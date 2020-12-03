@@ -6,4 +6,5 @@ public class Item : MonoBehaviour
 {
     public bool inPipe;
     public bool authorizedInPipe;
+    public string itemName = "badItem";
 }
