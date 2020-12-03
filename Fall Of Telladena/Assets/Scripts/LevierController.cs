@@ -85,7 +85,7 @@ public class LevierController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("FlowerContactZone"))
+        if (other.CompareTag("ContactZone"))
         {
             if (Input.GetKeyDown(KeyCode.I) && !isPressingKey /*&& listOfPlatforms[0].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1*/)
             {
