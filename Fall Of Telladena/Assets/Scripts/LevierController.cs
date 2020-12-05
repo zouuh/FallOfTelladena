@@ -87,15 +87,15 @@ public class LevierController : MonoBehaviour
     {
         if (other.CompareTag("ContactZone"))
         {
-            if (Input.GetKeyDown(KeyCode.I) && !isPressingKey /*&& listOfPlatforms[0].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1*/)
+            if (Input.GetKeyUp(KeyCode.I) /*&& listOfPlatforms[0].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1*/)
             {
-                isPressingKey = true;
+                //isPressingKey = true;
                 //changePosition();
                 changeAnimation();
-            }else if(isPressingKey && Input.GetKeyUp(KeyCode.I))
+            }/*else if(isPressingKey && Input.GetKeyUp(KeyCode.I))
             {
                 isPressingKey = false;
-            }
+            }*/
         }
     }
 }
