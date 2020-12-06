@@ -2,11 +2,19 @@
 using UnityEditor;
 using System.IO;
 
-public class ReadTextFile : MonoBehaviour
+public class Character : MonoBehaviour
 {
-    string[] dialogue;
-    public void Start() {
+    public string[] dialogue;
+    public bool isDialoguePossible = false;
+    void Start() {
         dialogue = ReadString();
+    }
+
+    void OnCollisionEnter(Collision collisionInfo) {
+         if (collisionInfo.collider.name == "Jammo_Player") {
+             isDialoguePossible = true;
+         }
+         Debug.Log(isDialoguePossible);
     }
     static string[] ReadString()
     {
@@ -25,5 +33,4 @@ public class ReadTextFile : MonoBehaviour
         reader.Close();
         return dialogue;
     }
-
 }
