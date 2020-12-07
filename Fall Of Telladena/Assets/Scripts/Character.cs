@@ -18,18 +18,29 @@ public class Character : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown("p")) {
-            if (isDialoguePossible) {
-                dialogueCanvas.SetActive(true);
-                dialogueNameText.text = this.name;
-                dialogueText.text = dialogue[dialogueId];
+            if (!dialogueCanvas.activeSelf) {
+                if (isDialoguePossible) {
+                    dialogueCanvas.SetActive(true);
+                    dialogueNameText.text = this.name;
+                    dialogueText.text = dialogue[dialogueId];
+                }
+            }
+            else {
+                dialogueCanvas.SetActive(false);
             }
         }
     }
 
     void OnTriggerStay(Collider colliderInfo) {
-         if (colliderInfo.CompareTag("DialogueInput")) {
-             isDialoguePossible = true;
-         }
+        if (colliderInfo.CompareTag("DialogueInput")) {
+            isDialoguePossible = true;
+        }
+    }
+
+    void OnTriggerExit(Collider colliderInfo) {
+        if (colliderInfo.CompareTag("DialogueInput")) {
+             isDialoguePossible = false;
+        }
     }
     static string[] ReadString()
     {
