@@ -1,20 +1,35 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.IO;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
     public string[] dialogue;
+    private int dialogueId = 0;
     public bool isDialoguePossible = false;
+    public GameObject dialogueCanvas;
+    public Text dialogueNameText;
+    public Text dialogueText;
+
     void Start() {
         dialogue = ReadString();
     }
 
-    void OnCollisionEnter(Collision collisionInfo) {
-         if (collisionInfo.collider.name == "Jammo_Player") {
+    void Update() {
+        if (Input.GetKeyDown("p")) {
+            if (isDialoguePossible) {
+                dialogueCanvas.SetActive(true);
+                dialogueNameText.text = this.name;
+                dialogueText.text = dialogue[dialogueId];
+            }
+        }
+    }
+
+    void OnTriggerStay(Collider colliderInfo) {
+         if (colliderInfo.CompareTag("DialogueInput")) {
              isDialoguePossible = true;
          }
-         Debug.Log(isDialoguePossible);
     }
     static string[] ReadString()
     {

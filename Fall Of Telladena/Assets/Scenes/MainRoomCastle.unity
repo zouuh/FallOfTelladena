@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 307615631}
   m_Layer: 0
   m_Name: DialogueArea
-  m_TagString: Untagged
+  m_TagString: DialogueInput
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,6 +496,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: []
   isDialoguePossible: 0
+  dialogueCanvas: {fileID: 856572772}
+  dialogueNameText: {fileID: 1678876220}
+  dialogueText: {fileID: 2142347581}
 --- !u!136 &334270019
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1384,7 +1387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &856572773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2754,7 +2757,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142347579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0832b4ffcd05252419df3a2a46885115, type: 3}
   m_Name: 
@@ -2762,7 +2765,6 @@ MonoBehaviour:
   character: {fileID: 334270016}
   myText: {fileID: 2142347581}
   textId: 0
-  dialogueCanvas: {fileID: 856572772}
 --- !u!1 &2142926188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -859439677000178088, guid: c26d3ae845b59bb40922e6bed25039a0,
