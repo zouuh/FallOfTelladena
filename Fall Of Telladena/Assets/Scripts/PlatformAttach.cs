@@ -6,7 +6,7 @@ public class PlatformAttach : MonoBehaviour
 {
     public GameObject myLedge;
     //public GameObject myLedgeExit;
-    GameObject[] myChildObjects;
+    //GameObject[] myChildObjects;
 
     void OnTriggerEnter(Collider other)
     {
