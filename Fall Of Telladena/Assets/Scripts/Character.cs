@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class Character : MonoBehaviour
 {
     public string[] dialogue;
-    private int dialogueId = 0;
     public bool isDialoguePossible = false;
     public GameObject dialogueCanvas;
     public Text dialogueNameText;
     public Text dialogueText;
+
+    private int dialogueId = 0;
 
     void Start() {
         dialogue = ReadString();
@@ -29,6 +30,10 @@ public class Character : MonoBehaviour
                 dialogueCanvas.SetActive(false);
             }
         }
+    }
+
+    public void ChangeDialogueID(int newId) {
+        dialogueId = newId;
     }
 
     void OnTriggerStay(Collider colliderInfo) {
