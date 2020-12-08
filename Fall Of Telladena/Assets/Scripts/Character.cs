@@ -10,10 +10,12 @@ public class Character : MonoBehaviour
     public GameObject dialogueCanvas;
     public Text dialogueNameText;
     public Text dialogueText;
+    static string myName;
 
     private int dialogueId = 0;
 
     void Start() {
+        myName = this.name;
         dialogue = ReadString();
     }
 
@@ -22,7 +24,7 @@ public class Character : MonoBehaviour
             if (!dialogueCanvas.activeSelf) {
                 if (isDialoguePossible) {
                     dialogueCanvas.SetActive(true);
-                    dialogueNameText.text = this.name;
+                    dialogueNameText.text = myName;
                     dialogueText.text = dialogue[dialogueId];
                 }
             }
@@ -37,7 +39,9 @@ public class Character : MonoBehaviour
     }
 
     void OnTriggerStay(Collider colliderInfo) {
+        Debug.Log("KAYAK");
         if (colliderInfo.CompareTag("DialogueInput")) {
+            Debug.Log("BOB");
             isDialoguePossible = true;
         }
     }
@@ -49,7 +53,7 @@ public class Character : MonoBehaviour
     }
     static string[] ReadString()
     {
-        string path = "Assets/Documents/Aïki.txt";
+        string path = "Assets/Documents/" + myName + ".txt";
 
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
