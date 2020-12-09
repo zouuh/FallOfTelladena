@@ -9,8 +9,10 @@ public class WaterController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log(other.tag);
+            other.gameObject.SetActive(false);
             other.gameObject.transform.position = resetPos.transform.position;
+            other.gameObject.transform.rotation = resetPos.transform.rotation;
+            other.gameObject.SetActive(true);
         }
     }
 }
