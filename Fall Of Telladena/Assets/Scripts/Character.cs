@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class Character : MonoBehaviour
 {
     public string[] dialogue;
-    public bool isDialoguePossible = false;
     public GameObject dialogueCanvas;
     public Text dialogueNameText;
     public Text dialogueText;
-    static string myName;
+    private static string myName;
 
     private int dialogueId = 0;
+    private bool isDialoguePossible = false;
+
 
     void Start() {
         myName = this.name;
@@ -21,15 +22,15 @@ public class Character : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown("p")) {
-            if (!dialogueCanvas.activeSelf) {
-                if (isDialoguePossible) {
+            if (isDialoguePossible) {
+                if (!dialogueCanvas.activeSelf) {
                     dialogueCanvas.SetActive(true);
-                    dialogueNameText.text = myName;
+                    dialogueNameText.text = this.name;
                     dialogueText.text = dialogue[dialogueId];
                 }
-            }
-            else {
-                dialogueCanvas.SetActive(false);
+                else {
+                    dialogueCanvas.SetActive(false);
+                }
             }
         }
     }
@@ -39,9 +40,7 @@ public class Character : MonoBehaviour
     }
 
     void OnTriggerStay(Collider colliderInfo) {
-        Debug.Log("KAYAK");
         if (colliderInfo.CompareTag("DialogueInput")) {
-            Debug.Log("BOB");
             isDialoguePossible = true;
         }
     }

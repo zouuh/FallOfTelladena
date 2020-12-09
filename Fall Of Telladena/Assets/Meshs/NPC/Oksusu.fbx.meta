@@ -3,7 +3,32 @@ guid: 9386b164369e0144c8597fd14dea7285
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OksusuBody
+    second: {fileID: 2100000, guid: 572e31f26cc9c5543bd84e47ebd2fd58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OksusuBois
+    second: {fileID: 2100000, guid: a847cdc7ff5f98348b30feace60ddaf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OksusuDress
+    second: {fileID: 2100000, guid: 82c9c338e17d1324798d6686cd96ed28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OksusuMask
+    second: {fileID: 2100000, guid: 97957f259d826824e82699777bfbba4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OksusuMedaillon
+    second: {fileID: 2100000, guid: 775a09990b90bb5409734752b9a0ad6a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

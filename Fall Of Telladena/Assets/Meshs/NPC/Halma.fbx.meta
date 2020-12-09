@@ -3,7 +3,27 @@ guid: db6060a02c016294d8fb0ee794fce016
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouricetteBody
+    second: {fileID: 2100000, guid: 5567054bf4ca4cd47853d1522088c0d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouricetteCloth
+    second: {fileID: 2100000, guid: c85cdf4fba7e40243b33081e12b7675f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouricetteGrass
+    second: {fileID: 2100000, guid: c15c5c799cf499348b7289691745134b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SouricetteMask
+    second: {fileID: 2100000, guid: c2a217153d1226a45b14c128ea63fab1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
