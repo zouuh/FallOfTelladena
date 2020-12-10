@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8927058777209199038}
   m_Layer: 0
   m_Name: Item
-  m_TagString: Item
+  m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inPipe: 0
   authorizedInPipe: 1
-  itemName: coin_square
+  itemName: goodItem
 --- !u!54 &-8927058777209199038
 Rigidbody:
   m_ObjectHideFlags: 0

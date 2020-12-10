@@ -9,10 +9,23 @@ public class WaterController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // begin transition
+            // ...
+
+            // begin teleportation
             other.gameObject.SetActive(false);
             other.gameObject.transform.position = resetPos.transform.position;
             other.gameObject.transform.rotation = resetPos.transform.rotation;
+
+            // reset platforms
+            // ...
+
+            // end transition
+            // ...
+
+            // end teleportation
             other.gameObject.SetActive(true);
+
         }
     }
 }
