@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour {
-    public string sceneName;
+    public string nextSceneName;
+    public string actualSceneName;
     public GameObject loadingScreen;
     public Slider slider;
     public void OnTriggerEnter() {
-        StartCoroutine(LoadAsynchronously(sceneName));
+        FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
+        StartCoroutine(LoadAsynchronously(nextSceneName));
     }
 
     IEnumerator LoadAsynchronously(string sceneName) {
