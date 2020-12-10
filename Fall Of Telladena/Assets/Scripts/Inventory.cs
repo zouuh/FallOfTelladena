@@ -1,5 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+
+using System;
+using System.Linq;
+
 using UnityEngine;
 
 public class Inventory : MonoBehaviour {
@@ -31,11 +35,17 @@ public class Inventory : MonoBehaviour {
 				Debug.Log ("Not enough room.");
 				return false;
 			}
+			for (int i = 0; i < items.Count; i++){
+				if(items[i] == item){
+					Debug.Log("LALALALALALALALALALALALAL");
+				}
+			}
 			items.Add (item);
 
 			if (onItemChangedCallback != null)
 				onItemChangedCallback.Invoke ();
 		}
+		PrintListItems();
 		return true;
 	}
 
@@ -46,6 +56,24 @@ public class Inventory : MonoBehaviour {
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
+	}
+
+	public void PrintListItems(){
+		Debug.Log(items.Count);
+		for (int i = 0; i < items.Count; i++)
+		{
+			Debug.Log("Element : " + items[i].name);
+		}
+		var dict = items.Select((s, i) => new { s, i }).ToDictionary(x => x.i, x => x.s);
+		Debug.Log("Dictionnaire : " + dict);
+
+		foreach (KeyValuePair<int, Item> kvp in dict)
+		{
+			//textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+			Debug.Log("Key = " + kvp.Key + ", Value = " + kvp.Value);
+		}
+
+		return;
 	}
 
 }
