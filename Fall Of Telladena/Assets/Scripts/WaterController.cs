@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaterController : MonoBehaviour
 {
     public Transform resetPos;
+    GameObject[] platformsToReset;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -19,6 +20,11 @@ public class WaterController : MonoBehaviour
 
             // reset platforms
             // ...
+            platformsToReset = GameObject.FindGameObjectsWithTag("WaterPlatform");
+            foreach(GameObject platform in platformsToReset)
+            {
+                platform.GetComponent<WaterPlatformController>().resetPosition();
+            }
 
             // end transition
             // ...

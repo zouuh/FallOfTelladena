@@ -7,12 +7,15 @@ public class WaterPlatformController : MonoBehaviour
     int position = 0;
     int accumulator = 1;
     public GameObject myPlatform;
-    //bool isPressingKey = false;
-    //public Vector3 scaleChange;
-    //string animName = "";
+    public Vector3 initPosition;
 
     // Animations
     private Animator anim;
+
+    private void Start()
+    {
+        initPosition = myPlatform.transform.position;
+    }
 
     void changeAnimation()
     {
@@ -28,35 +31,14 @@ public class WaterPlatformController : MonoBehaviour
             accumulator = -accumulator;
         }
     }
-    /*
-    void LateUpdate()
-    {
-        if (frameBeforeCheckingAgain <= 0)
-        {
-            if (isOn)
-            {
-                var myRenderer = GetComponent<Renderer>();
-                //Call SetColor using the shader property name "_Color" and setting the color to red
-                myRenderer.material.SetColor("_EmissionColor", Color.white * 1);
-                myLightZone.SetActive(true);
-            }
-            else
-            {
-                var myRenderer = GetComponent<Renderer>();
-                //Call SetColor using the shader property name "_Color" and setting the color to red
-                myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
-                myLightZone.SetActive(false);
-            }
-            if (!Input.GetKeyUp(KeyCode.E))
-            {
-                isOn = true;
-            }
-            frameBeforeCheckingAgain = 30;
-        }
-        --frameBeforeCheckingAgain;
 
+    public void resetPosition()
+    {
+        Debug.Log("reset");
+        myPlatform.transform.position = initPosition;
+        position = 0;
+        accumulator = 1;
     }
-    */
 
     void OnTriggerEnter(Collider other)
     {

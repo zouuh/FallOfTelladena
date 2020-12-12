@@ -3356,7 +3356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffabe92ecc62ef44fa84bb7145d2fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnee: {fileID: 1871178223499606354, guid: 2dbf8124246ac3a44b3eb6720448330b, type: 3}
+  spawnee: {fileID: 6147139666006997854, guid: 2195095581b045049836317d5015b7ad, type: 3}
 --- !u!1001 &791176839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4121,7 +4121,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923049439}
-  m_LocalRotation: {x: 0.086427614, y: -0.8054796, z: -0.12136863, w: -0.57358754}
+  m_LocalRotation: {x: 0.08642755, y: -0.80548, z: -0.12136867, w: -0.57358694}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4535,8 +4535,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089741773}
-  m_LocalRotation: {x: -0.086427495, y: 0.8054796, z: 0.12136872, w: 0.5735875}
-  m_LocalPosition: {x: -6.0800104, y: 0.44, z: -8.875889}
+  m_LocalRotation: {x: -0.08642739, y: 0.80548, z: 0.12136879, w: 0.5735868}
+  m_LocalPosition: {x: -6.0800095, y: 0.44, z: -8.875886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5436,7 +5436,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434939057}
-  m_LocalRotation: {x: 0.006585502, y: -0.81451964, z: -0.009248417, w: -0.58002496}
+  m_LocalRotation: {x: 0.006585492, y: -0.81452006, z: -0.009248423, w: -0.58002436}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6163,7 +6163,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710925023}
-  m_LocalRotation: {x: 0.05914834, y: -0.8103262, z: -0.083060704, w: -0.5770389}
+  m_LocalRotation: {x: 0.05914825, y: -0.8103267, z: -0.08306076, w: -0.5770382}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7059,7 +7059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075747001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0800104, y: 0.44, z: -8.875889}
+  m_LocalPosition: {x: -6.0800095, y: 0.44, z: -8.875886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1434939059}
@@ -7199,6 +7199,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 469370416}
     m_Modifications:
+    - target: {fileID: 6049497177807707376, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_TagString
+      value: WaterPlatform
+      objectReference: {fileID: 0}
     - target: {fileID: 6049497177807707378, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
         type: 3}
       propertyPath: myPlatform
@@ -7273,6 +7278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaterPlatformController
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390290047, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555fbbc3747be1e4d9ef58e09df5b0ad, type: 3}
