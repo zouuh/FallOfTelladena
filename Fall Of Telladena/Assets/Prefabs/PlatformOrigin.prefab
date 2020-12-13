@@ -61,6 +61,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5209553913893533983}
+  - {fileID: 8655480098882550865}
   m_Father: {fileID: 5209553913859098310}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5209553913859098310}
-  - component: {fileID: 5209553913859098313}
+  - component: {fileID: 2262076339896364663}
   m_Layer: 0
   m_Name: PlatformOrigin
   m_TagString: Untagged
@@ -156,25 +157,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5209553913859098313
-Animator:
-  serializedVersion: 3
+--- !u!111 &2262076339896364663
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5209553913859098306}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0eede2b5cd36d52488c58f18bc42aef3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e2f241c563b79364fac5e1f387d3fbf2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e2f241c563b79364fac5e1f387d3fbf2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &5209553913893533980
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,4 +280,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e660aad4cd6c24429bc04311b52ee4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLedge: {fileID: 5209553913859098306}
+  myLedge: {fileID: 260573912316732578}
+--- !u!1001 &3164430660005077522
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3844483160757603633}
+    m_Modifications:
+    - target: {fileID: 6049497177807707376, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_TagString
+      value: WaterPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497177807707378, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: myPlatform
+      value: 
+      objectReference: {fileID: 5209553913859098306}
+    - target: {fileID: 6049497177807707378, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: nbOfSteps
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497177807707378, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: axisToAnimate
+      value: x
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497177807707378, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: forwardOrBackward
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.10000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049497178390290047, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterPlatformController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 555fbbc3747be1e4d9ef58e09df5b0ad, type: 3}
+--- !u!4 &8655480098882550865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6049497178390289987, guid: 555fbbc3747be1e4d9ef58e09df5b0ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 3164430660005077522}
+  m_PrefabAsset: {fileID: 0}

@@ -58,6 +58,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPlatform: {fileID: 0}
+  nbOfSteps: 0
+  axisToAnimate: 
+  forwardOrBackward: 1
 --- !u!1 &6049497178390290047
 GameObject:
   m_ObjectHideFlags: 0
