@@ -4,50 +4,55 @@ using UnityEngine;
 
 public class WaterPlatformController : MonoBehaviour
 {
-    int position = 0;
-    int accumulator = 1;
     public GameObject myPlatform;
-    public Vector3 initPosition;
     public int nbOfSteps;
-    public int currStep = 0;
-    public bool forward = true;
+    int currStep = 0;
+    int forwardOrBackward = 1; // 1 = forward, -1 = backward
 
     // Animations
     private Animator anim;
+    Animation myAnimation;
+    AnimationCurve curve;
+    AnimationClip clip;
 
     private void Start()
     {
-        initPosition = myPlatform.transform.position;
         anim = myPlatform.GetComponent<Animator>();
+        myAnimation = myPlatform.GetComponent<Animation>();
+
+        // Create custom animation
+        //AnimationClip clip = new AnimationClip();
+        clip = myAnimation.clip;
+        //clip.legacy = true;
     }
-
-    /*
-     * void changeAnimation()
-    {
-        position += accumulator;
-        UnityEngine.Debug.Log(position);
-
-        //anim = myPlatform.GetComponent<Animator>();
-        UnityEngine.Debug.Log("waterPlatform_0" + (accumulator < 0 ? position + 1 : position) + (accumulator > 0 ? "" : "_backwards"));
-        anim.Play("waterPlatform_0" + (accumulator < 0 ? position + 1 : position) + (accumulator > 0 ? "" : "_backwards"));
-
-        if (position > 1 || position < 1)
-        {
-            accumulator = -accumulator;
-        }
-    }
-    */
     void changeAnimation()
     {
         if (currStep >= nbOfSteps)
         {
             currStep = 0;
-            forward = !forward;
+            forwardOrBackward *= -1;
         }
         if (currStep < nbOfSteps)
         {
             Debug.Log("Play:" + currStep);
-            anim.Play("waterPlatform_" + (forward ? "01" : "backward"));
+
+            // Create custom animation
+            
+
+            // create a curve to move the GameObject and assign to the clip
+            Keyframe[] keys;
+            keys = new Keyframe[2];
+            keys[0] = new Keyframe(0.0f, myPlatform.transform.position.z);
+            keys[1] = new Keyframe(1.0f, myPlatform.transform.position.z + (1.0f*forwardOrBackward));
+            curve = new AnimationCurve(keys);
+            clip.SetCurve("", typeof(Transform), "localPosition.z", curve);
+
+            //animation.AddClip(clip, clip.name);
+
+            // Play custom animation
+            myAnimation.Play(clip.name);
+
+            //animation.Play("waterPlatform_" + (forward ? "01" : "backward"));
         }
 
         ++currStep;
@@ -57,11 +62,7 @@ public class WaterPlatformController : MonoBehaviour
     {
         Debug.Log("reset");
         anim.Play("resetWaterPlatform");
-        myPlatform.transform.position = initPosition;
-        position = 0;
-        accumulator = 1;
         currStep = 0;
-        forward = true;
     }
 
     void OnTriggerEnter(Collider other)
