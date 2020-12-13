@@ -37,10 +37,13 @@ public class Inventory : MonoBehaviour {
 			}
 			for (int i = 0; i < items.Count; i++){
 				if(items[i] == item){
-					Debug.Log("LALALALALALALALALALALALAL");
+					items[i].amount += 1;
 				}
 			}
-			items.Add (item);
+			if(0 == item.amount){
+				item.amount = 1;
+				items.Add (item);
+			}
 
 			if (onItemChangedCallback != null)
 				onItemChangedCallback.Invoke ();
@@ -60,6 +63,7 @@ public class Inventory : MonoBehaviour {
 
 	public void PrintListItems(){
 		Debug.Log(items.Count);
+		/*
 		for (int i = 0; i < items.Count; i++)
 		{
 			Debug.Log("Element : " + items[i].name);
@@ -72,7 +76,7 @@ public class Inventory : MonoBehaviour {
 			//textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
 			Debug.Log("Key = " + kvp.Key + ", Value = " + kvp.Value);
 		}
-
+		*/
 		return;
 	}
 

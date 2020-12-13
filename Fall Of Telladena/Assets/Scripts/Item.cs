@@ -6,6 +6,7 @@ using UnityEngine;
 public class Item : ScriptableObject {
 
 	new public string name = "New Item";	// Name of the item
+	public int amount = 0;					// Amount of items
 	public Sprite icon = null;				// Item icon
 	public bool showInInventory = true;
 

@@ -7,6 +7,8 @@ public class InventorySlot : MonoBehaviour {
 
 	public Image icon;			// Reference to the Icon image
 	public Button removeButton;	// Reference to the remove button
+	public Text amountText;		// Reference to the Amount Text
+	public Text descriptionText;// Reference to the descrition Text
 
 	Item item;  // Current item in the slot
 
@@ -18,6 +20,18 @@ public class InventorySlot : MonoBehaviour {
 		icon.sprite = item.icon;
 		icon.enabled = true;
 		removeButton.interactable = true;
+		PrintAmount(item);
+
+	}
+
+	// Print Amount text
+	public void PrintAmount(Item item){
+		if (item.amount > 1){
+			amountText.text = item.amount.ToString();
+		}
+		else {
+			amountText.text = " ";
+		}
 	}
 
 	// Clear the slot
@@ -28,12 +42,22 @@ public class InventorySlot : MonoBehaviour {
 		icon.sprite = null;
 		icon.enabled = false;
 		removeButton.interactable = false;
+		amountText.text = " ";
 	}
 
 	// Called when the remove button is pressed
 	public void OnRemoveButton ()
 	{
-		Inventory.instance.Remove(item);
+		if (item.amount == 1){
+			item.amount = item.amount-1;
+			Inventory.instance.Remove(item);
+			descriptionText.text = " ";
+		}
+		
+		else {
+			item.amount = item.amount-1;
+			PrintAmount(item);
+		}
 	}
 
 	// Called when the item is pressed
@@ -42,6 +66,10 @@ public class InventorySlot : MonoBehaviour {
 		if (item != null)
 		{
 			item.Use();
+			descriptionText.text = item.name;
+		}
+		else {
+			descriptionText.text = " ";
 		}
 	}
 
