@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     public CharacterController controller;
     public Transform cam;
     public Animator animator;
+    public GameObject dialogueCanvas;
     public float speedCoef = 0;
     public float maxSpeed = 10;
     public float jumpSpeed = 5;
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetBool("pickUp", true);
         }
 
-        if(!pickUp) {
+        if(!pickUp && !dialogueCanvas.activeSelf) {
             if(direction.magnitude >= 0.1f) {
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);

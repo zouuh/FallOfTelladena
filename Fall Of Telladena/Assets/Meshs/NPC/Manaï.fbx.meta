@@ -3,7 +3,42 @@ guid: ff2bb3dd53f333943a6520934ea1f3b5
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bib
+    second: {fileID: 2100000, guid: c17773f24d1430944a94860bd1a98039, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body.004
+    second: {fileID: 2100000, guid: f7e20b5d47159bc40a26eb11dbb5dcb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cape
+    second: {fileID: 2100000, guid: 7729c4efdfc56c84c9dd8a4f616b1d12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hat
+    second: {fileID: 2100000, guid: 26d10a1527c7af649b641fc90ba8eef7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 4cba00d953956c643881a11f49184674, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 3e6c54554b85e5c409a6febc7103c627, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scarf.003
+    second: {fileID: 2100000, guid: 6a1db29aa32153b498bc262932cfa4ff, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

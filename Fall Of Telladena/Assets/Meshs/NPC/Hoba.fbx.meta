@@ -3,7 +3,37 @@ guid: 5e7924151abc4b54ea20775f35a02aed
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 03afd6aab07722d47a09a0429fad8031, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leafs_under
+    second: {fileID: 2100000, guid: ff99d592e0614f345a4d7c9d1a595df6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leafs_up_low
+    second: {fileID: 2100000, guid: efbc4598bc2737e42a0f086737e2e62f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Legs
+    second: {fileID: 2100000, guid: 8b00b6567ae2e6f47bcfc85eaaea1c1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mask
+    second: {fileID: 2100000, guid: 966ceb5c4d26eda47841c6503ebff4c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scarf
+    second: {fileID: 2100000, guid: 211725f766b5c7c46962e2fded6a4830, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

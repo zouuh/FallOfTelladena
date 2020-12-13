@@ -3,7 +3,47 @@ guid: d874709f24f6f02499731c300cd81ee1
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KogaBody
+    second: {fileID: 2100000, guid: c1e39b434355ad74cbf9d25e2e6c7f57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KogaHair
+    second: {fileID: 2100000, guid: bf886ee76c3ac1b499ec104e74dfee18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KogaMask
+    second: {fileID: 2100000, guid: ba1fe4f58468875459481fbddfaa51f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KogaMustache
+    second: {fileID: 2100000, guid: fa2f494cfee220a41a1394982ae373ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KogaRope1
+    second: {fileID: 2100000, guid: bb30eaec97b9ba74ca5f4f81a2d80a3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KogaRope2
+    second: {fileID: 2100000, guid: 393468a94c4598c4b9090a16df38a728, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KogaScarf
+    second: {fileID: 2100000, guid: 1000366e4d1e8114dac19e383cc78430, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KogaToga
+    second: {fileID: 2100000, guid: e7890f2d5f8bf0d4a9fc6f62293dbcdd, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

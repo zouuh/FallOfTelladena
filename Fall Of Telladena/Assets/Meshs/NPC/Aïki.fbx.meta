@@ -3,7 +3,32 @@ guid: 6380107ac186e2f4dab24d4572de9833
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AikiBody
+    second: {fileID: 2100000, guid: df74e84a837d9a346a7521431e3dd99e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AikiEarings
+    second: {fileID: 2100000, guid: 04db8a98fe4ce9a479d622727676a75a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AikiEaringsPendant
+    second: {fileID: 2100000, guid: 43954ccfe89f1734eb76c2e692b3c625, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AikiLeafs
+    second: {fileID: 2100000, guid: e364075661ddc39459371efe571a003c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AikiMask
+    second: {fileID: 2100000, guid: 14b0baaaef8d5804faa50fdd60b30878, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
