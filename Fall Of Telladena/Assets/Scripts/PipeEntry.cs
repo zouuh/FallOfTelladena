@@ -28,7 +28,7 @@ public class PipeEntry : MonoBehaviour
                 audioManager.Stop("pipeSound");
 
                 spawnee.SetActive(true);
-                spawnee.GetComponent<Item>().inPipe = false;
+                spawnee.GetComponent<ItemMaze>().inPipe = false;
                 spawnee = null;
                 hasAnObject = false;
             }
@@ -37,12 +37,12 @@ public class PipeEntry : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Item") && !hasAnObject && other.gameObject.GetComponent<Item>().authorizedInPipe && !other.gameObject.GetComponent<Item>().inPipe)
+        if (other.CompareTag("Item") && !hasAnObject && other.gameObject.GetComponent<ItemMaze>().authorizedInPipe && !other.gameObject.GetComponent<ItemMaze>().inPipe)
         {
             // set inactive
             other.gameObject.SetActive(false);
 
-            other.gameObject.GetComponent<Item>().inPipe = true;
+            other.gameObject.GetComponent<ItemMaze>().inPipe = true;
             spawnee = other.gameObject;
             hasAnObject = true;
 

@@ -5,7 +5,7 @@
 public class InventoryUI : MonoBehaviour {
 
 	public Transform itemsParent;	// The parent object of all the items
-	public GameObject inventoryUI;	// The entire UI
+	public GameObject inventoryUI;  // The entire UI
 
 	Inventory inventory;	// Our current inventory
 

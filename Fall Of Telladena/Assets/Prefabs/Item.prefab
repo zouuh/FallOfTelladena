@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8829982606441543825}
   - component: {fileID: 8063672601732819323}
   - component: {fileID: 4234892429141785603}
-  - component: {fileID: 4906670582750746989}
   - component: {fileID: -8927058777209199038}
+  - component: {fileID: 5320951445768439677}
   m_Layer: 0
   m_Name: Item
   m_TagString: Egg
@@ -95,21 +95,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4906670582750746989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2148728607406528290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aa9743fee192ed46a21e82d46f7eeee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inPipe: 0
-  authorizedInPipe: 1
-  itemName: goodItem
 --- !u!54 &-8927058777209199038
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,3 +111,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5320951445768439677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148728607406528290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76f0dd937f4d464082de49faabbfd47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inPipe: 0
+  authorizedInPipe: 1
+  itemName: goodItem

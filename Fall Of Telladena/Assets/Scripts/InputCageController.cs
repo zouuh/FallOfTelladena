@@ -9,7 +9,7 @@ public class InputCageController : MonoBehaviour
     public GameObject door;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Item") && other.gameObject.GetComponent<Item>().itemName == itemName) // the right item is inside
+        if(other.CompareTag("Item") && other.gameObject.GetComponent<ItemMaze>().itemName == itemName) // the right item is inside
         {            
             // open the door
             door.SetActive(false);

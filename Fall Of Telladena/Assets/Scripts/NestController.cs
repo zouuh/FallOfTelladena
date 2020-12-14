@@ -17,7 +17,7 @@ public class NestController : MonoBehaviour
             other.gameObject.transform.rotation = this.transform.rotation;
 
             // Change Symbol aspect according to egg color
-            mySymbol.changeColor(other.gameObject.GetComponent<Item>().itemName);
+            mySymbol.changeColor(other.gameObject.GetComponent<ItemMaze>().itemName);
         }
     }
     private void OnTriggerExit(Collider other) // turn off symbol when removing the egg
