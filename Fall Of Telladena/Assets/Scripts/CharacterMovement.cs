@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public Camera camera;
+    public Camera cam;
     float speed = 3.0f;
     float jumpSpeed = 6.0f;
     float gravity = 20.0f;
@@ -43,8 +43,8 @@ public class CharacterMovement : MonoBehaviour
         {
             movement.y -= gravity * Time.deltaTime;
         }
-        // Finally Moving Character Depending On Previously Adjusted Input & Camera
-        characterController.Move(Quaternion.Euler(0, camera.transform.rotation.eulerAngles.y, 0) * (movement * Time.deltaTime));
+        // Finally Moving Character Depending On Previously Adjusted Input & cam
+        characterController.Move(Quaternion.Euler(0, cam.transform.rotation.eulerAngles.y, 0) * (movement * Time.deltaTime));
     }
     IEnumerator Jump()
     {
