@@ -1,9 +1,14 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 /* The base item class. All items should derive from this. */
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject {
+  public bool inPipe;
+  public bool authorizedInPipe;
+  public string itemName = "badItem";
 
 	new public string name = "New Item";	// Name of the item
 	public int amount = 0;					// Amount of items
@@ -23,5 +28,4 @@ public class Item : ScriptableObject {
 	{
 		Inventory.instance.Remove(this);
 	}
-
 }

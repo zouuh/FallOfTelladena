@@ -10,8 +10,12 @@ public class ButtonController : MonoBehaviour
     public Vector3 positionDown = new Vector3(0, 0.3f, 0);
     public GameObject ButtonToPush;
 
+    public DoorController[] doorsToControl;
+    int nbOfColliders = 0;
+
     public float switchActivationWeight = 0.01f;
     
+    /*
     // Update is called once per frame
     void LateUpdate()
     {
@@ -21,7 +25,7 @@ public class ButtonController : MonoBehaviour
             //this.transform.position = positionDown;
             ButtonToPush.SetActive(false);
         }
-        */
+        *
         if (frameBeforeCheckingAgain <= 0)
         {
             if(isOn)
@@ -35,13 +39,14 @@ public class ButtonController : MonoBehaviour
         }
         --frameBeforeCheckingAgain;
         
-    }
+    }*/
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         UnityEngine.Debug.Log(other.tag);
-        if (!other.CompareTag("ButtonBase") && ((other.GetComponent<Rigidbody>() != null && other.GetComponent<Rigidbody>().mass > switchActivationWeight) || other.CompareTag("ButtonZone")))
+        if (!other.CompareTag("ButtonBase") && ((other.GetComponent<Rigidbody>() != null && other.GetComponent<Rigidbody>().mass > switchActivationWeight) || other.CompareTag("ContactZone")))
         {
+            /*
             isOn = true;
             //ButtonToPush.SetActive(false);
             if (other.GetComponent<Rigidbody>() != null) // stop bouncing
@@ -49,8 +54,15 @@ public class ButtonController : MonoBehaviour
                 Rigidbody rb = other.GetComponent<Rigidbody>();
                 rb.velocity = new Vector3(0, 0, 0);
                 rb.angularVelocity = new Vector3(0, 0, 0);
-            }            
+            }    
+            */
             UnityEngine.Debug.Log(other.tag + " : isOn");
+            ++nbOfColliders;
+
+            foreach(DoorController door in doorsToControl)
+            {
+                door.open();
+            }
         }
         /*
         else
@@ -66,5 +78,31 @@ public class ButtonController : MonoBehaviour
         }
         */
 
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        --nbOfColliders;
+        if (nbOfColliders <= 0)
+        {
+            UnityEngine.Debug.Log(other.tag + " : isOff");
+
+            foreach (DoorController door in doorsToControl)
+            {
+                door.close();
+            }
+        }
+
+        /*
+        if (!other.CompareTag("ButtonBase") && ((other.GetComponent<Rigidbody>() != null && other.GetComponent<Rigidbody>().mass > switchActivationWeight) || other.CompareTag("ButtonZone")))
+        {
+            UnityEngine.Debug.Log(other.tag + " : isOff");
+
+            foreach (DoorController door in doorsToControl)
+            {
+                door.close();
+            }
+        }
+        */
     }
 }

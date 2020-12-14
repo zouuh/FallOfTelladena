@@ -36,9 +36,9 @@ public class MovementInput : MonoBehaviour {
     public float verticalVel;
     private Vector3 moveVector;
 
-	int nrOfAlowedDJumps = 0;
+	public int nrOfAlowedDJumps = 0;
 	int dJumpCounter = 0;
-	float jumpSpeed = 20;
+	public float jumpSpeed = 20;
 
 	Vector3 teleportation = Vector3.zero;
 	bool isTeleporting = false;
@@ -84,14 +84,11 @@ public class MovementInput : MonoBehaviour {
 			}
 		}
 		
-		if (isGrounded)
+		if (!isGrounded)
 		{
-			verticalVel -= 0;
+            verticalVel -= .5f;
 		}
-		else
-		{
-            verticalVel -= 4;
-		}
+		
 
 		if(isTeleporting)
 		{
@@ -101,7 +98,7 @@ public class MovementInput : MonoBehaviour {
         }
         else
         {
-			moveVector = new Vector3(0, verticalVel * .2f * Time.deltaTime, 0);
+			moveVector = new Vector3(0, verticalVel * .5f * Time.deltaTime, 0);
 		}
 		
 		//moveVector = new Vector3(0, verticalVel * .2f * Time.deltaTime, 0);

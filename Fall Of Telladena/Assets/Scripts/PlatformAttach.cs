@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlatformAttach : MonoBehaviour
 {
     public GameObject myLedge;
-    public GameObject myLedgeExit;
-    GameObject[] myChildObjects;
+    //public GameObject myLedgeExit;
+    //GameObject[] myChildObjects;
 
     void OnTriggerEnter(Collider other)
     {
