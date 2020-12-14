@@ -4,37 +4,40 @@ using UnityEngine;
 
 public class LevierController : MonoBehaviour
 {
-    int position = 0;
-    int accumulator = 1;
     public GameObject myLevier;
     public GameObject[] listOfPlatforms;
-    bool isPressingKey = false;
-    public Vector3 scaleChange;
-    //string animName = "";
+
+    public int nbOfSteps;
+    public string axisToAnimate; // x, y, z
+    int axisId;
+    int currStep = 0;
+    public int forwardOrBackward = 1; // 1 = forward, -1 = backward
 
     // Animations
-    private Animator anim;
+    Animation myAnimation;
+    AnimationCurve curve;
+    AnimationClip clip;
 
-
-    void changePosition()
+    private void Start()
     {
-        position+=accumulator;
-        UnityEngine.Debug.Log(position);
-        //myLevier.transform.Rotate(0, 0, (20 - position * 20), Space.Self);
-        myLevier.transform.rotation = Quaternion.Euler(0, 0, (20 - position * 20));
-        for(int i=0; i<listOfPlatforms.Length; ++i)
+        switch (axisToAnimate)
         {
-            listOfPlatforms[i].transform.localScale += scaleChange*accumulator;
-            if(listOfPlatforms[i].transform.localScale.y > 2*scaleChange.y)
-            {
-                listOfPlatforms[i].transform.localScale -= 3*scaleChange;
-            }
+            case "x":
+                axisId = 0;
+                break;
+            case "y":
+                axisId = 1;
+                break;
+            case "z":
+                axisId = 2;
+                break;
+            default:
+                axisId = 0;
+                break;
         }
-        if (position > 1 || position < 1)
-        {
-            accumulator = -accumulator;
-        }
+
     }
+    /*
     void changeAnimation()
     {
         position += accumulator;
@@ -53,48 +56,57 @@ public class LevierController : MonoBehaviour
             accumulator = -accumulator;
         }
     }
-    /*
-    void LateUpdate()
-    {
-        if (frameBeforeCheckingAgain <= 0)
-        {
-            if (isOn)
-            {
-                var myRenderer = GetComponent<Renderer>();
-                //Call SetColor using the shader property name "_Color" and setting the color to red
-                myRenderer.material.SetColor("_EmissionColor", Color.white * 1);
-                myLightZone.SetActive(true);
-            }
-            else
-            {
-                var myRenderer = GetComponent<Renderer>();
-                //Call SetColor using the shader property name "_Color" and setting the color to red
-                myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
-                myLightZone.SetActive(false);
-            }
-            if (!Input.GetKeyUp(KeyCode.E))
-            {
-                isOn = true;
-            }
-            frameBeforeCheckingAgain = 30;
-        }
-        --frameBeforeCheckingAgain;
-
-    }
     */
+
+    void changeAnimation()
+    {
+        Debug.Log("anim");
+        if (currStep >= nbOfSteps)
+        {
+            currStep = 0;
+            forwardOrBackward *= -1;
+        }
+        if (currStep < nbOfSteps)
+        {
+            Debug.Log("Play:" + currStep);
+            for(int i = 0; i < listOfPlatforms.Length; ++i)
+            {
+                myAnimation = listOfPlatforms[i].GetComponent<Animation>();
+                // Create custom animation
+                AnimationClip clip = new AnimationClip();
+                //clip = myAnimation.clip;
+                clip.legacy = true;
+
+                Keyframe[] keys;
+                keys = new Keyframe[2];
+                keys[0] = new Keyframe(0.0f, listOfPlatforms[i].transform.position[axisId]);
+                keys[1] = new Keyframe(1.0f, listOfPlatforms[i].transform.position[axisId] + (1.0f * forwardOrBackward));
+                curve = new AnimationCurve(keys);
+                clip.SetCurve("", typeof(Transform), "localPosition." + axisToAnimate, curve);
+                Debug.Log("localPosition." + axisToAnimate);
+
+                myAnimation.AddClip(clip, clip.name);
+                // Play custom animation
+                myAnimation.Play(clip.name);
+            }
+
+            
+        }
+
+        ++currStep;
+    }
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("ContactZone"))
+        if (other.CompareTag("ContactZone") && Input.GetKeyUp(KeyCode.I))
         {
-            if (Input.GetKeyUp(KeyCode.I) /*&& listOfPlatforms[0].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1*/)
+            changeAnimation();
+                
+            /*
+            if (Input.GetKeyUp(KeyCode.I) /*&& listOfPlatforms[0].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1*)
             {
-                //isPressingKey = true;
-                //changePosition();
+                Debug.Log("anim");
                 changeAnimation();
-            }/*else if(isPressingKey && Input.GetKeyUp(KeyCode.I))
-            {
-                isPressingKey = false;
             }*/
         }
     }

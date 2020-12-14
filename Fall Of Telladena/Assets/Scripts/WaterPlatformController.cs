@@ -10,9 +10,9 @@ public class WaterPlatformController : MonoBehaviour
     int axisId;
     int currStep = 0;
     public int forwardOrBackward = 1; // 1 = forward, -1 = backward
-    public CharacterController player;
 
     // Animations
+    Animator anim;
     Animation myAnimation;
     AnimationCurve curve;
     AnimationClip clip;
@@ -20,6 +20,7 @@ public class WaterPlatformController : MonoBehaviour
     private void Start()
     {
         myAnimation = myPlatform.GetComponent<Animation>();
+        anim = myPlatform.GetComponent<Animator>();
         switch (axisToAnimate)
         {
             case "x":
@@ -36,10 +37,6 @@ public class WaterPlatformController : MonoBehaviour
                 break;
         }
 
-        // Create custom animation
-        //AnimationClip clip = new AnimationClip();
-        clip = myAnimation.clip;
-        //clip.legacy = true;
     }
     void changeAnimation()
     {
@@ -53,20 +50,21 @@ public class WaterPlatformController : MonoBehaviour
             Debug.Log("Play:" + currStep);
 
             // Create custom animation
+            AnimationClip clip = new AnimationClip();
+            //clip = myAnimation.clip;
+            clip.legacy = true;
+
             Keyframe[] keys;
             keys = new Keyframe[2];
             keys[0] = new Keyframe(0.0f, myPlatform.transform.position[axisId]);
-            keys[1] = new Keyframe(1.0f, myPlatform.transform.position[axisId] + (1.0f*forwardOrBackward));
+            keys[1] = new Keyframe(1.0f, myPlatform.transform.position[axisId] + (1.0f * forwardOrBackward));
             curve = new AnimationCurve(keys);
-            clip.SetCurve("", typeof(Transform), "localPosition."+axisToAnimate, curve);
+            clip.SetCurve("", typeof(Transform), "localPosition." + axisToAnimate, curve);
             Debug.Log("localPosition." + axisToAnimate);
 
-            //animation.AddClip(clip, clip.name);
-            player.enabled = false;
+            myAnimation.AddClip(clip, clip.name);
             // Play custom animation
             myAnimation.Play(clip.name);
-
-            //animation.Play("waterPlatform_" + (forward ? "01" : "backward"));
         }
 
         ++currStep;
@@ -77,6 +75,10 @@ public class WaterPlatformController : MonoBehaviour
         Debug.Log("reset");
 
         // Create reset animation (one frame)
+        AnimationClip clip = new AnimationClip();
+        //clip = myAnimation.clip;
+        clip.legacy = true;
+
         Keyframe[] keys;
         keys = new Keyframe[1];
         keys[0] = new Keyframe(0.0f, 0.0f);
@@ -84,6 +86,7 @@ public class WaterPlatformController : MonoBehaviour
         clip.SetCurve("", typeof(Transform), "localPosition." + axisToAnimate, curve);
 
         // Play custom animation
+        myAnimation.AddClip(clip, clip.name);
         myAnimation.Play(clip.name);
 
         currStep = 0;
@@ -95,6 +98,7 @@ public class WaterPlatformController : MonoBehaviour
         {
             changeAnimation();
             Destroy(other.gameObject);
+            
         }
     }
 }
