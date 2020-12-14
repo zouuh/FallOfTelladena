@@ -5,19 +5,23 @@ using UnityEngine;
 public class NestController : MonoBehaviour
 {
     public Symbol mySymbol;
+    public Transform eggPosition;
+    bool nestIsEmpty = true;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Egg"))
+        if (other.CompareTag("Egg") && nestIsEmpty)
         {
             // Position Egg in center
             other.gameObject.transform.parent = this.transform;
             other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            other.gameObject.transform.position = this.transform.position;
+            other.gameObject.transform.position = eggPosition.position;
             other.gameObject.transform.rotation = this.transform.rotation;
 
             // Change Symbol aspect according to egg color
             mySymbol.changeColor(other.gameObject.GetComponent<ItemMaze>().itemName);
+
+            nestIsEmpty = false;
         }
     }
     private void OnTriggerExit(Collider other) // turn off symbol when removing the egg
@@ -30,6 +34,8 @@ public class NestController : MonoBehaviour
 
             // Change Symbol aspect according to egg color
             mySymbol.setDefaultColor();
+
+            nestIsEmpty = true;
         }
     }
 }
