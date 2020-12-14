@@ -3,7 +3,37 @@ guid: a8b71af251991334baf9489bb62e6a3b
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MigwaBody
+    second: {fileID: 2100000, guid: c6f8228b3ccfae14fbc450cc67f72edc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MigwaDress
+    second: {fileID: 2100000, guid: 045a3cd67a1c0354aac15dff28ee9b9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MigwaHat
+    second: {fileID: 2100000, guid: 90f1e6de085024c438e4156b7b3f16cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MigwaHead
+    second: {fileID: 2100000, guid: 837b172261218b344a60746b08c7e5b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MigwaPendant
+    second: {fileID: 2100000, guid: 5ad111d060d3dbb45bff6af9651f5f84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MigwaScarf
+    second: {fileID: 2100000, guid: 06d48baec6f5a2745aaea3fb38500a35, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
