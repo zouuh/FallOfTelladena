@@ -7,10 +7,8 @@ TagManager:
   - Egg
   - Water
   - PlayerEyes
+  - Item
   - Ground
-  - SerenityInput
-  - ButtonZone
-  - FlowerContactZone
   - PlayerBody
   - LightInput
   - Bridge
@@ -18,8 +16,12 @@ TagManager:
   - Bridge3
   - Torch
   - Bridge1
+  - FlowerContactZone
+  - ButtonZone
   - ButtonBase
+  - SerenityInput
   - LightInputPlayer
+  - DialogueInput
   - ContactZone
   layers:
   - Default
