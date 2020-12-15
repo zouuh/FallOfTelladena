@@ -6,6 +6,7 @@ public class LevierController : MonoBehaviour
 {
     public GameObject myLevier;
     public GameObject[] listOfPlatforms;
+    bool isInContact = false;
 
     public int nbOfSteps;
     public string axisToAnimate; // x, y, z
@@ -36,6 +37,14 @@ public class LevierController : MonoBehaviour
                 break;
         }
 
+    }
+
+    void Update()
+    {
+        if(isInContact && Input.GetKeyUp(KeyCode.I))
+        {
+            changeAnimation();
+        }
     }
     /*
     void changeAnimation()
@@ -96,11 +105,12 @@ public class LevierController : MonoBehaviour
         ++currStep;
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("ContactZone") && Input.GetKeyUp(KeyCode.I))
+        if (other.CompareTag("ContactZone") /*&& Input.GetKeyUp(KeyCode.I)*/)
         {
-            changeAnimation();
+            isInContact = true;
+            //changeAnimation();
                 
             /*
             if (Input.GetKeyUp(KeyCode.I) /*&& listOfPlatforms[0].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1*)
@@ -108,6 +118,14 @@ public class LevierController : MonoBehaviour
                 Debug.Log("anim");
                 changeAnimation();
             }*/
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("ContactZone"))
+        {
+            isInContact = false;
         }
     }
 }

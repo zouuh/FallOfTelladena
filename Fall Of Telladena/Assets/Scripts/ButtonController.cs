@@ -11,7 +11,7 @@ public class ButtonController : MonoBehaviour
     public GameObject ButtonToPush;
 
     public DoorController[] doorsToControl;
-    int nbOfColliders = 0;
+    public int nbOfColliders = 0;
 
     public float switchActivationWeight = 0.01f;
     
@@ -82,15 +82,17 @@ public class ButtonController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        --nbOfColliders;
-        if (nbOfColliders <= 0)
+        if (nbOfColliders <= 0 && !other.CompareTag("ButtonBase") && ((other.GetComponent<Rigidbody>() != null && other.GetComponent<Rigidbody>().mass > switchActivationWeight) || other.CompareTag("ContactZone")))
         {
+            --nbOfColliders;
             UnityEngine.Debug.Log(other.tag + " : isOff");
 
             foreach (DoorController door in doorsToControl)
             {
                 door.close();
             }
+
+            nbOfColliders = 0;
         }
 
         /*
