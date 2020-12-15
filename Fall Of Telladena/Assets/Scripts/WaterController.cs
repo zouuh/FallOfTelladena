@@ -8,6 +8,7 @@ public class WaterController : MonoBehaviour
     GameObject[] platformsToReset;
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("contact");
         if (other.CompareTag("Player"))
         {
             // begin transition
