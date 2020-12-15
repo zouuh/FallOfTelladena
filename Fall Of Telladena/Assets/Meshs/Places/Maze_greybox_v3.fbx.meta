@@ -3,7 +3,72 @@ guid: 19470576557a76442963b4f78d9b35bd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazeCeilling
+    second: {fileID: 2100000, guid: ef4427b031b620f49988ce9af26bfc4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazeClosedDoorRoom
+    second: {fileID: 2100000, guid: 02b344e64a42c8f44b3cbb6bda3cdbb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazeFloor
+    second: {fileID: 2100000, guid: d9ced7ded2b492f43b2bc58173137a06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazePipeRoomPipes
+    second: {fileID: 2100000, guid: ca42bf8fe949328408d1017619bd146a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazePipeRoomSecondFloorlExit
+    second: {fileID: 2100000, guid: da0265e0be157a74b9561a8574b8368c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazePipeRoomStairs1
+    second: {fileID: 2100000, guid: 1762fa4e3f8007d4498f8aa00b9c35d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazePipeRoomStairsExit
+    second: {fileID: 2100000, guid: dfba1d6ed48a8da47981b05468324bb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazePipeRoomTopFloor
+    second: {fileID: 2100000, guid: 704cc6772ebc738489322c37a8fc7b2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazePipeRoomWalls
+    second: {fileID: 2100000, guid: 33a1e3f71a0bd754cac3385d8080ccaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazeStairsClosedDoorEntrance
+    second: {fileID: 2100000, guid: 33ac020fac3f03d47a7f48351d27cb95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazeStairsClosedDoorExit
+    second: {fileID: 2100000, guid: b986458eb2571274fabfba989e7bcc37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazeWalls
+    second: {fileID: 2100000, guid: d6cb457fe2118c14193cb3eec3fe18c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MazeWaterPlatforms
+    second: {fileID: 2100000, guid: 44f8fdff214a67f4bbea00d041bbe6fb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
