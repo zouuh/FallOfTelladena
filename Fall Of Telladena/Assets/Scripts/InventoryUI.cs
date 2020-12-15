@@ -46,5 +46,6 @@ public class InventoryUI : MonoBehaviour {
 			}
 		}   
         Debug.Log("Updating UI");
+		return;
 	}
 }

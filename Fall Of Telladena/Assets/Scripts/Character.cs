@@ -56,7 +56,7 @@ public class Character : MonoBehaviour
 
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
-        Debug.Log(reader.ReadLine());
+        reader.ReadLine();
         int nbDialogue = int.Parse(reader.ReadLine());
         string[] dialogue = new string[nbDialogue];
         for (int i=0; i<nbDialogue; i++) {

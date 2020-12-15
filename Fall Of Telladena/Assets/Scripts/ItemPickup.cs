@@ -20,7 +20,7 @@ public class ItemPickup : MonoBehaviour
 
     void Start()
     {
-        playerMovementInput = GameObject.Find("Jammo_Player").GetComponent<MovementInput>();
+        playerMovementInput = GameObject.Find("Oksusu").GetComponent<MovementInput>();
     }
 
     void OnTriggerStay(Collider other)
