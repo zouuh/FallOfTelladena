@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEditor;
+using System.Collections;
 
 public class WaterPlatformController : MonoBehaviour
 {
@@ -10,15 +10,18 @@ public class WaterPlatformController : MonoBehaviour
     int axisId;
     int currStep = 0;
     public int forwardOrBackward = 1; // 1 = forward, -1 = backward
+    CharacterController myPlayer;
 
     // Animations
     Animator anim;
     Animation myAnimation;
     AnimationCurve curve;
     AnimationClip clip;
+    bool animationIsEnded = true;
 
     private void Start()
     {
+        myPlayer = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
         myAnimation = myPlatform.GetComponent<Animation>();
         anim = myPlatform.GetComponent<Animator>();
         switch (axisToAnimate)
@@ -38,8 +41,27 @@ public class WaterPlatformController : MonoBehaviour
         }
 
     }
+
+    private void Update()
+    {
+        if (myAnimation.isPlaying)
+        {
+            animationIsEnded = false;
+        }
+        else
+        {
+            if (!animationIsEnded)
+            {
+                animationEnd();
+            }
+            animationIsEnded = true;
+        }
+    }
     void changeAnimation()
     {
+        // Block player
+        myPlayer.enabled = false;
+
         if (currStep >= nbOfSteps)
         {
             currStep = 0;
@@ -51,6 +73,7 @@ public class WaterPlatformController : MonoBehaviour
 
             // Create custom animation
             AnimationClip clip = new AnimationClip();
+            clip.name = "Anim";
             //clip = myAnimation.clip;
             clip.legacy = true;
 
@@ -62,12 +85,41 @@ public class WaterPlatformController : MonoBehaviour
             clip.SetCurve("", typeof(Transform), "localPosition." + axisToAnimate, curve);
             Debug.Log("localPosition." + axisToAnimate);
 
+            // Add event when animation end
+            // new event created 
+            /*
+            AnimationEvent evt;
+            evt = new AnimationEvent();
+            //AnimationEvent[] listOfEvts = new AnimationEvent[1];
+            //listOfEvts[0] = evt;
+
+            evt.time = clip.length/2; // because animation lasts 1s
+            evt.functionName = "animationEnd";
+            clip.AddEvent(evt);
+            */
+            //clip.events = listOfEvts;
+            //AnimationUtility.SetAnimationEvents(clip, listOfEvts);
+
             myAnimation.AddClip(clip, clip.name);
+            //Debug.Log(myAnimation["Anim"].clip.events.Length);
             // Play custom animation
             myAnimation.Play(clip.name);
+            //yield return new WaitForSeconds(1.0f);
+            //animationIsEnded = false;
+            //wait();
+            //animationEnd();
         }
 
         ++currStep;
+    }
+
+    void animationEnd()
+    {
+        Debug.Log("animation end");
+        // free player
+        myPlayer.enabled = true;
+        // allow new water
+        //animationIsEnded = true;
     }
 
     public void resetPosition()
@@ -94,7 +146,7 @@ public class WaterPlatformController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Water"))
+        if (other.CompareTag("Water") && animationIsEnded)
         {
             changeAnimation();
             Destroy(other.gameObject);

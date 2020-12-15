@@ -16,6 +16,7 @@ public class PlatformAttach : MonoBehaviour
             myChildObjects[i].transform.parent = myLedge.transform;
         }*/
         other.gameObject.transform.parent = myLedge.transform;
+        //other.gameObject.transform.SetParent(myLedge.transform, true);
     }
 
     void OnTriggerExit(Collider other)
