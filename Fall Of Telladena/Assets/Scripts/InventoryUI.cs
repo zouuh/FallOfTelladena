@@ -16,7 +16,9 @@ public class InventoryUI : MonoBehaviour {
 		inventory.onItemChangedCallback += UpdateUI;	// Subscribe to the onItemChanged callback
 
 		// Populate our slots array
-		slots = itemsParent.GetComponentsInChildren<InventorySlot>();   
+		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+
+		inventoryUI.SetActive(false);
 	}
 	
 	void Update () {
