@@ -1,18 +1,16 @@
-﻿using System.Collections;
+﻿//ZOE
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StoryManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    int inCrystalRoom = 0;
+    void Update() {
+        if(inCrystalRoom == 1) {
+            //change dialogue de tous les persos ou presque
+            //deplacer Aïki
+        }
     }
 }

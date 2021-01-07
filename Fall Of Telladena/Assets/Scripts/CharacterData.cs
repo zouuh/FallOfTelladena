@@ -1,12 +1,16 @@
-﻿using System.Collections;
+﻿//ZOE
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class CharacterData {
+    // Attributes
     public int dialogueId;
     public float[] position;
 
+    //How to save it from Character class
     public CharacterData (Character character) {
         dialogueId = character.GetDialogueId();
         

@@ -1,19 +1,21 @@
-﻿using System.Collections;
+﻿//ZOE
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
+    // Public attributes
     public int key = 0;
     public Text keyText;
 
-    void Update() {
+    public void AddKey() {
+        key ++;
         keyText.text = key.ToString();
     }
 
-    public void AddKey() {
-        key ++;
-    }
+    // Save and load functions
     public void SavePlayer() {
         SaveSystem.SavePlayer(this, this.name);
     }
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour {
         PlayerData data = SaveSystem.LoadPlayer(this.name);
 
         key = data.key;
+        keyText.text = key.ToString();
 
         //fonctionne pas pour la pos car character controller
         // Vector3 position;
