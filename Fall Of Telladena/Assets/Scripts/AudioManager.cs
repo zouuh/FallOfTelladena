@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* 
+ * Authors : (Brackeys), Manon
+ */
+
+using UnityEngine;
 using System;
 using UnityEngine.Audio;
 
@@ -8,7 +12,6 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    // Start is called before the first frame update
     void Awake()
     {
         if(instance == null)
