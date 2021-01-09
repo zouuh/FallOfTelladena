@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
 
     // Save and load functions
     public void SavePlayer() {
+        Debug.Log("Save player");
         SaveSystem.SavePlayer(this, this.name);
     }
     

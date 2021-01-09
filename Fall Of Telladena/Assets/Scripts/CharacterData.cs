@@ -8,11 +8,13 @@ using UnityEngine;
 public class CharacterData {
     // Attributes
     public int dialogueId;
+    public string scene;
     public float[] position;
 
     //How to save it from Character class
     public CharacterData (Character character) {
         dialogueId = character.GetDialogueId();
+        scene = character.GetScene();
         
         position = new float[3];
         position[0] = character.transform.position.x;

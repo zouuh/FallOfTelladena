@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
     // Public attributes
     public string[] dialogue;
+    private string scene = "Village";
     public GameObject dialogueCanvas;
     public Text dialogueNameText;
     public Text dialogueText;
@@ -18,6 +20,12 @@ public class Character : MonoBehaviour
     private int dialogueId = 0;
     private bool isDialoguePossible = false;
 
+    // Constructor
+    public Character(int newDialogueId, string newScene) {
+        dialogueId = newDialogueId;
+        scene = newScene;
+    }
+    
     // Getter and Setter
     public int GetDialogueId() {
         return dialogueId;
@@ -27,9 +35,30 @@ public class Character : MonoBehaviour
         dialogueId = newId;
     }
 
+    public string GetScene() {
+        return scene;
+    }
+
+    public void SetScene(string newScene) {
+        scene = newScene;
+    }
+
+    public void SetPosition(Vector3 newPos) {
+        // Change local position of player
+        transform.position = newPos;
+        //Save it for other scenes
+        this.SaveCharacter();
+    }
+
     void Start() {
         myName = this.name;
         dialogue = ReadCharacterFile();
+        this.LoadCharacterer();
+        Debug.Log("Test");
+        if(SceneManager.GetActiveScene().name != scene) {
+            Debug.Log("BOB");
+            gameObject.SetActive(false);
+        }
     }
 
     void Update() {
@@ -64,8 +93,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    static string[] ReadCharacterFile()
-    {
+    static string[] ReadCharacterFile() {
         // Path of this character's document
         string path = "Assets/Documents/" + myName + ".txt";
 
@@ -88,9 +116,9 @@ public class Character : MonoBehaviour
         return dialogue;
     }
 
-
     // Save and load functions
     public void SaveCharacter() {
+        Debug.Log("Save " + this.name);
         SaveSystem.SaveCharacter(this, this.name);
     }
     
@@ -98,6 +126,7 @@ public class Character : MonoBehaviour
         CharacterData data = SaveSystem.LoadCharacter(this.name);
 
         dialogueId = data.dialogueId;
+        scene = data.scene;
 
         Vector3 position;
         position.x = data.position[0];

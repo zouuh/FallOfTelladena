@@ -24,6 +24,7 @@ public static class SaveSystem {
     public static PlayerData LoadPlayer (string name) {
         // Get path of player save file
         string path = Application.persistentDataPath + "/" + name + ".sol";
+        Debug.Log(path);
         if (File.Exists(path)) {
             // Create binary formatter and stream from path
             BinaryFormatter formatter = new BinaryFormatter();

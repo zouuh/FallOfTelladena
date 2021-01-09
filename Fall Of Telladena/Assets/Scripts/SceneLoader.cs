@@ -14,6 +14,13 @@ public class SceneLoader : MonoBehaviour {
     
     // Change scene if trigger
     public void OnTriggerEnter() {
+        // Save player and PNJ before changing scene
+        FindObjectOfType<Player>().SavePlayer();
+        Character[] characters = FindObjectsOfType<Character>();
+        foreach (Character pnj in characters) {
+            pnj.SaveCharacter();
+        }
+        
         FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
         StartCoroutine(LoadAsynchronously(nextSceneName));
     }
