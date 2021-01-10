@@ -3,16 +3,15 @@
  */
 using Cinemachine;
 using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Collider))]
-public class CamZone : MonoBehaviour
+public class CamZoneForMixingCameras : MonoBehaviour
 {
     #region Fields
 
     [SerializeField]
-    private CinemachineVirtualCamera virtualCamera = null;
-    [SerializeField]
-    private CinemachineVirtualCamera virtualCameraReset = null;
+    private CinemachineMixingCamera virtualCamera = null;
 
     #endregion
 
@@ -27,7 +26,6 @@ public class CamZone : MonoBehaviour
         }
         */
         virtualCamera.enabled = false;
-        virtualCameraReset.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,10 +37,6 @@ public class CamZone : MonoBehaviour
             {
                 cam.enabled = true;
             }
-            */
-            /*
-            virtualCameraReset.enabled = true;
-            virtualCameraReset.enabled = false;
             */
             virtualCamera.enabled = true;
         }
