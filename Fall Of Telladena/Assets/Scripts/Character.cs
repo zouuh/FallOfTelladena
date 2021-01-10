@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
 {
     // Public attributes
     public string[] dialogue;
-    private string scene = "Village";
+    public string scene = "Village";
     public GameObject dialogueCanvas;
     public Text dialogueNameText;
     public Text dialogueText;
@@ -74,6 +74,7 @@ public class Character : MonoBehaviour
                 }
                 else {
                     dialogueCanvas.SetActive(false);
+                    // Add something to change values of dialogue in story manager
                 }
             }
         }
