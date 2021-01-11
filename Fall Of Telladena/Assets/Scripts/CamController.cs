@@ -46,10 +46,8 @@ public class CamController : MonoBehaviour
             {
                 if (cam.enabled)
                 {
-                    //virtualCameraMain.enabled = false;
                     virtualCameraMain.transform.eulerAngles = new Vector3(30, virtualCameraMain.m_Follow.rotation.eulerAngles.y, 0);
                     cam.enabled = false;
-                    //virtualCameraMain.enabled = true;
                 }                
             }
             /*
