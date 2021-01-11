@@ -1,6 +1,7 @@
 ﻿/*
  * Authors : (Notslot), Manon
  */
+
 using Cinemachine;
 using UnityEngine;
 
@@ -11,8 +12,6 @@ public class CamZone : MonoBehaviour
 
     [SerializeField]
     private CinemachineVirtualCamera virtualCamera = null;
-    [SerializeField]
-    private CinemachineVirtualCamera virtualCameraReset = null;
 
     #endregion
 
@@ -20,30 +19,13 @@ public class CamZone : MonoBehaviour
 
     private void Start()
     {
-        /*
-        foreach(CinemachineVirtualCamera cam in virtualCameras)
-        {
-            cam.enabled = false;
-        }
-        */
         virtualCamera.enabled = false;
-        virtualCameraReset.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            /*
-            foreach (CinemachineVirtualCamera cam in virtualCameras)
-            {
-                cam.enabled = true;
-            }
-            */
-            /*
-            virtualCameraReset.enabled = true;
-            virtualCameraReset.enabled = false;
-            */
             virtualCamera.enabled = true;
         }
     }
@@ -52,12 +34,6 @@ public class CamZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            /*
-            foreach (CinemachineVirtualCamera cam in virtualCameras)
-            {
-                cam.enabled = false;
-            }
-            */
             virtualCamera.enabled = false;
         }
     }
