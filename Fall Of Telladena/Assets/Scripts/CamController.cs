@@ -4,18 +4,15 @@
 
 using Cinemachine;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class CamController : MonoBehaviour
 {
     #region Fields
 
     [SerializeField]
-    private List<CinemachineVirtualCamera> virtualCameras = null;
+    private CinemachineVirtualCamera virtualCamera = null;
     [SerializeField]
     private CinemachineVirtualCamera virtualCameraMain = null;
-    //[SerializeField]
-    //private List<CinemachineVirtualCamera> virtualCamerasMain = null;
 
     #endregion
 
@@ -23,39 +20,23 @@ public class CamController : MonoBehaviour
 
     private void Start()
     {
-        foreach(CinemachineVirtualCamera cam in virtualCameras)
-        {
-            cam.enabled = false;
-        }
-        //virtualCamera.enabled = false;
+        virtualCamera.enabled = false;
     }
 
     private void Update()
     {
         if (Input.GetMouseButton(1))
         {
-            foreach (CinemachineVirtualCamera cam in virtualCameras)
-            {
-                cam.enabled = true;
-            }
-            //virtualCamera.enabled = true;
+            virtualCamera.enabled = true;
         }
         else
         {
-            foreach (CinemachineVirtualCamera cam in virtualCameras)
-            {
-                if (cam.enabled)
-                {
-                    virtualCameraMain.transform.eulerAngles = new Vector3(30, virtualCameraMain.m_Follow.rotation.eulerAngles.y, 0);
-                    cam.enabled = false;
-                }                
-            }
-            /*
             if (virtualCamera.enabled)
             {
+                // refocus camera on player's rotation
+                virtualCameraMain.transform.eulerAngles = new Vector3(30, virtualCameraMain.m_Follow.rotation.eulerAngles.y, 0);
                 virtualCamera.enabled = false;
             }
-            */
         }
     }
 
