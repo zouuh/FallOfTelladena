@@ -10,7 +10,7 @@ public class MapPlayerPosition : MonoBehaviour
     List<Vector2> origins = new List<Vector2>();
     List<Vector2> zones = new List<Vector2>();
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.Find("Oksusu");
         map = GameObject.Find("MapContainer");
@@ -34,10 +34,9 @@ public class MapPlayerPosition : MonoBehaviour
     public void updatePlayerPosition()
     {
         Debug.Log(transform.localPosition);
-        float widthMap = map.transform.localScale.x;
+        //float widthMap = map.transform.localScale.x;
         float widthWorld = 1.0f;
         Scene currentScene = SceneManager.GetActiveScene();
-        Debug.Log(origins);
         Vector2 origin = origins[currentScene.buildIndex];
         Vector2 zone = zones[currentScene.buildIndex];
 
