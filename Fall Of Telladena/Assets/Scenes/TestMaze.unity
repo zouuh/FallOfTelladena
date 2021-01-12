@@ -12898,6 +12898,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f23fe8dd968ac47bea404927e128e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inCrystalRoom: 0
+  yohDialogue: 0
+  migwaDialogue: 0
+  kiyoDialogue: 0
+  petitDadetDialogue: 0
+  byoldalDialogue: 0
+  flamencoDialogue: 0
+  grandDadetDialogue: 0
+  manoDialogue: 0
+  tokiDialogue: 0
+  hobaDialogue: 0
+  noonaDialogue: 0
+  kogaDialogue: 0
+  danseuseDialogue: 0
+  builtIrrigation: 0
 --- !u!1001 &1682702017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13805,6 +13820,7 @@ GameObject:
   - component: {fileID: 1810234220}
   - component: {fileID: 1810234219}
   - component: {fileID: 1810234221}
+  - component: {fileID: 1810234222}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13854,6 +13870,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 1583966714}
   virtualCameraMain: {fileID: 2007977070}
+--- !u!114 &1810234222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810234218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f23fe8dd968ac47bea404927e128e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inCrystalRoom: 0
+  yohDialogue: 0
+  migwaDialogue: 0
+  kiyoDialogue: 0
+  petitDadetDialogue: 0
+  byoldalDialogue: 0
+  flamencoDialogue: 0
+  grandDadetDialogue: 0
+  manoDialogue: 0
+  tokiDialogue: 0
+  hobaDialogue: 0
+  noonaDialogue: 0
+  kogaDialogue: 0
+  danseuseDialogue: 0
+  builtIrrigation: 0
 --- !u!1 &1818601042
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class Character : MonoBehaviour
     private static string myName;
     private int dialogueId = 0;
     private bool isDialoguePossible = false;
+    private bool hasSeenDialogue = false;
 
     // Constructor
     public Character(int newDialogueId, string newScene) {
@@ -33,6 +34,7 @@ public class Character : MonoBehaviour
 
     public void SetDialogueID(int newId) {
         dialogueId = newId;
+        hasSeenDialogue = false;
     }
 
     public string GetScene() {
@@ -48,6 +50,10 @@ public class Character : MonoBehaviour
         transform.position = newPos;
         //Save it for other scenes
         this.SaveCharacter();
+    }
+    
+    public bool haveSeenDialogue(int id) {
+        return (dialogueId == id && hasSeenDialogue);
     }
 
     void Start() {
@@ -74,7 +80,8 @@ public class Character : MonoBehaviour
                 }
                 else {
                     dialogueCanvas.SetActive(false);
-                    // Add something to change values of dialogue in story manager
+                    // Say thaa Oksusu red this dialogue
+                    hasSeenDialogue = true;
                 }
             }
         }

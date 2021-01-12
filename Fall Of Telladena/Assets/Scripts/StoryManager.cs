@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 // 1 - POUR FAIRE QUELQUE CHOSE SUR UN PERSO EN PARTICULIER TROUVER UNE FONCTION TYPE "FIND BY NAME"
-// 2 - POUR SAVOIR SI UN DIALOGUE A DEJA ETE LU, FAIRE UNE FONCTION "HAVESEEN(INT)" QUI VERIFIERA 
+// DONE - POUR SAVOIR SI UN DIALOGUE A DEJA ETE LU, FAIRE UNE FONCTION "HAVESEEN(INT)" QUI VERIFIERA 
 //          SI LE DIALOGUEID EST LE MEME ET SI LE PARAMETRE "HASSEEN" EST TRUE
 // 3 - FAIRE UNE FONCTION POUR SAVOIR SI UN ITEM EST DANS L'INVENTAIRE
 
@@ -15,6 +15,7 @@ using UnityEngine;
 public class StoryManager : MonoBehaviour
 {
     public int inCrystalRoom = 0;
+    public int aikiDialogue = 0;
     public int yohDialogue = 0;
     public int migwaDialogue = 0;
     public int kiyoDialogue = 0;
@@ -29,6 +30,7 @@ public class StoryManager : MonoBehaviour
     public int kogaDialogue = 0;
     public int danseuseDialogue = 0;
     public int builtIrrigation = 0;
+    public bool inBimbopCave = false;
     Character[] characters;
 
     void Start() {
@@ -48,6 +50,9 @@ public class StoryManager : MonoBehaviour
                 }
             }
         }
+        if(aikiDialogue == 2) {
+            ChangeDialogueOf(2, "Aïki");
+        }
         /////////////////////// SERENITY QUEST ///////////////////////
         if(yohDialogue == 1 && inCrystalRoom >= 1) {
             // Oksusu need a Turbull
@@ -61,7 +66,7 @@ public class StoryManager : MonoBehaviour
             // ______________ ajouter un turbull à l'inventaire
             ChangeDialogueOf(2, "PetitDadet");
         }
-        if(yohDialogue >= 2 && HasInInventory("Turbull")) {
+        if(yohDialogue >= 2 && HasInInventory("Turbull", 1)) {
             // Oksusu give the Turbull to Yoh and have to find the Luluby mushrooms and Migwa have the first labyrinthe key
             ChangeDialogueOf(2, "Yoh");
             ChangeDialogueOf(1, "Pititronc");
@@ -81,7 +86,7 @@ public class StoryManager : MonoBehaviour
         if(byoldalDialogue == 2) {
             ChangeDialogueOf(2, "Byoldal");
         }
-        if(HasInInventory("LulubyMushroom")) {
+        if(HasInInventory("LulubyMushroom", 1)) {
             // Yoh want something to drink and Migwa can create the potion
             ChangeDialogueOf(4, "Yoh");
             ChangeDialogueOf(3, "Migwa");
@@ -130,7 +135,7 @@ public class StoryManager : MonoBehaviour
         }
         // __________ Quand Oksusu va dans la maison d'Hoba et voit la pierre -> changer dialogue Hoba pour 1
         if(builtIrrigation == 1) {
-            if(HasInInventory("SerenityStone")) {
+            if(HasInInventory("SerenityStone", 1)) {
                 // Hoba is happy
                 ChangeDialogueOf(3, "Hoba");
             }
@@ -149,6 +154,8 @@ public class StoryManager : MonoBehaviour
             ChangeDialogueOf(5, "Hoba");
             ChangeDialogueOf(3, "Flamenco");
             ChangeDialogueOf(3, "Toki");
+            ChangeDialogueOf(1, "Kiyo");
+            ChangeDialogueOf(1, "Joya");
         }
 
         /////////////////////// CLARTY QUEST ///////////////////////
@@ -161,12 +168,99 @@ public class StoryManager : MonoBehaviour
         if(kogaDialogue == 2) {
             ChangeDialogueOf(2, "Noona");
         }
-        if(HasInInventory("Flower")) {
+        if(HasInInventory("Flower", 1)) {
             // ____________ Déplacer Noona et Koga
             ChangeDialogueOf(1, "Danseuse");
         }
         if(danseuseDialogue == 2) {
             ChangeDialogueOf(1, "Halma");
+        }
+        if(inBimbopCave) {
+            ChangeDialogueOf(2, "Koga");
+            // ____________Lance le dialogue de Koga
+        }
+        if(kogaDialogue == 3) {
+            ChangeDialogueOf(3, "Noona");
+            // ___________Lance le dialogue de Noona
+        }
+        if(noonaDialogue == 4) {
+            ChangeDialogueOf(3, "Koga");
+            // ___________Lance le dialogue de Koga
+        }
+        if(kogaDialogue == 4) {
+            ChangeDialogueOf(4, "Noona");
+            // ___________Lance le dialogue de Noona
+        }
+        if(noonaDialogue == 5) {
+            if(!HasInInventory("Recipient", 1) && !HasInInventory("FertilityStone", 1)) {
+                ChangeDialogueOf(4, "Koga");
+                // ___________Lance le dialogue de Koga
+            }
+            else if(!HasInInventory("Flower", 4)) {
+                ChangeDialogueOf(5, "Koga");
+                // ___________Lance le dialogue de Koga
+            }
+            else {
+                ChangeDialogueOf(6, "Koga");
+                // ___________Lance le dialogue de Koga
+            }
+        }
+        if(inBimbopCave && (kogaDialogue == 5 || kogaDialogue == 6)) {
+            ChangeDialogueOf(5, "Noona");
+            // ____________Lance le dialogue de Noona
+        }
+        if(inBimbopCave && kogaDialogue == 7) {
+            ChangeDialogueOf(5, "Noona");
+            ChangeDialogueOf(7, "Koga");
+            // ______________ Débloquer la pierre de clarté et l'ajouter a l'inventaire
+            // ______________ Lancer le dialogue de Noona
+        }
+        if(noonaDialogue == 6) {
+            ChangeDialogueOf(6, "Noona");
+            ChangeDialogueOf(2, "Danseuse");
+            ChangeDialogueOf(2, "Halma");
+            // ____________Déplacer Koga et Noona
+        }
+        if(HasInInventory("Recipient", 1) && !HasInInventory("Flower", 4)) {
+            ChangeDialogueOf(5,"Koga");
+        }
+        if(HasInInventory("Recipient",1) && HasInInventory("Flower", 4)) {
+            ChangeDialogueOf(6, "Koga");
+        }
+        if (!inBimbopCave && kogaDialogue == 7) {
+            // ______________ Débloquer la pierre de clarté et l'ajouter a l'inventaire
+            ChangeDialogueOf(7, "Koga");
+            ChangeDialogueOf(7, "Noona");
+        }
+        
+        /////////////////////// POSSA QUEST ///////////////////////
+        
+
+
+
+
+
+
+
+        /////////////////////// END MAIN QUEST ///////////////////////
+        if(aikiDialogue == 3 && inCrystalRoom == -1){
+            ChangeDialogueOf(3, "Aïki");
+        }
+        if(HasInInventory("Key", 1)) {
+            ChangeDialogueOf(4, "Aïki");
+        }
+        if(HasInInventory("Key", 10)) {
+            ChangeDialogueOf(5, "Aïki");
+        }
+        if(aikiDialogue == 6) {
+            ChangeDialogueOf(6, "Aïki");
+            ChangeDialogueOf(3, "Pada");
+            ChangeDialogueOf(3, "Halma");
+            ChangeDialogueOf(4, "Byoldal");
+            ChangeDialogueOf(4, "Possa");
+            ChangeDialogueOf(5, "Migwa");
+            ChangeDialogueOf(3, "Danseuse");
+            // __________ Lancer l'aniation de fin avec le discours de l'esprit de la forêt
         }
     }
 
@@ -178,7 +272,7 @@ public class StoryManager : MonoBehaviour
             }
         }
     }
-    bool HasInInventory(string item) {
+    bool HasInInventory(string item, int nbItem) {
         // Implementer la fonction
         return false;
     }
