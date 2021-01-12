@@ -29,7 +29,11 @@ public class StoryManager : MonoBehaviour
     public int noonaDialogue = 0;
     public int kogaDialogue = 0;
     public int danseuseDialogue = 0;
+    public int possaDialogue = 0;
+    public int manaiDialogue = 0;
     public int builtIrrigation = 0;
+    public bool possiIsBack = false;
+    public bool possiIsntScared = false;
     public bool inBimbopCave = false;
     Character[] characters;
 
@@ -212,6 +216,7 @@ public class StoryManager : MonoBehaviour
         if(inBimbopCave && kogaDialogue == 7) {
             ChangeDialogueOf(5, "Noona");
             ChangeDialogueOf(7, "Koga");
+            // ______________ Enlever les 4 fleurs et le récipient si pas sérénité
             // ______________ Débloquer la pierre de clarté et l'ajouter a l'inventaire
             // ______________ Lancer le dialogue de Noona
         }
@@ -228,18 +233,49 @@ public class StoryManager : MonoBehaviour
             ChangeDialogueOf(6, "Koga");
         }
         if (!inBimbopCave && kogaDialogue == 7) {
+            // ______________ Enlever les 4 fleurs et le récipient si pas sérénité
             // ______________ Débloquer la pierre de clarté et l'ajouter a l'inventaire
             ChangeDialogueOf(7, "Koga");
             ChangeDialogueOf(7, "Noona");
         }
         
-        /////////////////////// POSSA QUEST ///////////////////////
+        /////////////////////// LOST IN THE FOREST QUEST ///////////////////////
+        if(possaDialogue == 1) {
+            ChangeDialogueOf(1, "Possa");
+        }
+        if(possiIsBack) {
+            ChangeDialogueOf(2, "Possa");
+        }
+        if(possaDialogue == 3) {
+            // ___________ Ajouter une clef à l'inventaire
+            ChangeDialogueOf(3, "Possa");
+        }     
+
+        /////////////////////// FIND NOUNOURS QUEST ///////////////////////
+        if(manaiDialogue == 1) {
+            ChangeDialogueOf(1, "Manaï");
+        }
+        if(HasInInventory("Nounours", 1)) {
+            ChangeDialogueOf(2, "Manaï");
+        }
+        if(manaiDialogue == 3) {
+            // _____________ Ajouter une clef à l'inventaire
+            // _____________ Enlever le nounours de l'inventaire
+            ChangeDialogueOf(3, "Manaï");
+        }
+
+        /////////////////////// BEAUTIFUL DRESS QUEST ///////////////////////
+        if(HasInInventory("FlamencoDress", 1)) {
+            ChangeDialogueOf(4, "Flamenco");
+        }
+        if(flamencoDialogue == 5) {
+            // ________________ Enlever la robe de l'inventaire
+            // ________________ Ajouter la clef a l'inventaire 
+            ChangeDialogueOf(5, "Flamenco");
+        }
+
+        /////////////////////// BEAUTIFUL DRESS QUEST ///////////////////////
         
-
-
-
-
-
 
 
         /////////////////////// END MAIN QUEST ///////////////////////
@@ -260,7 +296,8 @@ public class StoryManager : MonoBehaviour
             ChangeDialogueOf(4, "Possa");
             ChangeDialogueOf(5, "Migwa");
             ChangeDialogueOf(3, "Danseuse");
-            // __________ Lancer l'aniation de fin avec le discours de l'esprit de la forêt
+            // __________ Enlever les clefs de l'inventaire et les pierres ?
+            // __________ Lancer l'animation de fin avec le discours de l'esprit de la forêt
         }
     }
 
