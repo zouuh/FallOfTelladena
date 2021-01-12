@@ -12,7 +12,11 @@ public class MapUI : MonoBehaviour
 
     [SerializeField]
     private GameObject mapUI; // the entire map UI
+
     private GameObject player; // the player
+
+    [SerializeField]
+    private MapPlayerPosition playerPositionSprite; // the marker for player
 
     #endregion
 
@@ -34,6 +38,9 @@ public class MapUI : MonoBehaviour
             // Desactivate player movements
             player.GetComponent<CharacterController>().enabled = false;
             player.GetComponent<PlayerMovement>().enabled = false;
+
+            // Update player position
+            playerPositionSprite.updatePlayerPosition();
 		}
         else if (Input.GetButtonDown("CloseMap"))
         {
