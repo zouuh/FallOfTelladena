@@ -13,6 +13,11 @@ public class QuestsController : MonoBehaviour
 
     [SerializeField]
     GameObject questPrefab;
+    int margin = 10;
+    int titleFontSize = 16;
+    int containerHeight = 420;
+
+    int nbOfQuests = 0;
     //List<Quest> listOfQuests;
 
     #endregion
@@ -21,26 +26,31 @@ public class QuestsController : MonoBehaviour
     public void addQuest()
     {
         GameObject clone = Instantiate(questPrefab, transform.position, transform.rotation);
-        GameObject desc = clone.transform.Find("Description").gameObject;
-        TextMeshProUGUI tmp = desc.GetComponent<TextMeshProUGUI>();
-        tmp.text = (Random.Range(0.0f, 1.0f)>0.5f)?"bla":"qlnflqnflqbvlbqlvjlqjcksdvblhsdb vm sdmv bmqkdjsvb jqdsvqùsi nvùsondv ùsdbvùjbs dmbwsm vbwsmdbv mwdbv mwbdm vsdwbm ";
-        //tmp.text = "bla";
+
+        string text = (Random.Range(0.0f, 1.0f)>0.5f)?"bla":"qlnflqnflqbvlbqlvjlqjcksdvblhsdb vm sdmv bmqkdjsvb jqdsvqùsi nvùsondv ùsdbvùjbs dmbwsm vbwsmdbv mwdbv mwbdm vsdwbm ";
+        clone.GetComponent<QuestController>().changeDescription(text);
+        //clone.GetComponent<QuestController>().orderInList = nbOfQuests;
+
         clone.transform.SetParent(transform, false);
 
         // Resize quest to fit content
-        int margin = 10;
-        int titleFontSize = 16;
-        clone.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 3*margin+titleFontSize+(Mathf.Floor(tmp.text.Length/(200/tmp.fontSize))+1)*tmp.fontSize);
-        
+        clone.GetComponent<QuestController>().resizeWithoutDescription();
+
         // Resize container to fit content
-        int containerHeight = 420;
+        resize();
+
+        ++nbOfQuests;
+    }
+
+    public void resize()
+    {
         float newHeight = 0;
         for (int i = 0; i < transform.childCount; i++)
         {
             newHeight += margin + transform.GetChild(i).gameObject.GetComponent<RectTransform>().sizeDelta.y;
         }
         newHeight += margin;
-        this.GetComponent<RectTransform>().sizeDelta = new Vector2(this.GetComponent<RectTransform>().sizeDelta.x, newHeight>containerHeight?newHeight:containerHeight);
+        this.GetComponent<RectTransform>().sizeDelta = new Vector2(this.GetComponent<RectTransform>().sizeDelta.x, newHeight > containerHeight ? newHeight : containerHeight);
 
     }
     #endregion
