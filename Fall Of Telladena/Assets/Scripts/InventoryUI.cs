@@ -18,16 +18,16 @@ public class InventoryUI : MonoBehaviour {
 		// Populate our slots array
 		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
-		inventoryUI.SetActive(false);
+		//inventoryUI.SetActive(false);
 	}
 	
-	void Update () {
+	// void Update () {
 		// Check to see if we should open/close the inventory
-		if (Input.GetButtonDown("Inventory"))
-		{
-			inventoryUI.SetActive(!inventoryUI.activeSelf);
-		}
-	}
+		// if (Input.GetButtonDown("Inventory"))
+		// {
+		// 	inventoryUI.SetActive(!inventoryUI.activeSelf);
+		// }
+	// }
 
 	// Update the inventory UI by:
 	//		- Adding items
