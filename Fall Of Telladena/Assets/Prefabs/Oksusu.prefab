@@ -398,7 +398,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2559909699491819031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -627,15 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72458ccce886dc14db2510f987e8f99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 2559909700045489914}
-  cam: {fileID: 0}
-  animator: {fileID: 2559909700045489909}
-  dialogueCanvas: {fileID: 0}
-  speedCoef: 0
-  maxSpeed: 10
-  jumpSpeed: 8
-  gravity: 9.8
-  turnSmoothTime: 0.1
+  mainVueCanvas: {fileID: 0}
 --- !u!1 &3649201670282043962
 GameObject:
   m_ObjectHideFlags: 0

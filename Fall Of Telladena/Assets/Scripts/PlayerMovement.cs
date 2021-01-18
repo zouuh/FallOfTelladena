@@ -6,12 +6,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     // Public attributes
-    public CharacterController controller;
-    public Transform cam;
-    public Animator animator;
-    public GameObject dialogueCanvas;
+    public GameObject mainVueCanvas;
 
     // Private attributes
+    private int dJumpCounter = 0;
+    private int nbOfAlowedDJumps = 0;
     private float turnSmoothVelocity;
     private float gravity = 9.8f;
     private float maxSpeed = 10;
@@ -19,8 +18,15 @@ public class PlayerMovement : MonoBehaviour {
     private float speedCoef = 0;
     private float turnSmoothTime = 0.1f;
     private float jumpSpeed = 8;
-    private int dJumpCounter = 0;
-    private int nrOfAlowedDJumps = 0;
+    private Transform cam;
+    private Animator animator;
+    private CharacterController controller;
+
+    void Start() {
+        cam = FindObjectOfType<Camera>().transform;
+        controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
+    }
 
     void Update() {
         // Get movement Input
@@ -36,7 +42,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // Only if player isn't picking up item or speaking to PNJ
-        if(!animator.GetBool("pickUp") && !dialogueCanvas.activeSelf) {
+        if(!animator.GetBool("pickUp") && mainVueCanvas.activeSelf) {
             // If movement necessary
             if(direction.magnitude >= 0.1f) {
                 // Get and apply angle of rotation
@@ -53,7 +59,7 @@ public class PlayerMovement : MonoBehaviour {
                         animator.SetBool("jump", true);
                     }
                     // If not and can double jump, do it again
-                    else if (!controller.isGrounded && dJumpCounter < nrOfAlowedDJumps) {
+                    else if (!controller.isGrounded && dJumpCounter < nbOfAlowedDJumps) {
                         vSpeed = jumpSpeed;
                         dJumpCounter++;
                         animator.SetBool("jump", true);
@@ -89,7 +95,7 @@ public class PlayerMovement : MonoBehaviour {
                         dJumpCounter = 0;
                         animator.SetBool("jump", true);
                     }
-                    else if (!controller.isGrounded && dJumpCounter < nrOfAlowedDJumps) {
+                    else if (!controller.isGrounded && dJumpCounter < nbOfAlowedDJumps) {
                         vSpeed = jumpSpeed;
                         dJumpCounter++;
                         animator.SetBool("jump", true);

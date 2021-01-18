@@ -9,17 +9,18 @@ using UnityEngine.SceneManagement;
 public class Character : MonoBehaviour
 {
     // Public attributes
-    public string[] dialogue;
     public string scene = "Village";
     public GameObject dialogueCanvas;
-    public Text dialogueNameText;
-    public Text dialogueText;
+    public GameObject mainInterfaceCanvas;
 
     // Private attributes
     private static string myName;
-    private int dialogueId = 0;
+    public int dialogueId = 0;
     private bool isDialoguePossible = false;
     private bool hasSeenDialogue = false;
+    private string[] dialogue;
+    private Text dialogueNameText;
+    private Text dialogueText;
 
     // Constructor
     public Character(int newDialogueId, string newScene) {
@@ -58,6 +59,8 @@ public class Character : MonoBehaviour
 
     void Start() {
         myName = this.name;
+        dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
+        dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadCharacterFile();
         this.LoadCharacterer();
         Debug.Log("Test");
@@ -77,11 +80,13 @@ public class Character : MonoBehaviour
                     dialogueNameText.text = this.name;
                     // Enable the right sentence of current Id
                     dialogueText.text = dialogue[dialogueId];
+                    mainInterfaceCanvas.SetActive(false);
                 }
                 else {
                     dialogueCanvas.SetActive(false);
                     // Say thaa Oksusu red this dialogue
                     hasSeenDialogue = true;
+                    mainInterfaceCanvas.SetActive(true);
                 }
             }
         }
