@@ -43,7 +43,8 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
                 if (size >= newSize)
                 {
                     expanded = true;
-                    Debug.Log("expanded!");
+                    // Resize container to fit content
+                    questContainer.resize();
                 }
                 else
                 {
@@ -56,7 +57,8 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
                 if (size <= newSize)
                 {
                     expanded = true;
-                    Debug.Log("expanded!");
+                    // Resize container to fit content
+                    questContainer.resize();
                 }
                 else
                 {
@@ -103,7 +105,7 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
 
         // description expend
         resizeWithoutDescription();
-        questContainer.resize();
+        //questContainer.resize();
         description.SetActive(false);
 
         // pointer show PNJ
@@ -124,7 +126,7 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
         // Resize quest to fit content
         resizeWithDescription();
         // Resize container to fit content
-        questContainer.resize();
+        //questContainer.resize();
         description.SetActive(true);
 
         // pointer show PNJ
