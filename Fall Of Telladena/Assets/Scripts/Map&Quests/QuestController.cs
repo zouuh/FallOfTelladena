@@ -20,6 +20,11 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
     TextMeshProUGUI tmp;
     int margin = 10;
     int titleFontSize = 16;
+    float size = 16;
+    float newSize = 16;
+    bool expanded = true;
+    float step = 0.5f;
+    float diff = 0.0f;
     #endregion
 
     #region MonoBehaviour
@@ -27,6 +32,41 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
     {
         questContainer = GameObject.Find("QuestsContainer").gameObject.GetComponent<QuestsController>();
         //questsScrollView = GameObject.Find("QuestsScrollView").gameObject.GetComponent<ScrollView>();
+    }
+
+    void Update()
+    {
+        if (!expanded)
+        {
+            if (diff < 0)
+            {
+                if (size >= newSize)
+                {
+                    expanded = true;
+                    Debug.Log("expanded!");
+                }
+                else
+                {
+                    size += step;
+                    this.GetComponent<RectTransform>().sizeDelta = new Vector2(200, size);
+                }
+            }
+            else
+            {
+                if (size <= newSize)
+                {
+                    expanded = true;
+                    Debug.Log("expanded!");
+                }
+                else
+                {
+                    size -= step;
+                    this.GetComponent<RectTransform>().sizeDelta = new Vector2(200, size);
+                }
+            }
+            
+            
+        }
     }
     #endregion
 
@@ -92,12 +132,22 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
 
     public void resizeWithDescription()
     {
-        this.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 3 * margin + titleFontSize + tmp.fontSize + (Mathf.Floor(tmp.text.Length / (200 / tmp.fontSize)) + 1) * tmp.fontSize);
+        size = this.GetComponent<RectTransform>().sizeDelta.y;
+        newSize = 3 * margin + titleFontSize + tmp.fontSize + (Mathf.Floor(tmp.text.Length / (200 / tmp.fontSize)) + 1) * tmp.fontSize;
+        step = (newSize>=size ? (newSize - size) / 5.0f : (size - newSize) / 5.0f);
+        diff = size - newSize;
+        expanded = false;
+        //this.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 3 * margin + titleFontSize + tmp.fontSize + (Mathf.Floor(tmp.text.Length / (200 / tmp.fontSize)) + 1) * tmp.fontSize);
     }
 
     public void resizeWithoutDescription()
     {
-        this.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 3 * margin + titleFontSize + tmp.fontSize);
+        size = this.GetComponent<RectTransform>().sizeDelta.y;
+        newSize = 3 * margin + titleFontSize + tmp.fontSize;
+        step = (newSize >= size ? (newSize - size) / 5.0f : (size - newSize) / 5.0f);
+        diff = size - newSize;
+        expanded = false;
+        //this.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 3 * margin + titleFontSize + tmp.fontSize);
     }
 
     public void changeDescription(string newDescription)
