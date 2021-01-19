@@ -63,7 +63,7 @@ public class Character : MonoBehaviour
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadCharacterFile();
         this.LoadCharacterer();
-        //Debug.Log("Test");
+        Debug.Log(myName);
         if(SceneManager.GetActiveScene().name != scene) {
             //Debug.Log("BOB");
             gameObject.SetActive(false);

@@ -33,7 +33,6 @@ public class StoryManager : MonoBehaviour {
     Character noona;
     Character pada;
     Character possa;
-    Character possi;
     Character toki;
     Character yoh;
 
@@ -83,9 +82,6 @@ public class StoryManager : MonoBehaviour {
                 case "Possa":
                     possa = pnj;
                     break;
-                case "Possi":
-                    possi = pnj;
-                    break;
                 case "Toki":
                     toki = pnj;
                     break;
@@ -97,7 +93,7 @@ public class StoryManager : MonoBehaviour {
                     break;
             }
         }
-        if(toki == null) {
+        if(yoh == null) {
             Debug.Log("toki not updated");
         }
     }

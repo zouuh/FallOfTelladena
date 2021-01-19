@@ -54,13 +54,13 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetButtonDown("Jump")) {
                     // If player on floor, jump and set animation
                     if (controller.isGrounded) {
-                        vSpeed = jumpSpeed;
+                        // vSpeed = jumpSpeed;
                         dJumpCounter = 0;
                         animator.SetBool("jump", true);
                     }
                     // If not and can double jump, do it again
                     else if (!controller.isGrounded && dJumpCounter < nbOfAlowedDJumps) {
-                        vSpeed = jumpSpeed;
+                        // vSpeed = jumpSpeed;
                         dJumpCounter++;
                         animator.SetBool("jump", true);
                     }
@@ -91,12 +91,12 @@ public class PlayerMovement : MonoBehaviour {
                 // If jump, same as before
                 if (Input.GetButtonDown("Jump")) {
                     if (controller.isGrounded) {
-                        vSpeed = jumpSpeed;
+                        // vSpeed = jumpSpeed;
                         dJumpCounter = 0;
                         animator.SetBool("jump", true);
                     }
                     else if (!controller.isGrounded && dJumpCounter < nbOfAlowedDJumps) {
-                        vSpeed = jumpSpeed;
+                        // vSpeed = jumpSpeed;
                         dJumpCounter++;
                         animator.SetBool("jump", true);
                     }
