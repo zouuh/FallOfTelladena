@@ -53,7 +53,7 @@ public class Character : MonoBehaviour
         this.SaveCharacter();
     }
     
-    public bool haveSeenDialogue(int id) {
+    public bool HaveSeenDialogue(int id) {
         return (dialogueId == id && hasSeenDialogue);
     }
 
@@ -63,9 +63,9 @@ public class Character : MonoBehaviour
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadCharacterFile();
         this.LoadCharacterer();
-        Debug.Log("Test");
+        //Debug.Log("Test");
         if(SceneManager.GetActiveScene().name != scene) {
-            Debug.Log("BOB");
+            //Debug.Log("BOB");
             gameObject.SetActive(false);
         }
     }
@@ -112,7 +112,7 @@ public class Character : MonoBehaviour
 
         StreamReader reader = new StreamReader(path);
 
-        Debug.Log(reader.ReadLine());
+        reader.ReadLine();
 
         // Get the number of sentences of the character
         int nbDialogue = int.Parse(reader.ReadLine());
@@ -131,7 +131,7 @@ public class Character : MonoBehaviour
 
     // Save and load functions
     public void SaveCharacter() {
-        Debug.Log("Save " + this.name);
+        //Debug.Log("Save " + this.name);
         SaveSystem.SaveCharacter(this, this.name);
     }
     

@@ -10,59 +10,113 @@ using UnityEngine;
 //          SI LE DIALOGUEID EST LE MEME ET SI LE PARAMETRE "HASSEEN" EST TRUE
 // 3 - FAIRE UNE FONCTION POUR SAVOIR SI UN ITEM EST DANS L'INVENTAIRE
 
-
-
-public class StoryManager : MonoBehaviour
-{
+public class StoryManager : MonoBehaviour {
     public int inCrystalRoom = 0;
-    public int aikiDialogue = 0;
-    public int yohDialogue = 0;
-    public int migwaDialogue = 0;
-    public int kiyoDialogue = 0;
     public int petitDadetDialogue = 0;
-    public int byoldalDialogue = 0;
     public int flamencoDialogue = 0;
     public int grandDadetDialogue = 0;
-    public int manoDialogue = 0;
-    public int tokiDialogue = 0;
-    public int hobaDialogue = 0;
-    public int noonaDialogue = 0;
-    public int kogaDialogue = 0;
     public int danseuseDialogue = 0;
-    public int possaDialogue = 0;
-    public int manaiDialogue = 0;
     public int builtIrrigation = 0;
     public bool possiIsBack = false;
-    public bool possiIsntScared = false;
     public bool inBimbopCave = false;
-    Character[] characters;
+    Character aiki;
+    Character byoldal;
+    Character eno;
+    Character halma;
+    Character hoba;
+    Character joya;
+    Character koga;
+    Character kiyo;
+    Character manai;
+    Character mano;
+    Character migwa;
+    Character noona;
+    Character pada;
+    Character possa;
+    Character possi;
+    Character toki;
+    Character yoh;
 
     void Start() {
-        characters = FindObjectsOfType<Character>();
+        Character[] characters = FindObjectsOfType<Character>();
+        foreach (Character pnj in characters) {
+            switch (pnj.name) {
+                case "Aïki":
+                    aiki = pnj;
+                    break;
+                case "Byoldal":
+                    byoldal = pnj;
+                    break;
+                case "Eno":
+                    eno = pnj;
+                    break;
+                case "Halma":
+                    halma = pnj;
+                    break;
+                case "Hoba":
+                    hoba = pnj;
+                    break;
+                case "Joya":
+                    joya = pnj;
+                    break;
+                case "Koga":
+                    koga = pnj;
+                    break;
+                case "Kiyo":
+                    kiyo = pnj;
+                    break;
+                case "Manaï":
+                    manai = pnj;
+                    break;
+                case "Mano":
+                    mano = pnj;
+                    break;
+                case "Migwa":
+                    migwa = pnj;
+                    break;
+                case "Noona":
+                    noona = pnj;
+                    break;
+                case "Pada":
+                    pada = pnj;
+                    break;
+                case "Possa":
+                    possa = pnj;
+                    break;
+                case "Possi":
+                    possi = pnj;
+                    break;
+                case "Toki":
+                    toki = pnj;
+                    break;
+                case "Yoh":
+                    yoh = pnj;
+                    break;
+                default :
+                    Debug.Log(pnj.name + " not assigned");
+                    break;
+            }
+        }
+        if(toki == null) {
+            Debug.Log("toki not updated");
+        }
     }
     void Update() {
         if(inCrystalRoom == 1) {
             // The story begin
-
-            //_____________________________ Change dialogue d'autres persos
-            // Move Aïki and change his dialogue
-            foreach (Character pnj in characters) { //_______________________MODIFIER CA POUR UN TRUC GENRE FIND OBJECT BY NAME
-                if (pnj.name == "Aïki") {
-                    pnj.SetScene("OutsideCastle");
-                    pnj.SetDialogueID(1);
-                    pnj.SetPosition(new Vector3(-20f, -10.1379f, -10f));
-                }
-            }
+            aiki.SetScene("OutsideCastle");
+            aiki.SetDialogueID(1);
+            aiki.SetPosition(new Vector3(-20f, -10.1379f, -10f));
         }
-        if(aikiDialogue == 2) {
-            ChangeDialogueOf(2, "Aïki");
+        if(aiki.HaveSeenDialogue(1)) {
+            aiki.SetDialogueID(2);
         }
         /////////////////////// SERENITY QUEST ///////////////////////
-        if(yohDialogue == 1 && inCrystalRoom >= 1) {
+        if(yoh.HaveSeenDialogue(0) && inCrystalRoom >= 1) {
             // Oksusu need a Turbull
-            ChangeDialogueOf(1, "Yoh");
+            yoh.SetDialogueID(1);
         }
-        if(yohDialogue == 2) {
+        if(yoh.HaveSeenDialogue(1)) {
             // Petit Dadet can give Oksusu a Turbull
             ChangeDialogueOf(1, "PetitDadet");
         }
@@ -70,52 +124,52 @@ public class StoryManager : MonoBehaviour
             // ______________ ajouter un turbull à l'inventaire
             ChangeDialogueOf(2, "PetitDadet");
         }
-        if(yohDialogue >= 2 && HasInInventory("Turbull", 1)) {
+        if(yoh.HaveSeenDialogue(1) && HasInInventory("Turbull", 1)) {
             // Oksusu give the Turbull to Yoh and have to find the Luluby mushrooms and Migwa have the first labyrinthe key
-            ChangeDialogueOf(2, "Yoh");
+            yoh.SetDialogueID(2);
             ChangeDialogueOf(1, "Pititronc");
         }
-        if(yohDialogue == 3) {
+        if(yoh.HaveSeenDialogue(2)) {
             // Yoh want the Luluby mushroom
             //___________________ Enlever 1 turbull de l'inventaire
-            ChangeDialogueOf(3, "Yoh");
-            ChangeDialogueOf(1, "Migwa");
+            yoh.SetDialogueID(3);
+            migwa.SetDialogueID(1);
         }
-        if(migwaDialogue == 2) {
+        if(migwa.HaveSeenDialogue(1)) {
             // Migwa give the first key and Byoldal have the second one
             // ______________ Ajouter une "clé du labyrinthe" dans l'inventaire
-            ChangeDialogueOf(1, "Byoldal");
-            ChangeDialogueOf(2, "Migwa");
+            byoldal.SetDialogueID(1);
+            migwa.SetDialogueID(2);
         }
-        if(byoldalDialogue == 2) {
-            ChangeDialogueOf(2, "Byoldal");
+        if(byoldal.HaveSeenDialogue(1)) {
+            byoldal.SetDialogueID(2);
         }
         if(HasInInventory("LulubyMushroom", 1)) {
             // Yoh want something to drink and Migwa can create the potion
-            ChangeDialogueOf(4, "Yoh");
-            ChangeDialogueOf(3, "Migwa");
             ChangeDialogueOf(0, "Pititronc");
+            yoh.SetDialogueID(4);
+            migwa.SetDialogueID(3);
         }
-        if(migwaDialogue == 4) {
+        if(migwa.HaveSeenDialogue(3)) {
             // Yoh accept the potion 
             // _____________ Ajouter une potion dans l'inventaire
             // _____________ Enlever un champignon de Luluby de l'inventaire
-            ChangeDialogueOf(4, "Migwa");
-            ChangeDialogueOf(5, "Yoh");
+            yoh.SetDialogueID(5);
+            migwa.SetDialogueID(4);
         }
-        if(yohDialogue == 6) {
+        if(yoh.HaveSeenDialogue(5)) {
             // Yoh give the potion to Oksusu
             // _____________ Débloquer la pierre de sérénité et l'ajouter a l'inventaire
-            ChangeDialogueOf(6, "Yoh");
+            yoh.SetDialogueID(6);
         }
 
         /////////////////////// FERTILITY QUEST ///////////////////////
-        if(kiyoDialogue == 2) {
+        if(kiyo.HaveSeenDialogue(1)) {
             // The 4 pnj will give symbols of their places to Oksusu
-            ChangeDialogueOf(1, "Mano");
             ChangeDialogueOf(1, "GrandDadet");
             ChangeDialogueOf(1, "Flamenco");
-            ChangeDialogueOf(1, "Toki");
+            mano.SetDialogueID(1);
+            toki.SetDialogueID(1);
         }
         if(flamencoDialogue == 2) {
             // Oksusu have the Castle symbol
@@ -127,141 +181,145 @@ public class StoryManager : MonoBehaviour
             ChangeDialogueOf(2, "GrandDadet");
             // ___________ Ajouter l'engrenage a l'inventaire
         }
-        if(manoDialogue == 2) {
+        if(mano.HaveSeenDialogue(1)) {
             // Oksusu have the field symbol
-            ChangeDialogueOf(2, "Mano");
+            mano.SetDialogueID(2);
             // ___________ Ajouter la tige de blé a l'inventaire
         }
-        if(tokiDialogue == 2) {
+        if(toki.HaveSeenDialogue(1)) {
             // Oksusu have the River symbol
-            ChangeDialogueOf(2, "Toki");
+            toki.SetDialogueID(2);
             // ___________ Ajouter le poisson a l'inventaire
         }
         // __________ Quand Oksusu va dans la maison d'Hoba et voit la pierre -> changer dialogue Hoba pour 1
         if(builtIrrigation == 1) {
             if(HasInInventory("SerenityStone", 1)) {
                 // Hoba is happy
-                ChangeDialogueOf(3, "Hoba");
+                hoba.SetDialogueID(3);
             }
             else {
                 // Hoba isn't happy, she wants a better irrigation system
-                ChangeDialogueOf(2, "Hoba");
+                hoba.SetDialogueID(2);
             }
         }
         if(builtIrrigation == 2) {
             // Hoba is happy
-            ChangeDialogueOf(4, "Hoba");
+            hoba.SetDialogueID(4);
         }
-        if(hobaDialogue == 4 || hobaDialogue == 5) {
+        if(hoba.HaveSeenDialogue(3) || hoba.HaveSeenDialogue(4)) {
             // Hoba gives the fertility stone to Oksusu and Flamenco have a new mission for Oksusu
             // _____________ Débloquer la pierre de fertilité et l'ajouter a l'inventaire
-            ChangeDialogueOf(5, "Hoba");
             ChangeDialogueOf(3, "Flamenco");
-            ChangeDialogueOf(3, "Toki");
-            ChangeDialogueOf(1, "Kiyo");
-            ChangeDialogueOf(1, "Joya");
+            hoba.SetDialogueID(5);
+            toki.SetDialogueID(3);
+            kiyo.SetDialogueID(1);
+            joya.SetDialogueID(1);
         }
 
         /////////////////////// CLARTY QUEST ///////////////////////
-        if(kogaDialogue == 1) {
-            ChangeDialogueOf(1, "Noona");
+        if(koga.HaveSeenDialogue(0)) {
+            noona.SetDialogueID(1);
         }
-        if(noonaDialogue == 2) {
-            ChangeDialogueOf(1, "Koga");
+        if(noona.HaveSeenDialogue(1)) {
+            koga.SetDialogueID(1);
         }
-        if(kogaDialogue == 2) {
-            ChangeDialogueOf(2, "Noona");
+        if(koga.HaveSeenDialogue(1)) {
+            noona.SetDialogueID(2);
         }
         if(HasInInventory("Flower", 1)) {
-            // ____________ Déplacer Noona et Koga
+            // ____________ mettre les positions de Noona et Koga
             ChangeDialogueOf(1, "Danseuse");
+            koga.SetScene("Forest");
+            noona.SetScene("Forest");
         }
         if(danseuseDialogue == 2) {
-            ChangeDialogueOf(1, "Halma");
+            halma.SetDialogueID(1);
         }
         if(inBimbopCave) {
-            ChangeDialogueOf(2, "Koga");
+            koga.SetDialogueID(2);
             // ____________Lance le dialogue de Koga
         }
-        if(kogaDialogue == 3) {
-            ChangeDialogueOf(3, "Noona");
+        if(koga.HaveSeenDialogue(2)) {
+            noona.SetDialogueID(3);
             // ___________Lance le dialogue de Noona
         }
-        if(noonaDialogue == 4) {
-            ChangeDialogueOf(3, "Koga");
+        if(noona.HaveSeenDialogue(3)) {
+            koga.SetDialogueID(3);
             // ___________Lance le dialogue de Koga
         }
-        if(kogaDialogue == 4) {
-            ChangeDialogueOf(4, "Noona");
+        if(koga.HaveSeenDialogue(3)) {
+            noona.SetDialogueID(4);
             // ___________Lance le dialogue de Noona
         }
-        if(noonaDialogue == 5) {
+        if(noona.HaveSeenDialogue(4)) {
             if(!HasInInventory("Recipient", 1) && !HasInInventory("FertilityStone", 1)) {
-                ChangeDialogueOf(4, "Koga");
+                koga.SetDialogueID(4);
                 // ___________Lance le dialogue de Koga
             }
             else if(!HasInInventory("Flower", 4)) {
-                ChangeDialogueOf(5, "Koga");
+                koga.SetDialogueID(5);
                 // ___________Lance le dialogue de Koga
             }
             else {
-                ChangeDialogueOf(6, "Koga");
+                koga.SetDialogueID(6);
                 // ___________Lance le dialogue de Koga
             }
         }
-        if(inBimbopCave && (kogaDialogue == 5 || kogaDialogue == 6)) {
-            ChangeDialogueOf(5, "Noona");
+        if(inBimbopCave && (koga.HaveSeenDialogue(4) || koga.HaveSeenDialogue(5))) {
+            noona.SetDialogueID(5);
             // ____________Lance le dialogue de Noona
         }
-        if(inBimbopCave && kogaDialogue == 7) {
-            ChangeDialogueOf(5, "Noona");
-            ChangeDialogueOf(7, "Koga");
+        if(inBimbopCave && koga.HaveSeenDialogue(6)) {
+            noona.SetDialogueID(5);
+            koga.SetDialogueID(6);
             // ______________ Enlever les 4 fleurs et le récipient si pas sérénité
             // ______________ Débloquer la pierre de clarté et l'ajouter a l'inventaire
             // ______________ Lancer le dialogue de Noona
         }
-        if(noonaDialogue == 6) {
-            ChangeDialogueOf(6, "Noona");
+        if(noona.HaveSeenDialogue(5)) {
             ChangeDialogueOf(2, "Danseuse");
-            ChangeDialogueOf(2, "Halma");
-            // ____________Déplacer Koga et Noona
+            noona.SetDialogueID(6);
+            halma.SetDialogueID(2);
+            koga.SetScene("Village");
+            noona.SetScene("Village");
+            // ____________ mettre la position de Koga et Noona
         }
         if(HasInInventory("Recipient", 1) && !HasInInventory("Flower", 4)) {
-            ChangeDialogueOf(5,"Koga");
+            koga.SetDialogueID(5);
         }
         if(HasInInventory("Recipient",1) && HasInInventory("Flower", 4)) {
-            ChangeDialogueOf(6, "Koga");
+            koga.SetDialogueID(6);
         }
-        if (!inBimbopCave && kogaDialogue == 7) {
+        if (!inBimbopCave && koga.HaveSeenDialogue(6)) {
             // ______________ Enlever les 4 fleurs et le récipient si pas sérénité
             // ______________ Débloquer la pierre de clarté et l'ajouter a l'inventaire
-            ChangeDialogueOf(7, "Koga");
-            ChangeDialogueOf(7, "Noona");
+            koga.SetDialogueID(7);
+            noona.SetDialogueID(7);
         }
         
         /////////////////////// LOST IN THE FOREST QUEST ///////////////////////
-        if(possaDialogue == 1) {
-            ChangeDialogueOf(1, "Possa");
+        if(possa.HaveSeenDialogue(0)) {
+            possa.SetDialogueID(1);
         }
         if(possiIsBack) {
-            ChangeDialogueOf(2, "Possa");
+            possa.SetDialogueID(2);
         }
-        if(possaDialogue == 3) {
+        if(possa.HaveSeenDialogue(2)) {
             // ___________ Ajouter une clef à l'inventaire
-            ChangeDialogueOf(3, "Possa");
+            possa.SetDialogueID(3);
         }     
 
         /////////////////////// FIND NOUNOURS QUEST ///////////////////////
-        if(manaiDialogue == 1) {
-            ChangeDialogueOf(1, "Manaï");
+        if(manai.HaveSeenDialogue(0)) {
+            manai.SetDialogueID(1);
         }
         if(HasInInventory("Nounours", 1)) {
-            ChangeDialogueOf(2, "Manaï");
+            manai.SetDialogueID(2);
         }
-        if(manaiDialogue == 3) {
+        if(manai.HaveSeenDialogue(2)) {
             // _____________ Ajouter une clef à l'inventaire
             // _____________ Enlever le nounours de l'inventaire
-            ChangeDialogueOf(3, "Manaï");
+            manai.SetDialogueID(3);
         }
 
         /////////////////////// BEAUTIFUL DRESS QUEST ///////////////////////
@@ -279,35 +337,34 @@ public class StoryManager : MonoBehaviour
 
 
         /////////////////////// END MAIN QUEST ///////////////////////
-        if(aikiDialogue == 3 && inCrystalRoom == -1){
-            ChangeDialogueOf(3, "Aïki");
+        if(aiki.HaveSeenDialogue(2) && inCrystalRoom == -1){
+            aiki.SetDialogueID(3);
         }
         if(HasInInventory("Key", 1)) {
-            ChangeDialogueOf(4, "Aïki");
+            aiki.SetDialogueID(4);
         }
         if(HasInInventory("Key", 10)) {
-            ChangeDialogueOf(5, "Aïki");
+            aiki.SetDialogueID(5);
         }
-        if(aikiDialogue == 6) {
-            ChangeDialogueOf(6, "Aïki");
-            ChangeDialogueOf(3, "Pada");
-            ChangeDialogueOf(3, "Halma");
-            ChangeDialogueOf(4, "Byoldal");
-            ChangeDialogueOf(4, "Possa");
-            ChangeDialogueOf(5, "Migwa");
+        if(aiki.HaveSeenDialogue(5)) {
+            aiki.SetDialogueID(6);
+            pada.SetDialogueID(3);
+            halma.SetDialogueID(3);
+            byoldal.SetDialogueID(4);
+            possa.SetDialogueID(4);
+            migwa.SetDialogueID(5);
             ChangeDialogueOf(3, "Danseuse");
             // __________ Enlever les clefs de l'inventaire et les pierres ?
             // __________ Lancer l'animation de fin avec le discours de l'esprit de la forêt
         }
     }
 
-
     void ChangeDialogueOf(int id, string name) {
-        foreach (Character pnj in characters) {  //______________________MODIFIER CA POUR UN TRUC GENRE FIND OBJECT BY NAME
-            if(pnj.name == name) {
-                pnj.SetDialogueID(id);
-            }
-        }
+        // foreach (Character pnj in characters) {  //______________________MODIFIER CA POUR UN TRUC GENRE FIND OBJECT BY NAME
+        //     if(pnj.name == name) {
+        //         pnj.SetDialogueID(id);
+        //     }
+        // }
     }
     bool HasInInventory(string item, int nbItem) {
         // Implementer la fonction
