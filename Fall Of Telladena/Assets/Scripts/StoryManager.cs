@@ -3,9 +3,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
-// 1 - POUR FAIRE QUELQUE CHOSE SUR UN PERSO EN PARTICULIER TROUVER UNE FONCTION TYPE "FIND BY NAME"
+// DONE - POUR FAIRE QUELQUE CHOSE SUR UN PERSO EN PARTICULIER TROUVER UNE FONCTION TYPE "FIND BY NAME"
 // DONE - POUR SAVOIR SI UN DIALOGUE A DEJA ETE LU, FAIRE UNE FONCTION "HAVESEEN(INT)" QUI VERIFIERA 
 //          SI LE DIALOGUEID EST LE MEME ET SI LE PARAMETRE "HASSEEN" EST TRUE
 // 3 - FAIRE UNE FONCTION POUR SAVOIR SI UN ITEM EST DANS L'INVENTAIRE
@@ -25,8 +26,8 @@ public class StoryManager : MonoBehaviour {
     Character halma;
     Character hoba;
     Character joya;
-    Character koga;
     Character kiyo;
+    Character koga;
     Character manai;
     Character mano;
     Character migwa;
@@ -37,7 +38,7 @@ public class StoryManager : MonoBehaviour {
     Character yoh;
 
     void Start() {
-        Character[] characters = FindObjectsOfType<Character>();
+        Character[] characters = Resources.FindObjectsOfTypeAll<Character>();
         foreach (Character pnj in characters) {
             switch (pnj.name) {
                 case "Aïki":
@@ -92,9 +93,6 @@ public class StoryManager : MonoBehaviour {
                     Debug.Log(pnj.name + " not assigned");
                     break;
             }
-        }
-        if(yoh == null) {
-            Debug.Log("toki not updated");
         }
     }
     void Update() {
