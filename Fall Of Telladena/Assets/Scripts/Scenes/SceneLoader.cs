@@ -1,14 +1,20 @@
-﻿using System.Collections;
+﻿/*
+ * Authors : Zoé
+ */
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneLoader : MonoBehaviour {
+public class SceneLoader : MonoBehaviour
+{
     public string nextSceneName;
     public string actualSceneName;
     public GameObject loadingScreen;
     public Slider slider;
-    public void OnTriggerEnter() {
+    public void OnTriggerEnter()
+    {
         FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
         StartCoroutine(LoadAsynchronously(nextSceneName));
     }

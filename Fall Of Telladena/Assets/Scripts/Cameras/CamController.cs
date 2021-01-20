@@ -10,9 +10,18 @@ public class CamController : MonoBehaviour
     #region Fields
 
     [SerializeField]
+    private string virtualCameraTag = "";
+    [SerializeField]
+    private string virtualCameraMainTag = "";
+
+    private CinemachineVirtualCamera virtualCamera = null;
+    private CinemachineVirtualCamera virtualCameraMain = null;
+    /*
+    [SerializeField]
     private CinemachineVirtualCamera virtualCamera = null;
     [SerializeField]
     private CinemachineVirtualCamera virtualCameraMain = null;
+    */
 
     #endregion
 
@@ -20,6 +29,8 @@ public class CamController : MonoBehaviour
 
     private void Start()
     {
+        virtualCamera = GameObject.FindGameObjectWithTag(virtualCameraTag).GetComponent<CinemachineVirtualCamera>();
+        virtualCameraMain = GameObject.FindGameObjectWithTag(virtualCameraMainTag).GetComponent<CinemachineVirtualCamera>();
         virtualCamera.enabled = false;
     }
 
