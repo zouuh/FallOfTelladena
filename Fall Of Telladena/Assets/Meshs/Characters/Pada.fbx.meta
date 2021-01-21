@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 615a1a6562d64984a917013f89dfc517
+guid: d8548990f1052af4f84f15a75ff7e5a1
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,42 +7,42 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GuruBody
+      name: PadaBody
     second: {fileID: 2100000, guid: 27ddcacf0542e6842a1a21b565b741c5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GuruCollier
-    second: {fileID: 2100000, guid: 482fed71cfe81b94b9516eca4c2c3529, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GuruDress
-    second: {fileID: 2100000, guid: 3b89d5afbee04544398281e914fccddd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GuruGrass
-    second: {fileID: 2100000, guid: 56d2ecd136e94b245b7bbd1a35939222, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GuruHorn
-    second: {fileID: 2100000, guid: 0536275c91fa1ad4b827823df8789c83, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GuruManteau
+      name: PadaCoat
     second: {fileID: 2100000, guid: 3074829d53afd0c488337ee977f6f9fb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GuruMasque
+      name: PadaDress
+    second: {fileID: 2100000, guid: 3b89d5afbee04544398281e914fccddd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PadaGrass
+    second: {fileID: 2100000, guid: 56d2ecd136e94b245b7bbd1a35939222, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PadaHorn
+    second: {fileID: 2100000, guid: 0536275c91fa1ad4b827823df8789c83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PadaMask
     second: {fileID: 2100000, guid: bd602961b7e725b4881238e05d7a6d3d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GuruScarf
+      name: PadaNecklace
+    second: {fileID: 2100000, guid: 482fed71cfe81b94b9516eca4c2c3529, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PadaScarf
     second: {fileID: 2100000, guid: df313ce027d2e254e9d66f0f5b10680e, type: 2}
   materials:
     materialImportMode: 1
