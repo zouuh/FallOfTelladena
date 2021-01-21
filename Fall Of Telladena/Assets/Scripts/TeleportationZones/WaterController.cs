@@ -2,8 +2,6 @@
  * Authors : Manon
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterController : MonoBehaviour
@@ -26,7 +24,7 @@ public class WaterController : MonoBehaviour
             // reset platforms
             // ...
             platformsToReset = GameObject.FindGameObjectsWithTag("WaterPlatform");
-            foreach (GameObject platform in platformsToReset)
+            foreach(GameObject platform in platformsToReset)
             {
                 platform.GetComponent<WaterPlatformController>().resetPosition();
             }
