@@ -43,25 +43,25 @@ public static class SaveSystem {
         }
     }
 
-    // Save and load for characters (same as player's functions)
-    public static void SaveCharacter(Character character, string name) {
+    // Save and load for NPCs (same as player's functions)
+    public static void SaveNPC(NPC npc, string name) {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/" + name + ".sol";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        CharacterData data = new CharacterData(character);
+        NPCData data = new NPCData(npc);
 
         formatter.Serialize(stream, data);
         stream.Close();
     }
 
-    public static CharacterData LoadCharacter(string name) {
+    public static NPCData LoadNPC(string name) {
         string path = Application.persistentDataPath + "/" + name + ".sol";
         if (File.Exists(path)) {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            CharacterData data = formatter.Deserialize(stream) as CharacterData;
+            NPCData data = formatter.Deserialize(stream) as NPCData;
             stream.Close();
 
             return data;

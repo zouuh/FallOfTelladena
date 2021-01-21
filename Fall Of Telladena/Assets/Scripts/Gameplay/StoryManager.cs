@@ -20,26 +20,26 @@ public class StoryManager : MonoBehaviour {
     public int builtIrrigation = 0;
     public bool possiIsBack = false;
     public bool inBimbopCave = false;
-    Character aiki;
-    Character byoldal;
-    Character eno;
-    Character halma;
-    Character hoba;
-    Character joya;
-    Character kiyo;
-    Character koga;
-    Character manai;
-    Character mano;
-    Character migwa;
-    Character noona;
-    Character pada;
-    Character possa;
-    Character toki;
-    Character yoh;
+    NPC aiki;
+    NPC byoldal;
+    NPC eno;
+    NPC halma;
+    NPC hoba;
+    NPC joya;
+    NPC kiyo;
+    NPC koga;
+    NPC manai;
+    NPC mano;
+    NPC migwa;
+    NPC noona;
+    NPC pada;
+    NPC possa;
+    NPC toki;
+    NPC yoh;
 
     void Start() {
-        Character[] characters = Resources.FindObjectsOfTypeAll<Character>();
-        foreach (Character pnj in characters) {
+        NPC[] characters = Resources.FindObjectsOfTypeAll<NPC>();
+        foreach (NPC pnj in characters) {
             switch (pnj.name) {
                 case "Aïki":
                     aiki = pnj;

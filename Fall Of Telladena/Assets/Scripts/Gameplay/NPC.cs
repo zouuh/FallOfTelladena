@@ -6,7 +6,7 @@ using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Character : MonoBehaviour
+public class NPC : MonoBehaviour
 {
     // Public attributes
     public string scene = "Village";
@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
     private Text dialogueText;
 
     // Constructor
-    public Character(int newDialogueId, string newScene) {
+    public NPC(int newDialogueId, string newScene) {
         dialogueId = newDialogueId;
         scene = newScene;
     }
@@ -50,7 +50,7 @@ public class Character : MonoBehaviour
         // Change local position of player
         transform.position = newPos;
         //Save it for other scenes
-        this.SaveCharacter();
+        this.SaveNPC();
     }
     
     public bool HaveSeenDialogue(int id) {
@@ -61,8 +61,8 @@ public class Character : MonoBehaviour
         myName = this.name;
         dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
-        dialogue = ReadCharacterFile();
-        this.LoadCharacterer();
+        dialogue = ReadNpcFile();
+        this.LoadNPC();
         Debug.Log(myName);
         if(SceneManager.GetActiveScene().name != scene) {
             //Debug.Log("BOB");
@@ -72,7 +72,7 @@ public class Character : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown("p")) {        // Mettre la touche action correspondante
-            // Test if the character is in the dialogue zone
+            // Test if the NPC is in the dialogue zone
             if (isDialoguePossible) {
                 // Test if the dialogue window isn't active
                 if (!dialogueCanvas.activeSelf) {
@@ -106,15 +106,15 @@ public class Character : MonoBehaviour
         }
     }
 
-    static string[] ReadCharacterFile() {
-        // Path of this character's document
+    static string[] ReadNpcFile() {
+        // Path of this NPC's document
         string path = "Assets/Documents/" + myName + ".txt";
 
         StreamReader reader = new StreamReader(path);
 
         reader.ReadLine();
 
-        // Get the number of sentences of the character
+        // Get the number of sentences of the NPC
         int nbDialogue = int.Parse(reader.ReadLine());
         // Initiate the string array with the right size
         string[] dialogue = new string[nbDialogue];
@@ -130,13 +130,13 @@ public class Character : MonoBehaviour
     }
 
     // Save and load functions
-    public void SaveCharacter() {
+    public void SaveNPC() {
         //Debug.Log("Save " + this.name);
-        SaveSystem.SaveCharacter(this, this.name);
+        SaveSystem.SaveNPC(this, this.name);
     }
     
-    public void LoadCharacterer() {
-        CharacterData data = SaveSystem.LoadCharacter(this.name);
+    public void LoadNPC() {
+        NPCData data = SaveSystem.LoadNPC(this.name);
 
         dialogueId = data.dialogueId;
         scene = data.scene;

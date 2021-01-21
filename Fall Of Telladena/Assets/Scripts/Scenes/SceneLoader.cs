@@ -16,9 +16,9 @@ public class SceneLoader : MonoBehaviour {
     public void OnTriggerEnter() {
         // Save player and PNJ before changing scene
         FindObjectOfType<Player>().SavePlayer();
-        Character[] characters = FindObjectsOfType<Character>();
-        foreach (Character pnj in characters) {
-            pnj.SaveCharacter();
+        NPC[] characters = FindObjectsOfType<NPC>();
+        foreach (NPC pnj in characters) {
+            pnj.SaveNPC();
         }
         
         FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
