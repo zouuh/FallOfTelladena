@@ -13,18 +13,17 @@ using UnityEngine.SceneManagement;
 
 public class StoryManager : MonoBehaviour {
     public int inCrystalRoom = 0;
-    public int petitDadetDialogue = 0;
-    public int flamencoDialogue = 0;
-    public int grandDadetDialogue = 0;
-    public int danseuseDialogue = 0;
     public int builtIrrigation = 0;
     public bool possiIsBack = false;
     public bool inBimbopCave = false;
     NPC aiki;
+    NPC aleya;
     NPC byoldal;
     NPC eno;
+    NPC gwang;
     NPC halma;
     NPC hoba;
+    NPC jouma;
     NPC joya;
     NPC kiyo;
     NPC koga;
@@ -35,6 +34,7 @@ public class StoryManager : MonoBehaviour {
     NPC pada;
     NPC possa;
     NPC toki;
+    NPC won;
     NPC yoh;
 
     void Start() {
@@ -44,17 +44,26 @@ public class StoryManager : MonoBehaviour {
                 case "Aïki":
                     aiki = pnj;
                     break;
+                case "Aleya":
+                    aleya = pnj;
+                    break;
                 case "Byoldal":
                     byoldal = pnj;
                     break;
                 case "Eno":
                     eno = pnj;
                     break;
+                case "Gwang":
+                    gwang = pnj;
+                    break;
                 case "Halma":
                     halma = pnj;
                     break;
                 case "Hoba":
                     hoba = pnj;
+                    break;
+                case "Jouma":
+                    jouma = pnj;
                     break;
                 case "Joya":
                     joya = pnj;
@@ -86,6 +95,9 @@ public class StoryManager : MonoBehaviour {
                 case "Toki":
                     toki = pnj;
                     break;
+                case "Won":
+                    won = pnj;
+                    break;
                 case "Yoh":
                     yoh = pnj;
                     break;
@@ -112,11 +124,11 @@ public class StoryManager : MonoBehaviour {
         }
         if(yoh.HaveSeenDialogue(1)) {
             // Petit Dadet can give Oksusu a Turbull
-            ChangeDialogueOf(1, "PetitDadet");
+            ChangeDialogueOf(1, "Gwang");
         }
-        if(petitDadetDialogue == 2) {
+        if(gwang.HaveSeenDialogue(1)) {
             // ______________ ajouter un turbull à l'inventaire
-            ChangeDialogueOf(2, "PetitDadet");
+            ChangeDialogueOf(2, "Gwang");
         }
         if(yoh.HaveSeenDialogue(1) && HasInInventory("Turbull", 1)) {
             // Oksusu give the Turbull to Yoh and have to find the Luluby mushrooms and Migwa have the first labyrinthe key
@@ -160,19 +172,19 @@ public class StoryManager : MonoBehaviour {
         /////////////////////// FERTILITY QUEST ///////////////////////
         if(kiyo.HaveSeenDialogue(1)) {
             // The 4 pnj will give symbols of their places to Oksusu
-            ChangeDialogueOf(1, "GrandDadet");
-            ChangeDialogueOf(1, "Flamenco");
+            ChangeDialogueOf(1, "Won");
+            ChangeDialogueOf(1, "Aleya");
             mano.SetDialogueID(1);
             toki.SetDialogueID(1);
         }
-        if(flamencoDialogue == 2) {
+        if(aleya.HaveSeenDialogue(1)) {
             // Oksusu have the Castle symbol
-            ChangeDialogueOf(2, "Flamenco");
+            ChangeDialogueOf(2, "Aleya");
             // ___________ Ajouter la coronne a l'inventaire
         }
-        if(grandDadetDialogue == 2) {
+        if(won.HaveSeenDialogue(1)) {
             // Oksusu have the Village symbol
-            ChangeDialogueOf(2, "GrandDadet");
+            ChangeDialogueOf(2, "Won");
             // ___________ Ajouter l'engrenage a l'inventaire
         }
         if(mano.HaveSeenDialogue(1)) {
@@ -201,9 +213,9 @@ public class StoryManager : MonoBehaviour {
             hoba.SetDialogueID(4);
         }
         if(hoba.HaveSeenDialogue(3) || hoba.HaveSeenDialogue(4)) {
-            // Hoba gives the fertility stone to Oksusu and Flamenco have a new mission for Oksusu
+            // Hoba gives the fertility stone to Oksusu and Aleya have a new mission for Oksusu
             // _____________ Débloquer la pierre de fertilité et l'ajouter a l'inventaire
-            ChangeDialogueOf(3, "Flamenco");
+            ChangeDialogueOf(3, "Aleya");
             hoba.SetDialogueID(5);
             toki.SetDialogueID(3);
             kiyo.SetDialogueID(1);
@@ -222,11 +234,11 @@ public class StoryManager : MonoBehaviour {
         }
         if(HasInInventory("Flower", 1)) {
             // ____________ mettre les positions de Noona et Koga
-            ChangeDialogueOf(1, "Danseuse");
+            ChangeDialogueOf(1, "Jouma");
             koga.SetScene("Forest");
             noona.SetScene("Forest");
         }
-        if(danseuseDialogue == 2) {
+        if(jouma.HaveSeenDialogue(1)) {
             halma.SetDialogueID(1);
         }
         if(inBimbopCave) {
@@ -271,7 +283,7 @@ public class StoryManager : MonoBehaviour {
             // ______________ Lancer le dialogue de Noona
         }
         if(noona.HaveSeenDialogue(5)) {
-            ChangeDialogueOf(2, "Danseuse");
+            ChangeDialogueOf(2, "Jouma");
             noona.SetDialogueID(6);
             halma.SetDialogueID(2);
             koga.SetScene("Village");
@@ -317,13 +329,13 @@ public class StoryManager : MonoBehaviour {
         }
 
         /////////////////////// BEAUTIFUL DRESS QUEST ///////////////////////
-        if(HasInInventory("FlamencoDress", 1)) {
-            ChangeDialogueOf(4, "Flamenco");
+        if(HasInInventory("AleyaDress", 1)) {
+            ChangeDialogueOf(4, "Aleya");
         }
-        if(flamencoDialogue == 5) {
+        if(aleya.HaveSeenDialogue(4)) {
             // ________________ Enlever la robe de l'inventaire
             // ________________ Ajouter la clef a l'inventaire 
-            ChangeDialogueOf(5, "Flamenco");
+            ChangeDialogueOf(5, "Aleya");
         }
 
         /////////////////////// BEAUTIFUL DRESS QUEST ///////////////////////
@@ -347,7 +359,7 @@ public class StoryManager : MonoBehaviour {
             byoldal.SetDialogueID(4);
             possa.SetDialogueID(4);
             migwa.SetDialogueID(5);
-            ChangeDialogueOf(3, "Danseuse");
+            ChangeDialogueOf(3, "Jouma");
             // __________ Enlever les clefs de l'inventaire et les pierres ?
             // __________ Lancer l'animation de fin avec le discours de l'esprit de la forêt
         }
