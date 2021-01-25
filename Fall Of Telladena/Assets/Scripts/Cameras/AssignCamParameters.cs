@@ -11,7 +11,7 @@ using Cinemachine;
 public class AssignCamParameters : MonoBehaviour
 {
     [SerializeField]
-    string followTargetTag = "";
+    string followTargetTag = "Player";
 
     void Awake()
     {
