@@ -58,9 +58,11 @@ public class CanvasController : MonoBehaviour {
         }
         if(Input.GetKeyDown("escape")) {
             if(pauseCanvas.activeSelf) {
+                Debug.Log(pauseCanvas.name);
                 SwitchCanvas(pauseCanvas, mainViewCanvas);
             }
             else if(mainViewCanvas.activeSelf) {
+                // Debug.Log("Heyoh !");
                 SwitchCanvas(mainViewCanvas, pauseCanvas);
             }
         }
@@ -69,5 +71,6 @@ public class CanvasController : MonoBehaviour {
     public void SwitchCanvas(GameObject oldCanvas, GameObject newCanvas) {
         oldCanvas.SetActive(false);
         newCanvas.SetActive(true);
+        Debug.Log(oldCanvas.name + " : " + oldCanvas.activeSelf);
     }
 }

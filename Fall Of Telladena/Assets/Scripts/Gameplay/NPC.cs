@@ -9,13 +9,15 @@ using UnityEngine.SceneManagement;
 public class NPC : MonoBehaviour
 {
     // Public attributes
-    public string scene = "Village";
+    public string initialScene;
+    public Vector3 initialPosition;
     public GameObject dialogueCanvas;
     public GameObject mainInterfaceCanvas;
 
     // Private attributes
     private static string myName;
     public int dialogueId = 0;
+    public string scene;
     private bool isDialoguePossible = false;
     private bool hasSeenDialogue = false;
     private string[] dialogue;
@@ -63,9 +65,7 @@ public class NPC : MonoBehaviour
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadNpcFile();
         this.LoadNPC();
-        Debug.Log(myName);
         if(SceneManager.GetActiveScene().name != scene) {
-            //Debug.Log("BOB");
             gameObject.SetActive(false);
         }
     }
@@ -131,7 +131,6 @@ public class NPC : MonoBehaviour
 
     // Save and load functions
     public void SaveNPC() {
-        //Debug.Log("Save " + this.name);
         SaveSystem.SaveNPC(this, this.name);
     }
     

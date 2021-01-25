@@ -12,12 +12,12 @@ public class PlayerMovement : MonoBehaviour {
     private int dJumpCounter = 0;
     private int nbOfAlowedDJumps = 0;
     private float turnSmoothVelocity;
-    private float gravity = 9.8f;
+    // private float gravity = 9.8f;
     private float maxSpeed = 10;
     private float vSpeed = 0;
     private float speedCoef = 0;
     private float turnSmoothTime = 0.1f;
-    private float jumpSpeed = 8;
+    // private float jumpSpeed = 8;
     private Transform cam;
     private Animator animator;
     private CharacterController controller;
@@ -68,10 +68,12 @@ public class PlayerMovement : MonoBehaviour {
                 // If no jump asked, don't move on Y axe
                 else if(controller.isGrounded) {
                     vSpeed = 0;
+                    maxSpeed = 10f;
                 }
                 // If not on floor, negative movement on Y axe to simulate gravity
                 if(!controller.isGrounded) {
                     vSpeed -= 0.2f;
+                    maxSpeed = 3f;
                 }
 
                 // Get and apply move direction and speed

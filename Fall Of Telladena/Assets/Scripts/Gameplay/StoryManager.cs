@@ -30,6 +30,7 @@ public class StoryManager : MonoBehaviour {
     NPC manai;
     NPC mano;
     NPC migwa;
+    NPC namou;
     NPC noona;
     NPC pada;
     NPC possa;
@@ -82,6 +83,9 @@ public class StoryManager : MonoBehaviour {
                     break;
                 case "Migwa":
                     migwa = pnj;
+                    break;
+                case "Namou":
+                    namou = pnj;
                     break;
                 case "Noona":
                     noona = pnj;
