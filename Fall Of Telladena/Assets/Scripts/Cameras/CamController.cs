@@ -16,6 +16,7 @@ public class CamController : MonoBehaviour
 
     private CinemachineVirtualCamera virtualCamera = null;
     private CinemachineVirtualCamera virtualCameraMain = null;
+    //CinemachineConfiner virtualCameraMainConfiner;
     /*
     [SerializeField]
     private CinemachineVirtualCamera virtualCamera = null;
@@ -31,7 +32,9 @@ public class CamController : MonoBehaviour
     {
         virtualCamera = GameObject.FindGameObjectWithTag(virtualCameraTag).GetComponent<CinemachineVirtualCamera>();
         virtualCameraMain = GameObject.FindGameObjectWithTag(virtualCameraMainTag).GetComponent<CinemachineVirtualCamera>();
+        //virtualCameraMainConfiner = virtualCameraMain.GetComponent<CinemachineConfiner>();
         virtualCamera.enabled = false;
+        //virtualCameraMainConfiner.enabled = false;
     }
 
     private void Update()
@@ -39,6 +42,8 @@ public class CamController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             virtualCamera.enabled = true;
+            virtualCameraMain.enabled = false;
+            //virtualCameraMainConfiner.enabled = true;
         }
         else
         {
@@ -46,6 +51,8 @@ public class CamController : MonoBehaviour
             {
                 // refocus camera on player's rotation
                 virtualCameraMain.transform.eulerAngles = new Vector3(30, virtualCameraMain.m_Follow.rotation.eulerAngles.y, 0);
+                virtualCameraMain.enabled = true;
+                //virtualCameraMainConfiner.enabled = false;
                 virtualCamera.enabled = false;
             }
         }
