@@ -112,6 +112,7 @@ public class StoryManager : MonoBehaviour {
         }
     }
     void Update() {
+        Debug.Log("StoryManager");
         if(inCrystalRoom == 1) {
             // The story begin
             aiki.SetScene("OutsideCastle");

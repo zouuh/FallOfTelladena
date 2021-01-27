@@ -40,7 +40,8 @@ public class CanvasController : MonoBehaviour {
     }
 
     void Update() {
-        if(Input.GetKeyDown("l")) {
+        Debug.Log("CanvasController");
+        if(Input.GetButtonDown("Inventory")) {
             if(inventoryCanvas.activeSelf) {
                 SwitchCanvas(inventoryCanvas, mainViewCanvas);
             }
@@ -48,7 +49,7 @@ public class CanvasController : MonoBehaviour {
                 SwitchCanvas(mainViewCanvas, inventoryCanvas);
             }
         }
-        if(Input.GetKeyDown("m")) {
+        if(Input.GetButtonDown("Map")) {
             if(mapCanvas.activeSelf) {
                 SwitchCanvas(mapCanvas, mainViewCanvas);
             }
@@ -56,13 +57,11 @@ public class CanvasController : MonoBehaviour {
                 SwitchCanvas(mainViewCanvas, mapCanvas);
             }
         }
-        if(Input.GetKeyDown("escape")) {
+        if (Input.GetButtonDown("Cancel")) {
             if(pauseCanvas.activeSelf) {
-                Debug.Log(pauseCanvas.name);
                 SwitchCanvas(pauseCanvas, mainViewCanvas);
             }
             else if(mainViewCanvas.activeSelf) {
-                // Debug.Log("Heyoh !");
                 SwitchCanvas(mainViewCanvas, pauseCanvas);
             }
         }
@@ -71,6 +70,7 @@ public class CanvasController : MonoBehaviour {
     public void SwitchCanvas(GameObject oldCanvas, GameObject newCanvas) {
         oldCanvas.SetActive(false);
         newCanvas.SetActive(true);
-        Debug.Log(oldCanvas.name + " : " + oldCanvas.activeSelf);
+        Debug.Log("New : " + newCanvas.name + " -> " + newCanvas.activeSelf);
+        Debug.Log("Old : " + oldCanvas.name + " -> " + oldCanvas.activeSelf);
     }
 }

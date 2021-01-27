@@ -71,6 +71,7 @@ public class NPC : MonoBehaviour
     }
 
     void Update() {
+        Debug.Log("NPC " + this.name);
         if (Input.GetKeyDown("p")) {        // Mettre la touche action correspondante
             // Test if the NPC is in the dialogue zone
             if (isDialoguePossible) {
