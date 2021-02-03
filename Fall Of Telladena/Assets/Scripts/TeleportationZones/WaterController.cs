@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Authors : Manon
+ */
+
 using UnityEngine;
 
 public class WaterController : MonoBehaviour
