@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class SpawnPoints : MonoBehaviour
 {
+    /*
     static string previousPlace;
     public string toCompare;
     void Start()
@@ -32,13 +33,13 @@ public class SpawnPoints : MonoBehaviour
     public void SetPreviousPlace(string place) {
         previousPlace = place;
     }
-
-    /*
+    */
+    
     public string toCompare;
 
     public bool isMySpawnPoint(string previousPlace)
     {
         return (toCompare == previousPlace);
     }
-    */
+    
 }

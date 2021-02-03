@@ -3,10 +3,11 @@
  */
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    void Awake()
+    private void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
 
@@ -16,5 +17,15 @@ public class DontDestroy : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+
+        if (this.gameObject.CompareTag("Player"))
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+    }
+    //void Awake()
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SearchNewPosition();
     }
 }

@@ -15,8 +15,10 @@ public class SceneLoader : MonoBehaviour
     public Slider slider;
     public void OnTriggerEnter()
     {
-        //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
-        FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
         StartCoroutine(LoadAsynchronously(nextSceneName));
     }
 
