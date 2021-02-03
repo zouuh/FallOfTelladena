@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 
 /* This object updates the inventory UI. */
 
@@ -7,7 +8,7 @@ public class InventoryUI : MonoBehaviour {
 	public Transform itemsParent;	// The parent object of all the items
 	public GameObject inventoryUI;  // The entire UI
 
-	Inventory inventory;	// Our current inventory
+	public static Inventory inventory;	// Our current inventory
 
 	InventorySlot[] slots;	// List of all the slots
 
@@ -16,7 +17,19 @@ public class InventoryUI : MonoBehaviour {
 		inventory.onItemChangedCallback += UpdateUI;	// Subscribe to the onItemChanged callback
 
 		// Populate our slots array
-		slots = itemsParent.GetComponentsInChildren<InventorySlot>();   
+		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
+        foreach (string guid2 in guids2)
+        {
+			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));
+			Debug.Log(data.Length + " Assets");
+			foreach (Item o in data)
+			{
+				if (o.amount >= 1){
+					inventory.Add(o);
+				}
+			}
+        }
 	}
 	
 	void Update () {
@@ -24,7 +37,7 @@ public class InventoryUI : MonoBehaviour {
 		if (Input.GetButtonDown("Inventory"))
 		{
 			inventoryUI.SetActive(!inventoryUI.activeSelf);
-		}
+		}	
 	}
 
 	// Update the inventory UI by:
@@ -44,8 +57,13 @@ public class InventoryUI : MonoBehaviour {
 				// Otherwise clear the slot
 				slots[i].ClearSlot();
 			}
-		}   
+		} 
+	
         Debug.Log("Updating UI");
+		
 		return;
+
 	}
+
+
 }
