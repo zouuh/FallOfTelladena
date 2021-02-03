@@ -15,6 +15,9 @@ public class Inventory : MonoBehaviour {
 	void Awake ()
 	{
 		instance = this;
+	//	Debug.Log("items " + items.Count);
+	//	Debug.Log("!= 0");
+	//	Debug.Log(InventoryUI.inventory);
 	}
 
 	#endregion
@@ -22,7 +25,7 @@ public class Inventory : MonoBehaviour {
 	public delegate void OnItemChanged();
 	public OnItemChanged onItemChangedCallback;
 
-	public int space = 10;	// Amount of item spaces
+	public int space = 42;	// Amount of item spaces
 
 	// Our current list of items in the inventory
 	public List<Item> items = new List<Item>();
@@ -36,19 +39,25 @@ public class Inventory : MonoBehaviour {
 				return false;
 			}
 			for (int i = 0; i < items.Count; i++){
-				if(items[i] == item){
+				Debug.Log("items[i].name : "+ items[i].name);
+				Debug.Log("item.name : "+ item.name);
+				if(items[i].name == item.name){
 					items[i].amount += 1;
+					items.Remove(item);
 				}
 			}
 			if(0 == item.amount){
 				item.amount = 1;
 				items.Add (item);
 			}
-
+			
+			else {
+				items.Add (item);
+			}
+			
 			if (onItemChangedCallback != null)
 				onItemChangedCallback.Invoke ();
 		}
-		PrintListItems();
 		return true;
 	}
 
@@ -61,23 +70,5 @@ public class Inventory : MonoBehaviour {
 			onItemChangedCallback.Invoke();
 	}
 
-	public void PrintListItems(){
-		Debug.Log(items.Count);
-		/*
-		for (int i = 0; i < items.Count; i++)
-		{
-			Debug.Log("Element : " + items[i].name);
-		}
-		var dict = items.Select((s, i) => new { s, i }).ToDictionary(x => x.i, x => x.s);
-		Debug.Log("Dictionnaire : " + dict);
-
-		foreach (KeyValuePair<int, Item> kvp in dict)
-		{
-			//textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-			Debug.Log("Key = " + kvp.Key + ", Value = " + kvp.Value);
-		}
-		*/
-		return;
-	}
 
 }
