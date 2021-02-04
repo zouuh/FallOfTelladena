@@ -17,11 +17,14 @@ public class SceneLoader : MonoBehaviour
     public void Start() {
         loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
         slider = loadingScreen.GetComponentInChildren<Slider>();
-        Debug.Log(slider);
     }
 
     public void OnTriggerEnter()
     {
+        NPC[] characters = FindObjectsOfType<NPC>();
+        foreach (NPC pnj in characters) {
+            pnj.SaveNPC();
+        }
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
@@ -37,6 +40,10 @@ public class SceneLoader : MonoBehaviour
         while (!operation.isDone) {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             slider.value = progress;
+            Debug.Log(slider.value);
+            if(slider.value == 1) {
+                loadingScreen.SetActive(false);
+            }
             yield return null;
         }
     }

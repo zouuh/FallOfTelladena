@@ -61,10 +61,10 @@ public class NPC : MonoBehaviour
 
     void Start() {
         myName = this.name;
-        dialogueCanvas = GameObject.Find("InterfaceManager").GetComponent<CanvasController>().dialogueCanvas;
+        dialogueCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("DialogueCanvas").gameObject;
         Debug.Log(dialogueCanvas);
         //FindObjectOfType<CanvasController>().dialogueCanvas;
-        mainInterfaceCanvas = GameObject.Find("InterfaceManager").GetComponent<CanvasController>().mainViewCanvas;
+        mainInterfaceCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("MainInterfaceCanvas").gameObject;
         dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadNpcFile();
@@ -138,6 +138,7 @@ public class NPC : MonoBehaviour
     // Save and load functions
     public void SaveNPC() {
         SaveSystem.SaveNPC(this, this.name);
+        //Debug.Log("saved " + name);
     }
     
     public void LoadNPC() {

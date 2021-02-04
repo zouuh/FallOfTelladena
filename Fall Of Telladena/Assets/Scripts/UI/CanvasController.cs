@@ -31,13 +31,13 @@ public class CanvasController : MonoBehaviour {
                     break;
                 case "LoadingScreen":
                     loadingCanvas = canvas.gameObject;
-                    loadingCanvas.SetActive(false);
                     break;
                 default :
                     // Debug.Log(canvas.name + " not linked ");
                     break;
             }
         }
+        loadingCanvas.SetActive(false);
     }
 
     void Update() {
