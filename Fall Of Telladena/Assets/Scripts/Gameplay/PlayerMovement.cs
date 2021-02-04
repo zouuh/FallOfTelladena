@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     private int nbOfAlowedDJumps = 0;
     private float turnSmoothVelocity;
     // private float gravity = 9.8f;
-    private float maxSpeed = 10;
+    private float maxSpeed = 10f;
     private float vSpeed = 0;
     private float speedCoef = 0;
     private float turnSmoothTime = 0.1f;
@@ -68,13 +68,21 @@ public class PlayerMovement : MonoBehaviour {
                 // If no jump asked, don't move on Y axe
                 else if(controller.isGrounded) {
                     vSpeed = 0;
-                    maxSpeed = 10f;
                 }
                 // If not on floor, negative movement on Y axe to simulate gravity
                 if(!controller.isGrounded) {
                     vSpeed -= 0.2f;
-                    maxSpeed = 3f;
                 }
+
+                // If on jump, increase speed move
+                if(animator.GetBool("jump")) {
+                    maxSpeed = 5f;
+                }
+                else {
+                    maxSpeed = 10f;
+                }
+
+                // If 
 
                 // Get and apply move direction and speed
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
