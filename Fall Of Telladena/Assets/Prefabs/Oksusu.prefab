@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 2559909700045489909}
   - component: {fileID: 2559909700045489915}
   - component: {fileID: 43216405861766047}
+  - component: {fileID: 4316533877178262584}
   m_Layer: 0
   m_Name: Oksusu
   m_TagString: Player
@@ -625,7 +626,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3406913326998158255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72458ccce886dc14db2510f987e8f99a, type: 3}
+  m_Script: {fileID: 11500000, guid: d2faf274d51565c4c98628b39406f757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainVueCanvas: {fileID: 0}
@@ -643,6 +644,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: 0
   keyText: {fileID: 0}
+--- !u!114 &4316533877178262584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3406913326998158255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e21a8e84562cf43b93247fbdd20920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3649201670282043962
 GameObject:
   m_ObjectHideFlags: 0

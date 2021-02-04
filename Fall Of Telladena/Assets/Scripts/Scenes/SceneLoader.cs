@@ -13,6 +13,13 @@ public class SceneLoader : MonoBehaviour
     public string actualSceneName;
     public GameObject loadingScreen;
     public Slider slider;
+
+    public void Start() {
+        loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
+        slider = loadingScreen.GetComponentInChildren<Slider>();
+        Debug.Log(slider);
+    }
+
     public void OnTriggerEnter()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);

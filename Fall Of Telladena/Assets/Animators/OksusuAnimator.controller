@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8946612401279685919
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d220df2617c5a484dad161efdde43908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1107 &-8757068390249700386
 AnimatorStateMachine:
   serializedVersion: 5
@@ -66,7 +78,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -5758824757021677865}
   m_StateMachineBehaviours:
-  - {fileID: -3007071122699315371}
+  - {fileID: -8946612401279685919}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -138,6 +150,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-5003580232406096931
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f533074abdcabdc408b98141f9d12b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-3007071122699315371
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,7 +318,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -8153673690500432723}
   m_StateMachineBehaviours:
-  - {fileID: -6896531227705872631}
+  - {fileID: -5003580232406096931}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

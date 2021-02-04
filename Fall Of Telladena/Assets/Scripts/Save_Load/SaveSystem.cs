@@ -57,7 +57,7 @@ public static class SaveSystem {
 
     public static NPCData LoadNPC(string name) {
         string path = Application.persistentDataPath + "/" + name + ".sol";
-        Debug.Log(path);
+        // Debug.Log(path);
         if (File.Exists(path)) {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);

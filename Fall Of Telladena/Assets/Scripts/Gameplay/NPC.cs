@@ -61,6 +61,10 @@ public class NPC : MonoBehaviour
 
     void Start() {
         myName = this.name;
+        dialogueCanvas = GameObject.Find("InterfaceManager").GetComponent<CanvasController>().dialogueCanvas;
+        Debug.Log(dialogueCanvas);
+        //FindObjectOfType<CanvasController>().dialogueCanvas;
+        mainInterfaceCanvas = GameObject.Find("InterfaceManager").GetComponent<CanvasController>().mainViewCanvas;
         dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadNpcFile();
@@ -68,6 +72,7 @@ public class NPC : MonoBehaviour
         if(SceneManager.GetActiveScene().name != scene) {
             gameObject.SetActive(false);
         }
+        
     }
 
     void Update() {
