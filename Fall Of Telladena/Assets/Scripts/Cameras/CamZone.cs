@@ -11,7 +11,7 @@ public class CamZone : MonoBehaviour
     #region Fields
 
     [SerializeField]
-    private CinemachineVirtualCamera virtualCamera = null;
+    public CinemachineVirtualCamera virtualCamera = null;
 
     #endregion
 
