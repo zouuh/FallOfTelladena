@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 63e53fbc203c47e49bcbee7d7bddb9d8
+guid: f1a2b8b0a27278547bf90f7edc2812ba
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cactus03
+    second: {fileID: 2100000, guid: 76aa3a73f61712345a5ed2595f097517, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -102,6 +107,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: HouseKogaCouch
+    second: {fileID: 2100000, guid: 20c32a24500b5f944b5e7ac8e74a3ca8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: HouseKogaKitchen
     second: {fileID: 2100000, guid: 0c570e98b10157b41bf5a3b63611b38d, type: 2}
   - first:
@@ -114,6 +124,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: HouseKogaTable
     second: {fileID: 2100000, guid: 820e042026891fe44ad18fe25a6afe76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kiosk
+    second: {fileID: 2100000, guid: 4f10f4d1e074ae249adfbe28628f5285, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OksusuHouse
+    second: {fileID: 2100000, guid: eca167a6fe65ba742a76e1034e041cf5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -198,7 +218,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: OksusuHouseShelfDecoration2
-    second: {fileID: 2100000, guid: fd97ac628412584428beab679d906a91, type: 2}
+    second: {fileID: 2100000, guid: 87d39f2a739b94a4489f00051100e2a8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -257,6 +277,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Palmier
+    second: {fileID: 2100000, guid: 5f8bfd968d03b614896884eafb171aa5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: VillageArc
     second: {fileID: 2100000, guid: 4d851141862e57e4a976a877342f0572, type: 2}
   - first:
@@ -264,6 +289,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: VillageBalcony
     second: {fileID: 2100000, guid: 07e4300ffcff0ec4a91cf220657228dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VillageBigWalls
+    second: {fileID: 2100000, guid: 34a5e46331a2f4a4eae025b407e1b302, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -293,7 +323,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: VillageHouseStairs
-    second: {fileID: 2100000, guid: fed4145529af22f4f9a14265dd5a639c, type: 2}
+    second: {fileID: 2100000, guid: 6883aa6975bfd5b479d199c0db746c11, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -314,6 +344,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: VillageKioskSmallPillow
     second: {fileID: 2100000, guid: 34503f3bcc97c3a4383027475673e209, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VillageLadder
+    second: {fileID: 2100000, guid: 1cedc5b16e4c11c478422bc8e180a7ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VillageLamp
+    second: {fileID: 2100000, guid: c816779c0e22bb948a3b2b2b89a923f1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -353,7 +393,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: VillageStairs
-    second: {fileID: 2100000, guid: 88b4cc78c4f633e4aae80eb5338e17bc, type: 2}
+    second: {fileID: 2100000, guid: 6abb3590ae059db4784b079696818028, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VillageWell
+    second: {fileID: 2100000, guid: 541d2c9bc38a2724eb17fdf6edb0f29f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
