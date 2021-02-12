@@ -264,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2846197715119970219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -20, y: -10.1379, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2980227449988207760}
@@ -319,9 +319,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialScene: Village
+  initialPosition: {x: 0, y: 0, z: 0}
   dialogueCanvas: {fileID: 0}
   mainInterfaceCanvas: {fileID: 0}
-  dialogueId: 0
+  dialogueId: 1
+  scene: OutsideCastle
 --- !u!1 &3449422642433095252
 GameObject:
   m_ObjectHideFlags: 0
