@@ -13,9 +13,9 @@ public class QuestsController : MonoBehaviour
 
     [SerializeField]
     GameObject questPrefab;
-    int margin = 10;
-    int titleFontSize = 16;
-    int containerHeight = 420;
+    int margin = 20;
+    int titleFontSize = 32;
+    int containerHeight = 850;
 
     int nbOfQuests = 0;
     //List<Quest> listOfQuests;
