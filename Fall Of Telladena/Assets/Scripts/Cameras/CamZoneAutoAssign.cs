@@ -19,6 +19,8 @@ public class CamZoneAutoAssign : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("changing for cam main");
         GetComponent<CamZone>().virtualCamera = GameObject.FindGameObjectWithTag(tagToAssign).GetComponent<CinemachineVirtualCamera>();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

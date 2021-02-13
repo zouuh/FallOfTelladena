@@ -6,6 +6,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class SceneLoader : MonoBehaviour
     public string actualSceneName;
     public GameObject loadingScreen;
     public Slider slider;
+    [SerializeField]
+    CinemachineBrain mainCam;
 
     public void Start() {
         loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
@@ -28,6 +31,7 @@ public class SceneLoader : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
+
         //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
         StartCoroutine(LoadAsynchronously(nextSceneName));
     }
