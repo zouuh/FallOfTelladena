@@ -19,9 +19,9 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     TextMeshProUGUI tmp;
     int margin = 10;
-    int titleFontSize = 16;
-    float size = 16;
-    float newSize = 16;
+    int titleFontSize = 32;
+    float size = 32;
+    float newSize = 32;
     bool expanded = true;
     float step = 0.5f;
     float diff = 0.0f;
@@ -135,7 +135,7 @@ public class QuestController : MonoBehaviour, IPointerClickHandler
     public void resizeWithDescription()
     {
         size = this.GetComponent<RectTransform>().sizeDelta.y;
-        newSize = 3 * margin + titleFontSize + tmp.fontSize + (Mathf.Floor(tmp.text.Length / (200 / tmp.fontSize)) + 1) * tmp.fontSize;
+        newSize = 3 * margin + titleFontSize + tmp.fontSize + (Mathf.Floor(tmp.text.Length / (350 / tmp.fontSize)) + 1) * tmp.fontSize;
         step = (newSize>=size ? (newSize - size) / 5.0f : (size - newSize) / 5.0f);
         diff = size - newSize;
         expanded = false;
