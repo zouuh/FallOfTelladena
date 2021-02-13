@@ -13834,6 +13834,7 @@ GameObject:
   - component: {fileID: 2021591034}
   - component: {fileID: 2021591033}
   - component: {fileID: 2021591040}
+  - component: {fileID: 2021591041}
   m_Layer: 0
   m_Name: CamZoneMain
   m_TagString: Untagged
@@ -13946,6 +13947,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 4576221425501214660}
+--- !u!114 &2021591041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021591032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196da5f249684fd4993e5858b75dcb09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToAssign: CamMain
 --- !u!1 &2037739881
 GameObject:
   m_ObjectHideFlags: 0

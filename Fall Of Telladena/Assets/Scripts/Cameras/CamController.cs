@@ -42,7 +42,7 @@ public class CamController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             virtualCamera.enabled = true;
-            //virtualCameraMain.enabled = false;
+            virtualCameraMain.enabled = false;
             //virtualCameraMainConfiner.enabled = true;
         }
         else
@@ -61,6 +61,7 @@ public class CamController : MonoBehaviour
                 virtualCameraMain.transform.position = virtualCamera.transform.position;
                 // Disable this cam
                 virtualCamera.enabled = false;
+                virtualCameraMain.enabled = true;
             }
         }
     }
