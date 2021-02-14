@@ -181,6 +181,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5068716925491945244, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!1 &22784434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4670672138629320364, guid: 501933c9637468843b4a42c7298218e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2093497074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &22784439
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22784434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &28495608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6108540546576547456, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -1657,6 +1679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 280103480}
   - component: {fileID: 280103481}
+  - component: {fileID: 280103482}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1690,6 +1713,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &280103482
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280103479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &280896162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1341803252078672197, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -4394,6 +4433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395895544}
   - component: {fileID: 395895545}
+  - component: {fileID: 395895546}
   m_Layer: 0
   m_Name: VirtualCam_OksusuHouse3
   m_TagString: Untagged
@@ -4451,6 +4491,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 280103480}
+--- !u!114 &395895546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395895543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeacd1f582323440b558fc75a3d86d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShake: 60
+  timeShaking: 3
+  intensity: 1
 --- !u!1 &398948729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1821202962852979064, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -4601,6 +4656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 454561415}
   - component: {fileID: 454561416}
+  - component: {fileID: 454561417}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -4634,6 +4690,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &454561417
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454561414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &455229665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7412413601995397264, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -5176,6 +5248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522363309}
   - component: {fileID: 522363310}
+  - component: {fileID: 522363311}
   m_Layer: 0
   m_Name: VirtualCam_OksusuHouse4
   m_TagString: Untagged
@@ -5233,6 +5306,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1998958137}
+--- !u!114 &522363311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522363308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeacd1f582323440b558fc75a3d86d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShake: 60
+  timeShaking: 3
+  intensity: 1
 --- !u!1 &526366930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8923185469844796324, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -7686,6 +7774,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTargetTag: Player
+--- !u!114 &1008641563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008641561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeacd1f582323440b558fc75a3d86d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShake: 60
+  timeShaking: 3
+  intensity: 1
 --- !u!1 &1009285715 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8136251848762830918, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -8076,6 +8179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076987494}
   - component: {fileID: 1076987495}
+  - component: {fileID: 1076987496}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -8109,6 +8213,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1076987496
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076987493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1086904325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4189401614040775187, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -10925,6 +11045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516202151}
   - component: {fileID: 1516202152}
+  - component: {fileID: 1516202153}
   m_Layer: 0
   m_Name: VirtualCam_OksusuHouse2
   m_TagString: Untagged
@@ -10982,6 +11103,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 454561415}
+--- !u!114 &1516202153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516202150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeacd1f582323440b558fc75a3d86d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShake: 60
+  timeShaking: 3
+  intensity: 1
 --- !u!1 &1519198897 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3051598706230225104, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -12761,6 +12897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1860682698}
   - component: {fileID: 1860682699}
+  - component: {fileID: 1860682700}
   m_Layer: 0
   m_Name: VirtualCam_OksusuHouse1
   m_TagString: Untagged
@@ -12818,6 +12955,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1076987494}
+--- !u!114 &1860682700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860682697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeacd1f582323440b558fc75a3d86d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShake: 60
+  timeShaking: 3
+  intensity: 1
 --- !u!1001 &1861366139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13596,6 +13748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1998958137}
   - component: {fileID: 1998958138}
+  - component: {fileID: 1998958139}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -13629,6 +13782,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1998958139
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998958136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &2002567248 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2563794343799737490, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -14059,37 +14228,37 @@ PrefabInstance:
     - target: {fileID: 4670672137539063376, guid: 501933c9637468843b4a42c7298218e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.649893
+      value: -10.371254
       objectReference: {fileID: 0}
     - target: {fileID: 4670672137539063376, guid: 501933c9637468843b4a42c7298218e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.468495
+      value: 9.530832
       objectReference: {fileID: 0}
     - target: {fileID: 4670672137539063376, guid: 501933c9637468843b4a42c7298218e2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.63165
+      value: -49.150265
       objectReference: {fileID: 0}
     - target: {fileID: 4670672137539063376, guid: 501933c9637468843b4a42c7298218e2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06328028
+      value: 0.2588191
       objectReference: {fileID: 0}
     - target: {fileID: 4670672137539063376, guid: 501933c9637468843b4a42c7298218e2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9210305
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4670672137539063376, guid: 501933c9637468843b4a42c7298218e2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.16881154
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4670672137539063376, guid: 501933c9637468843b4a42c7298218e2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3452552
+      value: 0.9659258
       objectReference: {fileID: 0}
     - target: {fileID: 4670672137539063376, guid: 501933c9637468843b4a42c7298218e2,
         type: 3}
