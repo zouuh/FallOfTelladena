@@ -20,6 +20,7 @@ public class CamZone : MonoBehaviour
     private void Start()
     {
         virtualCamera.enabled = false;
+        virtualCamera.Priority = 20;
     }
 
     private void OnTriggerEnter(Collider other)
