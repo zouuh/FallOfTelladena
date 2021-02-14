@@ -8980,6 +8980,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1f55f204f4c6743915313352d30c70, type: 3}
+--- !u!1 &1278432493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2953074982018662777, guid: 1e1f55f204f4c6743915313352d30c70,
+    type: 3}
+  m_PrefabInstance: {fileID: 1278432492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1278432494
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278432493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1278792620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4507886214734011587, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -11640,6 +11662,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+--- !u!114 &1784767867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784767865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeacd1f582323440b558fc75a3d86d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShake: 60
+  timeShaking: 3
+  intensity: 1
 --- !u!114 &1784767870
 MonoBehaviour:
   m_ObjectHideFlags: 0
