@@ -74,8 +74,6 @@ public class LevierController : MonoBehaviour
 
     void changeAnimation()
     {
-        Debug.Log("anim");
-
         //Debug.Log("Play:" + currStep);
         for(int i = 0; i < listOfPlatforms.Length; ++i)
         {
@@ -123,7 +121,6 @@ public class LevierController : MonoBehaviour
         if (other.CompareTag("ContactZone") /*&& Input.GetKeyUp(KeyCode.I)*/)
         {
             isInContact = true;
-            Debug.Log("isInCOntact");
             if(player == null)
             {
                 player = other.GetComponent<ContactZone>().player;
@@ -143,7 +140,6 @@ public class LevierController : MonoBehaviour
     {
         if (other.CompareTag("ContactZone"))
         {
-            Debug.Log("not in contact");
             isInContact = false;
         }
     }
