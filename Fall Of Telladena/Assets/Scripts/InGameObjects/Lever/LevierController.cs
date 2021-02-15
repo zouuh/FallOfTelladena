@@ -48,7 +48,7 @@ public class LevierController : MonoBehaviour
         if(isInContact && Input.GetButtonDown("Action"))
         {
             changeAnimation();
-            player.transform.LookAt(transform.position);
+            player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
         }
     }
     /*
