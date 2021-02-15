@@ -4,46 +4,51 @@ using UnityEngine;
 
 public class LevierController : MonoBehaviour
 {
-    public GameObject myLevier;
-    public GameObject[] listOfPlatforms;
+    GameObject player = null;
+
+    public GameObject myLever;
+    public Platform[] listOfPlatforms;
     bool isInContact = false;
 
+    /*
     public int nbOfSteps;
     public string axisToAnimate; // x, y, z
     int axisId;
     int currStep = 0;
-    public int forwardOrBackward = 1; // 1 = forward, -1 = backward
+    [SerializeField]
+    float stepSize = 1.0f;
+    public int forwardOrBackward = 1; 
+    */
 
     // Animations
     Animation myAnimation;
     AnimationCurve curve;
     AnimationClip clip;
 
-    private void Start()
+    /*
+    private int GetAxisToAnimate(string axis)
     {
-        switch (axisToAnimate)
+        switch (axis)
         {
             case "x":
-                axisId = 0;
-                break;
+                return 0;
             case "y":
-                axisId = 1;
-                break;
+                return 1;
             case "z":
-                axisId = 2;
-                break;
+                return 2;
             default:
-                axisId = 0;
-                break;
+                return 0;
         }
 
     }
+    */
 
     void Update()
     {
-        if(isInContact && Input.GetKeyUp(KeyCode.I))
+        if(isInContact && Input.GetButtonDown("Action"))
         {
             changeAnimation();
+            player.transform.LookAt(transform.position);
         }
     }
     /*
@@ -70,39 +75,47 @@ public class LevierController : MonoBehaviour
     void changeAnimation()
     {
         Debug.Log("anim");
-        if (currStep >= nbOfSteps)
+
+        //Debug.Log("Play:" + currStep);
+        for(int i = 0; i < listOfPlatforms.Length; ++i)
         {
-            currStep = 0;
-            forwardOrBackward *= -1;
-        }
-        if (currStep < nbOfSteps)
-        {
-            Debug.Log("Play:" + currStep);
-            for(int i = 0; i < listOfPlatforms.Length; ++i)
+            Debug.Log(listOfPlatforms[i]);
+            Debug.Log(listOfPlatforms[i].currStep);
+            Debug.Log(listOfPlatforms[i].nbOfSteps);
+            // if last step is reached, go backwards
+            if (listOfPlatforms[i].currStep >= listOfPlatforms[i].nbOfSteps)
             {
-                myAnimation = listOfPlatforms[i].GetComponent<Animation>();
-                // Create custom animation
-                AnimationClip clip = new AnimationClip();
-                //clip = myAnimation.clip;
-                clip.legacy = true;
-
-                Keyframe[] keys;
-                keys = new Keyframe[2];
-                keys[0] = new Keyframe(0.0f, listOfPlatforms[i].transform.position[axisId]);
-                keys[1] = new Keyframe(1.0f, listOfPlatforms[i].transform.position[axisId] + (1.0f * forwardOrBackward));
-                curve = new AnimationCurve(keys);
-                clip.SetCurve("", typeof(Transform), "localPosition." + axisToAnimate, curve);
-                Debug.Log("localPosition." + axisToAnimate);
-
-                myAnimation.AddClip(clip, clip.name);
-                // Play custom animation
-                myAnimation.Play(clip.name);
+                listOfPlatforms[i].currStep = 0;
+                listOfPlatforms[i].forwardOrBackward *= -1;
             }
 
-            
-        }
+            myAnimation = listOfPlatforms[i].GetComponent<Animation>();
+            // Create custom animation
+            AnimationClip clip = new AnimationClip();
+            //clip = myAnimation.clip;
+            clip.legacy = true;
 
-        ++currStep;
+            int axisId = listOfPlatforms[i].axisId;
+
+            float key1 = listOfPlatforms[i].transform.localPosition[axisId];
+            Debug.Log(listOfPlatforms[i].transform.localPosition[axisId]);
+            float key2 = key1 + (listOfPlatforms[i].stepSize * listOfPlatforms[i].forwardOrBackward);
+            clip.name = (key1 + "-" + key2);
+
+            Keyframe[] keys;
+            keys = new Keyframe[2];
+            keys[0] = new Keyframe(0.0f, key1);
+            keys[1] = new Keyframe(1.0f, key2);
+            curve = new AnimationCurve(keys);
+            clip.SetCurve("", typeof(Transform), "localPosition." + listOfPlatforms[i].axisToAnimate, curve);
+            //Debug.Log("localPosition." + axisToAnimate);
+
+            myAnimation.AddClip(clip, clip.name);
+            // Play custom animation
+            myAnimation.Play(clip.name);
+
+            ++listOfPlatforms[i].currStep;
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -110,6 +123,11 @@ public class LevierController : MonoBehaviour
         if (other.CompareTag("ContactZone") /*&& Input.GetKeyUp(KeyCode.I)*/)
         {
             isInContact = true;
+            Debug.Log("isInCOntact");
+            if(player == null)
+            {
+                player = other.GetComponent<ContactZone>().player;
+            }
             //changeAnimation();
                 
             /*
@@ -125,6 +143,7 @@ public class LevierController : MonoBehaviour
     {
         if (other.CompareTag("ContactZone"))
         {
+            Debug.Log("not in contact");
             isInContact = false;
         }
     }

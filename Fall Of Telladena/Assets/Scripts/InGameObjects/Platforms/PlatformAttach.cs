@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatformAttach : MonoBehaviour
 {
     public GameObject myLedge;
+    GameObject player = null;
     //public GameObject myLedgeExit;
     //GameObject[] myChildObjects;
 
@@ -15,12 +16,34 @@ public class PlatformAttach : MonoBehaviour
         {
             myChildObjects[i].transform.parent = myLedge.transform;
         }*/
-        other.gameObject.transform.parent = myLedge.transform;
+        if (other.CompareTag("ContactZone"))
+        {
+            if(player == null)
+            {
+                player = other.GetComponent<ContactZone>().player;
+            }
+            player.transform.parent = myLedge.transform;
+        }
+        else if(!other.CompareTag("FertilityZone"))
+        {
+            other.gameObject.transform.parent = myLedge.transform;
+        }        
         //other.gameObject.transform.SetParent(myLedge.transform, true);
     }
 
     void OnTriggerExit(Collider other)
     {
-        other.gameObject.transform.parent = null;
+        if (other.CompareTag("ContactZone"))
+        {
+            if (player == null)
+            {
+                player = other.GetComponent<ContactZone>().player;
+            }
+            player.gameObject.transform.parent = null;
+        }
+        else if (!other.CompareTag("FertilityZone"))
+        {
+            other.gameObject.transform.parent = null;
+        }
     }
 }
