@@ -1,4 +1,7 @@
-using System.Collections;
+/*
+ * Authors : Amélia, Manon
+ */
+
 using System.Collections.Generic;
 
 using System;
@@ -29,6 +32,8 @@ public class Inventory : MonoBehaviour {
 
 	// Our current list of items in the inventory
 	public List<Item> items = new List<Item>();
+
+	public string usedItem = ""; // the item the player is using now
 
 	// Add a new item if enough room
 	public bool Add (Item item)
@@ -69,6 +74,15 @@ public class Inventory : MonoBehaviour {
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
 	}
+
+	public bool isUsingTool(string toolName)
+    {
+		if(usedItem == toolName)
+        {
+			return true;
+        }
+		return false;
+    }
 
 
 }

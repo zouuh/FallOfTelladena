@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Authors : Manon
+ */
+
 using UnityEngine;
 
 public class LevierController : MonoBehaviour
@@ -9,6 +11,14 @@ public class LevierController : MonoBehaviour
     public GameObject myLever;
     public Platform[] listOfPlatforms;
     bool isInContact = false;
+
+    [SerializeField]
+    FloattingText floattingText;
+
+    [SerializeField]
+    string requiredToolName = "";
+    [SerializeField]
+    Inventory inventory;
 
     /*
     public int nbOfSteps;
@@ -43,12 +53,38 @@ public class LevierController : MonoBehaviour
     }
     */
 
+    bool hasRequiredTool()
+    {
+        if(requiredToolName.Length <= 0)
+        {
+            return true;
+        }else if (inventory.isUsingTool(requiredToolName))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     void Update()
     {
-        if(isInContact && Input.GetButtonDown("Action"))
+        if (isInContact)
         {
-            changeAnimation();
-            player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
+            if (hasRequiredTool())
+            {
+                if (Input.GetButtonDown("Action"))
+                {
+                    changeAnimation();
+                    player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
+                }
+                floattingText.activate();
+            }
+            else
+            {
+                floattingText.activate(requiredToolName);
+            }
         }
     }
     /*
@@ -125,6 +161,16 @@ public class LevierController : MonoBehaviour
             {
                 player = other.GetComponent<ContactZone>().player;
             }
+
+            if (hasRequiredTool())
+            {
+                floattingText.activate();
+            }
+            else
+            {
+                floattingText.activate(requiredToolName);
+            }
+
             //changeAnimation();
                 
             /*
@@ -141,6 +187,7 @@ public class LevierController : MonoBehaviour
         if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
+            floattingText.desactivate();
         }
     }
 }

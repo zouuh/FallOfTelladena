@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*
+ * Authors : Amélia, Manon
+ */
+
+using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */
@@ -70,6 +74,7 @@ public class InventorySlot : MonoBehaviour {
 			descriptionText.text = item.name;
 		}
 		else {
+			Inventory.instance.usedItem = ""; // no item is used
 			descriptionText.text = " ";
 		}
 	}

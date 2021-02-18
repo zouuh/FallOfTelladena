@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Authors : Amélia, Manon
+ */
+
 using UnityEngine;
 
 /* The base item class. All items should derive from this. */
@@ -11,7 +13,9 @@ public class Item : ScriptableObject
 	public int amount = 0;                  // Amount of items
 	public Sprite icon = null;              // Item icon
 	public bool showInInventory = true;
-	
+
+	// the item the player is using now
+	//public bool isUsed = false;
 
 	// Called when the item is pressed in the inventory
 	public virtual void Use()
@@ -19,6 +23,11 @@ public class Item : ScriptableObject
 		// Use the item
 		// Something may happen
 		Debug.Log("Using : " + name);
+
+		// Tell the inventory we are using this item now
+		Inventory.instance.usedItem = name;
+		// Change the active bar to fit the new configuration
+		// ...
 	}
 
 	// Call this method to remove the item from inventory
