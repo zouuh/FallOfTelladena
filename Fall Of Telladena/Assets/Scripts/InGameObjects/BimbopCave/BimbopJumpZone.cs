@@ -9,6 +9,12 @@ public class BimbopJumpZone : MonoBehaviour
     [SerializeField]
     float timeBetweenEachJump = 5f; // in seconds
     public float timer = 0f;
+    [SerializeField]
+    int requiredJumpCount = 10;
+    public bool caveIsOpen = false;
+
+    [SerializeField]
+    BimbopCave cave;
 
     private void Update()
     {
@@ -16,6 +22,21 @@ public class BimbopJumpZone : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+    }
+
+    public void AddJump()
+    {
+        ++jumpCount;
+        if (jumpCount >= requiredJumpCount)
+        {
+            cave.Appear();
+            caveIsOpen = true;
+        }
+    }
+
+    public void ResetJump()
+    {
+        jumpCount = 0;
     }
 
     public void ResetTimer()
@@ -27,6 +48,7 @@ public class BimbopJumpZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Is in zone !");
             isInZone = true;
         }
     }

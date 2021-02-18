@@ -26,11 +26,22 @@ public class JumpEnd : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (bimbopJumpZone.isInZone && bimbopJumpZone.timer > 0)
+        if (!bimbopJumpZone.caveIsOpen) // only usefull until cave is open
         {
-            ++bimbopJumpZone.jumpCount;
-            bimbopJumpZone.ResetTimer();
+            if (bimbopJumpZone.isInZone)
+            {
+                if (bimbopJumpZone.timer > 0f)
+                {
+                    bimbopJumpZone.AddJump();
+                }
+                else
+                {
+                    bimbopJumpZone.ResetJump();
+                }
+                bimbopJumpZone.ResetTimer();
+            }
         }
+        
        animator.SetBool("jump", false);
     }
 

@@ -6,7 +6,7 @@ public class PlatformAttach : MonoBehaviour
 {
     public GameObject myLedge;
     GameObject player = null;
-    Transform playerParent = null;
+    //Transform playerParent = null;
     //public GameObject myLedgeExit;
     //GameObject[] myChildObjects;
 
@@ -23,7 +23,7 @@ public class PlatformAttach : MonoBehaviour
             {
                 player = other.GetComponent<ContactZone>().player;
             }
-            playerParent = player.transform.parent;
+            //playerParent = player.transform.parent;
 
             Vector3 tmpScale = new Vector3(player.transform.localScale.x, player.transform.localScale.y, player.transform.localScale.z);
             player.transform.parent = myLedge.transform;
@@ -45,8 +45,8 @@ public class PlatformAttach : MonoBehaviour
             {
                 player = other.GetComponent<ContactZone>().player;
             }
-            player.gameObject.transform.parent = playerParent;
-            DontDestroyOnLoad(player); // important : avoid bug when deparenting from DontDestroyOnLoad Object
+            player.gameObject.transform.parent = null;
+            DontDestroyOnLoad(player.gameObject); // important : avoid bug when deparenting from DontDestroyOnLoad Object
         }
         else if (!other.CompareTag("FertilityZone"))
         {
