@@ -46,6 +46,7 @@ public class PlatformAttach : MonoBehaviour
                 player = other.GetComponent<ContactZone>().player;
             }
             player.gameObject.transform.parent = playerParent;
+            DontDestroyOnLoad(player); // important : avoid bug when deparenting from DontDestroyOnLoad Object
         }
         else if (!other.CompareTag("FertilityZone"))
         {
