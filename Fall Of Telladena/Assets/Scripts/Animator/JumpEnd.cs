@@ -6,11 +6,16 @@ using UnityEngine;
 
 public class JumpEnd : StateMachineBehaviour
 {
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    public BimbopJumpZone bimbopJumpZone = null;
+
+    //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (bimbopJumpZone == null)
+        {
+            bimbopJumpZone = FindObjectOfType<BimbopJumpZone>();
+        }
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -21,6 +26,11 @@ public class JumpEnd : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (bimbopJumpZone.isInZone && bimbopJumpZone.timer > 0)
+        {
+            ++bimbopJumpZone.jumpCount;
+            bimbopJumpZone.ResetTimer();
+        }
        animator.SetBool("jump", false);
     }
 

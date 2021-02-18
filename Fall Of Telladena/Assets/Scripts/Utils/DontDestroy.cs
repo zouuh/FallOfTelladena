@@ -23,6 +23,7 @@ public class DontDestroy : MonoBehaviour
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
     }
+
     //void Awake()
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {

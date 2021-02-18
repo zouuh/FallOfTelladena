@@ -14,12 +14,14 @@ public class SceneLoader : MonoBehaviour
     public string actualSceneName;
     public GameObject loadingScreen;
     public Slider slider;
-    [SerializeField]
     CinemachineBrain mainCam;
+    GameObject player;
 
     public void Start() {
         loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
         slider = loadingScreen.GetComponentInChildren<Slider>();
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void OnTriggerEnter()
@@ -28,9 +30,9 @@ public class SceneLoader : MonoBehaviour
         foreach (NPC pnj in characters) {
             pnj.SaveNPC();
         }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false;
 
         //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
         StartCoroutine(LoadAsynchronously(nextSceneName));
