@@ -7,6 +7,7 @@ using UnityEngine;
 public class JumpEnd : StateMachineBehaviour
 {
     public BimbopJumpZone bimbopJumpZone = null;
+    public PlayerPositionManager playerPositionManager = null;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -15,6 +16,12 @@ public class JumpEnd : StateMachineBehaviour
         {
             bimbopJumpZone = FindObjectOfType<BimbopJumpZone>();
         }
+        if (playerPositionManager == null)
+        {
+            playerPositionManager = FindObjectOfType<PlayerPositionManager>().GetComponent<PlayerPositionManager>();
+        }
+        playerPositionManager.SaveLastPosition();
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
