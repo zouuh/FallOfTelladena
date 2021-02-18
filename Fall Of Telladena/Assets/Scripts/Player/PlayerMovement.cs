@@ -71,19 +71,16 @@ public class PlayerMovement : MonoBehaviour {
                     if(controller.isGrounded) {
                         jumpCounter = 0;
                         animator.SetBool("jump", true);
-                        controller.center = new Vector3(0, controller.center.y + 0.6f, 0);
                     }
                     // Else if double jump is possible -> do it again
                     else if(!controller.isGrounded && jumpCounter < 2) {
                         jumpCounter = 0;
                         animator.SetBool("jump", true);
-                        controller.center = new Vector3(0, controller.center.y + 0.6f, 0);
                     }
                 }
                 // If not on the floor ->  bring back to floor and move down the collider
                 if(!controller.isGrounded && !animator.GetBool("jump")) {
                     vSpeed -= 0.2f;
-                    controller.center = new Vector3(0, 0.65f, 0);
                 }
 
                 // If jumping -> decrease speed move
@@ -91,10 +88,6 @@ public class PlayerMovement : MonoBehaviour {
                     maxSpeed = 5f;
                     vSpeed = 0;
                 }
-                // // If sliding -> increase speed move
-                // else if(slide) {
-                //     maxSpeed = 20f;
-                // }
                 else {
                     maxSpeed = 10f;
                 }
@@ -102,17 +95,14 @@ public class PlayerMovement : MonoBehaviour {
                 // Get maxCoef depending on movement mode
                 if(slide) {
                     maxCoef = 1.8f;
-                    Debug.Log("SLIDE " + maxCoef);
                 }
                 else {
                     maxCoef = 1f;
                 }
 
                 // Accelerate if not maxSpeed
-                Debug.Log("MaxCoef = " + maxCoef);
                 if(speedCoef < maxCoef) {
                     speedCoef += 0.05f;
-                    Debug.Log("speed coef : " + speedCoef);
                 }
                 else if(speedCoef > maxCoef) {
                     speedCoef -= 0.05f;
@@ -135,18 +125,18 @@ public class PlayerMovement : MonoBehaviour {
                     if(controller.isGrounded) {
                         jumpCounter = 0;
                         animator.SetBool("jump", true);
-                        controller.center = new Vector3(0, controller.center.y + 0.6f, 0);
                     }
                     // Else if double jump is possible -> do it again
                     else if(!controller.isGrounded && jumpCounter < 2) {
                         jumpCounter = 0;
                         animator.SetBool("jump", true);
-                        controller.center = new Vector3(0, controller.center.y + 0.6f, 0);
                     }
                 }
                 if(!controller.isGrounded && !animator.GetBool("jump")) {
                     vSpeed -= 0.2f;
-                    controller.center = new Vector3(0, 0.65f, 0);
+                }
+                else {
+                    vSpeed = 0;
                 }
                 // Move on Y axe
                 controller.Move(new Vector3(0, vSpeed * 0.5f * Time.deltaTime, 0));

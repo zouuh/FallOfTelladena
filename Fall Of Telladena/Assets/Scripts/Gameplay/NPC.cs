@@ -62,7 +62,6 @@ public class NPC : MonoBehaviour
     void Start() {
         myName = this.name;
         dialogueCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("DialogueCanvas").gameObject;
-        Debug.Log(dialogueCanvas);
         //FindObjectOfType<CanvasController>().dialogueCanvas;
         mainInterfaceCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("MainInterfaceCanvas").gameObject;
         dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
