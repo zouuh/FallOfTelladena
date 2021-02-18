@@ -9,44 +9,48 @@ using UnityEngine;
 public class CanvasController : MonoBehaviour
 {
     [SerializeField]
-    public GameObject mainViewCanvas;
+    GameObject mainViewCanvas;
     [SerializeField]
     GameObject mapCanvas;
+    [SerializeField]
     GameObject inventoryCanvas;
+    [SerializeField]
     GameObject pauseCanvas;
-    public GameObject dialogueCanvas;
+    [SerializeField]
+    GameObject dialogueCanvas;
+    [SerializeField]
     GameObject loadingCanvas;
 
     void Start() {
-        Canvas[] allCanvas = Resources.FindObjectsOfTypeAll<Canvas>();
-        foreach (Canvas canvas in allCanvas) {
-            switch (canvas.name)
-            {
-                /*
-            case "MainInterfaceCanvas":
-                mainViewCanvas = canvas.gameObject;
-                break;
-            case "MapCanvas":
-                mapCanvas = canvas.gameObject;
-                break;
-                */
-                case "InventoryCanvas":
-                    inventoryCanvas = canvas.gameObject;
-                    break;
-                case "DialogueCanvas":
-                    dialogueCanvas = canvas.gameObject;
-                    break;
-                case "PauseCanvas":
-                    pauseCanvas = canvas.gameObject;
-                    break;
-                case "LoadingScreen":
-                    loadingCanvas = canvas.gameObject;
-                    break;
-                default :
-                    // Debug.Log(canvas.name + " not linked ");
-                    break;
-            }
-        }
+        // Canvas[] allCanvas = Resources.FindObjectsOfTypeAll<Canvas>();
+        // foreach (Canvas canvas in allCanvas) {
+        //     switch (canvas.name)
+        //     {
+        //         /*
+        //     case "MainInterfaceCanvas":
+        //         mainViewCanvas = canvas.gameObject;
+        //         break;
+        //     case "MapCanvas":
+        //         mapCanvas = canvas.gameObject;
+        //         break;
+        //         */
+        //         case "InventoryCanvas":
+        //             inventoryCanvas = canvas.gameObject;
+        //             break;
+        //         case "DialogueCanvas":
+        //             dialogueCanvas = canvas.gameObject;
+        //             break;
+        //         case "PauseCanvas":
+        //             pauseCanvas = canvas.gameObject;
+        //             break;
+        //         case "LoadingScreen":
+        //             loadingCanvas = canvas.gameObject;
+        //             break;
+        //         default :
+        //             // Debug.Log(canvas.name + " not linked ");
+        //             break;
+        //     }
+        // }
         loadingCanvas.SetActive(false);
     }
 
@@ -72,16 +76,16 @@ public class CanvasController : MonoBehaviour
             }
         }
         if (Input.GetButtonDown("Cancel")) {
-            if(pauseCanvas.activeSelf) {
-                SwitchCanvas(pauseCanvas, mainViewCanvas);
+            if(mainViewCanvas.activeSelf) {
+                mainViewCanvas.SetActive(false);
+                pauseCanvas.SetActive(true);
             }
-            else if (mainViewCanvas.activeSelf)
-            {
-                SwitchCanvas(mainViewCanvas, pauseCanvas);
-            }
-            else if (mapCanvas.activeSelf)
-            {
-                SwitchCanvas(mapCanvas, mainViewCanvas);
+            else {
+                mapCanvas.SetActive(false);
+                inventoryCanvas.SetActive(false);
+                pauseCanvas.SetActive(false);
+                dialogueCanvas.SetActive(false);
+                mainViewCanvas.SetActive(true);
             }
         }
     }

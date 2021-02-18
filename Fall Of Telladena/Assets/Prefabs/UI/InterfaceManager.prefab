@@ -5180,6 +5180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 559243125932648849}
   - component: {fileID: 559243125932648848}
+  - component: {fileID: 6033806586697977414}
   m_Layer: 0
   m_Name: InterfaceManager
   m_TagString: Untagged
@@ -5219,9 +5220,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970bd8baf9a849047be15d12443bbce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainViewCanvas: {fileID: 0}
-  mapCanvas: {fileID: 0}
-  dialogueCanvas: {fileID: 0}
+  mainViewCanvas: {fileID: 559243125893453894}
+  mapCanvas: {fileID: 559243124755553420}
+  inventoryCanvas: {fileID: 1598024228003247128}
+  pauseCanvas: {fileID: 559243125762918687}
+  dialogueCanvas: {fileID: 8038037927677994349}
+  loadingCanvas: {fileID: 7259352711392973417}
+--- !u!114 &6033806586697977414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559243125932648862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5793aab43204a5441858d44a2b8f5384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568454001322798936
 GameObject:
   m_ObjectHideFlags: 0
@@ -19924,6 +19940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &8104593682970534619
 GameObject:
   m_ObjectHideFlags: 0
@@ -21952,6 +21970,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!114 &6222376405696487305
 MonoBehaviour:
   m_ObjectHideFlags: 0
