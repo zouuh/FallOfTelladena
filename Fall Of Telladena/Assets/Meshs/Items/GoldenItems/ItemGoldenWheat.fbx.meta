@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 22bf9f5b016043b43a3f98b4842a96c2
+guid: 2343a99dc33368148a7ad6cf27746392
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ItemGoldenWheat
+    second: {fileID: 2100000, guid: e6a85bbf178fccc4ea70b418f1b2d1ae, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

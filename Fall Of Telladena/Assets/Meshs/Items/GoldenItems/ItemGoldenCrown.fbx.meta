@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 80f50f06531e1674f8643f9053861c33
+guid: fafcf61e14b0bba419843708fe4f1679
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ItemGoldenCrown
+    second: {fileID: 2100000, guid: f4105b50a6b51904a8e656e0363291c0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
