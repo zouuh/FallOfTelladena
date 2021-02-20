@@ -76,13 +76,26 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public bool isUsingTool(string toolName)
-    {
-		if(usedItem == toolName)
-        {
+	{
+		if (usedItem == toolName)
+		{
 			return true;
-        }
+		}
 		return false;
-    }
+	}
+
+	public bool hasTool(string toolName, int amount)
+	{
+		foreach (Item item in items)
+        {
+			Debug.Log("Inventory search : " + item.name + ", " + item.amount);
+			if (item.name == toolName && item.amount >= amount)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 
 
 }

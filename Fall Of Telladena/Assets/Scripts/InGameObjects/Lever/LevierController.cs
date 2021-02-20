@@ -17,8 +17,6 @@ public class LevierController : MonoBehaviour
 
     [SerializeField]
     string requiredToolName = "";
-    [SerializeField]
-    Inventory inventory;
 
     /*
     public int nbOfSteps;
@@ -58,7 +56,7 @@ public class LevierController : MonoBehaviour
         if(requiredToolName.Length <= 0)
         {
             return true;
-        }else if (inventory.isUsingTool(requiredToolName))
+        }else if (Inventory.instance.isUsingTool(requiredToolName))
         {
             return true;
         }
