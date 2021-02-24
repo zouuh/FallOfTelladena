@@ -24,10 +24,6 @@ public class JumpEnd : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("frame : " + frame);
-        // Debug.Log("time : " + animation["JumpAnimation"].time);
-
-        
         if(time >= 1f/24f) {
             frame ++;
             time = 0;
