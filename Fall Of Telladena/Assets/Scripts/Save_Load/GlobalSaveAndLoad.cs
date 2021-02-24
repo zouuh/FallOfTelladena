@@ -23,8 +23,9 @@ public class GlobalSaveAndLoad : MonoBehaviour {
 
     public void ResetGame() {
         foreach(NPC npc in allNpc) {
-            npc.SetScene(npc.initialScene);
-            npc.SetPosition(npc.initialPosition);
+            npc.ResetNPC();
+            // npc.SetScene(npc.initialScene);
+            // npc.SetPosition(npc.initialPosition);
         }
     }
 }

@@ -318,12 +318,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3a3de37f4514c4c9c6a75b214e22c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialScene: Village
-  initialPosition: {x: 0, y: 0, z: 0}
   dialogueCanvas: {fileID: 0}
   mainInterfaceCanvas: {fileID: 0}
-  dialogueId: 1
-  scene: OutsideCastle
+  dialogueId: 0
+  scene: Village
 --- !u!1 &3449422642433095252
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,6 @@
-﻿//ZOE
+﻿/* 
+ * Authors : Zoé 
+ */
 
 using UnityEngine;
 using System.IO;

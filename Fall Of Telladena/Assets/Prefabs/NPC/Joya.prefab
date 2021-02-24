@@ -482,10 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3a3de37f4514c4c9c6a75b214e22c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialScene: Fields
   dialogueCanvas: {fileID: 0}
   mainInterfaceCanvas: {fileID: 0}
   dialogueId: 0
+  scene: Fields
 --- !u!1 &2635247403300216954
 GameObject:
   m_ObjectHideFlags: 0
