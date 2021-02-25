@@ -13,6 +13,10 @@ public class DontDestroy : MonoBehaviour
 
         if (objs.Length > 1)
         {
+            if (this.gameObject.CompareTag("Player"))
+            {
+                this.gameObject.SetActive(false);
+            }
             Destroy(this.gameObject);
         }
 

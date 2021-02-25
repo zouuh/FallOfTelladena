@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class PowersController : MonoBehaviour
 {
-    public GameObject powerGraphicsLight;
-    public GameObject powerGraphicsSerenity;
+    [SerializeField]
+    GameObject lightPowerZone;
+    [SerializeField]
+    float timerLightPower = 2.0f;
+
+    [SerializeField]
+    GameObject powerGraphicsSerenity;
+
     public float secondsBeforeDestruction = 1;
     bool isOnLight = false;
     bool isOnSerenity = false;
@@ -20,21 +26,36 @@ public class PowersController : MonoBehaviour
     public StateController[] listOfBridges;
     int nextBridge = 0;
 
-    // Start
     void Start()
     {
-        powerGraphicsLight.SetActive(false);
+        lightPowerZone.SetActive(false);
+        /*
         powerGraphicsSerenity.SetActive(false);
         particles.SetActive(false);
         foreach(var obj in listOfBridges)
         {
             obj.ShowObject(false);
         }
+        */
     }
-    // Update is called once per frame
+
+    // every 2 seconds perform the print()
+    private IEnumerator ActiveLightPower()
+    {
+        lightPowerZone.SetActive(true);
+        yield return new WaitForSeconds(timerLightPower);
+        lightPowerZone.SetActive(false);
+    }
+
     void Update()
     {
-        //InputLight = Input.GetKey(KeyCode.L);
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            StartCoroutine(ActiveLightPower());
+        }
+
+        /*
         if (Input.GetKeyDown(KeyCode.L) && !isOnLight)
         {
             powerGraphicsLight.SetActive(true);
@@ -51,6 +72,7 @@ public class PowersController : MonoBehaviour
             powerGraphicsLight.SetActive(false);
             isOnLight = false;
         }
+        */
 
         if (Input.GetKeyDown(KeyCode.V) && !isOnSerenity)
         {

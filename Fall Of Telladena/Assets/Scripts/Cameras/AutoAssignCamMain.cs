@@ -13,6 +13,9 @@ public class AutoAssignCamMain : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GetComponent<CinemachineVirtualCamera>().enabled = true;
+        if(this != null)
+        {
+            GetComponent<CinemachineVirtualCamera>().enabled = true;
+        }
     }
 }

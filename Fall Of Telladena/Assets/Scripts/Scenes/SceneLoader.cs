@@ -24,18 +24,22 @@ public class SceneLoader : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void OnTriggerEnter()
+    public void OnTriggerEnter(Collider other)
     {
-        NPC[] characters = FindObjectsOfType<NPC>();
-        foreach (NPC pnj in characters) {
-            pnj.SaveNPC();
-        }
-        player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
-        player.GetComponent<PlayerMovement>().enabled = false;
-        player.GetComponent<CharacterController>().enabled = false;
+        if (other.CompareTag("Player"))
+        {
+            NPC[] characters = FindObjectsOfType<NPC>();
+            foreach (NPC pnj in characters)
+            {
+                pnj.SaveNPC();
+            }
+            player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
+            player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<CharacterController>().enabled = false;
 
-        //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
-        StartCoroutine(LoadAsynchronously(nextSceneName));
+            //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
+            StartCoroutine(LoadAsynchronously(nextSceneName));
+        }
     }
 
     IEnumerator LoadAsynchronously(string sceneName)    {
