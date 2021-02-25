@@ -8,14 +8,17 @@ public class BrambleController : MonoBehaviour
     public bool playerIsOut = true;
     public GameObject[] myParts;
     //public CharacterController myPlayer;
-    MovementInput myPlayerMovement;
+    PlayerMovement myPlayerMovement;
     float normalVelocity;
+    [SerializeField]
+    float velocityInBrambles = 2.0f;
     //public GameObject Player;
 
     // Start is called before the first frame update
     void Start()
     {
-        myPlayerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementInput>();
+        myPlayerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        normalVelocity = myPlayerMovement.speedWithBrambles;
         /*
         //Get the Renderer component from the new cube
         var myRenderer = GetComponent<Renderer>();
@@ -89,9 +92,9 @@ public class BrambleController : MonoBehaviour
             Disappear();
         }
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("ContactZoneBrambles"))
         {
-            myPlayerMovement.Velocity = 2;
+            myPlayerMovement.speedWithBrambles = velocityInBrambles;
         }
     }
     void OnTriggerExit(Collider other)
@@ -101,9 +104,9 @@ public class BrambleController : MonoBehaviour
             Appear();
         }
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("ContactZoneBrambles"))
         {
-            myPlayerMovement.Velocity = 10;
+            myPlayerMovement.speedWithBrambles = normalVelocity;
         }
     }
 

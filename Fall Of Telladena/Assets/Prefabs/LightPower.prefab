@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8813314810974586833}
   - component: {fileID: 8813314810974586845}
+  - component: {fileID: 3736926241933041847}
   m_Layer: 0
   m_Name: LightPower
   m_TagString: LightInput
@@ -42,5 +43,22 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.00001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!111 &3736926241933041847
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8813314810974586834}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 707f40921de26614dbf21548e23613a6, type: 2}
+  - {fileID: 7400000, guid: 6fe2173651e75cc48a6087f1a080a42b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

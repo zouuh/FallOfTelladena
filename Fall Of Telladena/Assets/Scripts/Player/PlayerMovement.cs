@@ -1,4 +1,6 @@
-﻿//ZOE 
+﻿/*
+ * Authors : ZOE, Manon
+ */
 
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
     private float turnSmoothVelocity;
     // private float gravity = 9.8f;
     private float maxSpeed = 10f;
+    public float speedWithBrambles = 10f;  // public because needed in Brambles
     private float vSpeed = 0;
     private float speedCoef = 0;
     private float turnSmoothTime = 0.1f;
@@ -79,7 +82,8 @@ public class PlayerMovement : MonoBehaviour {
                     maxSpeed = 5f;
                 }
                 else {
-                    maxSpeed = 10f;
+                    //maxSpeed = 10f;
+                    maxSpeed = speedWithBrambles;
                 }
 
                 // If 

@@ -12603,6 +12603,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oksusu
       objectReference: {fileID: 0}
+    - target: {fileID: 4125502740269808566, guid: 0f94809ccaab4974dbc0c848b5d30aed,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125502740269808566, guid: 0f94809ccaab4974dbc0c848b5d30aed,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125502740269808566, guid: 0f94809ccaab4974dbc0c848b5d30aed,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125502740269808566, guid: 0f94809ccaab4974dbc0c848b5d30aed,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4316533877178262584, guid: 0f94809ccaab4974dbc0c848b5d30aed,
         type: 3}
       propertyPath: m_Enabled
@@ -12622,6 +12642,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1522536153}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1522536159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522536155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ed06687d8a50144a8299ec771d24a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1523760662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1588428563358341733, guid: f1a2b8b0a27278547bf90f7edc2812ba,

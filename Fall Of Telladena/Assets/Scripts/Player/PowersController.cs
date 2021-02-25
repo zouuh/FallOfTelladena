@@ -43,8 +43,10 @@ public class PowersController : MonoBehaviour
     private IEnumerator ActiveLightPower()
     {
         lightPowerZone.SetActive(true);
+        lightPowerZone.GetComponent<Animation>().Play("lightPower");
         yield return new WaitForSeconds(timerLightPower);
-        lightPowerZone.SetActive(false);
+        //lightPowerZone.transform.localScale = new Vector3(0,0,0);
+        lightPowerZone.GetComponent<Animation>().Play("lightPower_reverse");
     }
 
     void Update()
