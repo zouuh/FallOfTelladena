@@ -23,9 +23,6 @@ public class DoorKeyController : DoorController
     [SerializeField]
     List<NameAmountPair> requiredToolsName = new List<NameAmountPair>();
 
-    [SerializeField]
-    Inventory inventory;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ContactZone"))

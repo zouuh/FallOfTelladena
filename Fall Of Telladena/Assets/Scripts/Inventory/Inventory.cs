@@ -88,7 +88,6 @@ public class Inventory : MonoBehaviour {
 	{
 		foreach (Item item in items)
         {
-			Debug.Log("Inventory search : " + item.name + ", " + item.amount);
 			if (item.name == toolName && item.amount >= amount)
 			{
 				return true;
