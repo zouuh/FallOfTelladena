@@ -15,9 +15,6 @@ public class Inventory : MonoBehaviour {
 	void Awake ()
 	{
 		instance = this;
-	//	Debug.Log("items " + items.Count);
-	//	Debug.Log("!= 0");
-	//	Debug.Log(InventoryUI.inventory);
 	}
 
 	#endregion
@@ -59,6 +56,17 @@ public class Inventory : MonoBehaviour {
 				onItemChangedCallback.Invoke ();
 		}
 		return true;
+	}
+
+	// Inventory manager
+	public bool CheckItem(string name, int amount){
+			for (int i = 0; i < items.Count; i++){
+				if((items[i].name == name) && (items[i].amount == amount)){
+					return true;
+				}
+			}
+		return false;
+	
 	}
 
 	// Remove an item

@@ -1,14 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 
 /* This object updates the inventory UI. */
 
-public class InventoryUI : MonoBehaviour {
+public class ActiveInventoryUI : MonoBehaviour {
 
 	public Transform itemsParent;	// The parent object of all the items
 	public GameObject inventoryUI;  // The entire UI
-	public CanvasController cv;
-	bool verifBtn = true;
 
 	public static Inventory inventory;	// Our current inventory
 
@@ -40,13 +38,6 @@ public class InventoryUI : MonoBehaviour {
 		{
 			inventoryUI.SetActive(!inventoryUI.activeSelf);
 		}	
-		if (OnClick.result == true && verifBtn == true){
-			for (int i = 0; i < inventory.items.Count; i++)
-			{
-				slots[i].OnRemoveButton ();
-			}
-		}	
-		verifBtn = false;
 	}
 
 	// Update the inventory UI by:
@@ -66,16 +57,13 @@ public class InventoryUI : MonoBehaviour {
 				// Otherwise clear the slot
 				slots[i].ClearSlot();
 			}
-		
 		} 
 	
-        Debug.Log("Updating UI");	
-
-
+        Debug.Log("Updating UI");
+		
 		return;
 
 	}
-
 
 
 }

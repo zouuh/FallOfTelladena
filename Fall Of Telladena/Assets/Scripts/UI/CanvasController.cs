@@ -41,7 +41,8 @@ public class CanvasController : MonoBehaviour {
     }
 
     void Update() {
-        Debug.Log("CanvasController");
+        //Debug.Log("CanvasController");
+       // Debug.Log("inventoryCanvas : " + inventoryCanvas.activeSelf);
         if(Input.GetButtonDown("Inventory")) {
             if(inventoryCanvas.activeSelf) {
                 SwitchCanvas(inventoryCanvas, mainViewCanvas);
@@ -73,5 +74,7 @@ public class CanvasController : MonoBehaviour {
         newCanvas.SetActive(true);
         Debug.Log("New : " + newCanvas.name + " -> " + newCanvas.activeSelf);
         Debug.Log("Old : " + oldCanvas.name + " -> " + oldCanvas.activeSelf);
+        inventoryCanvas.SetActive(true);
+        Debug.Log("inventoryCanvas : " + inventoryCanvas.activeSelf);
     }
 }

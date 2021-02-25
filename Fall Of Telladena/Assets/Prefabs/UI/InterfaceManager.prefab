@@ -6945,6 +6945,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1538570051838809563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2689315123983000376}
+  m_Layer: 0
+  m_Name: ActiveInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2689315123983000376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538570051838809563}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 960, y: -540, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 2506125296686307201}
+  m_Father: {fileID: 8884832144379425794}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540322448202928527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7392,6 +7423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 1958100084365511201}
   inventoryUI: {fileID: 2444518123930574739}
+  cv: {fileID: 0}
 --- !u!1 &1928378201853269883
 GameObject:
   m_ObjectHideFlags: 0
@@ -10140,7 +10172,7 @@ GameObject:
   - component: {fileID: 2722883830317742637}
   - component: {fileID: 7568853506748246877}
   m_Layer: 5
-  m_Name: ItemsParent (1)
+  m_Name: ItemsParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10155,7 +10187,7 @@ RectTransform:
   m_GameObject: {fileID: 3392602530253405604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1281196513529247478}
   - {fileID: 6859100941016061561}
@@ -10163,13 +10195,13 @@ RectTransform:
   - {fileID: 9059890122038421494}
   - {fileID: 7507694008600753399}
   - {fileID: 8971690802274743581}
-  m_Father: {fileID: 8884832144379425794}
-  m_RootOrder: 4
+  m_Father: {fileID: 2689315123983000376}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -135, y: -320}
-  m_SizeDelta: {x: -270, y: -720}
+  m_SizeDelta: {x: 1371, y: 242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5123132562604233494
 CanvasRenderer:
@@ -16297,7 +16329,7 @@ RectTransform:
   - {fileID: 3547759731134858986}
   - {fileID: 2304184347715239576}
   - {fileID: 812336769697993887}
-  - {fileID: 2506125296686307201}
+  - {fileID: 2689315123983000376}
   - {fileID: 3989002198704713053}
   m_Father: {fileID: 1598024228003247132}
   m_RootOrder: 1
