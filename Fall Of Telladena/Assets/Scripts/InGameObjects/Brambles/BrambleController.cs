@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Authors : Manon
+ */
+
 using UnityEngine;
 
 public class BrambleController : MonoBehaviour
@@ -18,7 +20,7 @@ public class BrambleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myPlayerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        //myPlayerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         //normalVelocity = myPlayerMovement.speedWithBrambles;
         /*
         //Get the Renderer component from the new cube
@@ -101,9 +103,14 @@ public class BrambleController : MonoBehaviour
     {
         if (other.CompareTag("LightInput") || other.CompareTag("LightInputPlayer"))
         {
+            Debug.Log("Enter : " + other.tag);
             Disappear();
         }else if (other.CompareTag("ContactZoneBrambles"))
         {
+            if(myPlayerMovement == null)
+            {
+                myPlayerMovement = other.GetComponent<ContactZone>().player.GetComponent<PlayerMovement>();
+            }
             myPlayerMovement.speedWithBrambles = velocityInBrambles;
         }
     }
@@ -111,10 +118,14 @@ public class BrambleController : MonoBehaviour
     {
         if (other.CompareTag("LightInput") || other.CompareTag("LightInputPlayer"))
         {
-            Debug.Log("Exit light power !");
+            Debug.Log("Exit : " + other.tag);
             Appear();
         }else if (other.CompareTag("ContactZoneBrambles"))
         {
+            if (myPlayerMovement == null)
+            {
+                myPlayerMovement = other.GetComponent<ContactZone>().player.GetComponent<PlayerMovement>();
+            }
             myPlayerMovement.speedWithBrambles = normalVelocity;
         }
     }

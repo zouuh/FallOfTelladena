@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 7371402966011871570}
   - component: {fileID: 4310658025904534245}
   m_Layer: 0
-  m_Name: NoLightPlant
+  m_Name: Bramble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   - {fileID: 7371402965235747030}
   - {fileID: 7371402966278061222}
   - {fileID: 7371402967033447003}
+  normalVelocity: 10
   velocityInBrambles: 2
 --- !u!54 &7371402966011871570
 Rigidbody:
