@@ -40,6 +40,7 @@ public class InventoryUI : MonoBehaviour {
 		{
 			inventoryUI.SetActive(!inventoryUI.activeSelf);
 		}
+		/*
 		if (OnClick.result == true && verifBtn == true){
 			for (int i = 0; i < inventory.items.Count; i++)
 			{
@@ -51,8 +52,9 @@ public class InventoryUI : MonoBehaviour {
 				}
 			}
 		}	
+		*/
 		UpdateUI();
-		verifBtn = false;
+		//verifBtn = false;
 	}
 
 	// Update the inventory UI by:

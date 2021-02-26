@@ -11,7 +11,7 @@ public class ItemPickup : MonoBehaviour
     void PickUp()
     {
         Debug.Log("PickUP() : " + item.name);
-        Debug.Log("Inventory.instance.items.Count " + OnClick.test);
+       // Debug.Log("Inventory.instance.items.Count " + OnClick.test);
         // Debug.Log(item);
         bool wasPickedUp = Inventory.instance.Add(item);
         // Debug.Log(isPick);
