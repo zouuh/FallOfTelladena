@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d8bc6f6874b7d4299b2d2c2409c904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3406913326998158255}
 --- !u!54 &4228449477915201527
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1720,11 +1720,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8813314810974586833, guid: 36542fe89a844de44bec4596da82d4e4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8813314810974586833, guid: 36542fe89a844de44bec4596da82d4e4,
         type: 3}

@@ -9,7 +9,8 @@ public class BrambleController : MonoBehaviour
     public GameObject[] myParts;
     //public CharacterController myPlayer;
     PlayerMovement myPlayerMovement;
-    float normalVelocity;
+    [SerializeField]
+    float normalVelocity = 10f;
     [SerializeField]
     float velocityInBrambles = 2.0f;
     //public GameObject Player;
@@ -18,7 +19,7 @@ public class BrambleController : MonoBehaviour
     void Start()
     {
         myPlayerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        normalVelocity = myPlayerMovement.speedWithBrambles;
+        //normalVelocity = myPlayerMovement.speedWithBrambles;
         /*
         //Get the Renderer component from the new cube
         var myRenderer = GetComponent<Renderer>();
@@ -75,9 +76,20 @@ public class BrambleController : MonoBehaviour
         {
             myParts[i].SetActive(true);
         }
+        GetComponent<Animation>().Play("Bramble");
     }
 
     void Disappear()
+    {
+        /*
+        for (var i = 0; i < myParts.Length; ++i)
+        {
+            myParts[i].SetActive(false);
+        }
+        */
+        GetComponent<Animation>().Play("Bramble_reverse");
+    }
+    public void EndAnimation()
     {
         for (var i = 0; i < myParts.Length; ++i)
         {
@@ -90,9 +102,7 @@ public class BrambleController : MonoBehaviour
         if (other.CompareTag("LightInput") || other.CompareTag("LightInputPlayer"))
         {
             Disappear();
-        }
-
-        if (other.CompareTag("ContactZoneBrambles"))
+        }else if (other.CompareTag("ContactZoneBrambles"))
         {
             myPlayerMovement.speedWithBrambles = velocityInBrambles;
         }
@@ -101,10 +111,9 @@ public class BrambleController : MonoBehaviour
     {
         if (other.CompareTag("LightInput") || other.CompareTag("LightInputPlayer"))
         {
+            Debug.Log("Exit light power !");
             Appear();
-        }
-
-        if (other.CompareTag("ContactZoneBrambles"))
+        }else if (other.CompareTag("ContactZoneBrambles"))
         {
             myPlayerMovement.speedWithBrambles = normalVelocity;
         }
