@@ -39,13 +39,19 @@ public class InventoryUI : MonoBehaviour {
 		if (Input.GetButtonDown("Inventory"))
 		{
 			inventoryUI.SetActive(!inventoryUI.activeSelf);
-		}	
+		}
 		if (OnClick.result == true && verifBtn == true){
 			for (int i = 0; i < inventory.items.Count; i++)
 			{
-				slots[i].OnRemoveButton ();
+				if (inventory.items[i].activeInstance == false){
+					slots[i].OnRemoveButton ();
+				}
+				else {
+					inventory.items[i].amount -= 1;
+				}
 			}
 		}	
+		UpdateUI();
 		verifBtn = false;
 	}
 
@@ -58,7 +64,7 @@ public class InventoryUI : MonoBehaviour {
 		// Loop through all the slots
 		for (int i = 0; i < slots.Length; i++)
 		{
-			if (i < inventory.items.Count)	// If there is an item to add
+			if ((i < inventory.items.Count)&&(inventory.items[i].activeInstance == false))	// If there is an item to add
 			{
 				slots[i].AddItem(inventory.items[i]);	// Add it
 			} else

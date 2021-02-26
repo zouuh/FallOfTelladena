@@ -11,7 +11,7 @@ public class Item : ScriptableObject
 	public int amount = 0;                  // Amount of items
 	public Sprite icon = null;              // Item icon
 	public bool showInInventory = true;
-	
+	public bool activeInstance = false;
 
 	// Called when the item is pressed in the inventory
 	public virtual void Use()
