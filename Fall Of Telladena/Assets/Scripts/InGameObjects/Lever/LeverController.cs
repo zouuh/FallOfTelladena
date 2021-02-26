@@ -2,14 +2,15 @@
  * Authors : Manon
  */
 
+using System.Collections.Generic;
 using UnityEngine;
 
-public class LevierController : MonoBehaviour
+public class LeverController : MonoBehaviour
 {
     GameObject player = null;
 
     public GameObject myLever;
-    public Platform[] listOfPlatforms;
+    public List<Platform> listOfPlatforms = new List<Platform>();
     bool isInContact = false;
 
     [SerializeField]
@@ -72,7 +73,7 @@ public class LevierController : MonoBehaviour
         {
             if (hasRequiredTool())
             {
-                if (Input.GetButtonDown("Action"))
+                if (Input.GetButtonDown("Action") && listOfPlatforms.Find(x => x.animationEnd == false) == null)
                 {
                     changeAnimation();
                     player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
@@ -109,7 +110,7 @@ public class LevierController : MonoBehaviour
     void changeAnimation()
     {
         //Debug.Log("Play:" + currStep);
-        for(int i = 0; i < listOfPlatforms.Length; ++i)
+        for(int i = 0; i < listOfPlatforms.Count; ++i)
         {
             Debug.Log(listOfPlatforms[i]);
             Debug.Log(listOfPlatforms[i].currStep);
@@ -140,10 +141,18 @@ public class LevierController : MonoBehaviour
             keys[1] = new Keyframe(1.0f, key2);
             curve = new AnimationCurve(keys);
             clip.SetCurve("", typeof(Transform), "localPosition." + listOfPlatforms[i].axisToAnimate, curve);
-            //Debug.Log("localPosition." + axisToAnimate);
+
+            // new event created
+            AnimationEvent evt;
+            evt = new AnimationEvent();
+            evt.time = 1.0f; // same as key2 duration
+            evt.functionName = "EndAnimation";
+
+            clip.AddEvent(evt);
 
             myAnimation.AddClip(clip, clip.name);
             // Play custom animation
+            listOfPlatforms[i].animationEnd = false;
             myAnimation.Play(clip.name);
 
             ++listOfPlatforms[i].currStep;

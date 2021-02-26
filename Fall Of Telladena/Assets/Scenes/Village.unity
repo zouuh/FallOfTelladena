@@ -1999,6 +1999,7 @@ MonoBehaviour:
   currStep: 0
   stepSize: 1
   forwardOrBackward: -1
+  animationEnd: 1
 --- !u!111 &287566303
 Animation:
   m_ObjectHideFlags: 0
@@ -5095,7 +5096,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484553186}
-  m_LocalRotation: {x: -0.06360406, y: 0.9205883, z: -0.16912016, w: -0.34622273}
+  m_LocalRotation: {x: -0.06360406, y: 0.9205883, z: -0.16912019, w: -0.3462227}
   m_LocalPosition: {x: -10.245269, y: 6.1825457, z: -40.947098}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
@@ -5283,6 +5284,7 @@ MonoBehaviour:
   currStep: 0
   stepSize: 1
   forwardOrBackward: -1
+  animationEnd: 1
 --- !u!111 &501156433
 Animation:
   m_ObjectHideFlags: 0
@@ -8602,6 +8604,7 @@ MonoBehaviour:
   currStep: 0
   stepSize: 1
   forwardOrBackward: -1
+  animationEnd: 1
 --- !u!111 &1032765503
 Animation:
   m_ObjectHideFlags: 0
@@ -10558,12 +10561,12 @@ PrefabInstance:
     - target: {fileID: 2953074981376088603, guid: 1e1f55f204f4c6743915313352d30c70,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.16912016
+      value: -0.16912019
       objectReference: {fileID: 0}
     - target: {fileID: 2953074981376088603, guid: 1e1f55f204f4c6743915313352d30c70,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.34622273
+      value: -0.3462227
       objectReference: {fileID: 0}
     - target: {fileID: 2953074981376088603, guid: 1e1f55f204f4c6743915313352d30c70,
         type: 3}
@@ -13632,6 +13635,7 @@ MonoBehaviour:
   currStep: 0
   stepSize: 1
   forwardOrBackward: -1
+  animationEnd: 1
 --- !u!111 &1724621778
 Animation:
   m_ObjectHideFlags: 0
@@ -16747,6 +16751,7 @@ MonoBehaviour:
   currStep: 0
   stepSize: 1
   forwardOrBackward: 1
+  animationEnd: 1
 --- !u!33 &2187780102949487543
 MeshFilter:
   m_ObjectHideFlags: 0
