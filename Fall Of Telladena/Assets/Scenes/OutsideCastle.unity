@@ -3672,8 +3672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3a3de37f4514c4c9c6a75b214e22c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialScene: 
-  initialPosition: {x: 0, y: 0, z: 0}
   dialogueCanvas: {fileID: 0}
   mainInterfaceCanvas: {fileID: 0}
   dialogueId: 0
@@ -5083,12 +5081,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1442927446}
   m_Layer: 0
-  m_Name: Characters
+  m_Name: CharactersOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1442927446
 Transform:
   m_ObjectHideFlags: 0
@@ -5425,6 +5423,7 @@ MonoBehaviour:
   actualSceneName: OutsideCastle
   loadingScreen: {fileID: 0}
   slider: {fileID: 0}
+  mainCam: {fileID: 0}
 --- !u!65 &1513107441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5761,6 +5760,7 @@ MonoBehaviour:
   actualSceneName: OutsideCastle
   loadingScreen: {fileID: 0}
   slider: {fileID: 0}
+  mainCam: {fileID: 0}
 --- !u!1 &1558726923 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7515429101286732190, guid: 6aa4d0094f4efb7488032e63eb15e2e5,

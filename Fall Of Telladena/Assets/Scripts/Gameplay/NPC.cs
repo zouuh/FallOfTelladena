@@ -1,4 +1,6 @@
-﻿//ZOE
+﻿/* 
+ * Authors : Zoé 
+ */
 
 using UnityEngine;
 using UnityEditor;
@@ -59,11 +61,25 @@ public class NPC : MonoBehaviour
         return (dialogueId == id && hasSeenDialogue);
     }
 
-    void checkScene() {
+    public void checkScene() {
         if(SceneManager.GetActiveScene().name != scene) {
-            foreach(MeshRenderer rend in GetComponents<MeshRenderer>())
-            rend.enabled = false;
+            // GetComponent<Rigidbody>().useGravity = false;
+            foreach(Collider col in GetComponentsInChildren<Collider>()) {
+                col.enabled = false;
+            }
+            foreach(MeshRenderer rend in GetComponentsInChildren<MeshRenderer>()) {
+                rend.enabled = false;
+            }
             //gameObject.SetActive(false);
+        }
+        else {
+            // GetComponent<Rigidbody>().useGravity = true;
+            foreach(Collider col in GetComponentsInChildren<Collider>()) {
+                col.enabled = true;
+            }
+            foreach(MeshRenderer rend in GetComponentsInChildren<MeshRenderer>()) {
+                rend.enabled = true;
+            }
         }
     }
 

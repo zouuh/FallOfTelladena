@@ -74,4 +74,34 @@ public static class SaveSystem {
             return null;
         }
     }
+
+    // Save and load for StoryManager (same as player's functions)
+    public static void SaveStory(StoryManager story) {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/story.sol";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        StoryData data = new StoryData(story);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    public static StoryData LoadStory() {
+        string path = Application.persistentDataPath + "/story.sol";
+        // Debug.Log(path);
+        if (File.Exists(path)) {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            StoryData data = formatter.Deserialize(stream) as StoryData;
+            stream.Close();
+
+            return data;
+        }
+        else {
+            Debug.LogError("Save file not found in" + path);
+            return null;
+        }
+    }
 }

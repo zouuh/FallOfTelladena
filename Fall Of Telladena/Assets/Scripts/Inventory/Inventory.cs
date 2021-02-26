@@ -1,3 +1,7 @@
+/* 
+ * Authors : Amélia, Manon 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 
@@ -68,6 +72,18 @@ public class Inventory : MonoBehaviour {
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
+	}
+
+	public bool HasTool(string toolName, int amount)
+	{
+		foreach (Item item in items)
+        {
+			if (item.name == toolName && item.amount >= amount)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 

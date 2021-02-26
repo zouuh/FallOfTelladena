@@ -1,5 +1,5 @@
 ﻿/*
- * Authors : (Unity), Manon
+ * Authors : (Unity), Manon, Zoé
  */
 
 using UnityEngine;
@@ -22,10 +22,19 @@ public class DontDestroy : MonoBehaviour
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
+        if (this.gameObject.CompareTag("Characters")) {
+            SceneManager.sceneLoaded += CheckNpc;
+        }
     }
     //void Awake()
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SearchNewPosition();
+    }
+
+    void CheckNpc(Scene scene, LoadSceneMode mode) {
+        foreach(NPC npc in GetComponentsInChildren<NPC>()) {
+            npc.checkScene();
+        }
     }
 }

@@ -5264,17 +5264,17 @@ PrefabInstance:
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.4
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.339
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
@@ -5284,7 +5284,7 @@ PrefabInstance:
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.6427876
       objectReference: {fileID: 0}
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
@@ -5294,7 +5294,7 @@ PrefabInstance:
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7660445
       objectReference: {fileID: 0}
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
@@ -5309,7 +5309,7 @@ PrefabInstance:
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7210764068498196840, guid: 09e3c3bf02a168048827e68c7b2993f1,
         type: 3}
@@ -8596,37 +8596,37 @@ PrefabInstance:
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.35492
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.76
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.1682696
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6548261
+      value: -0.6427876
       objectReference: {fileID: 0}
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.75577956
+      value: 0.7660445
       objectReference: {fileID: 0}
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
@@ -8641,7 +8641,7 @@ PrefabInstance:
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -81.813
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8595067659878740151, guid: cef608f7e5596664dab24aa8aa76af9b,
         type: 3}
@@ -9321,12 +9321,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1826595894}
   m_Layer: 0
-  m_Name: Characters
+  m_Name: CharactersOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1826595894
 Transform:
   m_ObjectHideFlags: 0

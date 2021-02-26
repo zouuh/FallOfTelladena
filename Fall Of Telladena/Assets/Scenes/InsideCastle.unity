@@ -638,6 +638,7 @@ MonoBehaviour:
   actualSceneName: InsideCastle
   loadingScreen: {fileID: 0}
   slider: {fileID: 0}
+  mainCam: {fileID: 0}
 --- !u!1 &178927710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -480970952805598066, guid: bbcc8f9f9d15e564ea1bbfa5551b33d2,
@@ -2388,6 +2389,7 @@ MonoBehaviour:
   actualSceneName: InsideCastle
   loadingScreen: {fileID: 0}
   slider: {fileID: 0}
+  mainCam: {fileID: 0}
 --- !u!65 &961803459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3971,6 +3973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Castle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6b7a697afdd0b74bbe1178feccc1476,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6b7a697afdd0b74bbe1178feccc1476, type: 3}
@@ -8470,8 +8477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3a3de37f4514c4c9c6a75b214e22c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialScene: 
-  initialPosition: {x: 0, y: 0, z: 0}
   dialogueCanvas: {fileID: 0}
   mainInterfaceCanvas: {fileID: 0}
   dialogueId: 0
@@ -9886,12 +9891,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2076825047}
   m_Layer: 0
-  m_Name: Characters
+  m_Name: CharactersOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2076825047
 Transform:
   m_ObjectHideFlags: 0
@@ -10125,7 +10130,7 @@ PrefabInstance:
     - target: {fileID: 1508602911975419262, guid: 02b101aaccd038a45a62b2e16cf38674,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44.56
+      value: 44.55
       objectReference: {fileID: 0}
     - target: {fileID: 1508602911975419262, guid: 02b101aaccd038a45a62b2e16cf38674,
         type: 3}
