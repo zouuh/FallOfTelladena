@@ -86,6 +86,7 @@ public class Inventory : MonoBehaviour {
 
 	public bool hasTool(string toolName, int amount)
 	{
+		/*
 		foreach (Item item in items)
         {
 			if (item.name == toolName && item.amount >= amount)
@@ -93,7 +94,9 @@ public class Inventory : MonoBehaviour {
 				return true;
 			}
 		}
-		return false;
+		*/
+		Item result = items.Find(el => el.name == toolName && el.amount >= amount);
+		return (result != null ? true : false);
 	}
 
 

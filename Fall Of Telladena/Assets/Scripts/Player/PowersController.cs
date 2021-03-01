@@ -16,6 +16,7 @@ public class PowersController : MonoBehaviour
     bool isOnLight = false;
     bool isOnSerenity = false;
     float timeoutDestructor = 0;
+    public bool sameLightImpulse = false;
 
     //Fertility
     public GameObject particles;
@@ -53,8 +54,9 @@ public class PowersController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.A) && Inventory.instance.isUsingTool("GoldenFish"))
         {
+            sameLightImpulse = !sameLightImpulse;
             StartCoroutine(ActiveLightPower());
         }
 

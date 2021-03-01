@@ -549,6 +549,8 @@ GameObject:
   - component: {fileID: 2559909700045489915}
   - component: {fileID: 43216405861766047}
   - component: {fileID: 4316533877178262584}
+  - component: {fileID: 1141305457538685323}
+  - component: {fileID: 2211512870301080121}
   m_Layer: 0
   m_Name: Oksusu
   m_TagString: Player
@@ -660,6 +662,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastSafePosition: {x: 0, y: 0, z: 0}
+--- !u!114 &1141305457538685323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3406913326998158255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac30dca21844c74c8c96da751dee883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightPowerZone: {fileID: 4125502740269808565}
+  timerLightPower: 2
+  powerGraphicsSerenity: {fileID: 0}
+  secondsBeforeDestruction: 1
+  particles: {fileID: 0}
+  spawnPos: {fileID: 0}
+  listOfBridges: []
+--- !u!114 &2211512870301080121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3406913326998158255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5793aab43204a5441858d44a2b8f5384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3649201670282043962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1811,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36542fe89a844de44bec4596da82d4e4, type: 3}
+--- !u!1 &4125502740269808565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8813314810974586834, guid: 36542fe89a844de44bec4596da82d4e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4832245586729827431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4125502740269808566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8813314810974586833, guid: 36542fe89a844de44bec4596da82d4e4,
