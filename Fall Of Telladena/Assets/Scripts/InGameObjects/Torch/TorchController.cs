@@ -3,6 +3,9 @@
 public class TorchController : MonoBehaviour
 
 {
+    [SerializeField]
+    bool startOn = false;
+
     //Light myLight;
     public GameObject myLightZone;
     //public float timeBeforeNewLightInput;
@@ -15,13 +18,7 @@ public class TorchController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //myLight = GetComponent<Light>();
-        //myLightZone = GameObject.Find("LightPower");
-        myLightZone.SetActive(false);
-        //Get the Renderer component from the new cube
-        var myRenderer = GetComponent<Renderer>();
-        //Call SetColor using the shader property name "_Color" and setting the color to red
-        myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
+        SwitchLight(startOn);
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PowersController>();
     }
@@ -58,21 +55,9 @@ public class TorchController : MonoBehaviour
     }
     */
 
-    void SwitchLight()
+    void SwitchLight(bool isOn)
     {
-        if (hasReceivedLight)
-        {
-            myLightZone.SetActive(false);
-
-            //Get the Renderer component from the new cube
-            var myRenderer = GetComponent<Renderer>();
-            //Call SetColor using the shader property name "_Color" and setting the color to red
-            myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
-
-            hasReceivedLight = false;
-
-        }
-        else
+        if (isOn)
         {
             myLightZone.SetActive(true);
 
@@ -83,17 +68,28 @@ public class TorchController : MonoBehaviour
 
             hasReceivedLight = true;
         }
+        else
+        {
+            myLightZone.SetActive(false);
+
+            //Get the Renderer component from the new cube
+            var myRenderer = GetComponent<Renderer>();
+            //Call SetColor using the shader property name "_Color" and setting the color to red
+            myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
+
+            hasReceivedLight = false;
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LightInput") && Vector3.Distance(other.transform.position, transform.position) != 0)
         {
-            SwitchLight();
+            SwitchLight(true);
         }
         if (other.CompareTag("LightInputPlayer") && player.sameLightImpulse != sameLightImpulseTmp)
         {
-            SwitchLight();
+            SwitchLight(!hasReceivedLight);
             sameLightImpulseTmp = player.sameLightImpulse;
         }
     }
