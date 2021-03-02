@@ -22,35 +22,6 @@ public class CanvasController : MonoBehaviour
     GameObject loadingCanvas;
 
     void Start() {
-        // Canvas[] allCanvas = Resources.FindObjectsOfTypeAll<Canvas>();
-        // foreach (Canvas canvas in allCanvas) {
-        //     switch (canvas.name)
-        //     {
-        //         /*
-        //     case "MainInterfaceCanvas":
-        //         mainViewCanvas = canvas.gameObject;
-        //         break;
-        //     case "MapCanvas":
-        //         mapCanvas = canvas.gameObject;
-        //         break;
-        //         */
-        //         case "InventoryCanvas":
-        //             inventoryCanvas = canvas.gameObject;
-        //             break;
-        //         case "DialogueCanvas":
-        //             dialogueCanvas = canvas.gameObject;
-        //             break;
-        //         case "PauseCanvas":
-        //             pauseCanvas = canvas.gameObject;
-        //             break;
-        //         case "LoadingScreen":
-        //             loadingCanvas = canvas.gameObject;
-        //             break;
-        //         default :
-        //             // Debug.Log(canvas.name + " not linked ");
-        //             break;
-        //     }
-        // }
         loadingCanvas.SetActive(false);
     }
 

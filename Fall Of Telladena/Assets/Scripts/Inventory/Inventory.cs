@@ -1,5 +1,5 @@
 /* 
- * Authors : Amélia, Manon 
+ * Authors : Amélia, Manon, Zoé
  */
 
 using System.Collections;
@@ -56,11 +56,18 @@ public class Inventory : MonoBehaviour {
 			}
 			
 			else {
-				items.Add (item);
+				items.Add(item);
 			}
 			
 			if (onItemChangedCallback != null)
 				onItemChangedCallback.Invoke ();
+		}
+		return true;
+	}
+
+	public bool Add(Item item, int n) {
+		for(int i=0; i<n; i++) {
+			Add(item);
 		}
 		return true;
 	}
@@ -72,6 +79,12 @@ public class Inventory : MonoBehaviour {
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
+	}
+
+	public void Remove(Item item, int n) {
+		for(int i=0; i<n; i++) {
+			Remove(item);
+		}
 	}
 
 	public bool HasTool(string toolName, int amount)
