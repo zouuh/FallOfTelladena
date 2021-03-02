@@ -10,7 +10,7 @@ public class ActiveInventoryUI : MonoBehaviour
 
 	public static Inventory inventory;	// Our current inventory
 
-	InventorySlot[] slots;	// List of all the slots
+	ActiveInventorySlot[] slots;	// List of all the slots
 
 	void Start () {
         
@@ -18,7 +18,7 @@ public class ActiveInventoryUI : MonoBehaviour
 		//inventory.onItemChangedCallback += UpdateUI;	// Subscribe to the onItemChanged callback
 
 		// Populate our slots array
-		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+		slots = itemsParent.GetComponentsInChildren<ActiveInventorySlot>();
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
         foreach (string guid2 in guids2)
         {

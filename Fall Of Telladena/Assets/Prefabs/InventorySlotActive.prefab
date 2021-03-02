@@ -281,8 +281,8 @@ GameObject:
   m_Component:
   - component: {fileID: 569658932139130026}
   - component: {fileID: 6974485439283422372}
-  - component: {fileID: 5252318833880960973}
-  - component: {fileID: 3136835856662882593}
+  - component: {fileID: 4998430109545682494}
+  - component: {fileID: 6114093168502668454}
   m_Layer: 5
   m_Name: RemoveButton
   m_TagString: Untagged
@@ -317,7 +317,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5993607717534197526}
   m_CullTransparentMesh: 0
---- !u!114 &5252318833880960973
+--- !u!114 &4998430109545682494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3136835856662882593
+--- !u!114 &6114093168502668454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,7 +370,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -385,10 +385,21 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 0
-  m_TargetGraphic: {fileID: 5252318833880960973}
+  m_TargetGraphic: {fileID: 4998430109545682494}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8409110293635557332}
+        m_MethodName: OnRemoveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7583263269469896883
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1612258573094014945}
-  - component: {fileID: 2182267679399656353}
+  - component: {fileID: 8409110293635557332}
   m_Layer: 5
   m_Name: InventorySlotActive
   m_TagString: Untagged
@@ -428,7 +439,7 @@ RectTransform:
   m_AnchoredPosition: {x: -224.46515, y: 0.0004272461}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2182267679399656353
+--- !u!114 &8409110293635557332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -437,10 +448,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7583263269469896883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8ddec65a63a78b4994107ad5079567a, type: 3}
+  m_Script: {fileID: 11500000, guid: e32480ffac726774f905cd918968f278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 5647748819434295259}
-  removeButton: {fileID: 3136835856662882593}
+  removeButton: {fileID: 6114093168502668454}
   amountText: {fileID: 7029772377788237910}
-  descriptionText: {fileID: 0}

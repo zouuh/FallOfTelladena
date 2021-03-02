@@ -1,20 +1,19 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */
 
-public class InventorySlot : MonoBehaviour {
+public class ActiveInventorySlot : MonoBehaviour {
 
 	public Image icon;			// Reference to the Icon image
 	public Button removeButton;	// Reference to the remove button
 	public Text amountText;		// Reference to the Amount Text
-	public Text descriptionText;// Reference to the descrition Text
-
 	Item item;  // Current item in the slot
 
 	// Add item to the slot
 	public void AddItem (Item newItem)
 	{
+        Debug.Log("---------------------------------------------ActiveAddItem");
 		Debug.Log("AddItem");
 		item = newItem;
 
@@ -27,6 +26,7 @@ public class InventorySlot : MonoBehaviour {
 
 	// Print Amount text
 	public void PrintAmount(Item item){
+        Debug.Log("---------------------------------------------ActivePrintAmount");
 		if (item.amount > 1){
 			amountText.text = item.amount.ToString();
 		}
@@ -38,6 +38,7 @@ public class InventorySlot : MonoBehaviour {
 	// Clear the slot
 	public void ClearSlot ()
 	{
+        Debug.Log("---------------------------------------------ActiveClearSlot");
 		item = null;
 
 		icon.sprite = null;
@@ -52,7 +53,6 @@ public class InventorySlot : MonoBehaviour {
 		if (item.amount == 1){
 			item.amount = item.amount-1;
 			Inventory.instance.Remove(item);
-			descriptionText.text = " ";
 		}
 		
 		else {
@@ -60,19 +60,16 @@ public class InventorySlot : MonoBehaviour {
 			PrintAmount(item);
 		}
 
-		Debug.Log("---------------------------------------------OnRemoveButton");
+		Debug.Log("---------------------------------------------ActiveOnRemoveButton");
 	}
 
 	// Called when the item is pressed
 	public void UseItem ()
 	{
+        //Debug.Log("---------------------------------------------ActiveOnRemoveButton");
 		if (item != null)
 		{
 			item.Use();
-			descriptionText.text = item.name;
-		}
-		else {
-			descriptionText.text = " ";
 		}
 	}
 
