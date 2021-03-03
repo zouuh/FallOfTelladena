@@ -1,9 +1,39 @@
 fileFormatVersion: 2
-guid: 600535a08a37c3e49946adf4a14ddecb
+guid: 31ac6d8c92b5c434ab12ad6ee9befff7
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banners
+    second: {fileID: 2100000, guid: 37da31b2284233f4fb7c52ea2a4bdd41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomFloor
+    second: {fileID: 2100000, guid: 97719a4b78c09cf4e94a1d9788135f02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourMetallicLamps
+    second: {fileID: 2100000, guid: e9e8bd4c017e3f44f9c098b396f4b80a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourStairFloor
+    second: {fileID: 2100000, guid: b93b5d46a42378046b2dda7ee3371104, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourStairs
+    second: {fileID: 2100000, guid: 80243ef6f08c7df40bcb791bb0fbeb89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourStairsWalls
+    second: {fileID: 2100000, guid: d6248695b79903c45acd0be2ea846270, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
