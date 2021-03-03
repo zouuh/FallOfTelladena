@@ -1,12 +1,18 @@
-﻿using UnityEngine;
+﻿/*
+ * Authors : Manon
+ */
+
+using UnityEngine;
 
 public class FacingWaterZone : MonoBehaviour
 {
     [SerializeField]
-    string requiredToolName;
+    string requiredToolName; // Empty recipient
+    [SerializeField]
+    Item filledRecipient; // Filled recipient
 
     [SerializeField]
-    FloattingText floattingText;
+    public FloattingText floattingText; // public because used in RespawnZone
 
     bool isFacingWater = false;
 
@@ -20,6 +26,9 @@ public class FacingWaterZone : MonoBehaviour
                 {
                     // get water
                     Debug.Log("Get water.");
+
+                    Inventory.instance.RemoveByName(requiredToolName);
+                    Inventory.instance.Add(filledRecipient);
                 }
                 floattingText.activate();
             }

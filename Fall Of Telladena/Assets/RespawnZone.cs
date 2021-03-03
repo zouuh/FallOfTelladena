@@ -24,6 +24,7 @@ public class RespawnZone : MonoBehaviour
             {
                 other.gameObject.transform.position = other.gameObject.GetComponent<PlayerPositionManager>().lastSafePosition;
             }
+            other.GetComponentInChildren<FacingWaterZone>().floattingText.desactivate();
             other.gameObject.SetActive(true);
         }
     }

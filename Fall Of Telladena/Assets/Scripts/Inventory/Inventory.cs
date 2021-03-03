@@ -71,7 +71,22 @@ public class Inventory : MonoBehaviour {
 	// Remove an item
 	public void Remove(Item item)
 	{
-		items.Remove(item);
+		// items.Remove(item);
+		Item tmpItem = items.Find(el => el.name.Equals(item.name));
+        if (tmpItem != null)
+        {
+			--tmpItem.amount;
+			if(tmpItem.amount <= 0)
+            {
+				items.Remove(tmpItem);
+            }
+        }
+
+		if(!items.Exists(el => el.name.Equals(usedItem)))
+        {
+			// The item used as been removed
+			usedItem = null;
+        }
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
@@ -80,7 +95,22 @@ public class Inventory : MonoBehaviour {
 	// Remove an item by name
 	public void RemoveByName(string name)
 	{
-		items.Remove(items.Find(el => el.name.Equals(name)));
+		//items.Remove(items.Find(el => el.name.Equals(name)));
+		Item tmpItem = items.Find(el => el.name.Equals(name));
+		if (tmpItem != null)
+		{
+			--tmpItem.amount;
+			if (tmpItem.amount <= 0)
+			{
+				items.Remove(tmpItem);
+			}
+		}
+
+		if (!items.Exists(el => el.name.Equals(usedItem)))
+		{
+			// The item used as been removed
+			usedItem = null;
+		}
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
