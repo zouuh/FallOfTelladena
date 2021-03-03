@@ -1,4 +1,6 @@
-﻿//ZOE
+﻿/* 
+ * Authors : Zoé 
+ */
 
 using System.Collections;
 using System.Collections.Generic;

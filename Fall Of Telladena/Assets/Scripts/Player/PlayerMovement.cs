@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if(Input.GetKeyDown("tab")) {
-            Debug.Log("BOB");
             slide = !slide;
         }
 
