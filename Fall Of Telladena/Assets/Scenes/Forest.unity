@@ -2428,7 +2428,7 @@ GameObject:
   - component: {fileID: 324463433}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2445,6 +2445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf870ffbb828c8479b572f57e37d808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixedSpawnPos: 0
+  spawnPos: {fileID: 0}
 --- !u!65 &324463434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2513,7 +2515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324463432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -27, z: 0}
+  m_LocalPosition: {x: 0, y: -25.1, z: 0}
   m_LocalScale: {x: 250, y: 50, z: 250}
   m_Children: []
   m_Father: {fileID: 0}

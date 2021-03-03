@@ -30,7 +30,7 @@ public class PlatformAttach : MonoBehaviour
             //player.transform.localScale = Vector3.one;
             player.transform.localScale = tmpScale;
         }
-        else if(!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles"))
+        else if(!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles") && !other.CompareTag("FacingWaterZone"))
         {
             other.gameObject.transform.parent = myLedge.transform;
         }        
@@ -48,7 +48,7 @@ public class PlatformAttach : MonoBehaviour
             player.gameObject.transform.parent = null;
             DontDestroyOnLoad(player.gameObject); // important : avoid bug when deparenting from DontDestroyOnLoad Object
         }
-        else if (!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles"))
+        else if (!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles") && !other.CompareTag("FacingWaterZone"))
         {
             other.gameObject.transform.parent = null;
         }
