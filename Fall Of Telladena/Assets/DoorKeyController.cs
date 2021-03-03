@@ -14,6 +14,7 @@ public class NameAmountPair
 
 public class DoorKeyController : DoorController
 {
+    string id = "MazeDoorInOutsideStairs";
     bool isInContact = false;
     GameObject player = null;
 
@@ -22,6 +23,17 @@ public class DoorKeyController : DoorController
 
     [SerializeField]
     List<NameAmountPair> requiredToolsName = new List<NameAmountPair>();
+
+    [SerializeField]
+    bool consumeRequiredTools = false;
+
+    private void Start()
+    {
+        if (Inventory.instance.objectsThatHaveBeenConsumed.Contains(id))
+        {
+            requiredToolsName.Clear();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -68,6 +80,18 @@ public class DoorKeyController : DoorController
             floattingText.activate(missingTool);
             if (missingTool.Length <= 0 && Input.GetButtonDown("Action"))
             {
+                if (consumeRequiredTools)
+                {
+                    foreach (NameAmountPair item in requiredToolsName)
+                    {
+                        for(int n = 0; n < item.amount; ++n)
+                        {
+                            Inventory.instance.RemoveByName(item.name);
+                        }
+                    }
+                    requiredToolsName.Clear();
+                    Inventory.instance.objectsThatHaveBeenConsumed.Add(id);
+                }
                 open();
                 player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
             }

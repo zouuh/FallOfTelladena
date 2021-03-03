@@ -11338,9 +11338,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1465661849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa7fa798765467d4fb94e65e6b784e68, type: 3}
+  m_Script: {fileID: 11500000, guid: caf870ffbb828c8479b572f57e37d808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixedSpawnPos: 1
+  spawnPos: {fileID: 1145738703}
 --- !u!65 &1465661852
 BoxCollider:
   m_ObjectHideFlags: 0

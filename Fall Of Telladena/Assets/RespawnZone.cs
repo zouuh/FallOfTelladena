@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RespawnZone : MonoBehaviour
 {
+    [SerializeField]
+    bool fixedSpawnPos = false;
+    [SerializeField]
+    Transform spawnPos = null;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,7 +16,14 @@ public class RespawnZone : MonoBehaviour
         {
             Debug.Log("Player in water !");
             other.gameObject.SetActive(false);
-            other.gameObject.transform.position = other.gameObject.GetComponent<PlayerPositionManager>().lastSafePosition;
+            if (fixedSpawnPos)
+            {
+                other.gameObject.transform.position = spawnPos.position;
+            }
+            else
+            {
+                other.gameObject.transform.position = other.gameObject.GetComponent<PlayerPositionManager>().lastSafePosition;
+            }
             other.gameObject.SetActive(true);
         }
     }

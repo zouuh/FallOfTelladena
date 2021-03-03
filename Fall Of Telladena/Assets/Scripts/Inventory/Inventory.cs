@@ -35,6 +35,8 @@ public class Inventory : MonoBehaviour {
 
 	public string usedItem = ""; // the item the player is using now
 
+	public List<string> objectsThatHaveBeenConsumed = new List<string>(); // keep track of the objects that have consume objects and that can now be used forever
+
 	// Add a new item if enough room
 	public bool Add (Item item)
 	{
@@ -67,9 +69,18 @@ public class Inventory : MonoBehaviour {
 	}
 
 	// Remove an item
-	public void Remove (Item item)
+	public void Remove(Item item)
 	{
 		items.Remove(item);
+
+		if (onItemChangedCallback != null)
+			onItemChangedCallback.Invoke();
+	}
+
+	// Remove an item by name
+	public void RemoveByName(string name)
+	{
+		items.Remove(items.Find(el => el.name.Equals(name)));
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
