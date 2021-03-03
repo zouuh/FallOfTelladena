@@ -46,7 +46,7 @@ public class SceneLoader : MonoBehaviour
         while (!operation.isDone) {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             slider.value = progress;
-            Debug.Log(slider.value);
+            // Debug.Log(slider.value);
             if(slider.value == 1) {
                 loadingScreen.SetActive(false);
             }

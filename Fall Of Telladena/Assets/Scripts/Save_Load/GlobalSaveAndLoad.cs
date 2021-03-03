@@ -32,5 +32,6 @@ public class GlobalSaveAndLoad : MonoBehaviour {
             // npc.SetScene(npc.initialScene);
             // npc.SetPosition(npc.initialPosition);
         }
+        SaveGame();
     }
 }

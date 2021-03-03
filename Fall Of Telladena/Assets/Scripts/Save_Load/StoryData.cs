@@ -7,8 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class StoryData : MonoBehaviour
-{
+public class StoryData {
     //  Attributes
     public int inCrystalRoom;
     public int builtIrrigation;

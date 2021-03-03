@@ -48,6 +48,9 @@ public class NPC : MonoBehaviour
 
     public void SetScene(string newScene) {
         scene = newScene;
+        if(this.name == "Aïki") {
+            Debug.Log("Aïki scene is : " + scene);
+        }
     }
 
     public void SetPosition(Vector3 newPos) {
@@ -92,9 +95,6 @@ public class NPC : MonoBehaviour
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadNpcFile();
         this.LoadNPC();
-        // if(SceneManager.GetActiveScene().name != scene) {
-        //     gameObject.SetActive(false);
-        // }
         checkScene();
         
     }

@@ -125,22 +125,30 @@ public class StoryManager : MonoBehaviour {
         //Debug.Log("StoryManager");
         if(inCrystalRoom == 1) {  // --OK
             // The story begin 
+            Debug.Log("in crystal room");
             aiki.SetScene("OutsideCastle");
             aiki.SetDialogueID(1);
             aiki.SetPosition(new Vector3(-20f, -10.1379f, -10f));
+            // Debug.Log("aiki scene : " + aiki.scene);
             aiki.SaveNPC();
+            aiki.checkScene();
+            Debug.Log("aiki scene : " + aiki.scene);
+            // _________________________ Lancer la cinématique
         }
         if(aiki.HaveSeenDialogue(1)) {  // --OK
+            Debug.Log("Get principal quest");
             aiki.SetDialogueID(2);
             
         }
         /////////////////////// SERENITY QUEST ///////////////////////
         if(yoh.HaveSeenDialogue(0) && inCrystalRoom >= 1) {
+            Debug.Log("Had spoke to Yoh and begin serenity quest");
             // Oksusu need a Turbull
             yoh.SetDialogueID(1);
         }
         if(yoh.HaveSeenDialogue(1)) {
-            // Petit Dadet can give Oksusu a Turbull
+            // Gwang can give Oksusu a Turbull
+            Debug.Log("Gwang have turbull");
             gwang.SetDialogueID(1);
         }
         if(gwang.HaveSeenDialogue(1)) {
@@ -182,7 +190,7 @@ public class StoryManager : MonoBehaviour {
             migwa.SetDialogueID(4);
         }
         if(yoh.HaveSeenDialogue(5)) {
-            // Yoh give the potion to Oksusu
+            // Yoh give the stone to Oksusu
             Inventory.instance.Add(serenityStone);
             yoh.SetDialogueID(6);
         }
@@ -355,8 +363,6 @@ public class StoryManager : MonoBehaviour {
             // ________________ Ajouter la clef a l'inventaire 
             aleya.SetDialogueID(5);
         }
-
-        /////////////////////// BEAUTIFUL DRESS QUEST ///////////////////////
         
 
 

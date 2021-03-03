@@ -47,7 +47,7 @@ public class PlayerPositionManager : MonoBehaviour
     {
         Debug.Log("Refresh player!");
         SpawnPoints[] spawnPoints = FindObjectsOfType<SpawnPoints>();
-        Debug.Log(spawnPoints.Length);
+        //Debug.Log(spawnPoints.Length);
         foreach (SpawnPoints spawnPoint in spawnPoints)
         {
             if (spawnPoint.isMySpawnPoint(previousPlace))
