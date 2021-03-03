@@ -29,6 +29,7 @@ public class FacingWaterZone : MonoBehaviour
 
                     Inventory.instance.RemoveByName(requiredToolName);
                     Inventory.instance.Add(filledRecipient);
+                    Inventory.instance.ChangeActiveTool(filledRecipient);
                 }
                 floattingText.activate();
             }

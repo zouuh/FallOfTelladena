@@ -10,14 +10,24 @@ public class WaterPlatformController : MonoBehaviour
     int axisId;
     int currStep = 0;
     public int forwardOrBackward = 1; // 1 = forward, -1 = backward
-    CharacterController myPlayer;
+    public CharacterController myPlayer; // public because used by WaterPlatform
 
     // Animations
     Animator anim;
     Animation myAnimation;
     AnimationCurve curve;
     AnimationClip clip;
-    bool animationIsEnded = true;
+    public bool animationIsEnded = true; // public because used by WaterPlatform
+
+    bool isInContact = false;
+
+    [SerializeField]
+    FloattingText floattingText;
+
+    [SerializeField]
+    string requiredToolName; // Filled recipient
+    [SerializeField]
+    Item emptyRecipient; // Empty recipient
 
     private void Start()
     {
@@ -41,7 +51,7 @@ public class WaterPlatformController : MonoBehaviour
         }
 
     }
-
+    /*
     private void Update()
     {
         if (myAnimation.isPlaying)
@@ -57,7 +67,34 @@ public class WaterPlatformController : MonoBehaviour
             animationIsEnded = true;
         }
     }
-    void changeAnimation()
+    */
+    private void Update()
+    {
+        if (isInContact)
+        {
+            if (Inventory.instance.isUsingTool(requiredToolName))
+            {
+                if (Input.GetButtonDown("Action"))
+                {
+                    // get water
+                    Debug.Log("Drop water.");
+
+                    Inventory.instance.RemoveByName(requiredToolName);
+                    Inventory.instance.Add(emptyRecipient);
+                    Inventory.instance.ChangeActiveTool(emptyRecipient);
+
+                    ChangeAnimation();
+                }
+                floattingText.activate();
+            }
+            else
+            {
+                floattingText.activate(requiredToolName);
+            }
+        }
+    }
+
+    void ChangeAnimation()
     {
         // Block player
         myPlayer.enabled = false;
@@ -86,22 +123,21 @@ public class WaterPlatformController : MonoBehaviour
             Debug.Log("localPosition." + axisToAnimate);
 
             // Add event when animation end
-            // new event created 
-            /*
-            AnimationEvent evt;
-            evt = new AnimationEvent();
+            // new event created
+            AnimationEvent evt = new AnimationEvent();
             //AnimationEvent[] listOfEvts = new AnimationEvent[1];
             //listOfEvts[0] = evt;
 
-            evt.time = clip.length/2; // because animation lasts 1s
+            evt.time = clip.length; // because animation lasts 1s
             evt.functionName = "animationEnd";
             clip.AddEvent(evt);
-            */
+
             //clip.events = listOfEvts;
             //AnimationUtility.SetAnimationEvents(clip, listOfEvts);
 
             myAnimation.AddClip(clip, clip.name);
             //Debug.Log(myAnimation["Anim"].clip.events.Length);
+            animationIsEnded = false;
             // Play custom animation
             myAnimation.Play(clip.name);
             //yield return new WaitForSeconds(1.0f);
@@ -113,14 +149,16 @@ public class WaterPlatformController : MonoBehaviour
         ++currStep;
     }
 
-    void animationEnd()
+    /*
+    public void animationEnd()
     {
         Debug.Log("animation end");
         // free player
         myPlayer.enabled = true;
         // allow new water
-        //animationIsEnded = true;
+        animationIsEnded = true;
     }
+    */
 
     public void resetPosition()
     {
@@ -146,11 +184,32 @@ public class WaterPlatformController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+
+        if (other.CompareTag("ContactZone"))
+        {
+            isInContact = true;
+
+        }
+
+        /*
         if (other.CompareTag("Water") && animationIsEnded)
         {
             changeAnimation();
             Destroy(other.gameObject);
             
         }
+        */
     }
+
+    void OnTriggerExit(Collider other)
+    {
+
+        if (other.CompareTag("ContactZone"))
+        {
+            isInContact = false;
+            floattingText.desactivate();
+
+        }
+    }
+
 }
