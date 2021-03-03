@@ -26,7 +26,7 @@ public class WaterController : MonoBehaviour
             platformsToReset = GameObject.FindGameObjectsWithTag("WaterPlatform");
             foreach(GameObject platform in platformsToReset)
             {
-                platform.GetComponent<WaterPlatformController>().resetPosition();
+                platform.GetComponent<WaterPlatformController>().ResetPosition();
             }
 
             // end transition

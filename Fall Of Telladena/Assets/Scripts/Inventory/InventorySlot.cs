@@ -55,7 +55,7 @@ public class InventorySlot : MonoBehaviour {
 	{
 		if (item.amount == 1){
 			item.amount = item.amount-1;
-			Inventory.instance.Remove(item);
+			Inventory.instance.RemoveAll(item);
 			descriptionText.text = " ";
 		}
 		

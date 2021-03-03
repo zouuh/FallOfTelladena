@@ -160,10 +160,8 @@ public class WaterPlatformController : MonoBehaviour
     }
     */
 
-    public void resetPosition()
+    public void ResetPosition()
     {
-        Debug.Log("reset");
-
         // Create reset animation (one frame)
         AnimationClip clip = new AnimationClip();
         //clip = myAnimation.clip;

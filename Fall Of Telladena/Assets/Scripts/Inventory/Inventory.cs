@@ -116,6 +116,16 @@ public class Inventory : MonoBehaviour {
 			onItemChangedCallback.Invoke();
 	}
 
+
+	// Remove an item
+	public void RemoveAll(Item item)
+	{
+		items.Remove(item);
+
+		if (onItemChangedCallback != null)
+			onItemChangedCallback.Invoke();
+	}
+
 	public bool isUsingTool(string toolName)
 	{
 		if (usedItem == toolName)

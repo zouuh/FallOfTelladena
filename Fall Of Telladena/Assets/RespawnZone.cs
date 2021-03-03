@@ -9,6 +9,8 @@ public class RespawnZone : MonoBehaviour
     [SerializeField]
     Transform spawnPos = null;
 
+    GameObject[] platformsToReset;
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.tag);
@@ -19,6 +21,17 @@ public class RespawnZone : MonoBehaviour
             if (fixedSpawnPos)
             {
                 other.gameObject.transform.position = spawnPos.position;
+                other.gameObject.transform.rotation = spawnPos.rotation;
+
+                // reset platforms
+                if(platformsToReset == null)
+                {
+                    platformsToReset = GameObject.FindGameObjectsWithTag("WaterPlatform");
+                }
+                foreach (GameObject platform in platformsToReset)
+                {
+                    platform.GetComponent<WaterPlatformController>().ResetPosition();
+                }
             }
             else
             {
