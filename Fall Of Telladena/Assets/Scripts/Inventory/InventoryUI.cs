@@ -27,11 +27,13 @@ public class InventoryUI : MonoBehaviour {
 			Debug.Log(data.Length + " Assets");
 			foreach (Item o in data)
 			{
+				o.amount--;
 				if (o.amount >= 1){
 					inventory.Add(o);
 				}
 			}
         }
+
 	}
 	
 	void Update () {
