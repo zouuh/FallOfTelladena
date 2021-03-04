@@ -13,7 +13,6 @@ public class ActiveInventorySlot : MonoBehaviour {
 	// Add item to the slot
 	public void AddItem (Item newItem)
 	{
-        Debug.Log("---------------------------------------------ActiveAddItem");
 		Debug.Log("AddItem");
 		item = newItem;
 
@@ -26,7 +25,6 @@ public class ActiveInventorySlot : MonoBehaviour {
 
 	// Print Amount text
 	public void PrintAmount(Item item){
-        Debug.Log("---------------------------------------------ActivePrintAmount");
 		if (item.amount > 1){
 			amountText.text = item.amount.ToString();
 		}
@@ -38,8 +36,7 @@ public class ActiveInventorySlot : MonoBehaviour {
 	// Clear the slot
 	public void ClearSlot ()
 	{
-        Debug.Log("---------------------------------------------ActiveClearSlot");
-		item = null;
+        item = null;
 
 		icon.sprite = null;
 		icon.enabled = false;
@@ -60,13 +57,11 @@ public class ActiveInventorySlot : MonoBehaviour {
 			PrintAmount(item);
 		}
 
-		Debug.Log("---------------------------------------------ActiveOnRemoveButton");
 	}
 
 	// Called when the item is pressed
 	public void UseItem ()
 	{
-        //Debug.Log("---------------------------------------------ActiveOnRemoveButton");
 		if (item != null)
 		{
 			item.Use();

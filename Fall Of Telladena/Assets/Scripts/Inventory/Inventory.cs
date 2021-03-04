@@ -27,6 +27,8 @@ public class Inventory : MonoBehaviour {
 	// Our current list of items in the inventory
 	public List<Item> items = new List<Item>();
 
+	public List<Item> itemInvent = new List<Item>();
+
 	// Add a new item if enough room
 	public bool Add (Item item)
 	{
