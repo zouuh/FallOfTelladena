@@ -74,7 +74,7 @@ public class WaterPlatformController : MonoBehaviour
         {
             if (Inventory.instance.isUsingTool(requiredToolName))
             {
-                if (Input.GetButtonDown("Action"))
+                if (Input.GetButtonUp("Action"))
                 {
                     // get water
                     Debug.Log("Drop water.");

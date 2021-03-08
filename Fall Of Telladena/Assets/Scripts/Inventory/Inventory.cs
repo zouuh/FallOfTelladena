@@ -33,7 +33,7 @@ public class Inventory : MonoBehaviour {
 	// Our current list of items in the inventory
 	public List<Item> items = new List<Item>();
 
-	public string usedItem = ""; // the item the player is using now
+	public Item usedItem = null; // the item the player is using now
 
 	public List<string> objectsThatHaveBeenConsumed = new List<string>(); // keep track of the objects that have consume objects and that can now be used forever
 
@@ -72,17 +72,19 @@ public class Inventory : MonoBehaviour {
 	public void Remove(Item item)
 	{
 		// items.Remove(item);
-		Item tmpItem = items.Find(el => el.name.Equals(item.name));
-        if (tmpItem != null)
+		//Item tmpItem = items.Find(el => el.name.Equals(item.name));
+		Debug.Log("Removing !");
+        if (item != null)
         {
-			--tmpItem.amount;
-			if(tmpItem.amount <= 0)
+			--item.amount;
+			if(item.amount <= 0)
             {
-				items.Remove(tmpItem);
-            }
-        }
+				items.Remove(item);
+			}
+			Debug.Log("New amount ="+item.amount);
+		}
 
-		if(!items.Exists(el => el.name.Equals(usedItem)))
+		if(usedItem.amount <= 0)
         {
 			// The item used as been removed
 			usedItem = null;
@@ -128,7 +130,7 @@ public class Inventory : MonoBehaviour {
 
 	public bool isUsingTool(string toolName)
 	{
-		if (usedItem == toolName)
+		if (usedItem != null && usedItem.name == toolName)
 		{
 			return true;
 		}
@@ -154,7 +156,7 @@ public class Inventory : MonoBehaviour {
     {
         if (hasTool(newTool.name, 1))
 		{
-			usedItem = newTool.name;
+			usedItem.name = newTool.name;
 		}
     }
 

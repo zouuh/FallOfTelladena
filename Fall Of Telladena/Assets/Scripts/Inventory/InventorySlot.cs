@@ -16,6 +16,11 @@ public class InventorySlot : MonoBehaviour {
 
 	Item item;  // Current item in the slot
 
+	[SerializeField]
+	CanvasController canvasController; // needed to manage action infos when using a tool
+	[SerializeField]
+	ToolsManager toolsManager; // needed to display the item in Oksusu arms
+
 	// Add item to the slot
 	public void AddItem (Item newItem)
 	{
@@ -72,9 +77,16 @@ public class InventorySlot : MonoBehaviour {
 		{
 			item.Use();
 			descriptionText.text = item.name;
+            if (item.droppable)
+			{
+				canvasController.TurnOnActionCanvas("Drop");
+				toolsManager.CarryItem(true, item);
+			}
 		}
 		else {
-			Inventory.instance.usedItem = ""; // no item is used
+			Inventory.instance.usedItem = null; // no item is used
+			canvasController.TurnOffActionCanvas();
+			toolsManager.CarryItem(false, item);
 			descriptionText.text = " ";
 		}
 	}

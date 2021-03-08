@@ -54,7 +54,7 @@ public class PowersController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.A) && Inventory.instance.isUsingTool("GoldenFish"))
+        if (Input.GetButtonDown("Action") && Inventory.instance.isUsingTool("GoldenFish"))
         {
             sameLightImpulse = !sameLightImpulse;
             StartCoroutine(ActiveLightPower());

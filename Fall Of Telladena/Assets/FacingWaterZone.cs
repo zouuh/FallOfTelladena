@@ -1,7 +1,7 @@
 ﻿/*
  * Authors : Manon
  */
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class FacingWaterZone : MonoBehaviour
@@ -22,7 +22,7 @@ public class FacingWaterZone : MonoBehaviour
         {
             if (Inventory.instance.isUsingTool(requiredToolName))
             {
-                if (Input.GetButtonDown("Action"))
+                if (Input.GetButtonUp("Action"))
                 {
                     // get water
                     Debug.Log("Get water.");

@@ -13,6 +13,8 @@ public class Item : ScriptableObject
 	public int amount = 0;                  // Amount of items
 	public Sprite icon = null;              // Item icon
 	public bool showInInventory = true;
+	public bool droppable = false;
+	public GameObject prefab;
 
 	// the item the player is using now
 	//public bool isUsed = false;
@@ -25,7 +27,7 @@ public class Item : ScriptableObject
 		Debug.Log("Using : " + name);
 
 		// Tell the inventory we are using this item now
-		Inventory.instance.usedItem = name;
+		Inventory.instance.usedItem = this;
 		// Change the active bar to fit the new configuration
 		// ...
 	}

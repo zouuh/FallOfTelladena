@@ -18,6 +18,8 @@ public class LeverController : MonoBehaviour
 
     [SerializeField]
     string requiredToolName = "";
+    [SerializeField]
+    string actionName = "Use";
 
     /*
     public int nbOfSteps;
@@ -73,17 +75,19 @@ public class LeverController : MonoBehaviour
         {
             if (hasRequiredTool())
             {
-                if (Input.GetButtonDown("Action") && listOfPlatforms.Find(x => x.animationEnd == false) == null)
+                if (Input.GetButtonDown("Action") && listOfPlatforms.Find(x => x.animationEnd == false) == null && !player.GetComponent<ToolsManager>().usingATool)
                 {
                     changeAnimation();
                     player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
+                    player.GetComponent<ToolsManager>().StartCoroutine("UseTool");
                 }
-                floattingText.activate();
+                //floattingText.activate();
             }
             else
             {
-                floattingText.activate(requiredToolName);
+                //floattingText.activate(requiredToolName);
             }
+            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, requiredToolName);
         }
     }
     /*
@@ -171,11 +175,11 @@ public class LeverController : MonoBehaviour
 
             if (hasRequiredTool())
             {
-                floattingText.activate();
+                //floattingText.activate();
             }
             else
             {
-                floattingText.activate(requiredToolName);
+                //floattingText.activate(requiredToolName);
             }
 
             //changeAnimation();
@@ -194,7 +198,8 @@ public class LeverController : MonoBehaviour
         if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
-            floattingText.desactivate();
+            //floattingText.desactivate();
+            player.GetComponent<ToolsManager>().DeactivateActionInfo();
         }
     }
 }
