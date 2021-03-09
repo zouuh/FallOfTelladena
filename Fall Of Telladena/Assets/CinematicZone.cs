@@ -11,7 +11,10 @@ public class CinematicZone : MonoBehaviour
 {
     [SerializeField]
     bool playOnce = true;
-    bool hasPlayedOnce = false;
+    [SerializeField]
+    string cinematicName;
+
+    CinematicController cinematicController;
 
     [SerializeField]
     List<CinemachineVirtualCamera> virtualCameras = new List<CinemachineVirtualCamera>();
@@ -22,18 +25,31 @@ public class CinematicZone : MonoBehaviour
 
     private void Start()
     {
-        foreach(CinemachineVirtualCamera cam in virtualCameras)
+        cinematicController = GameObject.FindGameObjectWithTag("GameManager").GetComponent<CinematicController>();
+        if (cinematicController.CinematicPlayed.Contains(cinematicName))
         {
-            cam.enabled = false;
-            cam.Priority = 20;
+            RemoveEverything();
         }
+        else
+        {
+            foreach (CinemachineVirtualCamera cam in virtualCameras)
+            {
+                cam.enabled = false;
+                cam.Priority = 20;
+            }
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && (!hasPlayedOnce || !playOnce))
+        if (other.CompareTag("Player"))
         {
-            hasPlayedOnce = true;
+            if (playOnce)
+            {
+                cinematicController.CinematicPlayed.Add(cinematicName);
+
+            }
 
             if(player == null)
             {
@@ -86,7 +102,17 @@ public class CinematicZone : MonoBehaviour
 
         if (playOnce)
         {
-            Destroy(this);
+            RemoveEverything();
         }
+    }
+
+    void RemoveEverything()
+    {
+        foreach(CinemachineVirtualCamera cam in virtualCameras)
+        {
+            Destroy(cam.m_LookAt.gameObject);
+            Destroy(cam.gameObject);
+        }
+        Destroy(gameObject);
     }
 }
