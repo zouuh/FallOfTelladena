@@ -399,7 +399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4718157144893114523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_Children:
   - {fileID: 5565021096441810429}
@@ -417,7 +417,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4718157144893114521
 MonoBehaviour:
@@ -437,8 +437,8 @@ MonoBehaviour:
   forwardOrBackward: 1
   myPlayer: {fileID: 0}
   animationIsEnded: 1
-  floattingText: {fileID: 9201288306293676446}
   requiredToolName: GoldenCrown
+  actionName: Drop water
   emptyRecipient: {fileID: 11400000, guid: c93f3c9227f78fb40a42b9a91573654b, type: 2}
 --- !u!1 &8104353591950844099
 GameObject:

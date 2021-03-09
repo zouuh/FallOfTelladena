@@ -18,11 +18,13 @@ public class DoorKeyController : DoorController
     bool isInContact = false;
     GameObject player = null;
 
-    [SerializeField]
-    FloattingText floattingText;
+    //[SerializeField]
+    //FloattingText floattingText;
 
     [SerializeField]
     List<NameAmountPair> requiredToolsName = new List<NameAmountPair>();
+    [SerializeField]
+    string actionName = "Open";
 
     [SerializeField]
     bool consumeRequiredTools = false;
@@ -45,7 +47,8 @@ public class DoorKeyController : DoorController
                 player = other.GetComponent<ContactZone>().player;
             }
 
-            floattingText.activate(hasRequiredTool());
+            //floattingText.activate(hasRequiredTool());
+            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, null, requiredToolsName);
         }
     }
 
@@ -54,7 +57,8 @@ public class DoorKeyController : DoorController
         if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
-            floattingText.desactivate();
+            //floattingText.desactivate();
+            player.GetComponent<ToolsManager>().DeactivateActionInfo();
         }
     }
 
@@ -76,10 +80,13 @@ public class DoorKeyController : DoorController
     {
         if (isInContact)
         {
-            string missingTool = hasRequiredTool();
-            floattingText.activate(missingTool);
-            if (missingTool.Length <= 0 && Input.GetButtonDown("Action"))
+            //string missingTool = hasRequiredTool();
+            int missingTool = player.GetComponent<ToolsManager>().HasRequiredTools(requiredToolsName);
+            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, null, requiredToolsName);
+            //floattingText.activate(missingTool);
+            if (missingTool == -1 && Input.GetButtonDown("Action") && !player.GetComponent<ToolsManager>().usingATool)
             {
+                player.GetComponent<ToolsManager>().StartCoroutine("UseTool");
                 if (consumeRequiredTools)
                 {
                     foreach (NameAmountPair item in requiredToolsName)
@@ -94,6 +101,7 @@ public class DoorKeyController : DoorController
                 }
                 open();
                 player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
+                player.GetComponent<ToolsManager>().DeactivateActionInfo();
             }
         }
     }

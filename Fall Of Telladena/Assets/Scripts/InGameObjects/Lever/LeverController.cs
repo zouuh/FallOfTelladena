@@ -13,8 +13,8 @@ public class LeverController : MonoBehaviour
     public List<Platform> listOfPlatforms = new List<Platform>();
     bool isInContact = false;
 
-    [SerializeField]
-    FloattingText floattingText;
+    //[SerializeField]
+    //FloattingText floattingText;
 
     [SerializeField]
     string requiredToolName = "";

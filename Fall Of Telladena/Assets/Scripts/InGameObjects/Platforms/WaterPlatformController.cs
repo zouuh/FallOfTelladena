@@ -1,6 +1,8 @@
-﻿using UnityEngine;
-using UnityEditor;
-using System.Collections;
+﻿/*
+ * Authors : Manon
+ */
+
+using UnityEngine;
 
 public class WaterPlatformController : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class WaterPlatformController : MonoBehaviour
     int currStep = 0;
     public int forwardOrBackward = 1; // 1 = forward, -1 = backward
     public CharacterController myPlayer; // public because used by WaterPlatform
+    ToolsManager toolsManager;
 
     // Animations
     Animator anim;
@@ -21,17 +24,20 @@ public class WaterPlatformController : MonoBehaviour
 
     bool isInContact = false;
 
-    [SerializeField]
-    FloattingText floattingText;
+    //[SerializeField]
+    //FloattingText floattingText;
 
     [SerializeField]
     string requiredToolName; // Filled recipient
+    [SerializeField]
+    string actionName = "Drop water";
     [SerializeField]
     Item emptyRecipient; // Empty recipient
 
     private void Start()
     {
         myPlayer = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
+        toolsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
         myAnimation = myPlatform.GetComponent<Animation>();
         anim = myPlatform.GetComponent<Animator>();
         switch (axisToAnimate)
@@ -72,10 +78,12 @@ public class WaterPlatformController : MonoBehaviour
     {
         if (isInContact)
         {
+            toolsManager.ActivateActionInfo(actionName, requiredToolName);
             if (Inventory.instance.isUsingTool(requiredToolName))
             {
-                if (Input.GetButtonUp("Action"))
+                if (Input.GetButtonUp("Action") && !toolsManager.usingATool)
                 {
+                    toolsManager.StartCoroutine("UseTool");
                     // get water
                     Debug.Log("Drop water.");
 
@@ -84,12 +92,15 @@ public class WaterPlatformController : MonoBehaviour
                     Inventory.instance.ChangeActiveTool(emptyRecipient);
 
                     ChangeAnimation();
+
+                    toolsManager.CarryItem(true, emptyRecipient);
+                    toolsManager.DeactivateActionInfo();
                 }
-                floattingText.activate();
+                //floattingText.activate();
             }
             else
             {
-                floattingText.activate(requiredToolName);
+                //floattingText.activate(requiredToolName);
             }
         }
     }
@@ -205,7 +216,8 @@ public class WaterPlatformController : MonoBehaviour
         if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
-            floattingText.desactivate();
+            //floattingText.desactivate();
+            toolsManager.DeactivateActionInfo();
 
         }
     }

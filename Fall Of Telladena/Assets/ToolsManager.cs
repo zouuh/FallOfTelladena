@@ -1,8 +1,12 @@
-﻿using System.Collections;
+﻿/*
+ * Authors : Manon
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/** TODO : portes eau ronces **/
+/** TODO : eau ronces **/
 public class ToolsManager : MonoBehaviour
 {
     [SerializeField]
@@ -12,7 +16,7 @@ public class ToolsManager : MonoBehaviour
 
     public bool usingATool = false;
 
-    private void LateUpdate()
+    private void PostLateUpdate()
     {
         if(Input.GetButtonDown("Action") && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
         {
@@ -33,7 +37,7 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
-    bool HasRequiredTool(string requiredToolName)
+    bool IsUsingRequiredTool(string requiredToolName)
     {
         if (requiredToolName.Length <= 0)
         {
@@ -49,15 +53,38 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
-    public void ActivateActionInfo(string actionName, string requiredToolName = "")
+    public int HasRequiredTools(List<NameAmountPair> requiredTools)
     {
-        if(requiredToolName == null)
+        if(requiredTools != null)
         {
-            interfaceManager.TurnOnActionCanvas(actionName, requiredToolName, true);
+            for (int i = 0; i < requiredTools.Count; ++i)
+            {
+                if (!Inventory.instance.hasTool(requiredTools[i].name, requiredTools[i].amount))
+                {
+                    return i;
+                }
+            }
+        }        
+        return -1;
+    }
+
+    public void ActivateActionInfo(string actionName, string requiredUsingTool = "", List<NameAmountPair> requiredTools = null)
+    {
+        int idMissingTool = HasRequiredTools(requiredTools);
+        if (idMissingTool != -1)
+        {
+            interfaceManager.TurnOnActionCanvas(actionName, requiredTools[idMissingTool].name, false);
         }
         else
         {
-            interfaceManager.TurnOnActionCanvas(actionName, requiredToolName, HasRequiredTool(requiredToolName));
+            if (requiredUsingTool == null)
+            {
+                interfaceManager.TurnOnActionCanvas(actionName, requiredUsingTool, true);
+            }
+            else
+            {
+                interfaceManager.TurnOnActionCanvas(actionName, requiredUsingTool, IsUsingRequiredTool(requiredUsingTool));
+            }
         }
     }
 
@@ -82,7 +109,7 @@ public class ToolsManager : MonoBehaviour
         usingATool = false;
     }
 
-    public void CarryItem(bool carry, Item item)
+    public void CarryItem(bool carry, Item item = null)
     {
         if (carry)
         {
@@ -96,7 +123,7 @@ public class ToolsManager : MonoBehaviour
         }
         else
         {
-            Destroy(itemZone.GetChild(0));
+            Destroy(itemZone.GetChild(0).gameObject);
         }
     }
 }

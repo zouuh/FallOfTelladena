@@ -156,7 +156,7 @@ public class Inventory : MonoBehaviour {
     {
         if (hasTool(newTool.name, 1))
 		{
-			usedItem.name = newTool.name;
+			usedItem = newTool;
 		}
     }
 

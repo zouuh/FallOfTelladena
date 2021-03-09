@@ -13,6 +13,9 @@ public class TorchController : MonoBehaviour
     bool hasReceivedLight = false;
     bool sameLightImpulseTmp = false;
 
+    [SerializeField]
+    string requiredToolName = "LightStone";
+
     PowersController player;
 
     // Start is called before the first frame update
@@ -89,6 +92,14 @@ public class TorchController : MonoBehaviour
         }
         if (other.CompareTag("LightInputPlayer") && player.sameLightImpulse != sameLightImpulseTmp)
         {
+            if (myLightZone.activeSelf)
+            {
+                player.GetComponent<ToolsManager>().ActivateActionInfo("Turn off", requiredToolName);
+            }
+            else
+            {
+                player.GetComponent<ToolsManager>().ActivateActionInfo("Turn on", requiredToolName);
+            }
             SwitchLight(!hasReceivedLight);
             sameLightImpulseTmp = player.sameLightImpulse;
         }
