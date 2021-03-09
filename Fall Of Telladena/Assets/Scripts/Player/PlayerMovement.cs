@@ -4,11 +4,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
     // Public attributes
     
+    public float energy = 1;
 
     // Private attributes
     private bool slide = false;
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     private float maxCoef = 1f;
     private float speedCoef = 0;
 
+    private Slider energySlider;
     private Transform cam;
     private Animator animator;
     private CharacterController controller;
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         mainVueCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("MainInterfaceCanvas").gameObject;
+        energySlider = mainVueCanvas.GetComponentInChildren<Slider>();
     }
 
     void FixedUpdate() {
@@ -40,6 +44,11 @@ public class PlayerMovement : MonoBehaviour {
 
         // Get movement direction 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if(energy <= 0) {
+            slide = false;
+            energy = 0;
+        }
 
         // Active pick up animation if needed
         if(Input.GetKeyDown("left shift")) {
@@ -52,7 +61,9 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if(Input.GetKeyDown("tab")) {
-            slide = !slide;
+            if(energy > 0) {
+                slide = !slide;
+            }
         }
 
         // Only if player isn't picking up item or speaking to PNJ
@@ -94,6 +105,7 @@ public class PlayerMovement : MonoBehaviour {
                 // Get maxCoef depending on movement mode
                 if(slide) {
                     maxCoef = 1.8f;
+                    energy -= 0.05f * Time.deltaTime;
                 }
                 else {
                     maxCoef = 1f;
@@ -149,5 +161,10 @@ public class PlayerMovement : MonoBehaviour {
                 animator.SetFloat("speed", speedCoef);
             }
         }
+        // __________ DONNER LA VALEUR DU SLIDER A LA JAUGE D'ENERGIE
+        if(energy < 0) {
+            energy = 0;
+        }
+        energySlider.value = energy;
     }
 }
