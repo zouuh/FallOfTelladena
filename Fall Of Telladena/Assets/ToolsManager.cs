@@ -12,12 +12,13 @@ public class ToolsManager : MonoBehaviour
 
     public bool usingATool = false;
 
-    private void Update()
+    private void LateUpdate()
     {
         if(Input.GetButtonDown("Action") && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
         {
-            itemZone.GetChild(0).transform.Translate(0, 0, -.5f);
-            //itemZone.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+            Debug.Log("drop");
+            itemZone.GetChild(0).transform.Translate(0, 0, -.1f); // avoid bug
+            itemZone.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
             itemZone.GetChild(0).GetComponent<ItemPickup>().canPickUp = true;
             itemZone.DetachChildren();
             Inventory.instance.Remove(Inventory.instance.usedItem);
@@ -72,10 +73,12 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
-    public IEnumerable UseTool()
+    public IEnumerator UseTool()
     {
         usingATool = true;
+        Debug.Log("coroutine");
         yield return new WaitForSeconds(1f);
+        Debug.Log("coroutine end");
         usingATool = false;
     }
 
@@ -83,9 +86,13 @@ public class ToolsManager : MonoBehaviour
     {
         if (carry)
         {
+            if (itemZone.childCount > 0)
+            {
+                Destroy(itemZone.GetChild(0).gameObject);
+            }
             GameObject tmp = Instantiate(item.prefab, itemZone);
             tmp.GetComponent<ItemPickup>().canPickUp = false;
-            //tmp.GetComponent<Rigidbody>().isKinematic = true;
+            tmp.GetComponent<Rigidbody>().isKinematic = true;
         }
         else
         {
