@@ -21,13 +21,14 @@ public class InventoryUI : MonoBehaviour {
 		// Populate our slots array
 		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
+		Debug.Log("okokokok");
         foreach (string guid2 in guids2)
         {
 			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));
 			Debug.Log(data.Length + " Assets");
 			foreach (Item o in data)
 			{
-				o.amount--;
+				o.amount -= 2;
 				if (o.amount >= 1){
 					inventory.Add(o);
 				}

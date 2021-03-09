@@ -8,7 +8,7 @@ public class ActiveTool : MonoBehaviour
 
 
 	void Start () {
-        int  cmpt = 0;
+        //int  cmpt = 0;
         inventory = Inventory.instance;
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
         foreach (string guid2 in guids2)
@@ -22,10 +22,11 @@ public class ActiveTool : MonoBehaviour
 				/*if (o.amount >= 1){
 					inventory.Add(o);
 				}*/
-				if (cmpt == 0){
+				o.amount --;
+				/*if (cmpt == 0){
 					FromInventoryToActive(o);
-				}
-				cmpt++;
+				}*/
+				//cmpt++;
 				//Debug.Log(o);
 			}
         }   
