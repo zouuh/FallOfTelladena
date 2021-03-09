@@ -197,6 +197,7 @@ public class WaterPlatformController : MonoBehaviour
         if (other.CompareTag("ContactZone"))
         {
             isInContact = true;
+            other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = false;
 
         }
 
@@ -216,6 +217,7 @@ public class WaterPlatformController : MonoBehaviour
         if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
+            other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = true;
             //floattingText.desactivate();
             toolsManager.DeactivateActionInfo();
 

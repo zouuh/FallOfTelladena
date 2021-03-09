@@ -18,7 +18,7 @@ public class FacingWaterZone : MonoBehaviour
     [SerializeField]
     ToolsManager toolManager;
 
-    bool isFacingWater = false;
+    public bool isFacingWater = false;
 
     private void Update()
     {
