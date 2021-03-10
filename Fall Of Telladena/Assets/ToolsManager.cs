@@ -16,13 +16,8 @@ public class ToolsManager : MonoBehaviour
 
     public bool usingATool = false;
 
-    private void PostLateUpdate()
+    private void LateUpdate()
     {
-        Debug.Log("Drop ?");
-        Debug.Log(Input.GetButtonDown("Action"));
-        Debug.Log(Inventory.instance.usedItem != null);
-        Debug.Log(Inventory.instance.usedItem.droppable);
-        Debug.Log(!usingATool);
         if (Input.GetButtonDown("Action") && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
         {
             Debug.Log("drop");
