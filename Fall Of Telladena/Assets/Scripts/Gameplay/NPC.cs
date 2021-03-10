@@ -1,4 +1,6 @@
-﻿//ZOE
+﻿/* 
+ * Authors : Zoé 
+ */
 
 using UnityEngine;
 using UnityEditor;
@@ -9,8 +11,8 @@ using UnityEngine.SceneManagement;
 public class NPC : MonoBehaviour
 {
     // Public attributes
-    public string initialScene;
-    public Vector3 initialPosition;
+    //public string initialScene;
+    //public Vector3 initialPosition;
     public GameObject dialogueCanvas;
     public GameObject mainInterfaceCanvas;
 
@@ -46,6 +48,9 @@ public class NPC : MonoBehaviour
 
     public void SetScene(string newScene) {
         scene = newScene;
+        if(this.name == "Aïki") {
+            Debug.Log("Aïki scene is : " + scene);
+        }
     }
 
     public void SetPosition(Vector3 newPos) {
@@ -59,19 +64,38 @@ public class NPC : MonoBehaviour
         return (dialogueId == id && hasSeenDialogue);
     }
 
+    public void checkScene() {
+        if(SceneManager.GetActiveScene().name != scene) {
+            // GetComponent<Rigidbody>().useGravity = false;
+            foreach(Collider col in GetComponentsInChildren<Collider>()) {
+                col.enabled = false;
+            }
+            foreach(MeshRenderer rend in GetComponentsInChildren<MeshRenderer>()) {
+                rend.enabled = false;
+            }
+            //gameObject.SetActive(false);
+        }
+        else {
+            // GetComponent<Rigidbody>().useGravity = true;
+            foreach(Collider col in GetComponentsInChildren<Collider>()) {
+                col.enabled = true;
+            }
+            foreach(MeshRenderer rend in GetComponentsInChildren<MeshRenderer>()) {
+                rend.enabled = true;
+            }
+        }
+    }
+
     void Start() {
         myName = this.name;
         dialogueCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("DialogueCanvas").gameObject;
-        Debug.Log(dialogueCanvas);
         //FindObjectOfType<CanvasController>().dialogueCanvas;
         mainInterfaceCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("MainInterfaceCanvas").gameObject;
         dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadNpcFile();
         this.LoadNPC();
-        if(SceneManager.GetActiveScene().name != scene) {
-            gameObject.SetActive(false);
-        }
+        checkScene();
         
     }
 
@@ -114,7 +138,7 @@ public class NPC : MonoBehaviour
 
     static string[] ReadNpcFile() {
         // Path of this NPC's document
-        string path = "Assets/Documents/" + myName + ".txt";
+        string path = "Assets/Documents/Dialogue/" + myName + ".txt";
 
         StreamReader reader = new StreamReader(path);
 
@@ -152,5 +176,35 @@ public class NPC : MonoBehaviour
         position.y = data.position[1];
         position.z = data.position[2];
         transform.position = position;
+    }
+
+    public void ResetNPC() {
+
+        // Path of this NPC initial document
+        string path = "Assets/Documents/Initial/" + this.name + "Initial.txt";
+
+        StreamReader reader = new StreamReader(path);
+
+        reader.ReadLine();
+
+        // Set dialogue ID to 0
+        this.dialogueId = 0;
+        // Get the initial scene of the NPC
+        this.scene = reader.ReadLine();
+        // Get the initial position of the NPC
+        float posx = float.Parse(reader.ReadLine());
+        float posy = float.Parse(reader.ReadLine());
+        float posz = float.Parse(reader.ReadLine());
+        this.SetPosition(new Vector3(posx, posy, posz));
+        // Get the initial rotation
+        float rotx = float.Parse(reader.ReadLine());
+        float roty = float.Parse(reader.ReadLine());
+        float rotz = float.Parse(reader.ReadLine());
+        this.transform.rotation = new Quaternion(rotx, roty, rotz, 1);
+
+        reader.Close();
+
+        this.checkScene();
+        this.SaveNPC();
     }
 }

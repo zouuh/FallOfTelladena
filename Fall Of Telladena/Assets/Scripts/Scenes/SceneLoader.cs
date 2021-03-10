@@ -22,18 +22,20 @@ public class SceneLoader : MonoBehaviour
         slider = loadingScreen.GetComponentInChildren<Slider>();
     }
 
-    public void OnTriggerEnter()
+    public void OnTriggerEnter(Collider col)
     {
-        NPC[] characters = FindObjectsOfType<NPC>();
-        foreach (NPC pnj in characters) {
-            pnj.SaveNPC();
-        }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        if(col.CompareTag("Player")) {
+            NPC[] characters = FindObjectsOfType<NPC>();
+            foreach (NPC pnj in characters) {
+                pnj.SaveNPC();
+            }
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
 
-        //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
-        StartCoroutine(LoadAsynchronously(nextSceneName));
+            //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
+            StartCoroutine(LoadAsynchronously(nextSceneName));
+        }
     }
 
     IEnumerator LoadAsynchronously(string sceneName)    {
@@ -44,7 +46,7 @@ public class SceneLoader : MonoBehaviour
         while (!operation.isDone) {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             slider.value = progress;
-            Debug.Log(slider.value);
+            // Debug.Log(slider.value);
             if(slider.value == 1) {
                 loadingScreen.SetActive(false);
             }

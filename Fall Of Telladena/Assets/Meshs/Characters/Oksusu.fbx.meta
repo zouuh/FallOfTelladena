@@ -1,93 +1,58 @@
 fileFormatVersion: 2
-guid: 5a42f8748320564438e491c84f2942f2
+guid: a97431eb5467cc7469bb7b2db606173c
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -7541151421505854903
-    second: corps|Jump2
+      74: 703322725570780711
+    second: Armature|ClimbLadderAnimation
   - first:
-      74: -7030686378455966862
-    second: corps|Sliding
+      74: -8015573827971123036
+    second: Armature|JumpAnimation
   - first:
-      74: 3936545768891589879
-    second: corps|waiting
+      74: -9214461378265945980
+    second: Armature|PickUpAnimation
   - first:
-      74: -2372093987080039301
-    second: corps|Waiting2
+      74: 7402071543674178576
+    second: Armature|PushAnimation
   - first:
-      74: 2285813402658801117
-    second: corps|Walk
+      74: -4005463219817770956
+    second: Armature|RunAnimation
   - first:
-      74: -1576964902092063779
-    second: lower_clothes|Jump2
+      74: 3410912217022446861
+    second: Armature|SlideAnimation
   - first:
-      74: 811938230464550190
-    second: lower_clothes|Sliding
+      74: -8496673054275889727
+    second: Armature|UsePowerAnimation
   - first:
-      74: 3865191587492034523
-    second: lower_clothes|waiting
+      74: -4939380162320616177
+    second: Armature|WaitingAnimation
+  externalObjects:
   - first:
-      74: 4585502362150833643
-    second: lower_clothes|Waiting2
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bois
+    second: {fileID: 2100000, guid: a847cdc7ff5f98348b30feace60ddaf7, type: 2}
   - first:
-      74: -3495021992304767203
-    second: lower_clothes|Walk
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Corps
+    second: {fileID: 2100000, guid: 572e31f26cc9c5543bd84e47ebd2fd58, type: 2}
   - first:
-      74: 4781951162920444690
-    second: Armature|Jump
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Masque
+    second: {fileID: 2100000, guid: 97957f259d826824e82699777bfbba4c, type: 2}
   - first:
-      74: -1422011007694221501
-    second: Armature|Slide
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Medaillon
+    second: {fileID: 2100000, guid: 775a09990b90bb5409734752b9a0ad6a, type: 2}
   - first:
-      74: 73837518918158065
-    second: Armature|ascending_jump
-  - first:
-      74: -3765279866743892786
-    second: Armature|descending_jump
-  - first:
-      74: -5881577388716901297
-    second: Armature|end_jump
-  - first:
-      74: 1356150868493562102
-    second: Armature|full_jump
-  - first:
-      74: -1601028459545087361
-    second: Armature|Jump2
-  - first:
-      74: 5485498270205161018
-    second: Armature|Pick up
-  - first:
-      74: -7551964380084998518
-    second: Armature|Run
-  - first:
-      74: -1368983862868732575
-    second: Armature|Sliding
-  - first:
-      74: 2670215439520063003
-    second: Armature|start_jump
-  - first:
-      74: 4917175091499638653
-    second: Armature|test
-  - first:
-      74: 4634089074029213325
-    second: Armature|waiting
-  - first:
-      74: -8903901632051216501
-    second: Armature|Waiting
-  - first:
-      74: 3919985861630439109
-    second: Armature|Waiting.001
-  - first:
-      74: -4832513005233437826
-    second: Armature|Waiting2
-  - first:
-      74: -6555586141449979258
-    second: Armature|Waiting2.001
-  - first:
-      74: 8349542763059015795
-    second: Armature|Walk
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Robe
+    second: {fileID: 2100000, guid: 82c9c338e17d1324798d6686cd96ed28, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -116,8 +81,37 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Jump
-      takeName: Armature|ArmatureAction
+      name: Armature|ClimbLadderAnimation
+      takeName: Armature|ClimbLadderAnimation
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|JumpAnimation
+      takeName: Armature|JumpAnimation
       internalID: 0
       firstFrame: 0
       lastFrame: 23
@@ -145,37 +139,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Slide
-      takeName: Armature|ArmatureAction.001
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 30
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Pick up
-      takeName: Armature|Pick up
+      name: Armature|PickUpAnimation
+      takeName: Armature|PickUpAnimation
       internalID: 0
       firstFrame: 0
       lastFrame: 36
@@ -203,8 +168,37 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Run
-      takeName: Armature|Run
+      name: Armature|PushAnimation
+      takeName: Armature|PushAnimation
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|RunAnimation
+      takeName: Armature|RunAnimation
       internalID: 0
       firstFrame: 0
       lastFrame: 16
@@ -232,8 +226,66 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Waiting
-      takeName: Armature|Waiting
+      name: Armature|SlideAnimation
+      takeName: Armature|SlideAnimation
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|UsePowerAnimation
+      takeName: Armature|UsePowerAnimation
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|WaitingAnimation
+      takeName: Armature|WaitingAnimation
       internalID: 0
       firstFrame: 0
       lastFrame: 99

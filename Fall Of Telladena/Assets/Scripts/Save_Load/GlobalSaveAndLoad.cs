@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GlobalSaveAndLoad : MonoBehaviour {
+    StoryManager story;
     NPC[] allNpc;
     void Start() {
+        story = FindObjectOfType<StoryManager>();
         allNpc = Resources.FindObjectsOfTypeAll<NPC>();
     }
 
     public void SaveGame() {
+        story.SaveStory();
         foreach(NPC npc in allNpc) {
             npc.SaveNPC();
         }
@@ -16,15 +19,19 @@ public class GlobalSaveAndLoad : MonoBehaviour {
     }
 
     public void LoadGame() {
+        story.LoadStory();
         foreach(NPC npc in allNpc) {
             npc.LoadNPC();
         }
     }
 
     public void ResetGame() {
+        story.ResetStory();
         foreach(NPC npc in allNpc) {
-            npc.SetScene(npc.initialScene);
-            npc.SetPosition(npc.initialPosition);
+            npc.ResetNPC();
+            // npc.SetScene(npc.initialScene);
+            // npc.SetPosition(npc.initialPosition);
         }
+        SaveGame();
     }
 }

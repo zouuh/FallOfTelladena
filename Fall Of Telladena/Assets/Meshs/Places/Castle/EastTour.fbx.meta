@@ -1,0 +1,332 @@
+fileFormatVersion: 2
+guid: b792a0ed5d1f4b548a36b93881d3383e
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BallRoomChandelier.001
+    second: {fileID: 2100000, guid: 59d7c50f8479c264c8f3dffc3981fce3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BallRoomRopes.001
+    second: {fileID: 2100000, guid: 9b4e62135a5ab7c479bd7bd5ad647ab3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banners.002
+    second: {fileID: 2100000, guid: 37da31b2284233f4fb7c52ea2a4bdd41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookCover1.001
+    second: {fileID: 2100000, guid: 6459fe2efdf6e8d468a5e19bd03feb02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookCover2.001
+    second: {fileID: 2100000, guid: 096a85ca94de48c4cb5403d8d51ccecd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookCover3.001
+    second: {fileID: 2100000, guid: c32774e93f41014499966eb1812573e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookCover4.001
+    second: {fileID: 2100000, guid: b7e87b94537593e46a37c0ec510dbb10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookCover5.001
+    second: {fileID: 2100000, guid: 7e32ae04230fd70468d5cb188fd64b62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookCover6.001
+    second: {fileID: 2100000, guid: 26ab970522e587846852f556fffcb687, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPages.001
+    second: {fileID: 2100000, guid: 83b7bf4f32896444e9ea827a5d4872a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boxes.002
+    second: {fileID: 2100000, guid: 001e22ac1c5f6d4468d8a48f53143f01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CastleVase1.003
+    second: {fileID: 2100000, guid: da62eefc275b2944a98a0790ec9c4d6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CastleVase3.002
+    second: {fileID: 2100000, guid: 25708df21da05f845a9780f291aa6a64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBallRoomCeiling.001
+    second: {fileID: 2100000, guid: c8707f491b6a7c947a3ef8d47b1a9b82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomBed.001
+    second: {fileID: 2100000, guid: f952e70ea64473f40b98ceebd30ee6b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomCeiling.001
+    second: {fileID: 2100000, guid: c9e8050a945ccb642b8c472b84a7658e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomColumnCenter.001
+    second: {fileID: 2100000, guid: 4249543ebfd0c2748823d89690235854, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomDresser.001
+    second: {fileID: 2100000, guid: 54772b2397122ea4db655fa01fe05fa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomDressingTable.001
+    second: {fileID: 2100000, guid: e0389a32e53425149ae40ba4a213900c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomFloor.001
+    second: {fileID: 2100000, guid: 97719a4b78c09cf4e94a1d9788135f02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomStairs.001
+    second: {fileID: 2100000, guid: 2f75160160d5e764fb6b9098e53bf6bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomStool.001
+    second: {fileID: 2100000, guid: abfc91749a42a624396a98239f7181e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomWalls.001
+    second: {fileID: 2100000, guid: 82159acb664d80d47974528a7fcb7025, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourBedroomWardrobe.001
+    second: {fileID: 2100000, guid: 1b73def63a659b945ab83a8afd036a49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourFence.001
+    second: {fileID: 2100000, guid: 0fc0ff0d98e3ed84e8267e447e80a2af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourFenceTop.001
+    second: {fileID: 2100000, guid: 9cef1959e1aaa214a909fa9c9d89de7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourGroundFloorGround.001
+    second: {fileID: 2100000, guid: 444adaacb567e65439f33bce8ed17f7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourGroundFloorWalls.001
+    second: {fileID: 2100000, guid: 5ca3375eaaa82814282b86e90a7aec34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourMetallicLamps.001
+    second: {fileID: 2100000, guid: e9e8bd4c017e3f44f9c098b396f4b80a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObervatoryMagnifyingGlass.001
+    second: {fileID: 2100000, guid: d6b1419f312362246aa6f3aefdffab24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObesrvatoryBookshelf.002
+    second: {fileID: 2100000, guid: c05b4879d562a8343ac0c911b566ca3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryBookshelfOnPlatform.001
+    second: {fileID: 2100000, guid: 730003b933511e149ad18f970ad8c6b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryCeilling.001
+    second: {fileID: 2100000, guid: 53fdbd6af0e64ba42a8006c697edb251, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryCompass.001
+    second: {fileID: 2100000, guid: dfb8a8574203141449f2a841176bdca2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryDesk.001
+    second: {fileID: 2100000, guid: b88a3899acbcb7e41b311a1eee92898c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryDome.001
+    second: {fileID: 2100000, guid: 4a248c144118f644fb9f7c0bf5be2aad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryFenceTop.001
+    second: {fileID: 2100000, guid: 91600ff770ba83d468eafb544959a887, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryFloor.001
+    second: {fileID: 2100000, guid: 93d1c2f3d97a1ce448ca99403615ef25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryGlobe.001
+    second: {fileID: 2100000, guid: 1a77ea3824c140746ac253e055c5e0bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryPapers.001
+    second: {fileID: 2100000, guid: b73ed8f9bee7c5e47bc97a461abe81ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryPlatform.001
+    second: {fileID: 2100000, guid: e39e5c0879389094e9d80cb24ba9d98a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatorySundial.001
+    second: {fileID: 2100000, guid: 968da4addaf823845bc8010d14661b83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryTelescope.001
+    second: {fileID: 2100000, guid: 64e4b93e7516d7b4a81fb1bee62eb685, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourObservatoryWalls.001
+    second: {fileID: 2100000, guid: cd5b892b39db142439fa3edf7874d592, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourStairFloor.001
+    second: {fileID: 2100000, guid: b93b5d46a42378046b2dda7ee3371104, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourStairs.001
+    second: {fileID: 2100000, guid: 80243ef6f08c7df40bcb791bb0fbeb89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EastTourStairsWalls.001
+    second: {fileID: 2100000, guid: d6248695b79903c45acd0be2ea846270, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

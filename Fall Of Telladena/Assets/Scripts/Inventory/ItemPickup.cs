@@ -25,7 +25,7 @@ public class ItemPickup : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetButtonDown("Action"))
         {
             Debug.Log("JE PICK UP");
             PickUp();
