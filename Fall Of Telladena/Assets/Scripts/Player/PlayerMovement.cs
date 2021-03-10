@@ -1,5 +1,5 @@
 ﻿/*
- * Authors : ZOE, Manon
+ * Authors : Zoé, Manon
  */
 
 using System.Collections;
@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour {
     private float vSpeed = 0;
     private float maxSpeed = 10f;
     public float speedWithBrambles = 10f;  // public because needed in Brambles
-    private float vSpeed = 0;
     private float maxCoef = 1f;
     private float speedCoef = 0;
 

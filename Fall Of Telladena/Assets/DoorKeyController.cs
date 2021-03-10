@@ -67,7 +67,7 @@ public class DoorKeyController : DoorController
         string missingItem = "";
         foreach(NameAmountPair item in requiredToolsName)
         {
-            if (!Inventory.instance.hasTool(item.name, item.amount))
+            if (!Inventory.instance.HasTool(item.name, item.amount))
             {
                 missingItem = item.name;
             }

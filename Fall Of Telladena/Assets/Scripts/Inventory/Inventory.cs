@@ -167,7 +167,7 @@ public class Inventory : MonoBehaviour {
 
 	public void ChangeActiveTool(Item newTool)
     {
-        if (hasTool(newTool.name, 1))
+        if (HasTool(newTool.name, 1))
 		{
 			usedItem = newTool;
 		}

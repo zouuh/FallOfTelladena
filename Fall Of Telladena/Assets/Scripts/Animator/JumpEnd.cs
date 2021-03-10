@@ -22,9 +22,6 @@ public class JumpEnd : StateMachineBehaviour
         frame = 0;
         time = 0;
 
-    //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
         if (bimbopJumpZone == null)
         {
             bimbopJumpZone = FindObjectOfType<BimbopJumpZone>();

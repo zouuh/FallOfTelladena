@@ -18,7 +18,12 @@ public class ToolsManager : MonoBehaviour
 
     private void PostLateUpdate()
     {
-        if(Input.GetButtonDown("Action") && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
+        Debug.Log("Drop ?");
+        Debug.Log(Input.GetButtonDown("Action"));
+        Debug.Log(Inventory.instance.usedItem != null);
+        Debug.Log(Inventory.instance.usedItem.droppable);
+        Debug.Log(!usingATool);
+        if (Input.GetButtonDown("Action") && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
         {
             Debug.Log("drop");
             itemZone.GetChild(0).transform.Translate(0, 0, -.1f); // avoid bug
@@ -59,7 +64,7 @@ public class ToolsManager : MonoBehaviour
         {
             for (int i = 0; i < requiredTools.Count; ++i)
             {
-                if (!Inventory.instance.hasTool(requiredTools[i].name, requiredTools[i].amount))
+                if (!Inventory.instance.HasTool(requiredTools[i].name, requiredTools[i].amount))
                 {
                     return i;
                 }

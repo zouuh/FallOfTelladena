@@ -80,13 +80,13 @@ public class InventorySlot : MonoBehaviour {
             if (item.droppable)
 			{
 				canvasController.TurnOnActionCanvas("Drop");
-				toolsManager.CarryItem(true, item);
 			}
+			toolsManager.CarryItem(true, item);
 		}
 		else {
 			Inventory.instance.usedItem = null; // no item is used
 			canvasController.TurnOffActionCanvas();
-			toolsManager.CarryItem(false, item);
+			toolsManager.CarryItem(false);
 			descriptionText.text = " ";
 		}
 	}

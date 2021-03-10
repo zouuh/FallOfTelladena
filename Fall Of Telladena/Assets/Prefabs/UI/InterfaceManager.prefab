@@ -342,6 +342,7 @@ MonoBehaviour:
   amountText: {fileID: 5670311078567272995}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &186765527175439850
 GameObject:
   m_ObjectHideFlags: 0
@@ -5297,13 +5298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970bd8baf9a849047be15d12443bbce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionCanvas: {fileID: 3374813313043362910}
   mainViewCanvas: {fileID: 559243125893453894}
   mapCanvas: {fileID: 559243124755553420}
   inventoryCanvas: {fileID: 1598024228003247128}
   pauseCanvas: {fileID: 559243125762918687}
   dialogueCanvas: {fileID: 8038037927677994349}
   loadingCanvas: {fileID: 7259352711392973417}
+  actionCanvas: {fileID: 3374813313043362910}
 --- !u!114 &6033806586697977414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6702,6 +6703,7 @@ MonoBehaviour:
   amountText: {fileID: 4963008391520138741}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &1107543072218806508
 GameObject:
   m_ObjectHideFlags: 0
@@ -6758,6 +6760,7 @@ MonoBehaviour:
   amountText: {fileID: 5675029146181443121}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &1143028914472344053
 GameObject:
   m_ObjectHideFlags: 0
@@ -6814,6 +6817,7 @@ MonoBehaviour:
   amountText: {fileID: 8827747617186771840}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &1236529649012364054
 GameObject:
   m_ObjectHideFlags: 0
@@ -7286,6 +7290,7 @@ MonoBehaviour:
   amountText: {fileID: 9081227095993783866}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &1382113068727073068
 GameObject:
   m_ObjectHideFlags: 0
@@ -7416,6 +7421,7 @@ MonoBehaviour:
   amountText: {fileID: 4080007368925492022}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &1518003603290336301
 GameObject:
   m_ObjectHideFlags: 0
@@ -8116,7 +8122,7 @@ RectTransform:
   m_Children:
   - {fileID: 2206534276152067436}
   m_Father: {fileID: 559243125893453914}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8481,6 +8487,7 @@ MonoBehaviour:
   amountText: {fileID: 5353915178845615124}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &2024636270795562871
 GameObject:
   m_ObjectHideFlags: 0
@@ -8943,6 +8950,7 @@ MonoBehaviour:
   amountText: {fileID: 1141160117441393335}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &2211856394332955892
 GameObject:
   m_ObjectHideFlags: 0
@@ -10344,6 +10352,7 @@ MonoBehaviour:
   amountText: {fileID: 6226868621778370996}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &2799881416027958966
 GameObject:
   m_ObjectHideFlags: 0
@@ -10478,6 +10487,7 @@ MonoBehaviour:
   amountText: {fileID: 2946870120749276277}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &2948601705201905566
 GameObject:
   m_ObjectHideFlags: 0
@@ -11102,6 +11112,7 @@ MonoBehaviour:
   amountText: {fileID: 8968597259433297023}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &3279430637350646978
 GameObject:
   m_ObjectHideFlags: 0
@@ -11559,6 +11570,7 @@ MonoBehaviour:
   amountText: {fileID: 369231532343074455}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &3642962221559716558
 GameObject:
   m_ObjectHideFlags: 0
@@ -11929,6 +11941,7 @@ MonoBehaviour:
   amountText: {fileID: 5518357776239640352}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &3839075036280131947
 GameObject:
   m_ObjectHideFlags: 0
@@ -12674,6 +12687,7 @@ MonoBehaviour:
   amountText: {fileID: 5972398813254841480}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &4248184425966412845
 GameObject:
   m_ObjectHideFlags: 0
@@ -12937,6 +12951,7 @@ MonoBehaviour:
   amountText: {fileID: 6817684006716357445}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &4439027358183892734
 GameObject:
   m_ObjectHideFlags: 0
@@ -14157,6 +14172,7 @@ MonoBehaviour:
   amountText: {fileID: 1980047832133215995}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &4956130220320545433
 GameObject:
   m_ObjectHideFlags: 0
@@ -15816,6 +15832,7 @@ MonoBehaviour:
   amountText: {fileID: 6015866956299656030}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &5589065670953418696
 GameObject:
   m_ObjectHideFlags: 0
@@ -15950,6 +15967,7 @@ MonoBehaviour:
   amountText: {fileID: 5908105166627711573}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &5757424197719176945
 GameObject:
   m_ObjectHideFlags: 0
@@ -16080,6 +16098,7 @@ MonoBehaviour:
   amountText: {fileID: 8419129024604470863}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &5827072446195660382
 GameObject:
   m_ObjectHideFlags: 0
@@ -16618,6 +16637,7 @@ MonoBehaviour:
   amountText: {fileID: 3467958643696970599}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &6184331749392195778
 GameObject:
   m_ObjectHideFlags: 0
@@ -17033,6 +17053,7 @@ MonoBehaviour:
   amountText: {fileID: 1840062454433098367}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &6561509886517046055
 GameObject:
   m_ObjectHideFlags: 0
@@ -18932,6 +18953,7 @@ MonoBehaviour:
   amountText: {fileID: 3441054628404149437}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &7311879020916455799
 GameObject:
   m_ObjectHideFlags: 0
@@ -20017,6 +20039,7 @@ MonoBehaviour:
   amountText: {fileID: 3066695387235455832}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &7752968555938415426
 GameObject:
   m_ObjectHideFlags: 0
@@ -20073,6 +20096,7 @@ MonoBehaviour:
   amountText: {fileID: 1239518986854653585}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &7837784916528978379
 GameObject:
   m_ObjectHideFlags: 0
@@ -20956,6 +20980,7 @@ MonoBehaviour:
   amountText: {fileID: 9055250861903699828}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &8074651487939774530
 GameObject:
   m_ObjectHideFlags: 0
@@ -21076,8 +21101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: 0, z: 0, w: 0}
-  m_Softness: {x: 0, y: 0}
 --- !u!1 &8104593682970534619
 GameObject:
   m_ObjectHideFlags: 0
@@ -21597,6 +21620,7 @@ MonoBehaviour:
   amountText: {fileID: 4616262024746334265}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &8264266615194818469
 GameObject:
   m_ObjectHideFlags: 0
@@ -21783,6 +21807,7 @@ MonoBehaviour:
   amountText: {fileID: 3536480083110140782}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 559243125932648848}
+  toolsManager: {fileID: 0}
 --- !u!1 &8331403764959210219
 GameObject:
   m_ObjectHideFlags: 0
@@ -22836,6 +22861,7 @@ MonoBehaviour:
   amountText: {fileID: 8163280105553328438}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &8874949300453650696
 GameObject:
   m_ObjectHideFlags: 0
@@ -22892,6 +22918,7 @@ MonoBehaviour:
   amountText: {fileID: 7339580887709933116}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &8888195500294068633
 GameObject:
   m_ObjectHideFlags: 0
@@ -23110,8 +23137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: 0, z: 0, w: 0}
-  m_Softness: {x: 0, y: 0}
 --- !u!114 &6222376405696487305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23415,6 +23440,7 @@ MonoBehaviour:
   amountText: {fileID: 8657319177058536250}
   descriptionText: {fileID: 7855809574211134711}
   canvasController: {fileID: 0}
+  toolsManager: {fileID: 0}
 --- !u!1 &9189296465767797889
 GameObject:
   m_ObjectHideFlags: 0
