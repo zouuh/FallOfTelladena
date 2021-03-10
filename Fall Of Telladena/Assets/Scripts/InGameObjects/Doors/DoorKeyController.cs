@@ -49,6 +49,7 @@ public class DoorKeyController : DoorController
             }
 
             //floattingText.activate(hasRequiredTool());
+            player.GetComponent<ToolsManager>().canDrop = false;
             player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, null, requiredToolsName);
         }
     }
@@ -59,6 +60,7 @@ public class DoorKeyController : DoorController
         {
             isInContact = false;
             //floattingText.desactivate();
+            player.GetComponent<ToolsManager>().canDrop = true;
             player.GetComponent<ToolsManager>().DeactivateActionInfo();
         }
     }

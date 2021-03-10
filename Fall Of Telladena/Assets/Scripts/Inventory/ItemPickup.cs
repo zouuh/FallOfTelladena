@@ -31,6 +31,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.CompareTag("ContactZone") && canPickUp)
         {
+            toolsManager.canDrop = false;
             toolsManager.ActivateActionInfo("Take " + item.name);
             isInContact = true;
         }
@@ -40,6 +41,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.CompareTag("ContactZone"))
         {
+            toolsManager.canDrop = true;
             toolsManager.DeactivateActionInfo();
             isInContact = false;
         }

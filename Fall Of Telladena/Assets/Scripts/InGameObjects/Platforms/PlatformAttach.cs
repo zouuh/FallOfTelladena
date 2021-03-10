@@ -17,7 +17,7 @@ public class PlatformAttach : MonoBehaviour
         {
             myChildObjects[i].transform.parent = myLedge.transform;
         }*/
-        if (other.CompareTag("ContactZone"))
+        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
         {
             if(player == null)
             {
@@ -39,7 +39,7 @@ public class PlatformAttach : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("ContactZone"))
+        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
         {
             if (player == null)
             {

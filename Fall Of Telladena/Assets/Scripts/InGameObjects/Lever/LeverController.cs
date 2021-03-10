@@ -172,6 +172,7 @@ public class LeverController : MonoBehaviour
             {
                 player = other.GetComponent<ContactZone>().player;
             }
+            player.GetComponent<ToolsManager>().canDrop = false;
 
             if (hasRequiredTool())
             {
@@ -198,6 +199,7 @@ public class LeverController : MonoBehaviour
         if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
         {
             isInContact = false;
+            player.GetComponent<ToolsManager>().canDrop = true;
             //floattingText.desactivate();
             player.GetComponent<ToolsManager>().DeactivateActionInfo();
         }

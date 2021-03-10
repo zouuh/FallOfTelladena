@@ -194,9 +194,10 @@ public class WaterPlatformController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("ContactZone"))
+        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
         {
             isInContact = true;
+            toolsManager.canDrop = false;
             other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = false;
 
         }
@@ -214,9 +215,10 @@ public class WaterPlatformController : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
 
-        if (other.CompareTag("ContactZone"))
+        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
         {
             isInContact = false;
+            toolsManager.canDrop = true;
             other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = true;
             //floattingText.desactivate();
             toolsManager.DeactivateActionInfo();
