@@ -5,6 +5,9 @@ public class ItemPickup : MonoBehaviour
     //public Transform dest;
     bool isPickedUp = false;
     MovementInput playerMovementInput;
+    ToolsManager toolsManager;
+    public bool canPickUp = true;
+    bool isInContact;
 
     public Item item;
 
@@ -21,15 +24,49 @@ public class ItemPickup : MonoBehaviour
     void Start()
     {
         playerMovementInput = GameObject.Find("Oksusu").GetComponent<MovementInput>();
+        toolsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ContactZone") && canPickUp)
+        {
+            toolsManager.ActivateActionInfo("Take " + item.name);
+            isInContact = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("ContactZone"))
+        {
+            toolsManager.DeactivateActionInfo();
+            isInContact = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (isInContact && Input.GetButtonDown("Action") && canPickUp && !toolsManager.usingATool)
+        {
+            Debug.Log("JE PICK UP");
+            toolsManager.StartCoroutine("UseTool");
+            PickUp();
+            isPickedUp = true;
+            toolsManager.DeactivateActionInfo();
+        }
+    }
+    /*
     void OnTriggerStay(Collider other)
     {
-        if (Input.GetButtonDown("Action"))
+        if (other.CompareTag("ContactZone") && Input.GetKeyDown(KeyCode.I) && canPickUp)
         {
             Debug.Log("JE PICK UP");
             PickUp();
             isPickedUp = true;
+            toolsManager.DeactivateActionInfo();
+            toolsManager.StartCoroutine("UseTool");
         }
     }
+    */
 }

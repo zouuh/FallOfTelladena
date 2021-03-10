@@ -20,6 +20,8 @@ public class CanvasController : MonoBehaviour
     GameObject dialogueCanvas;
     [SerializeField]
     GameObject loadingCanvas;
+    [SerializeField]
+    ActionCanvas actionCanvas;
 
     void Start() {
         loadingCanvas.SetActive(false);
@@ -66,5 +68,15 @@ public class CanvasController : MonoBehaviour
         newCanvas.SetActive(true);
         Debug.Log("New : " + newCanvas.name + " -> " + newCanvas.activeSelf);
         Debug.Log("Old : " + oldCanvas.name + " -> " + oldCanvas.activeSelf);
+    }
+
+    public void TurnOnActionCanvas(string actionName="Use", string tool = "", bool active = true)
+    {
+        actionCanvas.UpdateText(actionName, tool, active);
+        actionCanvas.gameObject.SetActive(true);
+    }
+    public void TurnOffActionCanvas()
+    {
+        actionCanvas.gameObject.SetActive(false);
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class JumpEnd : StateMachineBehaviour
 {
+    public BimbopJumpZone bimbopJumpZone = null;
+    public PlayerPositionManager playerPositionManager = null;
     private CharacterController controller;
     //public Animation animation;
     int frame = 0;
@@ -19,6 +21,20 @@ public class JumpEnd : StateMachineBehaviour
         }
         frame = 0;
         time = 0;
+
+    //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (bimbopJumpZone == null)
+        {
+            bimbopJumpZone = FindObjectOfType<BimbopJumpZone>();
+        }
+        if (playerPositionManager == null)
+        {
+            playerPositionManager = FindObjectOfType<PlayerPositionManager>().GetComponent<PlayerPositionManager>();
+        }
+        playerPositionManager.SaveLastPosition();
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -42,6 +58,22 @@ public class JumpEnd : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (bimbopJumpZone != null && !bimbopJumpZone.caveIsOpen) // only usefull until cave is open
+        {
+            if (bimbopJumpZone.isInZone)
+            {
+                if (bimbopJumpZone.timer > 0f)
+                {
+                    bimbopJumpZone.AddJump();
+                }
+                else
+                {
+                    bimbopJumpZone.ResetJump();
+                }
+                bimbopJumpZone.ResetTimer();
+            }
+        }
+        
         controller.center = new Vector3(0, 0.65f, 0);
         animator.SetBool("jump", false);
     }

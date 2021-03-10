@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*
+ * Authors : Amélia, Manon
+ */
+
+using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */
@@ -11,6 +15,11 @@ public class InventorySlot : MonoBehaviour {
 	public Text descriptionText;// Reference to the descrition Text
 
 	Item item;  // Current item in the slot
+
+	[SerializeField]
+	CanvasController canvasController; // needed to manage action infos when using a tool
+	[SerializeField]
+	ToolsManager toolsManager; // needed to display the item in Oksusu arms
 
 	// Add item to the slot
 	public void AddItem (Item newItem)
@@ -51,7 +60,7 @@ public class InventorySlot : MonoBehaviour {
 	{
 		if (item.amount == 1){
 			item.amount = item.amount-1;
-			Inventory.instance.Remove(item);
+			Inventory.instance.RemoveAll(item);
 			descriptionText.text = " ";
 		}
 		
@@ -68,8 +77,16 @@ public class InventorySlot : MonoBehaviour {
 		{
 			item.Use();
 			descriptionText.text = item.name;
+            if (item.droppable)
+			{
+				canvasController.TurnOnActionCanvas("Drop");
+				toolsManager.CarryItem(true, item);
+			}
 		}
 		else {
+			Inventory.instance.usedItem = null; // no item is used
+			canvasController.TurnOffActionCanvas();
+			toolsManager.CarryItem(false, item);
 			descriptionText.text = " ";
 		}
 	}

@@ -1,6 +1,8 @@
-﻿using UnityEngine;
-using UnityEditor;
-using System.Collections;
+﻿/*
+ * Authors : Manon
+ */
+
+using UnityEngine;
 
 public class WaterPlatformController : MonoBehaviour
 {
@@ -10,18 +12,32 @@ public class WaterPlatformController : MonoBehaviour
     int axisId;
     int currStep = 0;
     public int forwardOrBackward = 1; // 1 = forward, -1 = backward
-    CharacterController myPlayer;
+    public CharacterController myPlayer; // public because used by WaterPlatform
+    ToolsManager toolsManager;
 
     // Animations
     Animator anim;
     Animation myAnimation;
     AnimationCurve curve;
     AnimationClip clip;
-    bool animationIsEnded = true;
+    public bool animationIsEnded = true; // public because used by WaterPlatform
+
+    bool isInContact = false;
+
+    //[SerializeField]
+    //FloattingText floattingText;
+
+    [SerializeField]
+    string requiredToolName; // Filled recipient
+    [SerializeField]
+    string actionName = "Drop water";
+    [SerializeField]
+    Item emptyRecipient; // Empty recipient
 
     private void Start()
     {
         myPlayer = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
+        toolsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
         myAnimation = myPlatform.GetComponent<Animation>();
         anim = myPlatform.GetComponent<Animator>();
         switch (axisToAnimate)
@@ -41,7 +57,7 @@ public class WaterPlatformController : MonoBehaviour
         }
 
     }
-
+    /*
     private void Update()
     {
         if (myAnimation.isPlaying)
@@ -57,7 +73,39 @@ public class WaterPlatformController : MonoBehaviour
             animationIsEnded = true;
         }
     }
-    void changeAnimation()
+    */
+    private void Update()
+    {
+        if (isInContact)
+        {
+            toolsManager.ActivateActionInfo(actionName, requiredToolName);
+            if (Inventory.instance.isUsingTool(requiredToolName))
+            {
+                if (Input.GetButtonUp("Action") && !toolsManager.usingATool)
+                {
+                    toolsManager.StartCoroutine("UseTool");
+                    // get water
+                    Debug.Log("Drop water.");
+
+                    Inventory.instance.RemoveByName(requiredToolName);
+                    Inventory.instance.Add(emptyRecipient);
+                    Inventory.instance.ChangeActiveTool(emptyRecipient);
+
+                    ChangeAnimation();
+
+                    toolsManager.CarryItem(true, emptyRecipient);
+                    toolsManager.DeactivateActionInfo();
+                }
+                //floattingText.activate();
+            }
+            else
+            {
+                //floattingText.activate(requiredToolName);
+            }
+        }
+    }
+
+    void ChangeAnimation()
     {
         // Block player
         myPlayer.enabled = false;
@@ -86,22 +134,21 @@ public class WaterPlatformController : MonoBehaviour
             Debug.Log("localPosition." + axisToAnimate);
 
             // Add event when animation end
-            // new event created 
-            /*
-            AnimationEvent evt;
-            evt = new AnimationEvent();
+            // new event created
+            AnimationEvent evt = new AnimationEvent();
             //AnimationEvent[] listOfEvts = new AnimationEvent[1];
             //listOfEvts[0] = evt;
 
-            evt.time = clip.length/2; // because animation lasts 1s
+            evt.time = clip.length; // because animation lasts 1s
             evt.functionName = "animationEnd";
             clip.AddEvent(evt);
-            */
+
             //clip.events = listOfEvts;
             //AnimationUtility.SetAnimationEvents(clip, listOfEvts);
 
             myAnimation.AddClip(clip, clip.name);
             //Debug.Log(myAnimation["Anim"].clip.events.Length);
+            animationIsEnded = false;
             // Play custom animation
             myAnimation.Play(clip.name);
             //yield return new WaitForSeconds(1.0f);
@@ -113,19 +160,19 @@ public class WaterPlatformController : MonoBehaviour
         ++currStep;
     }
 
-    void animationEnd()
+    /*
+    public void animationEnd()
     {
         Debug.Log("animation end");
         // free player
         myPlayer.enabled = true;
         // allow new water
-        //animationIsEnded = true;
+        animationIsEnded = true;
     }
+    */
 
-    public void resetPosition()
+    public void ResetPosition()
     {
-        Debug.Log("reset");
-
         // Create reset animation (one frame)
         AnimationClip clip = new AnimationClip();
         //clip = myAnimation.clip;
@@ -146,11 +193,35 @@ public class WaterPlatformController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+
+        if (other.CompareTag("ContactZone"))
+        {
+            isInContact = true;
+            other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = false;
+
+        }
+
+        /*
         if (other.CompareTag("Water") && animationIsEnded)
         {
             changeAnimation();
             Destroy(other.gameObject);
             
         }
+        */
     }
+
+    void OnTriggerExit(Collider other)
+    {
+
+        if (other.CompareTag("ContactZone"))
+        {
+            isInContact = false;
+            other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = true;
+            //floattingText.desactivate();
+            toolsManager.DeactivateActionInfo();
+
+        }
+    }
+
 }

@@ -1,29 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TorchController : MonoBehaviour
 
 {
-    Light myLight;
+    [SerializeField]
+    bool startOn = false;
+
+    //Light myLight;
     public GameObject myLightZone;
-    public float timeBeforeNewLightInput;
+    //public float timeBeforeNewLightInput;
     float timerBeforeNewLightInput;
     bool hasReceivedLight = false;
+    bool sameLightImpulseTmp = false;
+
+    [SerializeField]
+    string requiredToolName = "LightStone";
+
+    PowersController player;
 
     // Start is called before the first frame update
     void Start()
     {
-        myLight = GetComponent<Light>();
-        //myLightZone = GameObject.Find("LightPower");
-        myLightZone.SetActive(false);
-        //Get the Renderer component from the new cube
-        var myRenderer = GetComponent<Renderer>();
-        //Call SetColor using the shader property name "_Color" and setting the color to red
-        myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
+        SwitchLight(startOn);
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PowersController>();
     }
 
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -33,7 +36,9 @@ public class TorchController : MonoBehaviour
             --timerBeforeNewLightInput;
         }
     }
-    
+    */
+
+    /*
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("LightInput") && myLight.intensity <= 0 && !hasReceivedLight && timerBeforeNewLightInput <= 0)
@@ -51,36 +56,52 @@ public class TorchController : MonoBehaviour
             hasReceivedLight = true;
         }
     }
+    */
+
+    void SwitchLight(bool isOn)
+    {
+        if (isOn)
+        {
+            myLightZone.SetActive(true);
+
+            //Get the Renderer component from the new cube
+            var myRenderer = GetComponent<Renderer>();
+            //Call SetColor using the shader property name "_Color" and setting the color to red
+            myRenderer.material.SetColor("_EmissionColor", Color.white * 2);
+
+            hasReceivedLight = true;
+        }
+        else
+        {
+            myLightZone.SetActive(false);
+
+            //Get the Renderer component from the new cube
+            var myRenderer = GetComponent<Renderer>();
+            //Call SetColor using the shader property name "_Color" and setting the color to red
+            myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
+
+            hasReceivedLight = false;
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("LightInput") || other.CompareTag("LightInputPlayer"))
-            if (!hasReceivedLight && timerBeforeNewLightInput <= 0 && myLight.intensity <= 0)
+        if (other.CompareTag("LightInput") && Vector3.Distance(other.transform.position, transform.position) != 0)
+        {
+            SwitchLight(true);
+        }
+        if (other.CompareTag("LightInputPlayer") && player.sameLightImpulse != sameLightImpulseTmp)
+        {
+            if (myLightZone.activeSelf)
             {
-                myLight.intensity = 1;
-                myLightZone.SetActive(true);
-
-                timerBeforeNewLightInput = 60 * timeBeforeNewLightInput;
-
-                //Get the Renderer component from the new cube
-                var myRenderer = GetComponent<Renderer>();
-                //Call SetColor using the shader property name "_Color" and setting the color to red
-                myRenderer.material.SetColor("_EmissionColor", Color.white * 2);
-
-                hasReceivedLight = true;
-            }else if(myLight.intensity > 0 && timerBeforeNewLightInput <= 0 && other.CompareTag("LightInputPlayer"))
-            {
-                myLight.intensity = 0;
-                myLightZone.SetActive(false);
-
-                timerBeforeNewLightInput = 60 * timeBeforeNewLightInput;
-
-                //Get the Renderer component from the new cube
-                var myRenderer = GetComponent<Renderer>();
-                //Call SetColor using the shader property name "_Color" and setting the color to red
-                myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
-
-                hasReceivedLight = false;
+                player.GetComponent<ToolsManager>().ActivateActionInfo("Turn off", requiredToolName);
             }
+            else
+            {
+                player.GetComponent<ToolsManager>().ActivateActionInfo("Turn on", requiredToolName);
+            }
+            SwitchLight(!hasReceivedLight);
+            sameLightImpulseTmp = player.sameLightImpulse;
+        }
     }
 }

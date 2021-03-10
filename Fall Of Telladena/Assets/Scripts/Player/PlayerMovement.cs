@@ -1,6 +1,7 @@
 ﻿/*
- * Authors : Zoé
+ * Authors : ZOE, Manon
  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour {
     private float turnSmoothTime = 0.1f;
     private float vSpeed = 0;
     private float maxSpeed = 10f;
+    public float speedWithBrambles = 10f;  // public because needed in Brambles
+    private float vSpeed = 0;
     private float maxCoef = 1f;
     private float speedCoef = 0;
 
@@ -99,7 +102,8 @@ public class PlayerMovement : MonoBehaviour {
                     vSpeed = 0;
                 }
                 else {
-                    maxSpeed = 10f;
+                    //maxSpeed = 10f;
+                    maxSpeed = speedWithBrambles;
                 }
 
                 // Get maxCoef depending on movement mode
