@@ -34,7 +34,7 @@ public class DontDestroy : MonoBehaviour
 
     void CheckNpc(Scene scene, LoadSceneMode mode) {
         foreach(NPC npc in GetComponentsInChildren<NPC>()) {
-            npc.checkScene();
+            npc.CheckScene();
         }
     }
 }
