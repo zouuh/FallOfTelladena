@@ -3,7 +3,27 @@ guid: 8cfe62d58e1d13c408603b2643359287
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JoumaBelt
+    second: {fileID: 2100000, guid: 59038c9ffe2ec3045b50f372373ea581, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JoumaBody
+    second: {fileID: 2100000, guid: adc93339b86d8a8428a721b4b831c189, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JoumaClothes
+    second: {fileID: 2100000, guid: fc358ec4c475b7d429567a85d97408b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JoumaMask
+    second: {fileID: 2100000, guid: ff2d81f3e5660ca438985293a2082ac4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

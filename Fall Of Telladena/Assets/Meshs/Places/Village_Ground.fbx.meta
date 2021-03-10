@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 56a554ee1691d8a4b92a7b18683b3d73
+guid: 7f57293f00da7964face85c5d3b05df2
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VillageGround
+    second: {fileID: 2100000, guid: 9f78b80d3732ce4408479a732f21784e, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
