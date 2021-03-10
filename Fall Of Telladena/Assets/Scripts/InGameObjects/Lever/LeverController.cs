@@ -165,7 +165,7 @@ public class LeverController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("ContactZone") /*&& Input.GetKeyUp(KeyCode.I)*/)
+        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
         {
             isInContact = true;
             if(player == null)
@@ -195,7 +195,7 @@ public class LeverController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("ContactZone"))
+        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
         {
             isInContact = false;
             //floattingText.desactivate();
