@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e175d49dcf85e340aa98d43859507c8
+guid: c1d79d807b7ee0a4a8dcd5f4e4246d36
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,27 +7,27 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: AstronomeBody
+      name: ByoldalBody
     second: {fileID: 2100000, guid: a8c2806c28f3ef44785d8b9713c75052, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: AstronomeDress
+      name: ByoldalDress
     second: {fileID: 2100000, guid: 46eccc1888a89e74cb5d602c59b3dfa4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: AstronomeGrass1
-    second: {fileID: 2100000, guid: a7f5ada014199c54fbf73c006f1fac2e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: AstronomeGrass2
+      name: ByoldalGrass
     second: {fileID: 2100000, guid: c99edaf3b21ba1d4bae601aafc79c804, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: AstronomeMask
+      name: ByoldalGrass1
+    second: {fileID: 2100000, guid: a7f5ada014199c54fbf73c006f1fac2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ByoldalMask
     second: {fileID: 2100000, guid: aa0611d438502e94092e2bfa181c636b, type: 2}
   materials:
     materialImportMode: 1
