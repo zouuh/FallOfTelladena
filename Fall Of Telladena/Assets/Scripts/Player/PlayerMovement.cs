@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private Slider energySlider;
     private Transform cam;
-    private Animator animator;
+    public Animator animator; // public because used in FacingWaterZone
     private CharacterController controller;
     private GameObject mainVueCanvas;
 

@@ -90,7 +90,7 @@ public class ToolsManager : MonoBehaviour
 
     public void DeactivateActionInfo()
     {
-        if(Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable)
+        if(Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && canDrop)
         {
             interfaceManager.TurnOnActionCanvas("Drop");
         }
@@ -103,9 +103,7 @@ public class ToolsManager : MonoBehaviour
     public IEnumerator UseTool()
     {
         usingATool = true;
-        Debug.Log("coroutine");
         yield return new WaitForSeconds(1f);
-        Debug.Log("coroutine end");
         usingATool = false;
     }
 

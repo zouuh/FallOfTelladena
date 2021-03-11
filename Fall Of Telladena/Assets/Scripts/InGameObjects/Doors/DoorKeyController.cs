@@ -39,7 +39,7 @@ public class DoorKeyController : DoorController
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             Debug.Log("Contact");
             isInContact = true;
@@ -56,7 +56,7 @@ public class DoorKeyController : DoorController
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
             //floattingText.desactivate();

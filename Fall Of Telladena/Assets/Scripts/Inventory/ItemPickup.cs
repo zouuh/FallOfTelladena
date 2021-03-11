@@ -55,6 +55,7 @@ public class ItemPickup : MonoBehaviour
             toolsManager.StartCoroutine("UseTool");
             PickUp();
             isPickedUp = true;
+            toolsManager.canDrop = true;
             toolsManager.DeactivateActionInfo();
         }
     }

@@ -165,7 +165,7 @@ public class LeverController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             isInContact = true;
             if(player == null)
@@ -196,7 +196,7 @@ public class LeverController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
             player.GetComponent<ToolsManager>().canDrop = true;

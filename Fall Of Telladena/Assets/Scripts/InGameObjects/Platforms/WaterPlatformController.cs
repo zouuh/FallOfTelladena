@@ -23,6 +23,7 @@ public class WaterPlatformController : MonoBehaviour
     public bool animationIsEnded = true; // public because used by WaterPlatform
 
     bool isInContact = false;
+    GameObject player = null;
 
     //[SerializeField]
     //FloattingText floattingText;
@@ -92,6 +93,7 @@ public class WaterPlatformController : MonoBehaviour
                     Inventory.instance.ChangeActiveTool(emptyRecipient);
 
                     ChangeAnimation();
+                    player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
 
                     toolsManager.CarryItem(true, emptyRecipient);
                     toolsManager.DeactivateActionInfo();
@@ -194,8 +196,12 @@ public class WaterPlatformController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
+            if (player == null)
+            {
+                player = other.GetComponent<ContactZone>().player;
+            }
             isInContact = true;
             toolsManager.canDrop = false;
             other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = false;
@@ -215,7 +221,7 @@ public class WaterPlatformController : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
 
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
             toolsManager.canDrop = true;

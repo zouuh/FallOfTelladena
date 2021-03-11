@@ -24,11 +24,13 @@ public class FacingWaterZone : MonoBehaviour
     {
         if (isFacingWater)
         {
+            toolManager.canDrop = false;
             toolManager.ActivateActionInfo(actionName, requiredToolName);
             if (Inventory.instance.isUsingTool(requiredToolName))
             {
                 if (Input.GetButtonUp("Action") && !toolManager.usingATool)
                 {
+                    GetComponentInParent<PlayerMovement>().animator.SetBool("pickUp", true);
                     toolManager.StartCoroutine("UseTool");
                     // get water
                     Debug.Log("Get water.");
@@ -54,6 +56,7 @@ public class FacingWaterZone : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
+            toolManager.canDrop = false;
             isFacingWater = true;
         }
     }
@@ -62,6 +65,7 @@ public class FacingWaterZone : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
+            toolManager.canDrop = true;
             isFacingWater = false;
             //floattingText.desactivate();
             toolManager.DeactivateActionInfo();
