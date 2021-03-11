@@ -12,6 +12,8 @@ public class LeverController : MonoBehaviour
     public GameObject myLever;
     public List<Platform> listOfPlatforms = new List<Platform>();
     bool isInContact = false;
+    [SerializeField]
+    bool triggerCinematic = false;
 
     //[SerializeField]
     //FloattingText floattingText;
@@ -54,7 +56,7 @@ public class LeverController : MonoBehaviour
     }
     */
 
-    bool hasRequiredTool()
+    bool HasRequiredTool()
     {
         if(requiredToolName.Length <= 0)
         {
@@ -73,11 +75,15 @@ public class LeverController : MonoBehaviour
     {
         if (isInContact)
         {
-            if (hasRequiredTool())
+            if (HasRequiredTool())
             {
                 if (Input.GetButtonDown("Action") && listOfPlatforms.Find(x => x.animationEnd == false) == null && !player.GetComponent<ToolsManager>().usingATool)
                 {
-                    changeAnimation();
+                    if(triggerCinematic)
+                    {
+                        GetComponent<CinematicTrigger>().Play();
+                    }
+                    ChangeAnimation();
                     player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
                     player.GetComponent<ToolsManager>().StartCoroutine("UseTool");
                 }
@@ -90,30 +96,9 @@ public class LeverController : MonoBehaviour
             player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, requiredToolName);
         }
     }
-    /*
-    void changeAnimation()
-    {
-        position += accumulator;
-        UnityEngine.Debug.Log(position);
-        //myLevier.transform.Rotate(0, 0, (20 - position * 20), Space.Self);
-        myLevier.transform.rotation = Quaternion.Euler(0, 0, (20 - position * 20));
-        for (int i = 0; i < listOfPlatforms.Length; ++i)
-        {
-            anim = listOfPlatforms[i].GetComponent<Animator>();
-            UnityEngine.Debug.Log("platform_up0" + (accumulator<0?position+1:position) + (accumulator > 0 ? "" : "_backwards"));
-            //animName = "platform_anim0" + (accumulator < 0 ? position + 1 : position) + (accumulator > 0 ? "" : "_backwards");
-            anim.Play("platform_up0" + (accumulator < 0 ? position + 1 : position) + (accumulator > 0 ? "" : "_backwards"));
-        }
-        if (position > 1 || position < 1)
-        {
-            accumulator = -accumulator;
-        }
-    }
-    */
 
-    void changeAnimation()
+    void ChangeAnimation()
     {
-        //Debug.Log("Play:" + currStep);
         for(int i = 0; i < listOfPlatforms.Count; ++i)
         {
             Debug.Log(listOfPlatforms[i]);
@@ -142,14 +127,14 @@ public class LeverController : MonoBehaviour
             Keyframe[] keys;
             keys = new Keyframe[2];
             keys[0] = new Keyframe(0.0f, key1);
-            keys[1] = new Keyframe(1.0f, key2);
+            keys[1] = new Keyframe(listOfPlatforms[i].animationDuration, key2);
             curve = new AnimationCurve(keys);
             clip.SetCurve("", typeof(Transform), "localPosition." + listOfPlatforms[i].axisToAnimate, curve);
 
             // new event created
             AnimationEvent evt;
             evt = new AnimationEvent();
-            evt.time = 1.0f; // same as key2 duration
+            evt.time = listOfPlatforms[i].animationDuration; // same as key2 duration
             evt.functionName = "EndAnimation";
 
             clip.AddEvent(evt);

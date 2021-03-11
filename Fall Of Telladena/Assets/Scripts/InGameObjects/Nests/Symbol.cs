@@ -9,6 +9,7 @@ public class Symbol : MonoBehaviour
     public Color wrongPlaceColor = Color.yellow;
     public Color rightEggColor = Color.green;
 
+    public string myEgg;
     public string expectedEggName = "goodEgg";
     public Symbol[] symbols;
 
@@ -30,6 +31,18 @@ public class Symbol : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool CheckWin()
+    {
+        for (int i = 0; i < symbols.Length; ++i)
+        {
+            if (symbols[i].myEgg != null || symbols[i].expectedEggName != symbols[i].myEgg)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void setDefaultColor()
