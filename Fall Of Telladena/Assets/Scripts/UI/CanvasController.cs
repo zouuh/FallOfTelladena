@@ -64,7 +64,5 @@ public class CanvasController : MonoBehaviour
     public void SwitchCanvas(GameObject oldCanvas, GameObject newCanvas) {
         oldCanvas.SetActive(false);
         newCanvas.SetActive(true);
-        Debug.Log("New : " + newCanvas.name + " -> " + newCanvas.activeSelf);
-        Debug.Log("Old : " + oldCanvas.name + " -> " + oldCanvas.activeSelf);
     }
 }
