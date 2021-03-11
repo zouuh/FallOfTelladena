@@ -2601,7 +2601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-  m_AmplitudeGain: 1
+  m_AmplitudeGain: 0
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &280896162 stripped
@@ -5148,6 +5148,16 @@ PrefabInstance:
       propertyPath: interfaceManager
       value: 
       objectReference: {fileID: 289328735}
+    - target: {fileID: 2559909700045489915, guid: 66882116773d02d42823327cb5b6925e,
+        type: 3}
+      propertyPath: dustJump
+      value: 
+      objectReference: {fileID: 1713539264}
+    - target: {fileID: 2559909700045489915, guid: 66882116773d02d42823327cb5b6925e,
+        type: 3}
+      propertyPath: dust
+      value: 
+      objectReference: {fileID: 1198551523}
     - target: {fileID: 2597478789083865365, guid: 66882116773d02d42823327cb5b6925e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5203,15 +5213,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2654040076558205051, guid: 66882116773d02d42823327cb5b6925e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654040076558205051, guid: 66882116773d02d42823327cb5b6925e,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3406913326998158255, guid: 66882116773d02d42823327cb5b6925e,
         type: 3}
       propertyPath: m_Name
       value: Oksusu
       objectReference: {fileID: 0}
-    - target: {fileID: 4916590779777357956, guid: 66882116773d02d42823327cb5b6925e,
+    - target: {fileID: 8261261675998458660, guid: 66882116773d02d42823327cb5b6925e,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 12
+      propertyPath: m_Name
+      value: ' DustParticles'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66882116773d02d42823327cb5b6925e, type: 3}
@@ -5643,7 +5663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-  m_AmplitudeGain: 1
+  m_AmplitudeGain: 0
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &455229665 stripped
@@ -9020,7 +9040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-  m_AmplitudeGain: 1
+  m_AmplitudeGain: 0
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1086904325 stripped
@@ -9456,6 +9476,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!198 &1198551523 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6366265915645426594, guid: 66882116773d02d42823327cb5b6925e,
+    type: 3}
+  m_PrefabInstance: {fileID: 357854565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1203191911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -290014825203808698, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -12247,6 +12273,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3922947342677693106, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!198 &1713539264 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2654040076558205051, guid: 66882116773d02d42823327cb5b6925e,
+    type: 3}
+  m_PrefabInstance: {fileID: 357854565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1722334160 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7446472371454282871, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -13846,7 +13878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-  m_AmplitudeGain: 1
+  m_AmplitudeGain: 0
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &2002567248 stripped

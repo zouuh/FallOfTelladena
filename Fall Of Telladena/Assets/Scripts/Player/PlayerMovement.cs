@@ -30,6 +30,11 @@ public class PlayerMovement : MonoBehaviour {
     private CharacterController controller;
     private GameObject mainVueCanvas;
 
+    [SerializeField]
+    ParticleSystem dust;
+    [SerializeField]
+    ParticleSystem dustJump;
+
 
     void Start() {
         cam = FindObjectOfType<Camera>().transform;
@@ -78,9 +83,11 @@ public class PlayerMovement : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
                 // If jump asked
-                if(Input.GetButtonDown("Jump")) {
+                if(Input.GetButtonDown("Jump"))
+                {
+                    dustJump.Play();
                     // If player is on the floor -> jump, set the animation and move up the collider
-                    if(controller.isGrounded) {
+                    if (controller.isGrounded) {
                         jumpCounter = 0;
                         animator.SetBool("jump", true);
                     }
@@ -96,7 +103,8 @@ public class PlayerMovement : MonoBehaviour {
                 }
 
                 // If jumping -> decrease speed move
-                if(animator.GetBool("jump")) {
+                if(animator.GetBool("jump"))
+                {
                     maxSpeed = 5f;
                     vSpeed = 0;
                 }
@@ -107,10 +115,15 @@ public class PlayerMovement : MonoBehaviour {
 
                 // Get maxCoef depending on movement mode
                 if(slide) {
+                    var emission = dust.emission;
+                    emission.rateOverDistance = 5f;
                     maxCoef = 1.8f;
                     energy -= 0.05f * Time.deltaTime;
                 }
-                else {
+                else
+                {
+                    var emission = dust.emission;
+                    emission.rateOverDistance = .45f;
                     maxCoef = 1f;
                 }
 
