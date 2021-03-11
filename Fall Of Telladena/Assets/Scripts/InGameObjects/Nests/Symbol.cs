@@ -37,10 +37,14 @@ public class Symbol : MonoBehaviour
     {
         for (int i = 0; i < symbols.Length; ++i)
         {
-            if (symbols[i].myEgg != null || symbols[i].expectedEggName != symbols[i].myEgg)
+            if (symbols[i].myEgg == null || symbols[i].expectedEggName != symbols[i].myEgg)
             {
                 return false;
             }
+        }
+        if(myEgg == null || myEgg != expectedEggName)
+        {
+            return false;
         }
         return true;
     }

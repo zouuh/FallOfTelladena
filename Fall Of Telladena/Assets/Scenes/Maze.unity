@@ -1444,7 +1444,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204490828}
-  m_LocalRotation: {x: 0.3499163, y: -0.018382246, z: 0.00686773, w: 0.9365755}
+  m_LocalRotation: {x: 0.3499163, y: -0.01838228, z: 0.006867742, w: 0.9365755}
   m_LocalPosition: {x: 19.411417, y: 10.077033, z: -11.715314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1974,7 +1974,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275647226}
-  m_LocalRotation: {x: 0.10956839, y: -0.39217812, z: 0.047109958, w: 0.9121249}
+  m_LocalRotation: {x: 0.1095684, y: -0.39217815, z: 0.04710997, w: 0.9121249}
   m_LocalPosition: {x: 0, y: 4.45, z: -8.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6113,6 +6113,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 456191576}
     m_Modifications:
+    - target: {fileID: 7920589998269605879, guid: cc30a6c96129d334384e650e7f7796ea,
+        type: 3}
+      propertyPath: virtualCameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920589998269605879, guid: cc30a6c96129d334384e650e7f7796ea,
+        type: 3}
+      propertyPath: virtualCameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 94239607}
     - target: {fileID: 8787707620506687141, guid: cc30a6c96129d334384e650e7f7796ea,
         type: 3}
       propertyPath: listOfPlatforms.Array.size
@@ -6201,7 +6211,7 @@ PrefabInstance:
     - target: {fileID: 8787707621328129382, guid: cc30a6c96129d334384e650e7f7796ea,
         type: 3}
       propertyPath: expectedEggName
-      value: Green Egg
+      value: Red Egg
       objectReference: {fileID: 0}
     - target: {fileID: 8787707621328129382, guid: cc30a6c96129d334384e650e7f7796ea,
         type: 3}
@@ -7680,8 +7690,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910376497}
-  m_LocalRotation: {x: -0.0022902803, y: 0.89174664, z: -0.4525067, w: -0.004513413}
-  m_LocalPosition: {x: -20.851418, y: 8.752967, z: 11.815313}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.7700001, y: 6.000001, z: -4.8400006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11752,6 +11762,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 456191576}
     m_Modifications:
+    - target: {fileID: 7920589998269605879, guid: cc30a6c96129d334384e650e7f7796ea,
+        type: 3}
+      propertyPath: virtualCameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920589998269605879, guid: cc30a6c96129d334384e650e7f7796ea,
+        type: 3}
+      propertyPath: virtualCameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 94239607}
     - target: {fileID: 8787707620506687141, guid: cc30a6c96129d334384e650e7f7796ea,
         type: 3}
       propertyPath: listOfPlatforms.Array.size
@@ -15352,6 +15372,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 456191576}
     m_Modifications:
+    - target: {fileID: 7920589998269605879, guid: cc30a6c96129d334384e650e7f7796ea,
+        type: 3}
+      propertyPath: virtualCameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920589998269605879, guid: cc30a6c96129d334384e650e7f7796ea,
+        type: 3}
+      propertyPath: virtualCameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 94239607}
     - target: {fileID: 8787707620506687141, guid: cc30a6c96129d334384e650e7f7796ea,
         type: 3}
       propertyPath: listOfPlatforms.Array.size
@@ -15440,7 +15470,7 @@ PrefabInstance:
     - target: {fileID: 8787707621328129382, guid: cc30a6c96129d334384e650e7f7796ea,
         type: 3}
       propertyPath: expectedEggName
-      value: Green Egg
+      value: Silver Egg
       objectReference: {fileID: 0}
     - target: {fileID: 8787707621328129382, guid: cc30a6c96129d334384e650e7f7796ea,
         type: 3}
@@ -17582,6 +17612,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 456191576}
     m_Modifications:
+    - target: {fileID: 7920589998269605879, guid: cc30a6c96129d334384e650e7f7796ea,
+        type: 3}
+      propertyPath: virtualCameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920589998269605879, guid: cc30a6c96129d334384e650e7f7796ea,
+        type: 3}
+      propertyPath: virtualCameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 94239607}
     - target: {fileID: 8787707620506687140, guid: cc30a6c96129d334384e650e7f7796ea,
         type: 3}
       propertyPath: m_LocalPosition.y
