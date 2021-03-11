@@ -17,7 +17,7 @@ public class PlatformAttach : MonoBehaviour
         {
             myChildObjects[i].transform.parent = myLedge.transform;
         }*/
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             if(player == null)
             {
@@ -30,7 +30,7 @@ public class PlatformAttach : MonoBehaviour
             //player.transform.localScale = Vector3.one;
             player.transform.localScale = tmpScale;
         }
-        else if(!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles") && !other.CompareTag("FacingWaterZone"))
+        else if(!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles") && !other.CompareTag("FacingWaterZone") && !other.CompareTag("ContactZoneNests"))
         {
             other.gameObject.transform.parent = myLedge.transform;
         }        
@@ -39,7 +39,7 @@ public class PlatformAttach : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             if (player == null)
             {
@@ -48,7 +48,7 @@ public class PlatformAttach : MonoBehaviour
             player.gameObject.transform.parent = null;
             DontDestroyOnLoad(player.gameObject); // important : avoid bug when deparenting from DontDestroyOnLoad Object
         }
-        else if (!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles") && !other.CompareTag("FacingWaterZone"))
+        else if (!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles") && !other.CompareTag("FacingWaterZone") && !other.CompareTag("ContactZoneNests"))
         {
             other.gameObject.transform.parent = null;
         }

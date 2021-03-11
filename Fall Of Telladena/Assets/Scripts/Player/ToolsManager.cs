@@ -88,6 +88,34 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
+    bool IsUsingOneOfTheTools(List<string> tools)
+    {
+        if(tools == null)
+        {
+            return true;
+        }
+        foreach(string tool in tools)
+        {
+            if (Inventory.instance.isUsingTool(tool))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void ActivateActionInfo(string actionName, List<string> requiredUsingTools, string commonName)
+    {
+        if (IsUsingOneOfTheTools(requiredUsingTools))
+        {
+            interfaceManager.TurnOnActionCanvas(actionName+" "+commonName, "", true);
+        }
+        else
+        {
+            interfaceManager.TurnOnActionCanvas(actionName, commonName, false);
+        }
+    }
+
     public void DeactivateActionInfo()
     {
         if(Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && canDrop)

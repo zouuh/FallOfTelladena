@@ -12,51 +12,101 @@ public class NestController : MonoBehaviour
     // Animations
     Animation myAnimation;
     AnimationCurve curve;
-    AnimationClip clip;
 
+    ToolsManager toolsManager = null;
+    bool isInContact = false;
+
+    GameObject egg;
+
+    [SerializeField]
+    List<string> requiredUsingTools = new List<string>() { "Blue Egg", "Green Egg", "Red Egg", "Silver Egg", "Golden Egg", "Purple Egg" };
+
+    private void Update()
+    {
+        if(isInContact && Input.GetButtonDown("Action") && !toolsManager.usingATool)
+        {
+            toolsManager.UseTool();
+
+            // Animation
+            toolsManager.GetComponent<Animator>().SetBool("pickUp", true);
+
+            if (nestIsEmpty)
+            {
+                // Put Egg in center
+                egg = Instantiate(Inventory.instance.usedItem.prefab, eggPosition.position, eggPosition.rotation, eggPosition);
+                egg.GetComponent<Rigidbody>().isKinematic = false;
+                egg.GetComponent<ItemPickup>().canPickUp = false;
+
+                Inventory.instance.Remove(Inventory.instance.usedItem);
+                if(Inventory.instance.usedItem == null)
+                {
+                    toolsManager.CarryItem(false);
+                }
+
+                // Change Symbol aspect according to egg color
+                mySymbol.myEgg = egg.GetComponent<ItemPickup>().item.name;
+                mySymbol.changeColor(egg.GetComponent<ItemPickup>().item.name);
+                if (mySymbol.CheckWin())
+                {
+                    GetComponent<CinematicTrigger>().Play();
+                    ChangeAnimation();
+                }
+                nestIsEmpty = false;
+            }
+            else
+            {
+                egg.GetComponent<ItemPickup>().canPickUp = true;
+                Destroy(eggPosition.GetChild(0).gameObject);
+
+                Inventory.instance.Add(egg.GetComponent<ItemPickup>().item);
+
+                // Change Symbol aspect according to egg color
+                mySymbol.myEgg = null;
+                mySymbol.setDefaultColor();
+
+                // reverse animation
+                if (mySymbol.CheckWin())
+                {
+                    GetComponent<CinematicTrigger>().Play();
+                    ChangeAnimation();
+                }
+
+                nestIsEmpty = true;
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Egg") && nestIsEmpty)
+        if (other.CompareTag("ContactZoneNests"))
         {
-            // Position Egg in center
-            other.gameObject.transform.parent = this.transform;
-            other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            other.gameObject.transform.position = eggPosition.position;
-            other.gameObject.transform.rotation = this.transform.rotation;
-
-            // Change Symbol aspect according to egg color
-            mySymbol.myEgg = other.GetComponent<Item>().name;
-            mySymbol.changeColor(other.gameObject.GetComponent<ItemMaze>().itemName);
-            if (mySymbol.CheckWin())
+            if(toolsManager == null)
             {
-                GetComponent<CinematicTrigger>().Play();
-                ChangeAnimation();
+                toolsManager = other.GetComponent<ContactZone>().player.GetComponent<ToolsManager>();
             }
 
-            nestIsEmpty = false;
+            isInContact = true;
+            toolsManager.canDrop = false;
+
+            if (nestIsEmpty)
+            {
+                toolsManager.ActivateActionInfo("Drop", requiredUsingTools, "Egg");
+            }
+            else
+            {
+                toolsManager.ActivateActionInfo("Take", null, "Egg");
+            }
         }
     }
 
     private void OnTriggerExit(Collider other) // turn off symbol when removing the egg
     {
-        if (other.CompareTag("Egg"))
+
+        if (other.CompareTag("ContactZoneNests"))
         {
-            // Position Egg in center
-            other.gameObject.transform.parent = null;
-            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
-            // Change Symbol aspect according to egg color
-            mySymbol.myEgg = null;
-            mySymbol.setDefaultColor();
-
-            nestIsEmpty = true;
-
-            // reverse animation
-            if (mySymbol.CheckWin())
-            {
-                GetComponent<CinematicTrigger>().Play();
-                ChangeAnimation();
-            }
+            isInContact = false;
+            toolsManager.canDrop = true;
+            toolsManager.DeactivateActionInfo();
         }
     }
 

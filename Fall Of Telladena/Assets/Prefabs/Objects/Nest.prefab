@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5259036744561996829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7208253835173290504}
+  m_Layer: 0
+  m_Name: eggPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7208253835173290504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259036744561996829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 2, y: 10, z: 2}
+  m_Children: []
+  m_Father: {fileID: 8787707620810930425}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8787707620506687143
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +88,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySymbol: {fileID: 8787707621328129382}
-  eggPosition: {fileID: 6638720447096305160}
+  eggPosition: {fileID: 7208253835173290504}
+  listOfPlatforms: []
+  requiredUsingTools:
+  - Blue Egg
+  - Green Egg
+  - Red Egg
+  - Silver Egg
+  - Golden Egg
+  - Purple Egg
 --- !u!1 &8787707620810930429
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +127,7 @@ Transform:
   - {fileID: 8787707620506687140}
   - {fileID: 8787707621328129369}
   - {fileID: 3996245845230151915}
-  - {fileID: 6638720447096305160}
+  - {fileID: 7208253835173290504}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -121,7 +159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8787707621328129368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 18, z: 0.5}
+  m_LocalPosition: {x: 0, y: 18, z: 0.95}
   m_LocalScale: {x: 0.2, y: 1, z: 0.2}
   m_Children: []
   m_Father: {fileID: 8787707620810930425}
@@ -203,40 +241,11 @@ MonoBehaviour:
   wrongEggColor: {r: 1, g: 0, b: 0, a: 1}
   wrongPlaceColor: {r: 1, g: 0.4745098, b: 0.015686275, a: 1}
   rightEggColor: {r: 0.9539357, g: 1, b: 0.7971698, a: 1}
+  myEgg: 
   expectedEggName: goodEgg
   symbols:
   - {fileID: 0}
   - {fileID: 0}
---- !u!1 &9037942363182143152
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6638720447096305160}
-  m_Layer: 0
-  m_Name: eggPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6638720447096305160
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9037942363182143152}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8787707620810930425}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3530607776754536192
 PrefabInstance:
   m_ObjectHideFlags: 0
