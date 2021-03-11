@@ -158,24 +158,6 @@ public class LeverController : MonoBehaviour
                 player = other.GetComponent<ContactZone>().player;
             }
             player.GetComponent<ToolsManager>().canDrop = false;
-
-            if (hasRequiredTool())
-            {
-                //floattingText.activate();
-            }
-            else
-            {
-                //floattingText.activate(requiredToolName);
-            }
-
-            //changeAnimation();
-                
-            /*
-            if (Input.GetKeyUp(KeyCode.I) /*&& listOfPlatforms[0].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1*)
-            {
-                Debug.Log("anim");
-                changeAnimation();
-            }*/
         }
     }
 
