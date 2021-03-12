@@ -31,6 +31,7 @@ public class SceneLoader : MonoBehaviour
             NPC[] characters = FindObjectsOfType<NPC>();
             foreach (NPC pnj in characters)
             {
+                Debug.Log("saved " + pnj.name);
                 pnj.SaveNPC();
             }
             player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);

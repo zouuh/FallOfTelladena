@@ -1,10 +1,15 @@
-﻿using System.Collections;
+﻿/* 
+ * Authors : Zoé
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class State1_MainQuest : StateMachineBehaviour
+public class MainQuest_State2 : StateMachineBehaviour
 {
     StoryManager storyManager;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -14,28 +19,26 @@ public class State1_MainQuest : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(storyManager.inCrystalRoom == 1 || storyManager.mainQuestAdvencement >= 1) {
-           animator.SetInteger("MainQuestAdvencement", 1);
+       if(storyManager.aiki.HaveSeenDialogue(1) || storyManager.mainQuestAdvencement >= 2) {
+           animator.SetInteger("MainQuestAdvencement", 2);
        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // Moves Aïki and change his dialogue ID
+        // Change Aïki's dialogue ID
         NPC aiki = storyManager.aiki;
-        aiki.SetScene("OutsideCastle");
-        aiki.SetPosition(new Vector3(2f,-0.12f, -13f));
-        aiki.SetDialogueID(1);
+        aiki.SetDialogueID(2);
         aiki.SaveNPC();
 
-        // Yoh appears
-        NPC yoh = storyManager.yoh;
-        yoh.SetScene("Village");
-        yoh.SaveNPC();
+        // Close the crystal room door
+
+        // Begin the 3 stone quests (serenity, clarity and fertility)
+        storyManager.beginStoneQuests = true;
 
         // Update story manager
-        storyManager.SetMainAdvencement(1);
+        storyManager.SetMainAdvencement(2);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
