@@ -14,7 +14,7 @@ public class SerenityQuest_State8 : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(storyManager.byoldal.HaveSeenDialogue(1)) {
+       if(storyManager.byoldal.HaveSeenDialogue(1) || storyManager.serenityQuestAdvencement >= 8) {
            animator.SetInteger("SerenityQuestAdvencement", 8);
        }
     }
@@ -29,6 +29,9 @@ public class SerenityQuest_State8 : StateMachineBehaviour
         NPC byoldal = storyManager.byoldal;
         byoldal.SetDialogueID(2);
         byoldal.SaveNPC();
+
+        // Update story manager
+        storyManager.SetSerenityAdvencement(8);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

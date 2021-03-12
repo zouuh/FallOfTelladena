@@ -15,7 +15,7 @@ public class State2_MainQuest : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(storyManager.aiki.HaveSeenDialogue(1)) {
+       if(storyManager.aiki.HaveSeenDialogue(1) || storyManager.mainQuestAdvencement >= 2) {
            animator.SetInteger("MainQuestAdvencement", 2);
        }
     }
@@ -32,6 +32,9 @@ public class State2_MainQuest : StateMachineBehaviour
 
         // Begin the 3 stone quests (serenity, clarity and fertility)
         storyManager.beginStoneQuests = true;
+
+        // Update story manager
+        storyManager.SetMainAdvencement(2);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

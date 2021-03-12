@@ -11,10 +11,13 @@ public class StoryManager : MonoBehaviour {
     // PUBLIC ATTRIBUTES
     public int inCrystalRoom = 0;
     public int builtIrrigation = 0;
-    public int lulluby = 0;
     public bool possiIsBack = false;
     public bool inBimbopCave = false;
     public bool beginStoneQuests = false;
+    public int mainQuestAdvencement = 0;
+    public int serenityQuestAdvencement = 0;
+    private int currentSerenityAdvencement = 0;
+    private int currentMainAdvencement = 0;
 
     // PRIVATE ATTRIBUTES
     public NPC aiki, byoldal, gwang, migwa, namou, yoh;
@@ -22,6 +25,25 @@ public class StoryManager : MonoBehaviour {
     // SERIALIZED ATTRIBUTES
     [SerializeField]
     public Item turbull, mazeKey, lullubyMushroom, lullubyPotion, serenityStone;
+
+    // Methods
+    public void SetMainAdvencement(int newId) {
+        if(newId > mainQuestAdvencement) {
+            mainQuestAdvencement = newId;
+        }
+        else {
+            currentMainAdvencement = newId;
+        }
+    }
+
+    public void SetSerenityAdvencement(int newId) {
+        if(newId > serenityQuestAdvencement) {
+            serenityQuestAdvencement = newId;
+        }
+        else {
+            currentSerenityAdvencement = newId;
+        }
+    }
 
 
     void Start() {
@@ -169,6 +191,9 @@ public class StoryManager : MonoBehaviour {
         builtIrrigation = data.builtIrrigation;
         possiIsBack = data.possiIsBack;
         inBimbopCave = data.inBimbopCave;
+        beginStoneQuests = data.beginStoneQuests;
+        mainQuestAdvencement = data.mainQuestAdvencement;
+        serenityQuestAdvencement = data.serenityQuestAdvencement;
     }
 
     public void ResetStory() {
@@ -176,5 +201,8 @@ public class StoryManager : MonoBehaviour {
         builtIrrigation = 0;
         possiIsBack = false;
         inBimbopCave = false;
+        beginStoneQuests = false;
+        mainQuestAdvencement = 0;
+        serenityQuestAdvencement = 0;
     }
 }

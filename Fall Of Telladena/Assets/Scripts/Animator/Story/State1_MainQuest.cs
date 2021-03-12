@@ -14,7 +14,7 @@ public class State1_MainQuest : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(storyManager.inCrystalRoom == 1) {
+       if(storyManager.inCrystalRoom == 1 || storyManager.mainQuestAdvencement >= 1) {
            animator.SetInteger("MainQuestAdvencement", 1);
        }
     }
@@ -25,7 +25,7 @@ public class State1_MainQuest : StateMachineBehaviour
         // Moves Aïki and change his dialogue ID
         NPC aiki = storyManager.aiki;
         aiki.SetScene("OutsideCastle");
-        aiki.SetPosition(new Vector3(-20f,-10.138f, -10f));
+        aiki.SetPosition(new Vector3(2f,-0.12f, -13f));
         aiki.SetDialogueID(1);
         aiki.SaveNPC();
 
@@ -33,6 +33,9 @@ public class State1_MainQuest : StateMachineBehaviour
         NPC yoh = storyManager.yoh;
         yoh.SetScene("Village");
         yoh.SaveNPC();
+
+        // Update story manager
+        storyManager.SetMainAdvencement(1);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -14,7 +14,7 @@ public class SerenityQuest_State4 : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(storyManager.gwang.HaveSeenDialogue(1)) {
+       if(storyManager.gwang.HaveSeenDialogue(1) || storyManager.serenityQuestAdvencement >= 4) {
            animator.SetInteger("SerenityQuestAdvencement", 4);
        }
     }
@@ -29,6 +29,9 @@ public class SerenityQuest_State4 : StateMachineBehaviour
         NPC gwang = storyManager.gwang;
         gwang.SetDialogueID(2);
         gwang.SaveNPC();
+
+        // Update story manager
+        storyManager.SetSerenityAdvencement(4);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

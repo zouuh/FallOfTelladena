@@ -14,9 +14,12 @@ public class SerenityQuest_State5 : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(storyManager.yoh.HaveSeenDialogue(1) && Inventory.instance.HasTool("Turbull", 1)) {
-           animator.SetInteger("SerenityQuestAdvencement", 5);
-       }
+        Debug.Log("have seen dialogue : " + storyManager.yoh.HaveSeenDialogue(1));
+        Debug.Log("has turbull : " + Inventory.instance.HasTool("Turbull", 1));
+        if((storyManager.yoh.HaveSeenDialogue(1) && Inventory.instance.HasTool("Turbull", 1)) || storyManager.serenityQuestAdvencement >= 5) {
+            Debug.Log("j'ai le turbull");
+            animator.SetInteger("SerenityQuestAdvencement", 5);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -31,6 +34,9 @@ public class SerenityQuest_State5 : StateMachineBehaviour
         NPC namou = storyManager.namou;
         namou.SetDialogueID(1);
         namou.SaveNPC();
+
+        // Update story manager
+        storyManager.SetSerenityAdvencement(5);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

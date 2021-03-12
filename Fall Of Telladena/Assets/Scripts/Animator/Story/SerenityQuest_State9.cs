@@ -14,7 +14,7 @@ public class SerenityQuest_State9 : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(Inventory.instance.HasTool("LullubyMushroom", 1)) {
+       if(Inventory.instance.HasTool("LullubyMushroom", 1) || storyManager.serenityQuestAdvencement >= 9) {
            animator.SetInteger("SerenityQuestAdvencement", 9);
        }
     }
@@ -36,6 +36,9 @@ public class SerenityQuest_State9 : StateMachineBehaviour
         NPC migwa = storyManager.migwa;
         migwa.SetDialogueID(0);
         migwa.SaveNPC();
+
+        // Update story manager
+        storyManager.SetSerenityAdvencement(9);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
