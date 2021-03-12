@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 56a554ee1691d8a4b92a7b18683b3d73
+guid: eac3c57159e4adc4ba0de5200ef05674
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CastleOutsideGround
+    second: {fileID: 2100000, guid: 4e263a00df30e9740b3a241dc787aa35, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
