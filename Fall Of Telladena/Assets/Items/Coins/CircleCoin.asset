@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a934cc7392dc4514cb7696efe5fa741b, type: 3}
   m_Name: CircleCoin
   m_EditorClassIdentifier: 
-  name: CircleCoin
-  amount: 2
+  name: Circle Coin
+  amount: 5
   icon: {fileID: 21300000, guid: 004a7bb73136e1c4b8dbdcbd7240e73a, type: 3}
   showInInventory: 1
+  droppable: 1
+  prefab: {fileID: 3208867481222609143, guid: 043e7f1be9fed46498e2f6a27e500f9d, type: 3}

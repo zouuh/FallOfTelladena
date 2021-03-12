@@ -5,53 +5,85 @@ using UnityEngine;
 public class PipeEntry : MonoBehaviour
 {
     bool hasAnObject = false;
-    int timer = 300;
+    [SerializeField]
+    float timer = 1f; // in seconds
     GameObject spawnee;
     public Transform exitPos;
 
     public AudioManager audioManager;
 
+    ToolsManager toolsManager;
+    bool isInContact = false;
+    [SerializeField]
+    List<string> requiredUsingTools = new List<string>() { "Circle Coin", "Diamond Coin", "Hexagon Coin", "Pentagon Coin", "Rectangle Coin", "Square Coin", "Star Coin", "Trapese Coin", "Triangle Coin" };
+
     private void Update()
     {
-        if (hasAnObject)
+        if(Input.GetButtonDown("Action") && isInContact && !hasAnObject && !toolsManager.usingATool)
         {
-            if (timer > 0)
-            {
-                --timer;
-            }
-            else
-            {
-                timer = 300;
-                spawnee.transform.position = exitPos.position;
+            toolsManager.UseTool();
 
-                // stop sound
-                audioManager.Stop("pipeSound");
+            // Animation
+            toolsManager.GetComponent<Animator>().SetBool("pickUp", true);
 
-                spawnee.SetActive(true);
-                spawnee.GetComponent<ItemMaze>().inPipe = false;
-                spawnee = null;
-                hasAnObject = false;
+            StartCoroutine("ItemInPipe");
+
+            Inventory.instance.Remove(Inventory.instance.usedItem);
+            if (Inventory.instance.usedItem == null)
+            {
+                toolsManager.CarryItem(false);
             }
+            toolsManager.ActivateActionInfo("Drop", requiredUsingTools, "item");
         }
+    }
+
+    IEnumerator ItemInPipe()
+    {
+        hasAnObject = true;
+
+        spawnee = Inventory.instance.usedItem.prefab;
+
+        // play a sound
+        audioManager.Play("pipeSound");
+
+        yield return new WaitForSeconds(timer);
+
+        var tmp = Instantiate(spawnee, exitPos.position, spawnee.transform.rotation);
+
+        // stop sound
+        audioManager.Stop("pipeSound");
+
+        tmp.SetActive(true);
+        tmp.GetComponent<Rigidbody>().isKinematic = false;
+        tmp.GetComponent<ItemPickup>().canPickUp = true;
+        spawnee = null;
+        hasAnObject = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Item") && !hasAnObject && other.gameObject.GetComponent<ItemMaze>().authorizedInPipe && !other.gameObject.GetComponent<ItemMaze>().inPipe)
+        if (other.CompareTag("ContactZoneNests"))
         {
-            // set inactive
-            other.gameObject.SetActive(false);
+            if (toolsManager == null)
+            {
+                toolsManager = other.GetComponent<ContactZone>().player.GetComponent<ToolsManager>();
+            }
 
-            other.gameObject.GetComponent<ItemMaze>().inPipe = true;
-            spawnee = other.gameObject;
-            hasAnObject = true;
+            isInContact = true;
+            toolsManager.canDrop = false;
 
-            // play a sound
-            audioManager.Play("pipeSound");
+            toolsManager.ActivateActionInfo("Drop", requiredUsingTools, "item");
+        }
+    }
 
-            // wait for timer
-            // set to exitPos
-            // set active
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("ContactZoneNests"))
+        {
+
+            isInContact = false;
+            toolsManager.canDrop = true;
+            toolsManager.DeactivateActionInfo();
         }
     }
 }
