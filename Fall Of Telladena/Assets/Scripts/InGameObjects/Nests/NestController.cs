@@ -21,6 +21,8 @@ public class NestController : MonoBehaviour
     [SerializeField]
     List<string> requiredUsingTools = new List<string>() { "Blue Egg", "Green Egg", "Red Egg", "Silver Egg", "Golden Egg", "Purple Egg" };
 
+    bool win = false;
+
     private void Update()
     {
         if(isInContact && Input.GetButtonDown("Action") && !toolsManager.usingATool)
@@ -50,8 +52,10 @@ public class NestController : MonoBehaviour
                 {
                     GetComponent<CinematicTrigger>().Play();
                     ChangeAnimation();
+                    win = true;
                 }
                 nestIsEmpty = false;
+                toolsManager.ActivateActionInfo("Take", null, "Egg");
             }
             else
             {
@@ -64,14 +68,16 @@ public class NestController : MonoBehaviour
                 mySymbol.myEgg = null;
                 mySymbol.setDefaultColor();
 
-                // reverse animation
-                if (mySymbol.CheckWin())
+                // reverse animation only if the door was open before
+                if (win)
                 {
                     GetComponent<CinematicTrigger>().Play();
                     ChangeAnimation();
+                    win = false;
                 }
 
                 nestIsEmpty = true;
+                toolsManager.ActivateActionInfo("Drop", requiredUsingTools, "Egg");
             }
         }
     }

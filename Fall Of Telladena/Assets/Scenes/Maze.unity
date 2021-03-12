@@ -3666,7 +3666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCameras:
-  - {fileID: 275647227}
+  - {fileID: 2144799474}
   durationForEachCam: 2
 --- !u!1 &401819864
 GameObject:
@@ -7690,8 +7690,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910376497}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.7700001, y: 6.000001, z: -4.8400006}
+  m_LocalRotation: {x: 0.42449844, y: -0.12845692, z: 0.060982086, w: 0.89419305}
+  m_LocalPosition: {x: -19.811417, y: 8.752967, z: 2.7853138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9399,7 +9399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCameras:
-  - {fileID: 275647227}
+  - {fileID: 350486603}
   durationForEachCam: 2
 --- !u!1 &1065189698
 GameObject:
@@ -13421,7 +13421,7 @@ PrefabInstance:
     - target: {fileID: 2203829577629831841, guid: 8751f7271adf2494fa57981f660ebef7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.824677
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 2203829577629831841, guid: 8751f7271adf2494fa57981f660ebef7,
         type: 3}
