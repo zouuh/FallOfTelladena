@@ -9,6 +9,7 @@ public class PlatformAttach : MonoBehaviour
     //Transform playerParent = null;
     //public GameObject myLedgeExit;
     //GameObject[] myChildObjects;
+    List<string> forbiddenTags = new List<string>(){ "FertilityZone", "ContactZoneBrambles", "LightInput", "FacingWaterZone", "ContactZoneNests" };
 
     void OnTriggerEnter(Collider other)
     {
@@ -30,7 +31,7 @@ public class PlatformAttach : MonoBehaviour
             //player.transform.localScale = Vector3.one;
             player.transform.localScale = tmpScale;
         }
-        else if(!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles") && !other.CompareTag("FacingWaterZone") && !other.CompareTag("ContactZoneNests"))
+        else if(!forbiddenTags.Contains(other.tag))
         {
             other.gameObject.transform.parent = myLedge.transform;
         }        
@@ -48,7 +49,7 @@ public class PlatformAttach : MonoBehaviour
             player.gameObject.transform.parent = null;
             DontDestroyOnLoad(player.gameObject); // important : avoid bug when deparenting from DontDestroyOnLoad Object
         }
-        else if (!other.CompareTag("FertilityZone") && !other.CompareTag("ContactZoneBrambles") && !other.CompareTag("FacingWaterZone") && !other.CompareTag("ContactZoneNests"))
+        else if (!forbiddenTags.Contains(other.tag))
         {
             other.gameObject.transform.parent = null;
         }
