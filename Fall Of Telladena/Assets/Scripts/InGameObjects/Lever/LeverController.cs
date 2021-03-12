@@ -101,9 +101,6 @@ public class LeverController : MonoBehaviour
     {
         for(int i = 0; i < listOfPlatforms.Count; ++i)
         {
-            Debug.Log(listOfPlatforms[i]);
-            Debug.Log(listOfPlatforms[i].currStep);
-            Debug.Log(listOfPlatforms[i].nbOfSteps);
             // if last step is reached, go backwards
             if (listOfPlatforms[i].currStep >= listOfPlatforms[i].nbOfSteps)
             {
@@ -145,6 +142,25 @@ public class LeverController : MonoBehaviour
             myAnimation.Play(clip.name);
 
             ++listOfPlatforms[i].currStep;
+
+            /*
+            // if MazeDoorController, change step size
+            if (listOfPlatforms[i].GetComponent<MazeDoorController>() != null)
+            {
+                if(listOfPlatforms[i].currStep >= listOfPlatforms[i].nbOfSteps)
+                {
+                    if(listOfPlatforms[i].forwardOrBackward == -1)
+                    {
+                        listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors += 1;
+                    }
+                    else
+                    {
+                        listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors -= 1;
+                    }
+                }
+                listOfPlatforms[i].GetComponent<MazeDoorController>().ChangeStepSize();
+            }
+            */
         }
     }
 
