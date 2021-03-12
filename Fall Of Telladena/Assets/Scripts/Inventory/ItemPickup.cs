@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/* 
+ * Authors : Amélia, Manon, Zoé
+ */
+
+using UnityEngine;
+using System.Collections;
 
 public class ItemPickup : MonoBehaviour
 {
@@ -11,20 +16,30 @@ public class ItemPickup : MonoBehaviour
 
     public Item item;
 
+    public Animator oksusuAnimator;
+
     void PickUp()
     {
         Debug.Log("PickUP() : " + item.name);
         // Debug.Log(item);
         bool wasPickedUp = Inventory.instance.Add(item);
+        oksusuAnimator.SetBool("pickUp", true);
         // Debug.Log(isPick);
-        if (wasPickedUp)
+        StartCoroutine(WaitForAnim(wasPickedUp));
+    }
+
+    IEnumerator WaitForAnim(bool wasPickedUp) {
+        yield return new WaitForSeconds(1f);
+        if (wasPickedUp) {
             Destroy(gameObject);
+        }
     }
 
     void Start()
     {
         playerMovementInput = GameObject.Find("Oksusu").GetComponent<MovementInput>();
         toolsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
+        oksusuAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)

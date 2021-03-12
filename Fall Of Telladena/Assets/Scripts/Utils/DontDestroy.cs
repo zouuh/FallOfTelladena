@@ -17,7 +17,9 @@ public class DontDestroy : MonoBehaviour
             {
                 this.gameObject.SetActive(false);
             }
-            Destroy(this.gameObject);
+            if(this.gameObject != null) {
+                Destroy(this.gameObject);
+            }
         }
 
         DontDestroyOnLoad(this.gameObject);

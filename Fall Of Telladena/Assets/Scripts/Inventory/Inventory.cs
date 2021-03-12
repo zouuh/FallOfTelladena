@@ -92,7 +92,7 @@ public class Inventory : MonoBehaviour {
 			Debug.Log("New amount ="+item.amount);
 		}
 
-		if(usedItem.amount <= 0)
+		if(usedItem != null && usedItem.amount <= 0)
         {
 			// The item used as been removed
 			usedItem = null;
