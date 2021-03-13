@@ -146,9 +146,11 @@ public class LeverController : MonoBehaviour
             // if MazeDoorController, change step size
             if (listOfPlatforms[i].GetComponent<MazeDoorController>() != null)
             {
-                if(listOfPlatforms[i].currStep >= listOfPlatforms[i].nbOfSteps)
+                Debug.Log("is door");
+                if (listOfPlatforms[0].currStep >= listOfPlatforms[0].nbOfSteps)
                 {
-                    if(listOfPlatforms[i].forwardOrBackward == -1)
+                    Debug.Log("Has finished");
+                    if (listOfPlatforms[0].forwardOrBackward == -1)
                     {
                         listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors += 1;
                     }
