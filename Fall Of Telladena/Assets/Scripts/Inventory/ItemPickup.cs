@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*
+ * Authors : Amélia
+ */
+
+using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
@@ -11,12 +15,19 @@ public class ItemPickup : MonoBehaviour
 
     public Item item;
 
+    public ButtonController ActivateButton = null;
+
     void PickUp()
     {
         Debug.Log("PickUP() : " + item.name);
         // Debug.Log(item);
         bool wasPickedUp = Inventory.instance.Add(item);
         // Debug.Log(isPick);
+        if (ActivateButton != null)
+        {
+            ActivateButton.nbOfColliders--;
+            ActivateButton.CheckOpen();
+        }
         if (wasPickedUp)
             Destroy(gameObject);
     }
