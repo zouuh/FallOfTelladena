@@ -58,23 +58,7 @@ public class WaterPlatformController : MonoBehaviour
         }
 
     }
-    /*
-    private void Update()
-    {
-        if (myAnimation.isPlaying)
-        {
-            animationIsEnded = false;
-        }
-        else
-        {
-            if (!animationIsEnded)
-            {
-                animationEnd();
-            }
-            animationIsEnded = true;
-        }
-    }
-    */
+
     private void Update()
     {
         if (isInContact)
@@ -98,11 +82,6 @@ public class WaterPlatformController : MonoBehaviour
                     toolsManager.CarryItem(true, emptyRecipient);
                     toolsManager.DeactivateActionInfo();
                 }
-                //floattingText.activate();
-            }
-            else
-            {
-                //floattingText.activate(requiredToolName);
             }
         }
     }
@@ -119,8 +98,6 @@ public class WaterPlatformController : MonoBehaviour
         }
         if (currStep < nbOfSteps)
         {
-            Debug.Log("Play:" + currStep);
-
             // Create custom animation
             AnimationClip clip = new AnimationClip();
             clip.name = "Anim";
@@ -161,17 +138,6 @@ public class WaterPlatformController : MonoBehaviour
 
         ++currStep;
     }
-
-    /*
-    public void animationEnd()
-    {
-        Debug.Log("animation end");
-        // free player
-        myPlayer.enabled = true;
-        // allow new water
-        animationIsEnded = true;
-    }
-    */
 
     public void ResetPosition()
     {

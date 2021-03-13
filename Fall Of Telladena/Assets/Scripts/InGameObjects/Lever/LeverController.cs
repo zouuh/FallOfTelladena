@@ -143,7 +143,6 @@ public class LeverController : MonoBehaviour
 
             ++listOfPlatforms[i].currStep;
 
-            /*
             // if MazeDoorController, change step size
             if (listOfPlatforms[i].GetComponent<MazeDoorController>() != null)
             {
@@ -160,7 +159,6 @@ public class LeverController : MonoBehaviour
                 }
                 listOfPlatforms[i].GetComponent<MazeDoorController>().ChangeStepSize();
             }
-            */
         }
     }
 
