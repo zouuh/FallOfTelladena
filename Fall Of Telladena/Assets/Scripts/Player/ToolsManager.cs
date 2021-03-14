@@ -68,22 +68,22 @@ public class ToolsManager : MonoBehaviour
         return -1;
     }
 
-    public void ActivateActionInfo(string actionName, string requiredUsingTool = "", List<NameAmountPair> requiredTools = null)
+    public void ActivateActionInfo(string actionName, int amount, string requiredUsingTool, List<NameAmountPair> requiredTools = null)
     {
         int idMissingTool = HasRequiredTools(requiredTools);
         if (idMissingTool != -1)
         {
-            interfaceManager.TurnOnActionCanvas(actionName, requiredTools[idMissingTool].name, false);
+            interfaceManager.TurnOnActionCanvas(actionName, requiredTools[idMissingTool].amount, requiredTools[idMissingTool].name, false);
         }
         else
         {
             if (requiredUsingTool == null)
             {
-                interfaceManager.TurnOnActionCanvas(actionName, requiredUsingTool, true);
+                interfaceManager.TurnOnActionCanvas(actionName, amount, requiredUsingTool, true);
             }
             else
             {
-                interfaceManager.TurnOnActionCanvas(actionName, requiredUsingTool, IsUsingRequiredTool(requiredUsingTool));
+                interfaceManager.TurnOnActionCanvas(actionName, amount, requiredUsingTool, IsUsingRequiredTool(requiredUsingTool));
             }
         }
     }
@@ -108,11 +108,11 @@ public class ToolsManager : MonoBehaviour
     {
         if (IsUsingOneOfTheTools(requiredUsingTools))
         {
-            interfaceManager.TurnOnActionCanvas(actionName+" "+commonName, "", true);
+            interfaceManager.TurnOnActionCanvas(actionName, 1, commonName, true);
         }
         else
         {
-            interfaceManager.TurnOnActionCanvas(actionName, commonName, false);
+            interfaceManager.TurnOnActionCanvas(actionName, 1, commonName, false);
         }
     }
 

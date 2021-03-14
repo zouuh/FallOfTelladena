@@ -25,7 +25,7 @@ public class FacingWaterZone : MonoBehaviour
         if (isFacingWater)
         {
             toolManager.canDrop = false;
-            toolManager.ActivateActionInfo(actionName, requiredToolName);
+            toolManager.ActivateActionInfo(actionName, 1, requiredToolName);
             if (Inventory.instance.isUsingTool(requiredToolName))
             {
                 if (Input.GetButtonUp("Action") && !toolManager.usingATool)

@@ -50,7 +50,7 @@ public class DoorKeyController : DoorController
 
             //floattingText.activate(hasRequiredTool());
             player.GetComponent<ToolsManager>().canDrop = false;
-            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, null, requiredToolsName);
+            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, 1, null, requiredToolsName);
         }
     }
 
@@ -85,7 +85,7 @@ public class DoorKeyController : DoorController
         {
             //string missingTool = hasRequiredTool();
             int missingTool = player.GetComponent<ToolsManager>().HasRequiredTools(requiredToolsName);
-            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, null, requiredToolsName);
+            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, 1, null, requiredToolsName);
             //floattingText.activate(missingTool);
             if (missingTool == -1 && Input.GetButtonDown("Action") && !player.GetComponent<ToolsManager>().usingATool)
             {

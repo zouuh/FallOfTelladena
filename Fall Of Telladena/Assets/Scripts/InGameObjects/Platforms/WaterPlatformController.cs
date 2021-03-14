@@ -63,7 +63,7 @@ public class WaterPlatformController : MonoBehaviour
     {
         if (isInContact)
         {
-            toolsManager.ActivateActionInfo(actionName, requiredToolName);
+            toolsManager.ActivateActionInfo(actionName, 1, requiredToolName, null);
             if (Inventory.instance.isUsingTool(requiredToolName))
             {
                 if (Input.GetButtonUp("Action") && !toolsManager.usingATool)

@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     private GameObject mainVueCanvas;
 
     [SerializeField]
-    ParticleSystem dust;
+    public ParticleSystem dust;
     [SerializeField]
     ParticleSystem dustJump;
 
