@@ -6,7 +6,6 @@ public class ActiveInventoryUI : MonoBehaviour
 
 	public Transform itemsParent;	// The parent object of all the items
 	public GameObject inventoryUI;  // The entire UI
-	bool verifBtn = true;
 
 	public static Inventory inventory;	// Our current inventory
 
@@ -20,19 +19,32 @@ public class ActiveInventoryUI : MonoBehaviour
 		// Populate our slots array
 		slots = itemsParent.GetComponentsInChildren<ActiveInventorySlot>();
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
-        foreach (string guid2 in guids2)
-        {
+		foreach (string guid2 in guids2)
+		{
 			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));
 			Debug.Log(data.Length + " Assets");
-			foreach (Item o in data)
-			{
-				//o.amount--;
-				if (o.amount >= 1){
-					inventory.Add(o);
+			if (Inventory.verif == true){
+				foreach (Item o in data)
+				{
+					Debug.Log("--------------- "+ o + " -> "+ o.amount);
+					if (o.amount >= 1){
+						inventory.Add(o);
+					}
 				}
 			}
-        }
-
+			else {
+				foreach (Item o in data)
+				{
+					Debug.Log("--------------- "+ o + " -> "+ o.amount);
+					if (o.amount >= 1){
+						o.amount--;
+						inventory.Add(o);
+					}
+				}
+			}
+		}
+		Inventory.verif = false;
+		Debug.Log("start verifBtn "+Inventory.verif);
         UpdateActiveUI();
 /*        */
 	}
@@ -56,6 +68,7 @@ public class ActiveInventoryUI : MonoBehaviour
 			}
 		}	
 		*/
+		//Debug.Log(" verifBtn "+verifBtn);
 		UpdateActiveUI();
 		//verifBtn = false;
 	}

@@ -26,12 +26,31 @@ public class InventoryUI : MonoBehaviour {
         {
 			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));
 			Debug.Log(data.Length + " Assets");
+			
 			foreach (Item o in data)
 			{
-				o.amount -= 2;
+				Debug.Log("---------- "+ o + " -> "+ o.amount);
 				if (o.amount >= 1){
+					o.amount--;
 					inventory.Add(o);
 				}
+				/*
+				//o.amount -= 2;
+				if (o.amount >= 3){
+					inventory.Add(o);
+					o.amount -= 2;
+				}
+				else if (o.amount == 2){
+					inventory.Add(o);
+					o.amount -= 2;
+				}
+				else if (o.amount == 1){
+					Debug.Log("--------------- == 1 " + o.amount);
+				}
+				else {
+					Debug.Log("--------------- autre cas");
+				}
+				Debug.Log("---------- "+o.amount);*/
 			}
         }
 

@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour {
 	#region Singleton
 
 	public static Inventory instance;
+	public static bool verif = true;
 
 	void Awake ()
 	{
