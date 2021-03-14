@@ -21,9 +21,12 @@ public class ToolsManager : MonoBehaviour
         if (Input.GetButtonDown("Action") && canDrop && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
         {
             Debug.Log("drop");
-            itemZone.GetChild(0).transform.Translate(0, 0, -.3f); // avoid bug
-            itemZone.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
-            itemZone.GetChild(0).GetComponent<ItemPickup>().canPickUp = true;
+            if (itemZone.childCount > 0)
+            {
+                itemZone.GetChild(0).transform.Translate(0, 0, -.3f); // avoid bug
+                itemZone.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+                itemZone.GetChild(0).GetComponent<ItemPickup>().canPickUp = true;
+            }
             itemZone.DetachChildren();
             Inventory.instance.Remove(Inventory.instance.usedItem);
             if (Inventory.instance.usedItem == null)
