@@ -22,11 +22,9 @@ public class ActiveInventoryUI : MonoBehaviour
 		foreach (string guid2 in guids2)
 		{
 			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));
-			Debug.Log(data.Length + " Assets");
 			if (Inventory.verif == true){
 				foreach (Item o in data)
 				{
-					Debug.Log("--------------- "+ o + " -> "+ o.amount);
 					if (o.amount >= 1){
 						inventory.Add(o);
 					}
@@ -35,7 +33,6 @@ public class ActiveInventoryUI : MonoBehaviour
 			else {
 				foreach (Item o in data)
 				{
-					Debug.Log("--------------- "+ o + " -> "+ o.amount);
 					if (o.amount >= 1){
 						o.amount--;
 						inventory.Add(o);
@@ -44,33 +41,11 @@ public class ActiveInventoryUI : MonoBehaviour
 			}
 		}
 		Inventory.verif = false;
-		Debug.Log("start verifBtn "+Inventory.verif);
         UpdateActiveUI();
-/*        */
 	}
 	
 	void Update () {
-		// Check to see if we should open/close the inventory
-		/*if (Input.GetButtonDown("Inventory"))
-		{
-			inventoryUI.SetActive(!inventoryUI.activeSelf);
-		}
-		/*
-		if (OnClick.result == true && verifBtn == true){
-			for (int i = 0; i < inventory.items.Count; i++)
-			{
-				if (inventory.items[i].activeInstance == false){
-					slots[i].OnRemoveButton ();
-				}
-				else {
-					inventory.items[i].amount -= 1;
-				}
-			}
-		}	
-		*/
-		//Debug.Log(" verifBtn "+verifBtn);
 		UpdateActiveUI();
-		//verifBtn = false;
 	}
     
 
@@ -91,16 +66,11 @@ public class ActiveInventoryUI : MonoBehaviour
 				slots[j].AddItem(inventory.items[i]);	// Add it
 			} else
 			{
-				// Otherwise clear the slot
-				//slots[i].ClearSlot();
 				j--;
 			}
 			j++;
 		
 		} 
-
-        Debug.Log("Updating Active UI");	
-
 
 		return;
 

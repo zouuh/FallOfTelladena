@@ -39,8 +39,6 @@ public class Inventory : MonoBehaviour {
 				return false;
 			}
 			for (int i = 0; i < items.Count; i++){
-				Debug.Log("items[i].name : "+ items[i].name);
-				Debug.Log("item.name : "+ item.name);
 				if(items[i].name == item.name){
 					items[i].amount += 1;
 					items.Remove(item);

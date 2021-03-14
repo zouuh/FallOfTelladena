@@ -8,7 +8,6 @@ public class InventoryUI : MonoBehaviour {
 	public Transform itemsParent;	// The parent object of all the items
 	public GameObject inventoryUI;  // The entire UI
 	public CanvasController cv;
-	bool verifBtn = true;
 
 	public static Inventory inventory;	// Our current inventory
 
@@ -21,36 +20,15 @@ public class InventoryUI : MonoBehaviour {
 		// Populate our slots array
 		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
-		Debug.Log("okokokok");
         foreach (string guid2 in guids2)
         {
-			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));
-			Debug.Log(data.Length + " Assets");
-			
+			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));			
 			foreach (Item o in data)
 			{
-				Debug.Log("---------- "+ o + " -> "+ o.amount);
 				if (o.amount >= 1){
 					o.amount--;
 					inventory.Add(o);
 				}
-				/*
-				//o.amount -= 2;
-				if (o.amount >= 3){
-					inventory.Add(o);
-					o.amount -= 2;
-				}
-				else if (o.amount == 2){
-					inventory.Add(o);
-					o.amount -= 2;
-				}
-				else if (o.amount == 1){
-					Debug.Log("--------------- == 1 " + o.amount);
-				}
-				else {
-					Debug.Log("--------------- autre cas");
-				}
-				Debug.Log("---------- "+o.amount);*/
 			}
         }
 
@@ -62,21 +40,7 @@ public class InventoryUI : MonoBehaviour {
 		{
 			inventoryUI.SetActive(!inventoryUI.activeSelf);
 		}
-		/*
-		if (OnClick.result == true && verifBtn == true){
-			for (int i = 0; i < inventory.items.Count; i++)
-			{
-				if (inventory.items[i].activeInstance == false){
-					slots[i].OnRemoveButton ();
-				}
-				else {
-					inventory.items[i].amount -= 1;
-				}
-			}
-		}	
-		*/
 		UpdateUI();
-		//verifBtn = false;
 	}
 
 	// Update the inventory UI by:
@@ -86,9 +50,6 @@ public class InventoryUI : MonoBehaviour {
 	void UpdateUI ()
 	{
 		// Loop through all the slots
-
-		//Debug.Log("inventory.items ------------------------- " + inventory.items);
-		//Debug.Log("inventory.itemInvent ------------------------- " + inventory.itemInvent);
 		int j = 0;
 		for (int i = 0; i < slots.Length; i++)
 		{
@@ -98,14 +59,11 @@ public class InventoryUI : MonoBehaviour {
 				slots[j].AddItem(inventory.items[i]);	// Add it
 			} else
 			{
-				// Otherwise clear the slot
-				//slots[i].ClearSlot();
 				j--;
 			}
 			j++;
 		
-		} 
-        Debug.Log("Updating UI");	
+		} 	
 
 
 		return;

@@ -15,7 +15,6 @@ public class InventorySlot : MonoBehaviour {
 	// Add item to the slot
 	public void AddItem (Item newItem)
 	{
-		Debug.Log("AddItem");
 		item = newItem;
 
 		icon.sprite = item.icon;
@@ -59,8 +58,6 @@ public class InventorySlot : MonoBehaviour {
 			item.amount = item.amount-1;
 			PrintAmount(item);
 		}
-
-		Debug.Log("---------------------------------------------OnRemoveButton");
 	}
 
 	// Called when the item is pressed
