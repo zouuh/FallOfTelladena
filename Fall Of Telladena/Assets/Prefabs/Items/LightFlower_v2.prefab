@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 5584014374619178416}
   m_Layer: 0
   m_Name: LightFlower_v2
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,6 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickUp: 1
   item: {fileID: 11400000, guid: b349ee60bdb2cd94187c02e9d0daa6c8, type: 2}
+  ActivateButton: {fileID: 0}
 --- !u!1 &6749482669945828495
 GameObject:
   m_ObjectHideFlags: 0

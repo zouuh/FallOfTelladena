@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6976537138203112739}
   m_Layer: 0
   m_Name: ItemGoldenFish
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickUp: 1
   item: {fileID: 11400000, guid: c93f3c9227f78fb40a42b9a91573654b, type: 2}
+  ActivateButton: {fileID: 0}
 --- !u!54 &6976537138203112739
 Rigidbody:
   m_ObjectHideFlags: 0

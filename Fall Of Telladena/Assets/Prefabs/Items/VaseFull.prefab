@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 6856576107950672791}
   m_Layer: 0
   m_Name: VaseFull
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickUp: 1
   item: {fileID: 11400000, guid: b1a9cd6da2bd8b6438c44b90989cd3a6, type: 2}
+  ActivateButton: {fileID: 0}
 --- !u!54 &6856576107950672791
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class PlatformAttach : MonoBehaviour
     //Transform playerParent = null;
     //public GameObject myLedgeExit;
     //GameObject[] myChildObjects;
-    List<string> forbiddenTags = new List<string>(){ "FertilityZone", "ContactZoneBrambles", "LightInput", "FacingWaterZone", "ContactZoneNests" };
+    List<string> forbiddenTags = new List<string>(){ "FertilityZone", "ContactZoneBrambles", "LightInput", "FacingWaterZone", "ContactZoneNests", "Item", "Egg" };
 
     void OnTriggerEnter(Collider other)
     {

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2175228672889457522}
   m_Layer: 0
   m_Name: ItemGoldenGear
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickUp: 1
   item: {fileID: 11400000, guid: bcfa2513af1824c4998fa020ddb74697, type: 2}
+  ActivateButton: {fileID: 0}
 --- !u!54 &2175228672889457522
 Rigidbody:
   m_ObjectHideFlags: 0

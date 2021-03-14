@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 713965554025763590}
   m_Layer: 0
   m_Name: PlushyManai
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickUp: 1
   item: {fileID: 11400000, guid: 7cbc960195239c44bb7c1cda727e9bba, type: 2}
+  ActivateButton: {fileID: 0}
 --- !u!54 &713965554025763590
 Rigidbody:
   m_ObjectHideFlags: 0
