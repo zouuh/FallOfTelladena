@@ -13,14 +13,31 @@ public class MazeDoorController : MonoBehaviour
 
     public void ChangeStepSize()
     {
-        if(nbOfOpenDoors < nbOfRequiredOpenDoors - 1)
+        if (GetComponent<Platform>().forwardOrBackward == -1)
         {
-            GetComponent<Platform>().stepSize = 0.5f;
-            return;
+            if (nbOfOpenDoors <= nbOfRequiredOpenDoors - 1)
+            {
+                GetComponent<Platform>().stepSize = 0.5f;
+                GetComponent<Platform>().animationDuration = 4f;
+            }
+            else
+            {
+                GetComponent<Platform>().stepSize = 5f;
+                GetComponent<Platform>().animationDuration = 6f;
+            }
         }
         else
         {
-            GetComponent<Platform>().stepSize = 10f;
+            if (nbOfOpenDoors > nbOfRequiredOpenDoors - 1)
+            {
+                GetComponent<Platform>().stepSize = 0.5f;
+                GetComponent<Platform>().animationDuration = 4f;
+            }
+            else
+            {
+                GetComponent<Platform>().stepSize = 5f;
+                GetComponent<Platform>().animationDuration = 6f;
+            }
         }
     }
 

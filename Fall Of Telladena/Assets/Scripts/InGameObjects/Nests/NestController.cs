@@ -35,9 +35,11 @@ public class NestController : MonoBehaviour
             if (nestIsEmpty)
             {
                 // Put Egg in center
-                egg = Instantiate(Inventory.instance.usedItem.prefab, eggPosition.position, eggPosition.rotation, eggPosition);
-                egg.GetComponent<Rigidbody>().isKinematic = false;
+                //egg = Instantiate(Inventory.instance.usedItem.prefab, eggPosition.position, eggPosition.rotation, eggPosition);
+                egg = Instantiate(Inventory.instance.usedItem.prefab, eggPosition);
+                egg.GetComponent<Rigidbody>().isKinematic = true;
                 egg.GetComponent<ItemPickup>().canPickUp = false;
+                egg.transform.position = eggPosition.position;
 
                 Inventory.instance.Remove(Inventory.instance.usedItem);
                 if(Inventory.instance.usedItem == null)
@@ -60,6 +62,7 @@ public class NestController : MonoBehaviour
             else
             {
                 egg.GetComponent<ItemPickup>().canPickUp = true;
+                egg.GetComponent<Rigidbody>().isKinematic = false;
                 Destroy(eggPosition.GetChild(0).gameObject);
 
                 Inventory.instance.Add(egg.GetComponent<ItemPickup>().item);
@@ -120,14 +123,38 @@ public class NestController : MonoBehaviour
     {
         for (int i = 0; i < listOfPlatforms.Count; ++i)
         {
-            Debug.Log(listOfPlatforms[i]);
-            Debug.Log(listOfPlatforms[i].currStep);
-            Debug.Log(listOfPlatforms[i].nbOfSteps);
+
             // if last step is reached, go backwards
             if (listOfPlatforms[i].currStep >= listOfPlatforms[i].nbOfSteps)
             {
+                Debug.Log("reset, currStep = 0");
                 listOfPlatforms[i].currStep = 0;
                 listOfPlatforms[i].forwardOrBackward *= -1;
+            }
+
+            // if MazeDoorController, change step size
+            if (listOfPlatforms[i].GetComponent<MazeDoorController>() != null)
+            {
+                if (listOfPlatforms[0].forwardOrBackward == -1)
+                {
+                    listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors += 1;
+                    if (listOfPlatforms[i].forwardOrBackward == 1)
+                    {
+                        listOfPlatforms[i].forwardOrBackward = -1;
+                        listOfPlatforms[i].currStep = listOfPlatforms[i].nbOfSteps - listOfPlatforms[i].currStep;
+                    }
+                }
+                else
+                {
+                    listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors -= 1;
+                    if (listOfPlatforms[i].forwardOrBackward == -1)
+                    {
+                        listOfPlatforms[i].forwardOrBackward = 1;
+                        listOfPlatforms[i].currStep = listOfPlatforms[i].nbOfSteps - listOfPlatforms[i].currStep;
+                        Debug.Log("currStep:" + listOfPlatforms[i].currStep);
+                    }
+                }
+                listOfPlatforms[i].GetComponent<MazeDoorController>().ChangeStepSize();
             }
 
             myAnimation = listOfPlatforms[i].GetComponent<Animation>();

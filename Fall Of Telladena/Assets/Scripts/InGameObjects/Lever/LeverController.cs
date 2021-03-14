@@ -93,7 +93,7 @@ public class LeverController : MonoBehaviour
             {
                 //floattingText.activate(requiredToolName);
             }
-            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, requiredToolName);
+            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, 1, requiredToolName);
         }
     }
 
@@ -106,6 +106,29 @@ public class LeverController : MonoBehaviour
             {
                 listOfPlatforms[i].currStep = 0;
                 listOfPlatforms[i].forwardOrBackward *= -1;
+            }
+            // if MazeDoorController, change step size
+            if (listOfPlatforms[i].GetComponent<MazeDoorController>() != null)
+            {
+                if (listOfPlatforms[0].forwardOrBackward == -1)
+                {
+                    listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors += 1;
+                    if (listOfPlatforms[i].forwardOrBackward == 1)
+                    {
+                        listOfPlatforms[i].forwardOrBackward = -1;
+                        listOfPlatforms[i].currStep = listOfPlatforms[i].nbOfSteps - listOfPlatforms[i].currStep;
+                    }
+                }
+                else
+                {
+                    listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors -= 1;
+                    if (listOfPlatforms[i].forwardOrBackward == -1)
+                    {
+                        listOfPlatforms[i].forwardOrBackward = 1;
+                        listOfPlatforms[i].currStep = listOfPlatforms[i].nbOfSteps - listOfPlatforms[i].currStep;
+                    }
+                }
+                listOfPlatforms[i].GetComponent<MazeDoorController>().ChangeStepSize();
             }
 
             myAnimation = listOfPlatforms[i].GetComponent<Animation>();
@@ -142,25 +165,6 @@ public class LeverController : MonoBehaviour
             myAnimation.Play(clip.name);
 
             ++listOfPlatforms[i].currStep;
-
-            // if MazeDoorController, change step size
-            if (listOfPlatforms[i].GetComponent<MazeDoorController>() != null)
-            {
-                Debug.Log("is door");
-                if (listOfPlatforms[0].currStep >= listOfPlatforms[0].nbOfSteps)
-                {
-                    Debug.Log("Has finished");
-                    if (listOfPlatforms[0].forwardOrBackward == -1)
-                    {
-                        listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors += 1;
-                    }
-                    else
-                    {
-                        listOfPlatforms[i].GetComponent<MazeDoorController>().nbOfOpenDoors -= 1;
-                    }
-                }
-                listOfPlatforms[i].GetComponent<MazeDoorController>().ChangeStepSize();
-            }
         }
     }
 
