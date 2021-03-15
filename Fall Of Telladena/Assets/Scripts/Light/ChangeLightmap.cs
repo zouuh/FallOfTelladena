@@ -76,17 +76,18 @@ public class ChangeLightmap : MonoBehaviour
         var newLightmaps = new LightmapData[lightingScenariosData.lightmaps.Length];
 
         for (int i = 0; i < newLightmaps.Length; i++)
+        //for (int i = 0; i < 34 ; i++)
         {
             newLightmaps[i] = new LightmapData();
-            newLightmaps[i].lightmapLight = Resources.Load<Texture2D>(m_resourceFolder + "/" + lightingScenariosData.lightmaps[i].name);
+            newLightmaps[i].lightmapColor = Resources.Load<Texture2D>(m_resourceFolder + "/" + lightingScenariosData.lightmaps[i].name);
 
             if (lightingScenariosData.lightmapsMode != LightmapsMode.NonDirectional)
             {
                 newLightmaps[i].lightmapDir = Resources.Load<Texture2D>(m_resourceFolder + "/" + lightingScenariosData.lightmapsDir[i].name);
-                if (lightingScenariosData.lightmapsShadow[i] != null)
+              /*  if (lightingScenariosData.lightmapsShadow[i] != null)
                 { // If the textuer existed and was set in the data file.
                     newLightmaps[i].shadowMask = Resources.Load<Texture2D>(m_resourceFolder + "/" + lightingScenariosData.lightmapsShadow[i].name);
-                }
+                }*/
             }
         }
 
@@ -214,7 +215,7 @@ public class ChangeLightmap : MonoBehaviour
                 info.renderer = renderer;
                 info.lightmapOffsetScale = renderer.lightmapScaleOffset;
 
-                Texture2D lightmaplight = LightmapSettings.lightmaps[renderer.lightmapIndex].lightmapLight;
+                Texture2D lightmaplight = LightmapSettings.lightmaps[renderer.lightmapIndex].lightmapColor;
                 info.lightmapIndex = newLightmapsTextures.IndexOf(lightmaplight);
                 if (info.lightmapIndex == -1)
                 {
