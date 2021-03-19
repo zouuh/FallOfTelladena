@@ -20,37 +20,10 @@ public class CanvasController : MonoBehaviour
     GameObject dialogueCanvas;
     [SerializeField]
     GameObject loadingCanvas;
+    [SerializeField]
+    ActionCanvas actionCanvas;
 
     void Start() {
-        // Canvas[] allCanvas = Resources.FindObjectsOfTypeAll<Canvas>();
-        // foreach (Canvas canvas in allCanvas) {
-        //     switch (canvas.name)
-        //     {
-        //         /*
-        //     case "MainInterfaceCanvas":
-        //         mainViewCanvas = canvas.gameObject;
-        //         break;
-        //     case "MapCanvas":
-        //         mapCanvas = canvas.gameObject;
-        //         break;
-        //         */
-        //         case "InventoryCanvas":
-        //             inventoryCanvas = canvas.gameObject;
-        //             break;
-        //         case "DialogueCanvas":
-        //             dialogueCanvas = canvas.gameObject;
-        //             break;
-        //         case "PauseCanvas":
-        //             pauseCanvas = canvas.gameObject;
-        //             break;
-        //         case "LoadingScreen":
-        //             loadingCanvas = canvas.gameObject;
-        //             break;
-        //         default :
-        //             // Debug.Log(canvas.name + " not linked ");
-        //             break;
-        //     }
-        // }
         loadingCanvas.SetActive(false);
     }
 
@@ -93,7 +66,15 @@ public class CanvasController : MonoBehaviour
     public void SwitchCanvas(GameObject oldCanvas, GameObject newCanvas) {
         oldCanvas.SetActive(false);
         newCanvas.SetActive(true);
-        Debug.Log("New : " + newCanvas.name + " -> " + newCanvas.activeSelf);
-        Debug.Log("Old : " + oldCanvas.name + " -> " + oldCanvas.activeSelf);
+    }
+
+    public void TurnOnActionCanvas(string actionName="Use", int amount = 1, string tool = "", bool active = true)
+    {
+        actionCanvas.UpdateText(actionName, amount, tool, active);
+        actionCanvas.gameObject.SetActive(true);
+    }
+    public void TurnOffActionCanvas()
+    {
+        actionCanvas.gameObject.SetActive(false);
     }
 }

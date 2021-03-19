@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class PlayerPositionManager : MonoBehaviour
 {
     string previousPlace;
+    public Vector3 lastSafePosition;
     /*
      private void Awake()
     {
@@ -28,10 +29,6 @@ public class PlayerPositionManager : MonoBehaviour
     }
     */
 
-    private void Update()
-    {
-        //Debug.Log("Debug : " + transform.position);
-    }
     public void SetPreviousPlace(string place)
     {
         previousPlace = place;
@@ -47,7 +44,7 @@ public class PlayerPositionManager : MonoBehaviour
     {
         Debug.Log("Refresh player!");
         SpawnPoints[] spawnPoints = FindObjectsOfType<SpawnPoints>();
-        Debug.Log(spawnPoints.Length);
+        //Debug.Log(spawnPoints.Length);
         foreach (SpawnPoints spawnPoint in spawnPoints)
         {
             if (spawnPoint.isMySpawnPoint(previousPlace))
@@ -96,6 +93,19 @@ public class PlayerPositionManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Current pos : "+transform.position);
+        InvokeRepeating("SaveLastPosition", 0f, 5f);
+    }
+
+    public void SaveLastPosition()
+    {
+        lastSafePosition = transform.position;
+    }
+
+    public void SaveLastPositionLoop()
+    {
+        if (this.gameObject.GetComponent<CharacterController>().isGrounded)
+        {
+            lastSafePosition = transform.position;
+        }
     }
 }

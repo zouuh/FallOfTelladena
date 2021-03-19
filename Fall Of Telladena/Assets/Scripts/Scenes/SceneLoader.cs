@@ -14,26 +14,34 @@ public class SceneLoader : MonoBehaviour
     public string actualSceneName;
     public GameObject loadingScreen;
     public Slider slider;
-    [SerializeField]
     CinemachineBrain mainCam;
+    GameObject player;
 
     public void Start() {
         loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
         slider = loadingScreen.GetComponentInChildren<Slider>();
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void OnTriggerEnter()
+    public void OnTriggerEnter(Collider other)
     {
-        NPC[] characters = FindObjectsOfType<NPC>();
-        foreach (NPC pnj in characters) {
-            pnj.SaveNPC();
-        }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        if (other.CompareTag("Player"))
+        {
+            NPC[] characters = FindObjectsOfType<NPC>();
+            foreach (NPC pnj in characters)
+            {
+                Debug.Log("saved " + pnj.name);
+                pnj.SaveNPC();
+            }
+            player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
+            player.GetComponent<PlayerMovement>().dust.Stop();
+            player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<CharacterController>().enabled = false;
 
-        //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
-        StartCoroutine(LoadAsynchronously(nextSceneName));
+            //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
+            StartCoroutine(LoadAsynchronously(nextSceneName));
+        }
     }
 
     IEnumerator LoadAsynchronously(string sceneName)    {
@@ -44,7 +52,7 @@ public class SceneLoader : MonoBehaviour
         while (!operation.isDone) {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             slider.value = progress;
-            Debug.Log(slider.value);
+            // Debug.Log(slider.value);
             if(slider.value == 1) {
                 loadingScreen.SetActive(false);
             }

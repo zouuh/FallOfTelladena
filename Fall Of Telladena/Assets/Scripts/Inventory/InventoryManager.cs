@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Authors : Amélia
+ */
+
 using UnityEngine;
 using UnityEngine.UI;
 

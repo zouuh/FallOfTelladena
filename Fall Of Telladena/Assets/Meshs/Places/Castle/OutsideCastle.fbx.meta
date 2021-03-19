@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: eac3c57159e4adc4ba0de5200ef05674
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CastleOutsideBridge
+    second: {fileID: 2100000, guid: adde0e7fb0717954981e52e77fc3f825, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CastleOutsideGround
+    second: {fileID: 2100000, guid: 4e263a00df30e9740b3a241dc787aa35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LabrinthEntranceDoor
+    second: {fileID: 8816721768174937928, guid: eac3c57159e4adc4ba0de5200ef05674,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LabrinthEntranceDoor.001
+    second: {fileID: 535573399695025573, guid: eac3c57159e4adc4ba0de5200ef05674, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideCastleDoor
+    second: {fileID: 2100000, guid: 29e319cbd693fa441970681477d14431, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideColumns
+    second: {fileID: 2100000, guid: 2d64a28fc737323489a8025fe36a59da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideDecoTop
+    second: {fileID: 2100000, guid: f17e27cea17703644a69f3f38c6b26b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourBallRoomCeiling
+    second: {fileID: 2100000, guid: 462a6e8072d11a24e9cdb6d27dccb726, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourBallRoomWalls
+    second: {fileID: 2100000, guid: 1756902510cc4e64aa138fc260d6e1a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourBallRoomWindows
+    second: {fileID: 2100000, guid: 41c9aed94c210184398627346eec4ccb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourBedroomCeiling
+    second: {fileID: 2100000, guid: 8b76f557452344047a8da762de744a8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourBedroomWalls
+    second: {fileID: 2100000, guid: d5316708451190e4e8e0d9f183cb8c52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourBedroomWindows
+    second: {fileID: 2100000, guid: 4450c39c52704224db90cc259d7b8132, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourObservatoryCeilling
+    second: {fileID: 2100000, guid: 9c59aec443273994aa8730c822213c51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourObservatoryWalls
+    second: {fileID: 2100000, guid: c201c5fb6e54b4744a5290a1da242fec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourObservatoryWindows
+    second: {fileID: 2100000, guid: 4a459a25fd485f34599b3ccf324622f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourStairsWalls
+    second: {fileID: 2100000, guid: f17bbba2efdfa2f48b392dc3bd85ffb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideEastTourStairsWindows
+    second: {fileID: 2100000, guid: 0e3a04969ca320249a3dda8b9b240932, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideKitchenCeiling
+    second: {fileID: 2100000, guid: 1ce9c2300594b5745a8648d65ed990e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideKitchenDome
+    second: {fileID: 2100000, guid: bb5fdf28bcf415543920e13bcde43cd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideKitchenHalfSpheres
+    second: {fileID: 2100000, guid: f3221081cd195394b912970fd6f2e482, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideKitchenWalls
+    second: {fileID: 2100000, guid: 0f067e4edce85af40a118afd57a34cd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideMainBuildingBridge
+    second: {fileID: 2100000, guid: bf899d7eb4563ea41b24bac302e50705, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideMainBuildingCeiling
+    second: {fileID: 2100000, guid: 57b40f31e69a08f4081631ff2325995f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideMainBuildingDome
+    second: {fileID: 2100000, guid: 44daf303920ddf34c82f319853cdedbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideMainBuildingMiniDomeTop
+    second: {fileID: 2100000, guid: 513fd7a1b8eb4bc4381ea337eed48012, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideMainBuildingWalls
+    second: {fileID: 2100000, guid: e84e46f3d7a6ced498bbd3bf8359efb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideTourDome
+    second: {fileID: 2100000, guid: 11f7eba388fa5744991922c0b2716065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideWestTourGroundFloorMiniDomeTop
+    second: {fileID: 2100000, guid: 0a413a46d38f79d4f8964caf884551cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideWestTourGroundFloorWalls
+    second: {fileID: 2100000, guid: 48e07e2103049fc43b6bcc0194795762, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideWestTourLaboratoryCeiling
+    second: {fileID: 2100000, guid: c92f31e4b95f384419def55369650f1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideWestTourLaboratoryWalls
+    second: {fileID: 2100000, guid: 5e4e7f801f848e141a2e5939a810ee47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutsideWestTourSecondFloorWalls
+    second: {fileID: 2100000, guid: 20cf048cd5a188443a0b6d3c49279429, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WestTourGroundFloorStraightStairs
+    second: {fileID: 2100000, guid: 1abaa9a122a28b54483d3065abb54c6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WestTourGroundFloorStraightStairsFence
+    second: {fileID: 2100000, guid: 57654d5ab0d86a64495f3d5119174b86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WestTourGroundFloorStraightStairsFenceTop
+    second: {fileID: 2100000, guid: e7f44059510e1784bab6f2c70a3f674e, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
