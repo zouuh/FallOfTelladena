@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class MainQuest_State1 : StateMachineBehaviour
 {
+
     StoryManager storyManager;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,6 +32,7 @@ public class MainQuest_State1 : StateMachineBehaviour
         aiki.SetScene("OutsideCastle");
         aiki.SetPosition(new Vector3(2f,-0.12f, -13f));
         aiki.SetDialogueID(1);
+        aiki.SetAutomaticDialogue(true);
         aiki.SaveNPC();
 
         // Yoh appears

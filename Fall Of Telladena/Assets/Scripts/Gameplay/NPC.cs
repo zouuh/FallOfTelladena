@@ -3,6 +3,7 @@
  */
 
 using UnityEngine;
+using System.Collections;
 using UnityEditor;
 using System.IO;
 using UnityEngine.UI;
@@ -16,10 +17,11 @@ public class NPC : MonoBehaviour
 
     // Private attributes
     private static string myName;
-    public int dialogueId = 0;
-    public string scene;
+    private int dialogueId = 0;
+    private string scene;
+    private bool automaticDialogue = false;
     private bool isDialoguePossible = false;
-    public bool hasSeenDialogue = false;
+    private bool hasSeenDialogue = false;
     private string[] dialogue;
     private Text dialogueNameText;
     private Text dialogueText;
@@ -35,13 +37,17 @@ public class NPC : MonoBehaviour
         hasSeenDialogue = false;
     }
 
-    public string GetScene() {
+    public string  GetScene() {
         return scene;
     }
 
     public void SetScene(string newScene) {
         scene = newScene;
         this.CheckScene();
+    }
+
+    public void SetAutomaticDialogue(bool newBool) {
+        automaticDialogue = newBool;
     }
 
     public void SetPosition(Vector3 newPos) {
@@ -72,6 +78,31 @@ public class NPC : MonoBehaviour
                 rend.enabled = true;
             }
         }
+    }
+
+    public void ActiveDialogue() {
+        dialogueCanvas.SetActive(true);
+        dialogueNameText.text = this.name;
+        // Enable the right sentence of current Id
+        dialogueText.text = "";
+        // dialogueText.text = dialogue[dialogueId];
+        mainInterfaceCanvas.SetActive(false);
+
+        StartCoroutine(TypeSentence(dialogue[dialogueId]));
+    }
+
+    IEnumerator TypeSentence (string sentence) {
+        foreach(char letter in sentence.ToCharArray()) {
+            dialogueText.text += letter;
+            yield return null;
+        }
+    }
+
+    public void HideDialogue() {
+        dialogueCanvas.SetActive(false);
+        // Say that Oksusu red this dialogue
+        hasSeenDialogue = true;
+        mainInterfaceCanvas.SetActive(true);
     }
 
     static string[] ReadNpcFile() {
@@ -106,6 +137,9 @@ public class NPC : MonoBehaviour
         dialogue = ReadNpcFile();
         this.LoadNPC();
         CheckScene();
+        if(this.name == "Aïki") {
+            automaticDialogue = true;
+        }
     }
 
     void Update() {
@@ -114,26 +148,23 @@ public class NPC : MonoBehaviour
             if (isDialoguePossible) {
                 // Test if the dialogue window isn't active
                 if (!dialogueCanvas.activeSelf) {
-                    dialogueCanvas.SetActive(true);
-                    dialogueNameText.text = this.name;
-                    // Enable the right sentence of current Id
-                    dialogueText.text = dialogue[dialogueId];
-                    mainInterfaceCanvas.SetActive(false);
+                    ActiveDialogue();
                 }
                 else {
-                    dialogueCanvas.SetActive(false);
-                    // Say that Oksusu red this dialogue
-                    hasSeenDialogue = true;
-                    mainInterfaceCanvas.SetActive(true);
+                    HideDialogue();
                 }
             }
         }
     }
 
-    void OnTriggerStay(Collider colliderInfo) {
+    void OnTriggerEnter(Collider colliderInfo) {
         // Change bool if this is in the dialogue zone
         if (colliderInfo.CompareTag("DialogueInput")) {
             isDialoguePossible = true;
+            if(automaticDialogue) {
+                ActiveDialogue();
+                automaticDialogue = false;
+            }
         }
     }
 
