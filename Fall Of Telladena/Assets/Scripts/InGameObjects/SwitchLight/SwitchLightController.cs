@@ -1,13 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿/*
+ * Authors : Manon
+ */
+
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SwitchLightController : MonoBehaviour
 {
     public bool isOn = false;
-    int frameBeforeCheckingAgain = 30;
-    // Start is called before the first frame update
+    [SerializeField]
+    List<Platform> listOfPlatforms = new List<Platform>();
+
+    // Animations
+    Animation myAnimation;
+    AnimationCurve curve;
+
     void Start()
     {
         //Get the Renderer component from the new cube
@@ -15,68 +22,87 @@ public class SwitchLightController : MonoBehaviour
         //Call SetColor using the shader property name "_Color" and setting the color to red
         myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
     }
-    
-    void LateUpdate()
-    {
-        if (frameBeforeCheckingAgain <= 0)
-        {
-            if (isOn)
-            {
-                var myRenderer = GetComponent<Renderer>();
-                //Call SetColor using the shader property name "_Color" and setting the color to red
-                myRenderer.material.SetColor("_EmissionColor", Color.white * 1);
-                //UnityEngine.Debug.Log("ison");
-                //isOn = true;
-            }
-            else
-            {
-                var myRenderer = GetComponent<Renderer>();
-                //Call SetColor using the shader property name "_Color" and setting the color to red
-                myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
-                //UnityEngine.Debug.Log("isoff");
-            }
-            isOn = false;
-            frameBeforeCheckingAgain = 30;
-        }        
-        --frameBeforeCheckingAgain;
-    }
-    
 
-    void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LightInput") || other.CompareTag("LightInputPlayer"))
         {
-            /*
-            UnityEngine.Debug.Log("is colliding");
-            
-            //Get the Renderer component from the new cube
-            var myRenderer = GetComponent<Renderer>();
-            //Call SetColor using the shader property name "_Color" and setting the color to red
-            myRenderer.material.SetColor("_EmissionColor", Color.white * 1);
-            */
             isOn = true;
-            UnityEngine.Debug.Log("ison");
-        }/*else
-        {
-            UnityEngine.Debug.Log("is not colliding");
-            //Get the Renderer component from the new cube
             var myRenderer = GetComponent<Renderer>();
-            //Call SetColor using the shader property name "_Color" and setting the color to red
-            myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
-        }*/
-    }
-    /*
-    void OnTriggerExit(Collider other)
-    {
-        UnityEngine.Debug.Log("is not colliding");
-        UnityEngine.Debug.Log(other.tag);
-        if (other.gameObject.CompareTag("LightInput"))
-        {
-            UnityEngine.Debug.Log("is away");
-            //Get the Renderer component from the new cube
-            var myRenderer = GetComponent<Renderer>();
-            //Call SetColor using the shader property name "_Color" and setting the color to red
-            myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
+            myRenderer.material.SetColor("_EmissionColor", Color.white * 1);
+
+            if (GetComponent<CinematicTrigger>() != null)
+            {
+                GetComponent<CinematicTrigger>().Play();
+                ChangeAnimation();
+            }
         }
-    }*/
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("LightInput") || other.CompareTag("LightInputPlayer"))
+        {
+            isOn = false;
+            var myRenderer = GetComponent<Renderer>();
+            myRenderer.material.SetColor("_EmissionColor", Color.white * 0);
+
+            if (GetComponent<CinematicTrigger>() != null)
+            {
+                GetComponent<CinematicTrigger>().Play();
+                ChangeAnimation();
+            }
+        }
+    }
+
+    void ChangeAnimation()
+    {
+        for (int i = 0; i < listOfPlatforms.Count; ++i)
+        {
+            Debug.Log(listOfPlatforms[i]);
+            Debug.Log(listOfPlatforms[i].currStep);
+            Debug.Log(listOfPlatforms[i].nbOfSteps);
+            // if last step is reached, go backwards
+            if (listOfPlatforms[i].currStep >= listOfPlatforms[i].nbOfSteps)
+            {
+                listOfPlatforms[i].currStep = 0;
+                listOfPlatforms[i].forwardOrBackward *= -1;
+            }
+
+            myAnimation = listOfPlatforms[i].GetComponent<Animation>();
+            // Create custom animation
+            AnimationClip clip = new AnimationClip();
+            //clip = myAnimation.clip;
+            clip.legacy = true;
+
+            int axisId = listOfPlatforms[i].axisId;
+
+            float key1 = listOfPlatforms[i].transform.localPosition[axisId];
+            Debug.Log(listOfPlatforms[i].transform.localPosition[axisId]);
+            float key2 = key1 + (listOfPlatforms[i].stepSize * listOfPlatforms[i].forwardOrBackward);
+            clip.name = (key1 + "-" + key2);
+
+            Keyframe[] keys;
+            keys = new Keyframe[2];
+            keys[0] = new Keyframe(0.0f, key1);
+            keys[1] = new Keyframe(listOfPlatforms[i].animationDuration, key2);
+            curve = new AnimationCurve(keys);
+            clip.SetCurve("", typeof(Transform), "localPosition." + listOfPlatforms[i].axisToAnimate, curve);
+
+            // new event created
+            AnimationEvent evt;
+            evt = new AnimationEvent();
+            evt.time = listOfPlatforms[i].animationDuration; // same as key2 duration
+            evt.functionName = "EndAnimation";
+
+            clip.AddEvent(evt);
+
+            myAnimation.AddClip(clip, clip.name);
+            // Play custom animation
+            listOfPlatforms[i].animationEnd = false;
+            myAnimation.Play(clip.name);
+
+            ++listOfPlatforms[i].currStep;
+        }
+    }
 }

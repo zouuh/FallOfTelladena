@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a934cc7392dc4514cb7696efe5fa741b, type: 3}
   m_Name: TrapeseCoin
   m_EditorClassIdentifier: 
-  name: TrapeseCoin
-  amount: 0
+  name: Trapese Coin
+  amount: 4
   icon: {fileID: 21300000, guid: dd6881ca51c3fa04f9553790b9486d54, type: 3}
   showInInventory: 1
+  droppable: 1
+  prefab: {fileID: 6067224109508469629, guid: 15b1c0f9fc8a8864ab94e72890f44616, type: 3}

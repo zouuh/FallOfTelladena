@@ -35,6 +35,7 @@ public class SceneLoader : MonoBehaviour
                 pnj.SaveNPC();
             }
             player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
+            player.GetComponent<PlayerMovement>().dust.Stop();
             player.GetComponent<PlayerMovement>().enabled = false;
             player.GetComponent<CharacterController>().enabled = false;
 

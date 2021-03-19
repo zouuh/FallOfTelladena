@@ -18,6 +18,8 @@ public class ItemPickup : MonoBehaviour
 
     public Animator oksusuAnimator;
 
+    public ButtonController ActivateButton = null;
+
     void PickUp()
     {
         Debug.Log("PickUP() : " + item.name);
@@ -30,7 +32,12 @@ public class ItemPickup : MonoBehaviour
 
     IEnumerator WaitForAnim(bool wasPickedUp) {
         yield return new WaitForSeconds(1f);
-        if (wasPickedUp) {
+        if (ActivateButton != null)
+        {
+            ActivateButton.nbOfColliders--;
+            ActivateButton.CheckOpen();
+        }
+        if (wasPickedUp)
             Destroy(gameObject);
         }
     }
@@ -46,7 +53,8 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.CompareTag("ContactZone") && canPickUp)
         {
-            toolsManager.ActivateActionInfo("Take " + item.name);
+            toolsManager.canDrop = false;
+            toolsManager.ActivateActionInfo("Take "+ item.name, 1, null);
             isInContact = true;
         }
     }
@@ -55,6 +63,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.CompareTag("ContactZone"))
         {
+            toolsManager.canDrop = true;
             toolsManager.DeactivateActionInfo();
             isInContact = false;
         }
@@ -68,6 +77,7 @@ public class ItemPickup : MonoBehaviour
             toolsManager.StartCoroutine("UseTool");
             PickUp();
             isPickedUp = true;
+            toolsManager.canDrop = true;
             toolsManager.DeactivateActionInfo();
         }
     }

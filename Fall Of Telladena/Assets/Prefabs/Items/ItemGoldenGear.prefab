@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2175228672889457522}
   m_Layer: 0
   m_Name: ItemGoldenGear
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,8 +93,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.005, y: 0.005, z: 0.001}
-  m_Center: {x: 0, y: -0.000017926217, z: 0.0001168409}
+  m_Size: {x: 0.003, y: 0.003, z: 0.001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6455158645575409839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickUp: 1
   item: {fileID: 11400000, guid: bcfa2513af1824c4998fa020ddb74697, type: 2}
+  ActivateButton: {fileID: 0}
 --- !u!54 &2175228672889457522
 Rigidbody:
   m_ObjectHideFlags: 0

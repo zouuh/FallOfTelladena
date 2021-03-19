@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1691899039527676082}
   m_Layer: 0
   m_Name: ItemGoldenCrown
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.005, y: 0.005, z: 0.001}
+  m_Size: {x: 0.002, y: 0.002, z: 0.001}
   m_Center: {x: 0, y: 0, z: 0.0005733466}
 --- !u!114 &6404550105878456453
 MonoBehaviour:
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickUp: 1
   item: {fileID: 11400000, guid: 7cbc960195239c44bb7c1cda727e9bba, type: 2}
+  ActivateButton: {fileID: 0}
 --- !u!54 &-1691899039527676082
 Rigidbody:
   m_ObjectHideFlags: 0

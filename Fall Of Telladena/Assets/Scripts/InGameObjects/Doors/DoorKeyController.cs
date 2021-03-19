@@ -39,7 +39,7 @@ public class DoorKeyController : DoorController
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             Debug.Log("Contact");
             isInContact = true;
@@ -49,16 +49,18 @@ public class DoorKeyController : DoorController
             }
 
             //floattingText.activate(hasRequiredTool());
-            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, null, requiredToolsName);
+            player.GetComponent<ToolsManager>().canDrop = false;
+            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, 1, null, requiredToolsName);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("ContactZone") || other.CompareTag("ContactZoneBrambles"))
+        if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
             //floattingText.desactivate();
+            player.GetComponent<ToolsManager>().canDrop = true;
             player.GetComponent<ToolsManager>().DeactivateActionInfo();
         }
     }
@@ -83,7 +85,7 @@ public class DoorKeyController : DoorController
         {
             //string missingTool = hasRequiredTool();
             int missingTool = player.GetComponent<ToolsManager>().HasRequiredTools(requiredToolsName);
-            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, null, requiredToolsName);
+            player.GetComponent<ToolsManager>().ActivateActionInfo(actionName, 1, null, requiredToolsName);
             //floattingText.activate(missingTool);
             if (missingTool == -1 && Input.GetButtonDown("Action") && !player.GetComponent<ToolsManager>().usingATool)
             {

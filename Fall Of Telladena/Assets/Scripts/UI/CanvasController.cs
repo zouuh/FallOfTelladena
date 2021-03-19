@@ -68,9 +68,9 @@ public class CanvasController : MonoBehaviour
         newCanvas.SetActive(true);
     }
 
-    public void TurnOnActionCanvas(string actionName="Use", string tool = "", bool active = true)
+    public void TurnOnActionCanvas(string actionName="Use", int amount = 1, string tool = "", bool active = true)
     {
-        actionCanvas.UpdateText(actionName, tool, active);
+        actionCanvas.UpdateText(actionName, amount, tool, active);
         actionCanvas.gameObject.SetActive(true);
     }
     public void TurnOffActionCanvas()

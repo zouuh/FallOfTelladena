@@ -94,11 +94,11 @@ public class TorchController : MonoBehaviour
         {
             if (myLightZone.activeSelf)
             {
-                player.GetComponent<ToolsManager>().ActivateActionInfo("Turn off", requiredToolName);
+                player.GetComponent<ToolsManager>().ActivateActionInfo("Turn off", 1, requiredToolName);
             }
             else
             {
-                player.GetComponent<ToolsManager>().ActivateActionInfo("Turn on", requiredToolName);
+                player.GetComponent<ToolsManager>().ActivateActionInfo("Turn on", 1, requiredToolName);
             }
             SwitchLight(!hasReceivedLight);
             sameLightImpulseTmp = player.sameLightImpulse;

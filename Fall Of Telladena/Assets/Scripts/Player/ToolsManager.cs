@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/** TODO : eau ronces **/
 public class ToolsManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,15 +14,19 @@ public class ToolsManager : MonoBehaviour
     Transform itemZone;
 
     public bool usingATool = false;
+    public bool canDrop = true;
 
     private void LateUpdate()
     {
-        if (Input.GetButtonDown("Action") && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
+        if (Input.GetButtonDown("Action") && canDrop && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
         {
             Debug.Log("drop");
-            itemZone.GetChild(0).transform.Translate(0, 0, -.1f); // avoid bug
-            itemZone.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
-            itemZone.GetChild(0).GetComponent<ItemPickup>().canPickUp = true;
+            if (itemZone.childCount > 0)
+            {
+                itemZone.GetChild(0).transform.Translate(0, 0, -.3f); // avoid bug
+                itemZone.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+                itemZone.GetChild(0).GetComponent<ItemPickup>().canPickUp = true;
+            }
             itemZone.DetachChildren();
             Inventory.instance.Remove(Inventory.instance.usedItem);
             if (Inventory.instance.usedItem == null)
@@ -68,29 +71,57 @@ public class ToolsManager : MonoBehaviour
         return -1;
     }
 
-    public void ActivateActionInfo(string actionName, string requiredUsingTool = "", List<NameAmountPair> requiredTools = null)
+    public void ActivateActionInfo(string actionName, int amount, string requiredUsingTool, List<NameAmountPair> requiredTools = null)
     {
         int idMissingTool = HasRequiredTools(requiredTools);
         if (idMissingTool != -1)
         {
-            interfaceManager.TurnOnActionCanvas(actionName, requiredTools[idMissingTool].name, false);
+            interfaceManager.TurnOnActionCanvas(actionName, requiredTools[idMissingTool].amount, requiredTools[idMissingTool].name, false);
         }
         else
         {
             if (requiredUsingTool == null)
             {
-                interfaceManager.TurnOnActionCanvas(actionName, requiredUsingTool, true);
+                interfaceManager.TurnOnActionCanvas(actionName, amount, requiredUsingTool, true);
             }
             else
             {
-                interfaceManager.TurnOnActionCanvas(actionName, requiredUsingTool, IsUsingRequiredTool(requiredUsingTool));
+                interfaceManager.TurnOnActionCanvas(actionName, amount, requiredUsingTool, IsUsingRequiredTool(requiredUsingTool));
             }
+        }
+    }
+
+    bool IsUsingOneOfTheTools(List<string> tools)
+    {
+        if(tools == null)
+        {
+            return true;
+        }
+        foreach(string tool in tools)
+        {
+            if (Inventory.instance.isUsingTool(tool))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void ActivateActionInfo(string actionName, List<string> requiredUsingTools, string commonName)
+    {
+        if (IsUsingOneOfTheTools(requiredUsingTools))
+        {
+            interfaceManager.TurnOnActionCanvas(actionName, 1, commonName, true);
+        }
+        else
+        {
+            interfaceManager.TurnOnActionCanvas(actionName, 1, commonName, false);
         }
     }
 
     public void DeactivateActionInfo()
     {
-        if(Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable)
+        if(Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && canDrop)
         {
             interfaceManager.TurnOnActionCanvas("Drop");
         }
@@ -103,9 +134,7 @@ public class ToolsManager : MonoBehaviour
     public IEnumerator UseTool()
     {
         usingATool = true;
-        Debug.Log("coroutine");
         yield return new WaitForSeconds(1f);
-        Debug.Log("coroutine end");
         usingATool = false;
     }
 

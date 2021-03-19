@@ -9,26 +9,26 @@ public class DontDestroy : MonoBehaviour
 {
     private void Awake()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+        GameObject[] objs = GameObject.FindGameObjectsWithTag(gameObject.tag);
 
         if (objs.Length > 1)
         {
-            if (this.gameObject.CompareTag("Player"))
+            if (gameObject.CompareTag("Player"))
             {
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
             }
             if(this.gameObject != null) {
                 Destroy(this.gameObject);
             }
         }
 
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
 
-        if (this.gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Player"))
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
-        if (this.gameObject.CompareTag("Characters")) {
+        if (gameObject.CompareTag("Characters")) {
             SceneManager.sceneLoaded += CheckNpc;
         }
     }
@@ -36,7 +36,9 @@ public class DontDestroy : MonoBehaviour
     //void Awake()
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPositionManager>().SearchNewPosition();
+        var player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerPositionManager>().SearchNewPosition();
+        player.GetComponent<PlayerMovement>().dust.Play();
     }
 
     void CheckNpc(Scene scene, LoadSceneMode mode) {

@@ -46,20 +46,18 @@ public class Inventory : MonoBehaviour {
 				Debug.Log ("Not enough room.");
 				return false;
 			}
+			// for first appearance
 			for (int i = 0; i < items.Count; i++){
-				Debug.Log("items[i].name : "+ items[i].name);
-				Debug.Log("item.name : "+ item.name);
 				if(items[i].name == item.name){
 					items[i].amount += 1;
 					items.Remove(item);
 				}
 			}
-			if(0 == item.amount){
+			if(item.amount <= 0){
 				item.amount = 1;
-				items.Add (item);
+				items.Add(item);
 			}
-			
-			else {
+			else{
 				items.Add(item);
 			}
 			
@@ -81,7 +79,6 @@ public class Inventory : MonoBehaviour {
 	{
 		// items.Remove(item);
 		//Item tmpItem = items.Find(el => el.name.Equals(item.name));
-		Debug.Log("Removing !");
         if (item != null)
         {
 			--item.amount;

@@ -12,6 +12,7 @@ public class Platform : MonoBehaviour
     public int currStep = 0;
     public float stepSize = 1.0f;
     public int forwardOrBackward = 1; // 1 = forward, -1 = backward
+    public float animationDuration = 1f;
     public bool animationEnd = true;
 
     public void EndAnimation()

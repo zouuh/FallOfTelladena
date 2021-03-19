@@ -23,6 +23,7 @@ public class WaterPlatformController : MonoBehaviour
     public bool animationIsEnded = true; // public because used by WaterPlatform
 
     bool isInContact = false;
+    GameObject player = null;
 
     //[SerializeField]
     //FloattingText floattingText;
@@ -57,28 +58,12 @@ public class WaterPlatformController : MonoBehaviour
         }
 
     }
-    /*
-    private void Update()
-    {
-        if (myAnimation.isPlaying)
-        {
-            animationIsEnded = false;
-        }
-        else
-        {
-            if (!animationIsEnded)
-            {
-                animationEnd();
-            }
-            animationIsEnded = true;
-        }
-    }
-    */
+
     private void Update()
     {
         if (isInContact)
         {
-            toolsManager.ActivateActionInfo(actionName, requiredToolName);
+            toolsManager.ActivateActionInfo(actionName, 1, requiredToolName, null);
             if (Inventory.instance.isUsingTool(requiredToolName))
             {
                 if (Input.GetButtonUp("Action") && !toolsManager.usingATool)
@@ -92,15 +77,11 @@ public class WaterPlatformController : MonoBehaviour
                     Inventory.instance.ChangeActiveTool(emptyRecipient);
 
                     ChangeAnimation();
+                    player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
 
                     toolsManager.CarryItem(true, emptyRecipient);
                     toolsManager.DeactivateActionInfo();
                 }
-                //floattingText.activate();
-            }
-            else
-            {
-                //floattingText.activate(requiredToolName);
             }
         }
     }
@@ -117,8 +98,6 @@ public class WaterPlatformController : MonoBehaviour
         }
         if (currStep < nbOfSteps)
         {
-            Debug.Log("Play:" + currStep);
-
             // Create custom animation
             AnimationClip clip = new AnimationClip();
             clip.name = "Anim";
@@ -160,17 +139,6 @@ public class WaterPlatformController : MonoBehaviour
         ++currStep;
     }
 
-    /*
-    public void animationEnd()
-    {
-        Debug.Log("animation end");
-        // free player
-        myPlayer.enabled = true;
-        // allow new water
-        animationIsEnded = true;
-    }
-    */
-
     public void ResetPosition()
     {
         // Create reset animation (one frame)
@@ -196,7 +164,12 @@ public class WaterPlatformController : MonoBehaviour
 
         if (other.CompareTag("ContactZone"))
         {
+            if (player == null)
+            {
+                player = other.GetComponent<ContactZone>().player;
+            }
             isInContact = true;
+            toolsManager.canDrop = false;
             other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = false;
 
         }
@@ -217,6 +190,7 @@ public class WaterPlatformController : MonoBehaviour
         if (other.CompareTag("ContactZone"))
         {
             isInContact = false;
+            toolsManager.canDrop = true;
             other.GetComponent<ContactZone>().player.GetComponentInChildren<FacingWaterZone>().isFacingWater = true;
             //floattingText.desactivate();
             toolsManager.DeactivateActionInfo();
