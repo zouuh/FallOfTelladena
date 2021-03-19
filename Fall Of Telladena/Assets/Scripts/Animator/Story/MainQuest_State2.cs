@@ -32,6 +32,7 @@ public class MainQuest_State2 : StateMachineBehaviour
         aiki.SetDialogueID(2);
         aiki.SaveNPC();
 
+
         // Close the crystal room door
 
         // Begin the 3 stone quests (serenity, clarity and fertility)
