@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4670672137539063377}
   - component: {fileID: 4670672137539063383}
   - component: {fileID: 4899247888456684613}
+  - component: {fileID: 7229986431725527522}
+  - component: {fileID: 3778936903870803002}
   m_Layer: 0
   m_Name: VirtualCamRightClick
   m_TagString: CamRightClick
@@ -111,6 +113,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5793aab43204a5441858d44a2b8f5384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7229986431725527522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670672137539063378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45063831c85d01746ae27b13570f5877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTargetTag: Player
+--- !u!114 &3778936903870803002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670672137539063378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeacd1f582323440b558fc75a3d86d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShake: 60
+  timeShaking: 3
+  intensity: 1
 --- !u!1 &4670672138629320364
 GameObject:
   m_ObjectHideFlags: 0

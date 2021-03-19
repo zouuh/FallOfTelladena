@@ -1,6 +1,7 @@
 ﻿/*
- * Authors : Zoé
+ * Authors : Zoé, Manon
  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,14 +20,20 @@ public class PlayerMovement : MonoBehaviour {
     private float turnSmoothTime = 0.1f;
     private float vSpeed = 0;
     private float maxSpeed = 10f;
+    public float speedWithBrambles = 10f;  // public because needed in Brambles
     private float maxCoef = 1f;
     private float speedCoef = 0;
 
     private Slider energySlider;
     private Transform cam;
-    private Animator animator;
+    public Animator animator; // public because used in FacingWaterZone
     private CharacterController controller;
     private GameObject mainVueCanvas;
+
+    [SerializeField]
+    public ParticleSystem dust;
+    [SerializeField]
+    ParticleSystem dustJump;
 
 
     void Start() {
@@ -76,9 +83,11 @@ public class PlayerMovement : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
                 // If jump asked
-                if(Input.GetButtonDown("Jump")) {
+                if(Input.GetButtonDown("Jump"))
+                {
+                    dustJump.Play();
                     // If player is on the floor -> jump, set the animation and move up the collider
-                    if(controller.isGrounded) {
+                    if (controller.isGrounded) {
                         jumpCounter = 0;
                         animator.SetBool("jump", true);
                     }
@@ -94,20 +103,27 @@ public class PlayerMovement : MonoBehaviour {
                 }
 
                 // If jumping -> decrease speed move
-                if(animator.GetBool("jump")) {
+                if(animator.GetBool("jump"))
+                {
                     maxSpeed = 5f;
                     vSpeed = 0;
                 }
                 else {
-                    maxSpeed = 10f;
+                    //maxSpeed = 10f;
+                    maxSpeed = speedWithBrambles;
                 }
 
                 // Get maxCoef depending on movement mode
                 if(slide) {
+                    var emission = dust.emission;
+                    emission.rateOverDistance = 5f;
                     maxCoef = 1.8f;
                     energy -= 0.05f * Time.deltaTime;
                 }
-                else {
+                else
+                {
+                    var emission = dust.emission;
+                    emission.rateOverDistance = .45f;
                     maxCoef = 1f;
                 }
 

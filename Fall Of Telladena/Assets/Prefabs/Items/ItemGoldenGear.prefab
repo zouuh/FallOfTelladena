@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5648893885880777915
+--- !u!1 &6148606770214940441
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4985264489960891905}
-  - component: {fileID: 8250854237193628068}
-  - component: {fileID: 6153073224635850094}
-  - component: {fileID: 4802401664038437351}
-  - component: {fileID: 4802401664038437350}
+  - component: {fileID: 6782401159438628259}
+  - component: {fileID: 7615646885726288390}
+  - component: {fileID: 5644348678536072908}
+  - component: {fileID: 6455158645575409838}
+  - component: {fileID: 6455158645575409839}
+  - component: {fileID: 2175228672889457522}
   m_Layer: 0
   m_Name: ItemGoldenGear
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4985264489960891905
+--- !u!4 &6782401159438628259
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5648893885880777915}
-  m_LocalRotation: {x: -0.37465724, y: -0.59969324, z: -0.59969336, w: 0.37465718}
-  m_LocalPosition: {x: -1.0757073, y: -1.7533951, z: 26.281132}
-  m_LocalScale: {x: 99.99996, y: 99.99996, z: 99.999985}
+  m_GameObject: {fileID: 6148606770214940441}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8250854237193628068
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &7615646885726288390
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5648893885880777915}
+  m_GameObject: {fileID: 6148606770214940441}
   m_Mesh: {fileID: 6037859144413749896, guid: b662d41efa00a3741b51b4de60cec563, type: 3}
---- !u!23 &6153073224635850094
+--- !u!23 &5644348678536072908
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5648893885880777915}
+  m_GameObject: {fileID: 6148606770214940441}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -81,29 +82,47 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4802401664038437351
+--- !u!65 &6455158645575409838
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5648893885880777915}
+  m_GameObject: {fileID: 6148606770214940441}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.00311765, y: 0.0032974272, z: 0.010398047}
-  m_Center: {x: 2.2923423e-10, y: 9.794446e-10, z: 0.003508019}
---- !u!114 &4802401664038437350
+  m_Size: {x: 0.003, y: 0.003, z: 0.001}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6455158645575409839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5648893885880777915}
+  m_GameObject: {fileID: 6148606770214940441}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dbb4c4e01e72ea4599e110e5bffb125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPickUp: 1
   item: {fileID: 11400000, guid: bcfa2513af1824c4998fa020ddb74697, type: 2}
+  ActivateButton: {fileID: 0}
+--- !u!54 &2175228672889457522
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6148606770214940441}
+  serializedVersion: 2
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a934cc7392dc4514cb7696efe5fa741b, type: 3}
   m_Name: PentagonCoin
   m_EditorClassIdentifier: 
-  name: PentagonCoin
-  amount: 2
+  name: Pentagon Coin
+  amount: 4
   icon: {fileID: 21300000, guid: 7dd3250194441584d94cf0c53ebfac91, type: 3}
   showInInventory: 1
+  droppable: 1
+  prefab: {fileID: 4933202683959571641, guid: 6a78a2c29ff27764982e1e792c99db2e, type: 3}

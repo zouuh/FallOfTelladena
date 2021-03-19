@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: FertilityStone
   m_EditorClassIdentifier: 
   name: FertilityStone
-  amount: 1
+  amount: 0
   icon: {fileID: 21300000, guid: 58920751b3d5186488fe6c5869bc721c, type: 3}
   showInInventory: 1
+  droppable: 0
+  prefab: {fileID: 0}

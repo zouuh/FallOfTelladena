@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GlobalSaveAndLoad : MonoBehaviour {
-    StoryManager story;
-    NPC[] allNpc;
+    private StoryManager story;
+    private Player player;
+    private NPC[] allNpc;
     void Start() {
         story = FindObjectOfType<StoryManager>();
+        player = FindObjectOfType<Player>();
         allNpc = Resources.FindObjectsOfTypeAll<NPC>();
     }
 
@@ -15,6 +17,8 @@ public class GlobalSaveAndLoad : MonoBehaviour {
         foreach(NPC npc in allNpc) {
             npc.SaveNPC();
         }
+        player.SavePlayer();
+
         //Same pour l'inventaire et les items et le storyManager
     }
 

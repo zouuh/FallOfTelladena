@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a934cc7392dc4514cb7696efe5fa741b, type: 3}
   m_Name: HexagonCoin
   m_EditorClassIdentifier: 
-  name: HexagonCoin
-  amount: 2
+  name: Hexagon Coin
+  amount: 4
   icon: {fileID: 21300000, guid: df6f5ab23adab0943b3fed3c253dae76, type: 3}
   showInInventory: 1
+  droppable: 1
+  prefab: {fileID: 1682861229020243983, guid: af3746dd8da5f384fadab3371d12792b, type: 3}

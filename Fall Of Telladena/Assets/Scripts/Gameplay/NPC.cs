@@ -3,6 +3,7 @@
  */
 
 using UnityEngine;
+using System.Collections;
 using UnityEditor;
 using System.IO;
 using UnityEngine.UI;
@@ -11,27 +12,21 @@ using UnityEngine.SceneManagement;
 public class NPC : MonoBehaviour
 {
     // Public attributes
-    //public string initialScene;
-    //public Vector3 initialPosition;
     public GameObject dialogueCanvas;
     public GameObject mainInterfaceCanvas;
 
     // Private attributes
     private static string myName;
-    public int dialogueId = 0;
-    public string scene;
+    private int dialogueId = 0;
+    private string scene;
+    private bool automaticDialogue = false;
     private bool isDialoguePossible = false;
     private bool hasSeenDialogue = false;
     private string[] dialogue;
     private Text dialogueNameText;
     private Text dialogueText;
-
-    // Constructor
-    public NPC(int newDialogueId, string newScene) {
-        dialogueId = newDialogueId;
-        scene = newScene;
-    }
     
+
     // Getter and Setter
     public int GetDialogueId() {
         return dialogueId;
@@ -42,41 +37,40 @@ public class NPC : MonoBehaviour
         hasSeenDialogue = false;
     }
 
-    public string GetScene() {
+    public string  GetScene() {
         return scene;
     }
 
     public void SetScene(string newScene) {
         scene = newScene;
-        if(this.name == "Aïki") {
-            Debug.Log("Aïki scene is : " + scene);
-        }
+        this.CheckScene();
+    }
+
+    public void SetAutomaticDialogue(bool newBool) {
+        automaticDialogue = newBool;
     }
 
     public void SetPosition(Vector3 newPos) {
         // Change local position of player
         transform.position = newPos;
-        //Save it for other scenes
-        this.SaveNPC();
     }
-    
+
+
+    // Other methods
     public bool HaveSeenDialogue(int id) {
         return (dialogueId == id && hasSeenDialogue);
     }
 
-    public void checkScene() {
+    public void CheckScene() {
         if(SceneManager.GetActiveScene().name != scene) {
-            // GetComponent<Rigidbody>().useGravity = false;
             foreach(Collider col in GetComponentsInChildren<Collider>()) {
                 col.enabled = false;
             }
             foreach(MeshRenderer rend in GetComponentsInChildren<MeshRenderer>()) {
                 rend.enabled = false;
             }
-            //gameObject.SetActive(false);
         }
         else {
-            // GetComponent<Rigidbody>().useGravity = true;
             foreach(Collider col in GetComponentsInChildren<Collider>()) {
                 col.enabled = true;
             }
@@ -86,54 +80,29 @@ public class NPC : MonoBehaviour
         }
     }
 
-    void Start() {
-        myName = this.name;
-        dialogueCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("DialogueCanvas").gameObject;
-        //FindObjectOfType<CanvasController>().dialogueCanvas;
-        mainInterfaceCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("MainInterfaceCanvas").gameObject;
-        dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
-        dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
-        dialogue = ReadNpcFile();
-        this.LoadNPC();
-        checkScene();
-        
+    public void ActiveDialogue() {
+        dialogueCanvas.SetActive(true);
+        dialogueNameText.text = this.name;
+        // Enable the right sentence of current Id
+        dialogueText.text = "";
+        // dialogueText.text = dialogue[dialogueId];
+        mainInterfaceCanvas.SetActive(false);
+
+        StartCoroutine(TypeSentence(dialogue[dialogueId]));
     }
 
-    void Update() {
-        // Debug.Log("NPC " + this.name);
-        if (Input.GetKeyDown("p")) {        // Mettre la touche action correspondante
-            // Test if the NPC is in the dialogue zone
-            if (isDialoguePossible) {
-                // Test if the dialogue window isn't active
-                if (!dialogueCanvas.activeSelf) {
-                    dialogueCanvas.SetActive(true);
-                    dialogueNameText.text = this.name;
-                    // Enable the right sentence of current Id
-                    dialogueText.text = dialogue[dialogueId];
-                    mainInterfaceCanvas.SetActive(false);
-                }
-                else {
-                    dialogueCanvas.SetActive(false);
-                    // Say thaa Oksusu red this dialogue
-                    hasSeenDialogue = true;
-                    mainInterfaceCanvas.SetActive(true);
-                }
-            }
+    IEnumerator TypeSentence (string sentence) {
+        foreach(char letter in sentence.ToCharArray()) {
+            dialogueText.text += letter;
+            yield return null;
         }
     }
 
-    // Change bool if this is in the dialogue zone
-    void OnTriggerStay(Collider colliderInfo) {
-        if (colliderInfo.CompareTag("DialogueInput")) {
-            isDialoguePossible = true;
-        }
-    }
-
-    // Change bool if this isn't in the dialogue zone
-    void OnTriggerExit(Collider colliderInfo) {
-        if (colliderInfo.CompareTag("DialogueInput")) {
-             isDialoguePossible = false;
-        }
+    public void HideDialogue() {
+        dialogueCanvas.SetActive(false);
+        // Say that Oksusu red this dialogue
+        hasSeenDialogue = true;
+        mainInterfaceCanvas.SetActive(true);
     }
 
     static string[] ReadNpcFile() {
@@ -154,15 +123,61 @@ public class NPC : MonoBehaviour
             newLine += reader.ReadLine();
             dialogue[i] = newLine;
         }
-
         reader.Close();
         return dialogue;
+    }
+
+    // Unity functions
+    void Start() {
+        myName = this.name;
+        dialogueCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("DialogueCanvas").gameObject;
+        mainInterfaceCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("MainInterfaceCanvas").gameObject;
+        dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
+        dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
+        dialogue = ReadNpcFile();
+        this.LoadNPC();
+        CheckScene();
+        if(this.name == "Aïki") {
+            automaticDialogue = true;
+        }
+    }
+
+    void Update() {
+        if (Input.GetKeyDown("p")) {        // Mettre la touche action correspondante
+            // Test if the NPC is in the dialogue zone
+            if (isDialoguePossible) {
+                // Test if the dialogue window isn't active
+                if (!dialogueCanvas.activeSelf) {
+                    ActiveDialogue();
+                }
+                else {
+                    HideDialogue();
+                }
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider colliderInfo) {
+        // Change bool if this is in the dialogue zone
+        if (colliderInfo.CompareTag("DialogueInput")) {
+            isDialoguePossible = true;
+            if(automaticDialogue) {
+                ActiveDialogue();
+                automaticDialogue = false;
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider colliderInfo) {
+        // Change bool if this isn't in the dialogue zone
+        if (colliderInfo.CompareTag("DialogueInput")) {
+             isDialoguePossible = false;
+        }
     }
 
     // Save and load functions
     public void SaveNPC() {
         SaveSystem.SaveNPC(this, this.name);
-        //Debug.Log("saved " + name);
     }
     
     public void LoadNPC() {
@@ -200,11 +215,11 @@ public class NPC : MonoBehaviour
         float rotx = float.Parse(reader.ReadLine());
         float roty = float.Parse(reader.ReadLine());
         float rotz = float.Parse(reader.ReadLine());
-        this.transform.rotation = new Quaternion(rotx, roty, rotz, 1);
+        this.transform.rotation = new Quaternion(rotx, roty, rotz, 0);
 
         reader.Close();
 
-        this.checkScene();
+        this.CheckScene();
         this.SaveNPC();
     }
 }

@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 3264885638e2b8240a5bd42aeb7462eb
+guid: f2516a3c994a287439096deabd8675ca
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainBuildingCrystalRoomDoor
+    second: {fileID: 2100000, guid: a10287c2a09f16547958eaad999b5a5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainBuildingCrystalRoomDoorGear
+    second: {fileID: 2100000, guid: e87e97009fa118747834a44ebc101a49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainBuildingCrystalRoomDoorLocks
+    second: {fileID: 2100000, guid: f53a3224a3917c5498cfb9187b61481d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

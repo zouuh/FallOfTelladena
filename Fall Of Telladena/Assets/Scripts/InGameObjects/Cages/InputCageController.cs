@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Authors : Manon
+ */
+
 using UnityEngine;
 
 public class InputCageController : MonoBehaviour
@@ -9,18 +11,16 @@ public class InputCageController : MonoBehaviour
     public GameObject door;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Item") && other.gameObject.GetComponent<ItemMaze>().itemName == itemName) // the right item is inside
+        if(other.CompareTag("Item") && other.gameObject.GetComponent<ItemPickup>().item.name == itemName) // the right item is inside
         {            
             // open the door
             door.SetActive(false);
-            Debug.Log("open door");
 
             // play sound
         }
         else
         {
             // reject object (play animation)
-            Debug.Log("Hodor!");
             other.gameObject.transform.position = respawnZone.position;
 
             // play sound

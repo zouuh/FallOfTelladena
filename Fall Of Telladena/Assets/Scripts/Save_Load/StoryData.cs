@@ -13,6 +13,9 @@ public class StoryData {
     public int builtIrrigation;
     public bool possiIsBack;
     public bool inBimbopCave;
+    public bool beginStoneQuests;
+    public int mainQuestAdvencement;
+    public int serenityQuestAdvencement;
 
     // How to save it from Player class
     public StoryData (StoryManager story) {
@@ -20,5 +23,8 @@ public class StoryData {
         builtIrrigation = story.builtIrrigation;
         possiIsBack = story.possiIsBack;
         inBimbopCave = story.inBimbopCave;
+        beginStoneQuests = story.beginStoneQuests;
+        mainQuestAdvencement = story.mainQuestAdvencement;
+        serenityQuestAdvencement = story.serenityQuestAdvencement;
     }
 }
