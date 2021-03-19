@@ -37,7 +37,7 @@ public class ItemPickup : MonoBehaviour
             ActivateButton.nbOfColliders--;
             ActivateButton.CheckOpen();
         }
-        if (wasPickedUp)
+        if (wasPickedUp) {
             Destroy(gameObject);
         }
     }
