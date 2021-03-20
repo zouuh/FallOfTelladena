@@ -148,6 +148,7 @@ public class PlayerMovement : MonoBehaviour {
             else {
                 // If jump asked, same as before
                 if(Input.GetButtonDown("Jump")) {
+                    dustJump.Play();
                     // If player is on the floor -> jump, set the animation and move up the collider
                     if(controller.isGrounded) {
                         jumpCounter = 0;

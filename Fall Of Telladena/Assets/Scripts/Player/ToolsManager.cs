@@ -123,6 +123,8 @@ public class ToolsManager : MonoBehaviour
     {
         if(Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && canDrop)
         {
+            Debug.Log("droppable");
+            Debug.Log("used item :"+Inventory.instance.usedItem.name);
             interfaceManager.TurnOnActionCanvas("Drop");
         }
         else

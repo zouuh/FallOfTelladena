@@ -7,6 +7,8 @@ public class PowersController : MonoBehaviour
     [SerializeField]
     GameObject lightPowerZone;
     [SerializeField]
+    ParticleSystem lightParticles;
+    [SerializeField]
     float timerLightPower = 2.0f;
 
     [SerializeField]
@@ -30,6 +32,7 @@ public class PowersController : MonoBehaviour
     void Start()
     {
         lightPowerZone.SetActive(false);
+        lightParticles.Stop();
         /*
         powerGraphicsSerenity.SetActive(false);
         particles.SetActive(false);
@@ -45,17 +48,21 @@ public class PowersController : MonoBehaviour
     {
         lightPowerZone.SetActive(true);
         lightPowerZone.GetComponent<Animation>().Play("lightPower");
+        lightParticles.Play();
         yield return new WaitForSeconds(timerLightPower);
         //lightPowerZone.transform.localScale = new Vector3(0,0,0);
         lightPowerZone.GetComponent<Animation>().Play("lightPower_reverse");
+        lightParticles.Stop();
         //lightPowerZone.SetActive(false);
     }
 
     void Update()
     {
 
-        if (Input.GetButtonDown("Action") && Inventory.instance.isUsingTool("GoldenFish"))
+        if (Input.GetButtonDown("Action") && Inventory.instance.isUsingTool("ClarityStone") && !GetComponent<ToolsManager>().usingATool)
         {
+            GetComponent<ToolsManager>().StartCoroutine("UseTool");
+
             sameLightImpulse = !sameLightImpulse;
             StartCoroutine(ActiveLightPower());
         }
