@@ -7,24 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CastleOutsideBridge
+      name: Bench.002
+    second: {fileID: 2100000, guid: b6e75a9658e701549bf4b4d2aa3bd0f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrambleBush
+    second: {fileID: 2100000, guid: 9855893c1fa4b7042b7330718d17850d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cactus03.002
+    second: {fileID: 2100000, guid: 76aa3a73f61712345a5ed2595f097517, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CastleOutsideBridge.002
     second: {fileID: 2100000, guid: adde0e7fb0717954981e52e77fc3f825, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CastleOutsideGround
+      name: CastleOutsideGround.002
     second: {fileID: 2100000, guid: 4e263a00df30e9740b3a241dc787aa35, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: LabrinthEntranceDoor
-    second: {fileID: 8816721768174937928, guid: eac3c57159e4adc4ba0de5200ef05674,
-      type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LabrinthEntranceDoor.001
-    second: {fileID: 535573399695025573, guid: eac3c57159e4adc4ba0de5200ef05674, type: 3}
+      name: OutsideBridgeDoor.002
+    second: {fileID: 2100000, guid: 7996a818418dbdf4c98ea924d6b4bd9a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -143,6 +152,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: OutsideMazeDoor
+    second: {fileID: 2100000, guid: b39d7298896bc41429c4ebbd11d282d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: OutsideTourDome
     second: {fileID: 2100000, guid: 11f7eba388fa5744991922c0b2716065, type: 2}
   - first:
@@ -173,17 +187,27 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: OutsideWestTourSecretPathDoor
+    second: {fileID: 2100000, guid: 4a86e9279e78b1e419078cb08acda78a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Palmier.002
+    second: {fileID: 2100000, guid: 5f8bfd968d03b614896884eafb171aa5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: WestTourGroundFloorStraightStairs
     second: {fileID: 2100000, guid: 1abaa9a122a28b54483d3065abb54c6f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: WestTourGroundFloorStraightStairsFence
+      name: WestTourGroundFloorStraightStairsFence.002
     second: {fileID: 2100000, guid: 57654d5ab0d86a64495f3d5119174b86, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: WestTourGroundFloorStraightStairsFenceTop
+      name: WestTourGroundFloorStraightStairsFenceTop.002
     second: {fileID: 2100000, guid: e7f44059510e1784bab6f2c70a3f674e, type: 2}
   materials:
     materialImportMode: 1
