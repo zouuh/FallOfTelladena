@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 843ed524a1be59342bfae2e8c1458cf8
+guid: f76d2a7a3cc454e4383cc6cff8bb11e5
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainBuildingDoor
+    second: {fileID: 2100000, guid: f7c4abb45c89c674ea7bc3b2817bc832, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
