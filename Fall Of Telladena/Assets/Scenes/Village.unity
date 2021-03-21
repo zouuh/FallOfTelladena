@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.8396226, g: 0.6679243, b: 0.47921857, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cdbb40e11399e4a17882ada20a1b896a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12035518, g: 0.18584053, b: 0.3342108, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 896a61bed74b4c042a7e484d3d23482a,
+    type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
@@ -18602,13 +18603,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375595415}
-  m_LocalRotation: {x: 0.7766639, y: 0.33788806, z: -0.10439874, w: 0.52127326}
+  m_LocalRotation: {x: 0.74770033, y: 0.42141291, z: -0.23462819, w: 0.4564044}
   m_LocalPosition: {x: 0, y: 19.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 118.32599, y: -23.617981, z: -61.251984}
+  m_LocalEulerAnglesHint: {x: 118.32599, y: -4.0859985, z: -61.251984}
 --- !u!1 &1379144904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6899481752674355698, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -21132,7 +21133,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7f57293f00da7964face85c5d3b05df2,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f57293f00da7964face85c5d3b05df2, type: 3}
@@ -23548,10 +23549,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3952154439018594383, guid: f4f2c897008a79548b287aba20e30828,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f4f2c897008a79548b287aba20e30828,
         type: 3}
       propertyPath: m_Name
       value: OutsideCastleLow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016191981097714822, guid: f4f2c897008a79548b287aba20e30828,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f2c897008a79548b287aba20e30828, type: 3}
