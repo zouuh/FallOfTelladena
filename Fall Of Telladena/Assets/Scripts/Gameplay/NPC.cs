@@ -18,7 +18,7 @@ public class NPC : MonoBehaviour
     // Private attributes
     private static string myName;
     private int dialogueId = 0;
-    private string scene;
+    public string scene;
     private bool automaticDialogue = false;
     private bool isDialoguePossible = false;
     private bool hasSeenDialogue = false;
