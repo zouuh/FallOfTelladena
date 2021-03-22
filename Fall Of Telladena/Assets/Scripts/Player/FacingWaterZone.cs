@@ -12,6 +12,8 @@ public class FacingWaterZone : MonoBehaviour
     string actionName = "Fill recipient";
     [SerializeField]
     Item filledRecipient; // Filled recipient
+    [SerializeField]
+    AudioManager audioManager;
 
     //[SerializeField]
     //public FloattingText floattingText; // public because used in RespawnZone
@@ -31,6 +33,8 @@ public class FacingWaterZone : MonoBehaviour
                 if (Input.GetButtonUp("Action") && !toolManager.usingATool)
                 {
                     GetComponentInParent<PlayerMovement>().animator.SetBool("pickUp", true);
+                    audioManager.Play("fill_water");
+
                     toolManager.StartCoroutine("UseTool");
                     // get water
                     Debug.Log("Get water.");

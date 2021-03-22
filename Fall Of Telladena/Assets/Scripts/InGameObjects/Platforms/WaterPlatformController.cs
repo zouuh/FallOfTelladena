@@ -15,6 +15,8 @@ public class WaterPlatformController : MonoBehaviour
     public CharacterController myPlayer; // public because used by WaterPlatform
     ToolsManager toolsManager;
 
+    AudioManager audioManager;
+
     // Animations
     Animator anim;
     Animation myAnimation;
@@ -39,6 +41,8 @@ public class WaterPlatformController : MonoBehaviour
     {
         myPlayer = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
         toolsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
+        audioManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioManager>();
+
         myAnimation = myPlatform.GetComponent<Animation>();
         anim = myPlatform.GetComponent<Animator>();
         switch (axisToAnimate)
@@ -69,8 +73,12 @@ public class WaterPlatformController : MonoBehaviour
                 if (Input.GetButtonUp("Action") && !toolsManager.usingATool)
                 {
                     toolsManager.StartCoroutine("UseTool");
+
                     // get water
                     Debug.Log("Drop water.");
+
+                    // sound
+                    audioManager.Play("drop_water");
 
                     Inventory.instance.RemoveByName(requiredToolName);
                     Inventory.instance.Add(emptyRecipient);
