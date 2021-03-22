@@ -20,7 +20,6 @@ public class ToolsManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Action") && canDrop && Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && !usingATool)
         {
-            Debug.Log("drop");
             if (itemZone.childCount > 0)
             {
                 itemZone.GetChild(0).transform.Translate(0, 0, -.3f); // avoid bug
@@ -123,7 +122,7 @@ public class ToolsManager : MonoBehaviour
     {
         if(Inventory.instance.usedItem != null && Inventory.instance.usedItem.droppable && canDrop)
         {
-            interfaceManager.TurnOnActionCanvas("Drop");
+            interfaceManager.TurnOnActionCanvas("Poser");
         }
         else
         {

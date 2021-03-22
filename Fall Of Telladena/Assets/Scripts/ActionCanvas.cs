@@ -23,7 +23,7 @@ public class ActionCanvas : MonoBehaviour
         actionText.text = action;
         if (!active)
         {
-            actionText.text += " (need " + (amount != 1 ? amount.ToString() + " " : "") + tool + ")";
+            actionText.text += " (nécessite " + (amount != 1 ? amount.ToString() + " " : "") + tool + ")";
             background.color = disableColor;
             background.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 40f, 250f);
         }
