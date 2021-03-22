@@ -10384,6 +10384,7 @@ GameObject:
   - component: {fileID: 691383341}
   - component: {fileID: 691383343}
   - component: {fileID: 691383344}
+  - component: {fileID: 691383345}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -10522,6 +10523,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &691383345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691383336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e017724585b82ca4190fe8e67c643016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Background
+    clip: {fileID: 8300000, guid: 04d0e678aed5d4f4b9f0e7c7df038484, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &702595101
 GameObject:
   m_ObjectHideFlags: 0

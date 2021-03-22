@@ -16,12 +16,14 @@ public class SceneLoader : MonoBehaviour
     public Slider slider;
     CinemachineBrain mainCam;
     GameObject player;
+    AudioSource audioManager;
 
     public void Start() {
         loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
         slider = loadingScreen.GetComponentInChildren<Slider>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();
         player = GameObject.FindGameObjectWithTag("Player");
+        audioManager = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -42,6 +44,9 @@ public class SceneLoader : MonoBehaviour
             player.GetComponent<PlayerMovement>().enabled = false;
             player.GetComponent<CharacterController>().enabled = false;
 
+            // Decrease music
+            audioManager.volume = audioManager.volume/2f;
+
             //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
             StartCoroutine(LoadAsynchronously(nextSceneName));
         }
@@ -58,6 +63,7 @@ public class SceneLoader : MonoBehaviour
             // Debug.Log(slider.value);
             if(slider.value == 1) {
                 loadingScreen.SetActive(false);
+                audioManager.volume = audioManager.volume*2f;
             }
             yield return null;
         }
