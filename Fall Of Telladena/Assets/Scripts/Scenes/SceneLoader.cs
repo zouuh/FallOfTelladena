@@ -17,6 +17,9 @@ public class SceneLoader : MonoBehaviour
     CinemachineBrain mainCam;
     GameObject player;
 
+    [SerializeField]
+    bool loadOnTrigger = true;
+
     public void Start() {
         loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
         slider = loadingScreen.GetComponentInChildren<Slider>();
@@ -26,25 +29,29 @@ public class SceneLoader : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (loadOnTrigger && other.CompareTag("Player"))
         {
             other.gameObject.transform.parent = null;
             DontDestroyOnLoad(other.gameObject);
-
-            NPC[] characters = FindObjectsOfType<NPC>();
-            foreach (NPC pnj in characters)
-            {
-                Debug.Log("saved " + pnj.name);
-                pnj.SaveNPC();
-            }
-            player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
-            player.GetComponent<PlayerMovement>().dust.Stop();
-            player.GetComponent<PlayerMovement>().enabled = false;
-            player.GetComponent<CharacterController>().enabled = false;
-
-            //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
-            StartCoroutine(LoadAsynchronously(nextSceneName));
+            StartLoadScene();
         }
+    }
+
+    public void StartLoadScene()
+    {
+        NPC[] characters = FindObjectsOfType<NPC>();
+        foreach (NPC pnj in characters)
+        {
+            Debug.Log("saved " + pnj.name);
+            pnj.SaveNPC();
+        }
+        player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
+        player.GetComponent<PlayerMovement>().dust.Stop();
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false;
+
+        //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
+        StartCoroutine(LoadAsynchronously(nextSceneName));
     }
 
     IEnumerator LoadAsynchronously(string sceneName)    {

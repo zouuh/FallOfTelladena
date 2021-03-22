@@ -29,6 +29,9 @@ public class DoorKeyController : DoorController
     [SerializeField]
     bool consumeRequiredTools = false;
 
+    [SerializeField]
+    SceneLoader sceneToLoad = null;
+
     private void Start()
     {
         if (Inventory.instance.objectsThatHaveBeenConsumed.Contains(id))
@@ -105,6 +108,10 @@ public class DoorKeyController : DoorController
                 open();
                 player.transform.LookAt(new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
                 player.GetComponent<ToolsManager>().DeactivateActionInfo();
+                if(sceneToLoad != null)
+                {
+                    sceneToLoad.StartLoadScene();
+                }
             }
         }
     }
