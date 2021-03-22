@@ -38,6 +38,8 @@ public class Inventory : MonoBehaviour {
 
 	public List<string> objectsThatHaveBeenConsumed = new List<string>(); // keep track of the objects that have consume objects and that can now be used forever
 
+	ToolsManager toolsManager = null;
+
 	// Add a new item if enough room
 	public bool Add (Item item)
 	{
@@ -93,7 +95,7 @@ public class Inventory : MonoBehaviour {
         {
 			// The item used as been removed
 			usedItem = null;
-        }
+		}
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
@@ -128,6 +130,20 @@ public class Inventory : MonoBehaviour {
 	public void RemoveAll(Item item)
 	{
 		items.Remove(item);
+		Debug.Log("RemoveAll");
+		Debug.Log(usedItem.amount <= 0);
+		if (usedItem.amount <= 0)
+        {
+			usedItem = null;
+			if (toolsManager == null)
+			{
+				toolsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
+			}
+			if(toolsManager != null)
+            {
+				toolsManager.CarryItem(false);
+			}			
+		}
 
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();

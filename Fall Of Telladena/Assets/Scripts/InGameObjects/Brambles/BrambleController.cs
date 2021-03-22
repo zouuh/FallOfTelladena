@@ -120,7 +120,8 @@ public class BrambleController : MonoBehaviour
         {
             Debug.Log("Exit : " + other.tag);
             Appear();
-        }else if (other.CompareTag("ContactZoneBrambles"))
+        }
+        if (other.CompareTag("ContactZoneBrambles"))
         {
             if (myPlayerMovement == null)
             {

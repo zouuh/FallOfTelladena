@@ -264,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5004711541689089030}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 57, y: 0, z: -8}
+  m_LocalPosition: {x: -23, y: 4.31, z: 57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2151919219715917291}
@@ -322,7 +322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 0}
   mainInterfaceCanvas: {fileID: 0}
-  dialogueId: 0
   scene: Lands
 --- !u!1 &5281083506634937565
 GameObject:
