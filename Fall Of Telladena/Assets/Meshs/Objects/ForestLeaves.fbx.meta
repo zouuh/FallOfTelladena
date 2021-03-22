@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbffce0894a9e174fbf92350a2406d75
+guid: 1260260b17ab14d47805656a8780835b
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MainLandRiver
-    second: {fileID: 2100000, guid: c0c288c5727f91e469ed40017f6c7bbe, type: 2}
+      name: ForestLeaves
+    second: {fileID: 2100000, guid: 984aff106b9707b44ae731050551e6ec, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -50,7 +50,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

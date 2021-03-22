@@ -28,6 +28,9 @@ public class SceneLoader : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.gameObject.transform.parent = null;
+            DontDestroyOnLoad(other.gameObject);
+
             NPC[] characters = FindObjectsOfType<NPC>();
             foreach (NPC pnj in characters)
             {
