@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: 843ed524a1be59342bfae2e8c1458cf8
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ForestCubicTree
+    second: {fileID: 2100000, guid: a9a91e092522150488c2883b9ae89095, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ForestLowPolyGround
+    second: {fileID: 2100000, guid: b692cfba674cf8b478688bb00077ddaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House02
+    second: {fileID: 2100000, guid: 192f7c36d1c77984c8eba9e5b1d4bbd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House03
+    second: {fileID: 2100000, guid: a43d4ccef5816ca44a0afaf53bf3842c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House04
+    second: {fileID: 2100000, guid: c827ccb56b070ee468d2db2ae1c67edb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House05
+    second: {fileID: 2100000, guid: 8677dcd2e7cd8f442b47db84cf9c6c37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House07
+    second: {fileID: 2100000, guid: 0a71ba9c1cbfc864c82e659da0bfdda0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House08
+    second: {fileID: 2100000, guid: dd3617cb5c100534ab42739be4435b21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IrrigationSustemKiyoHolders
+    second: {fileID: 2100000, guid: 4a2c400b800876d4187a5a380d6b3be0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IrrigationSystemKiyoBamboo
+    second: {fileID: 2100000, guid: 23df5f31ab369364890d4ece3ccbfb0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainLandGround
+    second: {fileID: 2100000, guid: 1043bbed83933954c9e0bce534c05f6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 495fe9f3c3e8d014db1d9ad7124d4cbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nets
+    second: {fileID: 2100000, guid: 5019d2ea23603064eb5058e629c270ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SingleRockTypeC
+    second: {fileID: 2100000, guid: 7e97f73f2a4596b45826ddaaab2bf2b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SingleRockTypeE
+    second: {fileID: 2100000, guid: f7b830fdfe87a9c41a2356adfb60fac5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SingleRockTypeG
+    second: {fileID: 2100000, guid: 4b0f4d9d804213742985c95ff4f8d471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SingleRockTypeH
+    second: {fileID: 2100000, guid: 87be3d5850ca7144e962d8a5f32adff6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SmallIslandToJump
+    second: {fileID: 2100000, guid: 7299ec83449440d4ab74b0d66fc827ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeType1
+    second: {fileID: 2100000, guid: 97090bc921014804a947989ddfc877b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeType2
+    second: {fileID: 2100000, guid: 3d713b71033745d4aa1077f23be4747d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeType3
+    second: {fileID: 2100000, guid: ab1838b248698454ba464901148f2098, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeType4
+    second: {fileID: 2100000, guid: 1be688ab65114f94da63ddc2dbbb2e34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeType5
+    second: {fileID: 2100000, guid: fc87913b72ae374489d4d1d1b48c3e6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeType6
+    second: {fileID: 2100000, guid: f1db2a5177e12ab449c3688cb2cadce8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeType7
+    second: {fileID: 2100000, guid: 6384f9185e30a8b49a41c10a90fc4012, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeType8
+    second: {fileID: 2100000, guid: 02c135c1b53c3c944b77d2c8295076cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VillageHouseBeam
+    second: {fileID: 2100000, guid: dfd0e9e30beec214ba8483b1dfd4b18c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VillageHouseStairs
+    second: {fileID: 2100000, guid: 6883aa6975bfd5b479d199c0db746c11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WaterMillBarrel
+    second: {fileID: 2100000, guid: ce7da1da70f18694ab507fc50f367229, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WaterMillBarrelMetal
+    second: {fileID: 2100000, guid: f0e347e0317ec7c4a9fb06c607453915, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WaterMillHolder
+    second: {fileID: 2100000, guid: a069a9d67dca4ef4c8a12d14701cf25b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WaterMillRocks
+    second: {fileID: 2100000, guid: 28dd0aac1f6b7f047a16c70ba3021788, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WaterMillWheel
+    second: {fileID: 2100000, guid: 402bd712370ea914b9c8c3313d723ff9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smallFloatingIsland
+    second: {fileID: 2100000, guid: 83cd9d9a18d92e14285a7af003762d3a, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
