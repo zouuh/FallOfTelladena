@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour {
 	public delegate void OnItemChanged();
 	public OnItemChanged onItemChangedCallback;
 
-	public int space = 42;	// Amount of item spaces
+	public int space = 23;	// Amount of item spaces
 
 	// Our current list of items in the inventory
 	public List<Item> items = new List<Item>();
