@@ -15,13 +15,11 @@ public class Inventory : MonoBehaviour {
 	#region Singleton
 
 	public static Inventory instance;
+	public static bool verif = true;
 
 	void Awake ()
 	{
 		instance = this;
-	//	Debug.Log("items " + items.Count);
-	//	Debug.Log("!= 0");
-	//	Debug.Log(InventoryUI.inventory);
 	}
 
 	#endregion
@@ -29,7 +27,7 @@ public class Inventory : MonoBehaviour {
 	public delegate void OnItemChanged();
 	public OnItemChanged onItemChangedCallback;
 
-	public int space = 42;	// Amount of item spaces
+	public int space = 23;	// Amount of item spaces
 
 	// Our current list of items in the inventory
 	public List<Item> items = new List<Item>();
@@ -39,6 +37,8 @@ public class Inventory : MonoBehaviour {
 	public List<string> objectsThatHaveBeenConsumed = new List<string>(); // keep track of the objects that have consume objects and that can now be used forever
 
 	ToolsManager toolsManager = null;
+
+	public List<Item> itemInvent = new List<Item>();
 
 	// Add a new item if enough room
 	public bool Add (Item item)
@@ -74,6 +74,17 @@ public class Inventory : MonoBehaviour {
 			Add(item);
 		}
 		return true;
+	}
+
+	// Inventory manager
+	public bool CheckItem(string name, int amount){
+			for (int i = 0; i < items.Count; i++){
+				if((items[i].name == name) && (items[i].amount == amount)){
+					return true;
+				}
+			}
+		return false;
+	
 	}
 
 	// Remove an item

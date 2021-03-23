@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour {
 
 	public Transform itemsParent;	// The parent object of all the items
 	public GameObject inventoryUI;  // The entire UI
+	public CanvasController cv;
 
 	public static Inventory inventory;	// Our current inventory
 
@@ -22,11 +23,11 @@ public class InventoryUI : MonoBehaviour {
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
         foreach (string guid2 in guids2)
         {
-			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));
-			Debug.Log(data.Length + " Assets");
+			Object[] data = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(guid2));			
 			foreach (Item o in data)
 			{
 				if (o.amount >= 1){
+					o.amount--;
 					inventory.Add(o);
 				}
 			}
@@ -39,7 +40,8 @@ public class InventoryUI : MonoBehaviour {
 		if (Input.GetButtonDown("Inventory"))
 		{
 			inventoryUI.SetActive(!inventoryUI.activeSelf);
-		}	
+		}
+		UpdateUI();
 	}
 
 	// Update the inventory UI by:
@@ -49,21 +51,26 @@ public class InventoryUI : MonoBehaviour {
 	void UpdateUI ()
 	{
 		// Loop through all the slots
+		int j = 0;
 		for (int i = 0; i < slots.Length; i++)
 		{
-			if (i < inventory.items.Count)	// If there is an item to add
+			slots[i].ClearSlot();
+			if ((i < inventory.items.Count)&&(inventory.items[i].activeInstance == false))	// If there is an item to add
 			{
-				slots[i].AddItem(inventory.items[i]);	// Add it
+				slots[j].AddItem(inventory.items[i]);	// Add it
 			} else
 			{
-				// Otherwise clear the slot
-				slots[i].ClearSlot();
+				j--;
 			}
-		}
+			j++;
 		
+		} 	
+
+
 		return;
 
 	}
+
 
 
 }

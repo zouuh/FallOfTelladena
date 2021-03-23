@@ -66,6 +66,10 @@ public class CanvasController : MonoBehaviour
     public void SwitchCanvas(GameObject oldCanvas, GameObject newCanvas) {
         oldCanvas.SetActive(false);
         newCanvas.SetActive(true);
+        Debug.Log("New : " + newCanvas.name + " -> " + newCanvas.activeSelf);
+        Debug.Log("Old : " + oldCanvas.name + " -> " + oldCanvas.activeSelf);
+        inventoryCanvas.SetActive(true);
+        Debug.Log("inventoryCanvas : " + inventoryCanvas.activeSelf);
     }
 
     public void TurnOnActionCanvas(string actionName="Use", int amount = 1, string tool = "", bool active = true)

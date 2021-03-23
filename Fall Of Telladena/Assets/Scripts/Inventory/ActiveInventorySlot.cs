@@ -1,25 +1,14 @@
-﻿/*
- * Authors : Amélia, Manon
- */
-
 using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */
 
-public class InventorySlot : MonoBehaviour {
+public class ActiveInventorySlot : MonoBehaviour {
 
 	public Image icon;			// Reference to the Icon image
 	public Button removeButton;	// Reference to the remove button
 	public Text amountText;		// Reference to the Amount Text
-	public Text descriptionText;// Reference to the descrition Text
-
 	Item item;  // Current item in the slot
-
-	[SerializeField]
-	CanvasController canvasController; // needed to manage action infos when using a tool
-	[SerializeField]
-	ToolsManager toolsManager; // needed to display the item in Oksusu arms
 
 	// Add item to the slot
 	public void AddItem (Item newItem)
@@ -46,7 +35,7 @@ public class InventorySlot : MonoBehaviour {
 	// Clear the slot
 	public void ClearSlot ()
 	{
-		item = null;
+        item = null;
 
 		icon.sprite = null;
 		icon.enabled = false;
@@ -59,34 +48,23 @@ public class InventorySlot : MonoBehaviour {
 	{
 		if (item.amount == 1){
 			item.amount = item.amount-1;
-			Inventory.instance.RemoveAll(item);
-			descriptionText.text = " ";
+			Inventory.instance.Remove(item);
 		}
 		
 		else {
 			item.amount = item.amount-1;
 			PrintAmount(item);
 		}
+
 	}
 
 	// Called when the item is pressed
 	public void UseItem ()
 	{
+		//Debug.Log("Pressed left click.");
 		if (item != null)
 		{
 			item.Use();
-			descriptionText.text = item.name;
-            if (item.droppable)
-			{
-				canvasController.TurnOnActionCanvas("Drop");
-			}
-			toolsManager.CarryItem(true, item);
-		}
-		else {
-			Inventory.instance.usedItem = null; // no item is used
-			canvasController.TurnOffActionCanvas();
-			toolsManager.CarryItem(false);
-			descriptionText.text = " ";
 		}
 	}
 

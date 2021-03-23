@@ -15,6 +15,7 @@ public class Item : ScriptableObject
 	public bool showInInventory = true;
 	public bool droppable = false;
 	public GameObject prefab;
+	public bool activeInstance = false;
 
 	// the item the player is using now
 	//public bool isUsed = false;
