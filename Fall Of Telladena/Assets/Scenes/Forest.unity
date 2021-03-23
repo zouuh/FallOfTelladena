@@ -4013,6 +4013,20 @@ MonoBehaviour:
   refractLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &470607919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470607917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf870ffbb828c8479b572f57e37d808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedSpawnPos: 0
+  spawnPos: {fileID: 0}
 --- !u!1 &472860803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -70920574451499197, guid: 65c4deb64d3aece468cda7a60ffe4715,
@@ -18190,6 +18204,7 @@ GameObject:
   - component: {fileID: 2020162372}
   - component: {fileID: 2020162371}
   - component: {fileID: 2020162375}
+  - component: {fileID: 2020162376}
   m_Layer: 0
   m_Name: Plane (3)
   m_TagString: Untagged
@@ -18294,6 +18309,20 @@ MonoBehaviour:
   refractLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2020162376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020162370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf870ffbb828c8479b572f57e37d808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedSpawnPos: 0
+  spawnPos: {fileID: 0}
 --- !u!1 &2030917259 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4501056043823821084, guid: 65c4deb64d3aece468cda7a60ffe4715,
