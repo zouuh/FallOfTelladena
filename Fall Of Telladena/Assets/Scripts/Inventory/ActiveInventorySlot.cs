@@ -61,9 +61,26 @@ public class ActiveInventorySlot : MonoBehaviour {
 	// Called when the item is pressed
 	public void UseItem ()
 	{
+		//Debug.Log("Pressed left click.");
 		if (item != null)
 		{
 			item.Use();
+		}
+	}
+
+
+	// Called when the item is pressed
+	public void ChangeItem ()
+	{
+		//Debug.Log("Pressed middle click.");
+		if (item != null)
+		{
+			if (item.activeInstance == true){
+				item.activeInstance = false;
+			}
+			else {
+				item.activeInstance = true;
+			}
 		}
 	}
 

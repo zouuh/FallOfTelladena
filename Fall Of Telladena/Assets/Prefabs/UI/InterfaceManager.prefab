@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 3654414457912647400}
   - component: {fileID: 5771255581603614956}
   - component: {fileID: 7169209065138969040}
+  - component: {fileID: 7704765942522185795}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -196,6 +197,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5771255581603614956}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7704765942522185795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89518377054916696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5509987874894404464}
         m_MethodName: UseItem
@@ -208,6 +224,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5509987874894404464}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &162054278552810692
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +515,7 @@ GameObject:
   - component: {fileID: 7072828811108554629}
   - component: {fileID: 3340129615926481251}
   - component: {fileID: 3070130928810585561}
+  - component: {fileID: 8032300172892802944}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -588,6 +622,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3340129615926481251}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8032300172892802944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319214620925745687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6073967627541523489}
         m_MethodName: UseItem
@@ -600,6 +649,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6073967627541523489}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &343466523269831212
 GameObject:
   m_ObjectHideFlags: 0
@@ -5251,6 +5317,7 @@ GameObject:
   - component: {fileID: 7378356361978830421}
   - component: {fileID: 4850125396259025183}
   - component: {fileID: 4015687298110562150}
+  - component: {fileID: 1877905949077250305}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -5357,6 +5424,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4850125396259025183}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1877905949077250305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690927558119589105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 155618963437789675}
         m_MethodName: UseItem
@@ -5369,6 +5451,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 155618963437789675}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &711275786234671317
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,6 +5683,7 @@ GameObject:
   - component: {fileID: 7016632225432097600}
   - component: {fileID: 3908231853798016373}
   - component: {fileID: 6367804450480404624}
+  - component: {fileID: 5076219918890068027}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -5690,6 +5790,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3908231853798016373}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5076219918890068027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756333491604024043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6003347571520802108}
         m_MethodName: UseItem
@@ -5702,6 +5817,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6003347571520802108}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &817229287742888490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,6 +5846,7 @@ GameObject:
   - component: {fileID: 767105236238571313}
   - component: {fileID: 9103534225312451979}
   - component: {fileID: 4370304843675918659}
+  - component: {fileID: 2262106649013360955}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -5820,6 +5953,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9103534225312451979}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2262106649013360955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817229287742888490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5862843552722630808}
         m_MethodName: UseItem
@@ -5832,6 +5980,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5862843552722630808}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &877302420580447982
 GameObject:
   m_ObjectHideFlags: 0
@@ -6243,6 +6408,7 @@ GameObject:
   - component: {fileID: 3830424900290503191}
   - component: {fileID: 8120399997289693515}
   - component: {fileID: 5071198831714537625}
+  - component: {fileID: 8719146685598329925}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -6349,6 +6515,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8120399997289693515}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8719146685598329925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236529649012364054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8182461666843436997}
         m_MethodName: UseItem
@@ -6361,6 +6542,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8182461666843436997}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1335325031196571099
 GameObject:
   m_ObjectHideFlags: 0
@@ -6373,6 +6571,7 @@ GameObject:
   - component: {fileID: 2674564848577511290}
   - component: {fileID: 4554293685758261352}
   - component: {fileID: 6665627606991182939}
+  - component: {fileID: 5882636883348888715}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -6479,6 +6678,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4554293685758261352}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5882636883348888715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335325031196571099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1647707945351575018}
         m_MethodName: UseItem
@@ -6491,6 +6705,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1647707945351575018}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1343169108470282585
 GameObject:
   m_ObjectHideFlags: 0
@@ -7845,6 +8076,7 @@ GameObject:
   - component: {fileID: 7543266222926317224}
   - component: {fileID: 4242584842752488770}
   - component: {fileID: 685490384620823585}
+  - component: {fileID: 6080206850315497597}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -7951,6 +8183,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4242584842752488770}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6080206850315497597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245401250786287603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3148506201185962460}
         m_MethodName: UseItem
@@ -7963,6 +8210,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3148506201185962460}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2247842323853450619
 GameObject:
   m_ObjectHideFlags: 0
@@ -8938,6 +9202,7 @@ GameObject:
   - component: {fileID: 53489981142281453}
   - component: {fileID: 1110634881926422962}
   - component: {fileID: 3812020447343034547}
+  - component: {fileID: 2309853687759883128}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -9044,6 +9309,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1110634881926422962}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2309853687759883128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3031927562391917885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8670193422209499711}
         m_MethodName: UseItem
@@ -9056,6 +9336,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8670193422209499711}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3055016541906443951
 GameObject:
   m_ObjectHideFlags: 0
@@ -10870,6 +11167,7 @@ GameObject:
   - component: {fileID: 6329069196626819169}
   - component: {fileID: 5854565901441291079}
   - component: {fileID: 8094185851095012958}
+  - component: {fileID: 5437764678971096979}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -10976,6 +11274,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5854565901441291079}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5437764678971096979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724774010538676983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7694946973200584872}
         m_MethodName: UseItem
@@ -10988,6 +11301,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7694946973200584872}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4795756592569303259
 GameObject:
   m_ObjectHideFlags: 0
@@ -11000,6 +11330,7 @@ GameObject:
   - component: {fileID: 2747543923046945859}
   - component: {fileID: 8736768720923984797}
   - component: {fileID: 4039170940940137532}
+  - component: {fileID: 1066396105364738219}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -11106,6 +11437,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8736768720923984797}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1066396105364738219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795756592569303259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5536721842156016943}
         m_MethodName: UseItem
@@ -11118,6 +11464,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5536721842156016943}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4948297338162783138
 GameObject:
   m_ObjectHideFlags: 0
@@ -11591,6 +11954,7 @@ GameObject:
   - component: {fileID: 746729375089837587}
   - component: {fileID: 3812831317923097032}
   - component: {fileID: 2352586479865301193}
+  - component: {fileID: 4189333432146799695}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -11697,6 +12061,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3812831317923097032}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4189333432146799695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142586432706051066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9137624552934510719}
         m_MethodName: UseItem
@@ -11709,6 +12088,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9137624552934510719}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5173548879734307229
 GameObject:
   m_ObjectHideFlags: 0
@@ -12043,6 +12439,7 @@ GameObject:
   - component: {fileID: 3811501316443043473}
   - component: {fileID: 1683301347567741570}
   - component: {fileID: 189801282177398425}
+  - component: {fileID: 7550337916971238810}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -12149,6 +12546,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1683301347567741570}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7550337916971238810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5437865243027015347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7701036023429468352}
         m_MethodName: UseItem
@@ -12161,6 +12573,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7701036023429468352}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5458521130456480198
 GameObject:
   m_ObjectHideFlags: 0
@@ -12173,6 +12602,7 @@ GameObject:
   - component: {fileID: 5726786351331711832}
   - component: {fileID: 4096316610473075871}
   - component: {fileID: 3223586281169106640}
+  - component: {fileID: 241073078883203214}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -12279,6 +12709,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4096316610473075871}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &241073078883203214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5458521130456480198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6268926515047138353}
         m_MethodName: UseItem
@@ -12291,6 +12736,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6268926515047138353}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5526200062306512963
 GameObject:
   m_ObjectHideFlags: 0
@@ -12303,6 +12765,7 @@ GameObject:
   - component: {fileID: 2487262933238973934}
   - component: {fileID: 3839977698892484615}
   - component: {fileID: 1272188783426380346}
+  - component: {fileID: 1291794493340775553}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -12409,6 +12872,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3839977698892484615}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1291794493340775553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526200062306512963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1655929707021008470}
         m_MethodName: UseItem
@@ -12421,6 +12899,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1655929707021008470}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5547092590089398812
 GameObject:
   m_ObjectHideFlags: 0
@@ -12598,6 +13093,7 @@ GameObject:
   - component: {fileID: 3615175624365121134}
   - component: {fileID: 3807602271262799177}
   - component: {fileID: 6891714856804762929}
+  - component: {fileID: 1246645787621069100}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -12704,6 +13200,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3807602271262799177}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1246645787621069100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5827072446195660382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7888174548008208535}
         m_MethodName: UseItem
@@ -12716,6 +13227,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7888174548008208535}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6011461884390283752
 GameObject:
   m_ObjectHideFlags: 0
@@ -12950,6 +13478,7 @@ GameObject:
   - component: {fileID: 2523215302861892536}
   - component: {fileID: 8781008553691568837}
   - component: {fileID: 6156372555893008294}
+  - component: {fileID: 5889631217217780463}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -13056,6 +13585,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8781008553691568837}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5889631217217780463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6084404678992993455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6278434806983136395}
         m_MethodName: UseItem
@@ -13068,6 +13612,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6278434806983136395}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6159550626832208811
 GameObject:
   m_ObjectHideFlags: 0
@@ -14101,6 +14662,7 @@ GameObject:
   - component: {fileID: 6559961672474954324}
   - component: {fileID: 7219919099484279319}
   - component: {fileID: 3536376220210577235}
+  - component: {fileID: 6498153202463313040}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -14207,6 +14769,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7219919099484279319}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6498153202463313040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006558821921930259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 999744311636824380}
         m_MethodName: UseItem
@@ -14219,6 +14796,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 999744311636824380}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7026906297131313500
 GameObject:
   m_ObjectHideFlags: 0
@@ -15684,6 +16278,7 @@ GameObject:
   - component: {fileID: 2229014621738356015}
   - component: {fileID: 7410378688500083109}
   - component: {fileID: 958305211207316304}
+  - component: {fileID: 5573859567956933396}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -15790,6 +16385,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7410378688500083109}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5573859567956933396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7718637464178818251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7375547218926311840}
         m_MethodName: UseItem
@@ -15802,6 +16412,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7375547218926311840}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7720546789183395201
 GameObject:
   m_ObjectHideFlags: 0
@@ -16870,6 +17497,7 @@ GameObject:
   - component: {fileID: 1930526327526982127}
   - component: {fileID: 1229093710457765836}
   - component: {fileID: 5895655230772170878}
+  - component: {fileID: 1106024644367959392}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -16976,6 +17604,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1229093710457765836}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1106024644367959392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8121380724642916481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1400769149247566896}
         m_MethodName: UseItem
@@ -16988,6 +17631,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1400769149247566896}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8162480240211139538
 GameObject:
   m_ObjectHideFlags: 0
@@ -17129,6 +17789,7 @@ GameObject:
   - component: {fileID: 6222015026992651456}
   - component: {fileID: 6955643331238976120}
   - component: {fileID: 6977216956676737020}
+  - component: {fileID: 2577072337903012800}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -17235,6 +17896,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6955643331238976120}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2577072337903012800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8192454651135772688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1105083523621690951}
         m_MethodName: UseItem
@@ -17247,6 +17923,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105083523621690951}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8264266615194818469
 GameObject:
   m_ObjectHideFlags: 0
@@ -17259,6 +17952,7 @@ GameObject:
   - component: {fileID: 6209184974354040041}
   - component: {fileID: 8895900267200139846}
   - component: {fileID: 3623939705767529018}
+  - component: {fileID: 4101449800827702670}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -17365,6 +18059,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8895900267200139846}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4101449800827702670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264266615194818469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6603127189522729249}
         m_MethodName: UseItem
@@ -17377,6 +18086,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6603127189522729249}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8310432145157420378
 GameObject:
   m_ObjectHideFlags: 0
@@ -17444,6 +18170,7 @@ GameObject:
   - component: {fileID: 1842677683474150095}
   - component: {fileID: 5252259052244403798}
   - component: {fileID: 6973526094088065908}
+  - component: {fileID: 6129511849340354693}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -17550,6 +18277,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5252259052244403798}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6129511849340354693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466757092974792063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2719661598670094225}
         m_MethodName: UseItem
@@ -17562,6 +18304,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2719661598670094225}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8475254306731911238
 GameObject:
   m_ObjectHideFlags: 0
@@ -17693,6 +18452,7 @@ GameObject:
   - component: {fileID: 6258590484149286648}
   - component: {fileID: 7543399969765780154}
   - component: {fileID: 7284234272255650998}
+  - component: {fileID: 2435902250001207765}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -17799,6 +18559,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7543399969765780154}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2435902250001207765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563124093779947063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8538249304591908250}
         m_MethodName: UseItem
@@ -17811,6 +18586,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8538249304591908250}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8572490251590104033
 GameObject:
   m_ObjectHideFlags: 0
@@ -18672,11 +19464,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9195083559420959277}
     m_Modifications:
-    - target: {fileID: 569658932139130026, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 19.000008
-      objectReference: {fileID: 0}
     - target: {fileID: 1612258573094014945, guid: 728bba32f00135d40b0c8638631f4aea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18781,27 +19568,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744620806469065133, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 34.000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 4811215695650055442, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dc6afea2162d67c45abf5169fa16e8e6,
-        type: 3}
-    - target: {fileID: 6921169760578633780, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 6921169760578633780, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7583263269469896883, guid: 728bba32f00135d40b0c8638631f4aea,
         type: 3}
@@ -19125,11 +19891,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1495096537812596251}
     m_Modifications:
-    - target: {fileID: 569658932139130026, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 19.000008
-      objectReference: {fileID: 0}
     - target: {fileID: 1612258573094014945, guid: 728bba32f00135d40b0c8638631f4aea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19234,27 +19995,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744620806469065133, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 34.000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 4811215695650055442, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dc6afea2162d67c45abf5169fa16e8e6,
-        type: 3}
-    - target: {fileID: 6921169760578633780, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 6921169760578633780, guid: 728bba32f00135d40b0c8638631f4aea,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7583263269469896883, guid: 728bba32f00135d40b0c8638631f4aea,
         type: 3}

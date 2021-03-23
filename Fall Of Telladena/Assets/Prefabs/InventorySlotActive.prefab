@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 8154948700103946006}
   - component: {fileID: 4811215695650055442}
   - component: {fileID: 5812443858641970604}
+  - component: {fileID: 1791950061052118436}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -111,7 +112,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 30, y: -29.999985}
-  m_SizeDelta: {x: 65.12439, y: 68.89649}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8154948700103946006
 CanvasRenderer:
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc8f3c7b224a823449c3cf0260788702, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc6afea2162d67c45abf5169fa16e8e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -193,6 +194,49 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1791950061052118436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056670488594189171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c31e3e4c64c7a4dab5dc2a9e882c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8409110293635557332}
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  middleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8409110293635557332}
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5573683759805007260
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.164, y: -21.821}
+  m_AnchoredPosition: {x: 34.000004, y: -21.821}
   m_SizeDelta: {x: 33.20343, y: 25.255196}
   m_Pivot: {x: 0.5, y: 0.49999982}
 --- !u!222 &8393508596101965550
@@ -306,7 +350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.8, y: 30}
+  m_AnchoredPosition: {x: 19.000008, y: 30}
   m_SizeDelta: {x: 26, y: 26}
   m_Pivot: {x: 0.5000001, y: 0.50000006}
 --- !u!222 &6974485439283422372
