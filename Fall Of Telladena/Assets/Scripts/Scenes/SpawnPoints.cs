@@ -37,7 +37,7 @@ public class SpawnPoints : MonoBehaviour
     
     public string toCompare;
 
-    public bool isMySpawnPoint(string previousPlace)
+    public bool IsMySpawnPoint(string previousPlace)
     {
         return (toCompare == previousPlace);
     }

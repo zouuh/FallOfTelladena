@@ -46,11 +46,11 @@ public class PlayerPositionManager : MonoBehaviour
         //Debug.Log(spawnPoints.Length);
         foreach (SpawnPoints spawnPoint in spawnPoints)
         {
-            if (spawnPoint.isMySpawnPoint(previousPlace))
+            if (spawnPoint.IsMySpawnPoint(previousPlace))
             {
                 transform.position = spawnPoint.transform.position;
                 transform.rotation = spawnPoint.transform.rotation;
-                Debug.Log("Has changed player!" + transform.position);
+                lastSafePosition = spawnPoint.transform.position;
                 /*
                 StartCoroutine(wait(spawnPoint));
                 return;
@@ -81,18 +81,9 @@ public class PlayerPositionManager : MonoBehaviour
         }
     }
 */
-
-    IEnumerator wait(SpawnPoints spawnPoint)
-    {
-        transform.position = spawnPoint.transform.position;
-        transform.rotation = spawnPoint.transform.rotation;
-        Debug.Log("Has changed player!" + transform.position);
-        yield return new WaitForSeconds(.1f);
-    }
-
     private void Start()
     {
-        InvokeRepeating("SaveLastPosition", 0f, 5f);
+        InvokeRepeating("SaveLastPosition", 0f, 20f);
     }
 
     public void SaveLastPosition()
