@@ -42,7 +42,6 @@ public class PlayerPositionManager : MonoBehaviour
     */
     public void SearchNewPosition()
     {
-        Debug.Log("Refresh player!");
         SpawnPoints[] spawnPoints = FindObjectsOfType<SpawnPoints>();
         //Debug.Log(spawnPoints.Length);
         foreach (SpawnPoints spawnPoint in spawnPoints)
