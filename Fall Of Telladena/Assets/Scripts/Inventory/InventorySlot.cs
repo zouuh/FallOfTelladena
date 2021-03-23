@@ -60,7 +60,7 @@ public class InventorySlot : MonoBehaviour {
 		if (item.amount == 1){
 			item.amount = item.amount-1;
 			Inventory.instance.RemoveAll(item);
-			descriptionText.text = " ";
+			descriptionText.text = "";
 		}
 		
 		else {
@@ -75,7 +75,7 @@ public class InventorySlot : MonoBehaviour {
 		if (item != null)
 		{
 			item.Use();
-			descriptionText.text = item.name;
+			descriptionText.text = item.name + " " + item.description;
             if (item.droppable)
 			{
 				canvasController.TurnOnActionCanvas("Poser");
@@ -86,7 +86,7 @@ public class InventorySlot : MonoBehaviour {
 			Inventory.instance.usedItem = null; // no item is used
 			canvasController.TurnOffActionCanvas();
 			toolsManager.CarryItem(false);
-			descriptionText.text = " ";
+			descriptionText.text = "";
 		}
 	}
 
