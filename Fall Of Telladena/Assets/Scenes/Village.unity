@@ -5630,21 +5630,6 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
-    - target: {fileID: 3374813313043362910, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
-        type: 3}
-      propertyPath: disableColor.r
-      value: 0.3679245
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374813313043362910, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
-        type: 3}
-      propertyPath: disableColor.g
-      value: 0.3679245
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374813313043362910, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
-        type: 3}
-      propertyPath: disableColor.b
-      value: 0.3679245
-      objectReference: {fileID: 0}
     - target: {fileID: 3473379349865830195, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6688,6 +6673,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c13582dd7298bca4bbceaf044b7ff7ae,
         type: 3}
+    - target: {fileID: 7917184576814782995, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917184576814782995, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.41509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917184576814782995, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.41509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917184576814782995, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.41509432
+      objectReference: {fileID: 0}
     - target: {fileID: 7941648167965735720, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6752,6 +6757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038037927677994350, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8091603164941838553, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
