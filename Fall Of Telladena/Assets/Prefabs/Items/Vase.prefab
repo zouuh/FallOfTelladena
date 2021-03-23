@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPickUp: 1
-  item: {fileID: 11400000, guid: b1a9cd6da2bd8b6438c44b90989cd3a6, type: 2}
+  item: {fileID: 11400000, guid: fd7b26ba89d82804e9bd293cc7bd143d, type: 2}
+  oksusuAnimator: {fileID: 0}
   ActivateButton: {fileID: 0}
 --- !u!54 &5245833622937868392
 Rigidbody:
