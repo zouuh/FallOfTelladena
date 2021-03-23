@@ -154,7 +154,9 @@ public class ToolsManager : MonoBehaviour
         }
         else
         {
-            Destroy(itemZone.GetChild(0).gameObject);
+            if (itemZone.childCount > 0) {
+                Destroy(itemZone.GetChild(0).gameObject);
+            }
         }
     }
 }

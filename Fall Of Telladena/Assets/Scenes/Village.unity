@@ -562,6 +562,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5819524732752139495, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!1 &60999475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3087850775205095880, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &60999481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60999475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52825b88038a6e4db9eede74b893a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolButtons:
+  - {fileID: 1399050103}
+  - {fileID: 538634313}
+  - {fileID: 2135474633}
+  - {fileID: 1228402271}
+  - {fileID: 1600954851}
+  - {fileID: 1904545379}
+  activeSprite: {fileID: 21300000, guid: dc6afea2162d67c45abf5169fa16e8e6, type: 3}
+  unactiveSprite: {fileID: 21300000, guid: ca580a307a551cb409ce6b2bfcab7d1e, type: 3}
 --- !u!1 &68583644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6992206785224468627, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -5081,6 +5108,31 @@ PrefabInstance:
       propertyPath: m_Size
       value: 0.4117645
       objectReference: {fileID: 0}
+    - target: {fileID: 675515133845042483, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
+    - target: {fileID: 675515133845042483, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 675515133845042483, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 675515133845042483, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 675515133845042483, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
     - target: {fileID: 680103071168641425, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -5121,6 +5173,31 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 949417540911686832, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
+    - target: {fileID: 949417540911686832, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 949417540911686832, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 949417540911686832, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 949417540911686832, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
     - target: {fileID: 999744311636824380, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -5506,6 +5583,41 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1938100291510583502, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938100291510583502, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 60999481}
+    - target: {fileID: 1938100291510583502, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeActiveTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938100291510583502, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938100291510583502, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938100291510583502, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938100291510583502, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1985205539923620985, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -5836,6 +5948,31 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 103566788}
+    - target: {fileID: 2612389155280319682, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
+    - target: {fileID: 2612389155280319682, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 2612389155280319682, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 2612389155280319682, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 2612389155280319682, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
     - target: {fileID: 2623345402473569311, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5970,6 +6107,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.0018310547
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091249495687550554, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091249495687550554, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 60999481}
+    - target: {fileID: 3091249495687550554, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeActiveTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091249495687550554, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091249495687550554, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091249495687550554, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091249495687550554, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3095673891193146604, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
@@ -6121,6 +6293,31 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3597072251154415799, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
+    - target: {fileID: 3597072251154415799, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 3597072251154415799, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 3597072251154415799, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 3597072251154415799, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
     - target: {fileID: 3652518174629200031, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -6366,6 +6563,66 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4267083716984631235, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267083716984631235, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267083716984631235, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267083716984631235, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 60999481}
+    - target: {fileID: 4267083716984631235, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeActiveTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267083716984631235, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267083716984631235, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503893865512082418, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
+    - target: {fileID: 4503893865512082418, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 4503893865512082418, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 4503893865512082418, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 4503893865512082418, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
     - target: {fileID: 4542381816829847232, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -6396,6 +6653,31 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 103566788}
+    - target: {fileID: 4620522821776594062, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
+    - target: {fileID: 4620522821776594062, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 4620522821776594062, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 4620522821776594062, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 4620522821776594062, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
     - target: {fileID: 4634044876359409132, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -6551,6 +6833,31 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5083213082767258666, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
+    - target: {fileID: 5083213082767258666, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 5083213082767258666, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 5083213082767258666, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 5083213082767258666, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
     - target: {fileID: 5092973022922562807, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6670,6 +6977,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200657341974501042, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200657341974501042, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 60999481}
+    - target: {fileID: 5200657341974501042, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeActiveTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200657341974501042, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200657341974501042, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200657341974501042, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200657341974501042, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5212619548254694065, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
@@ -6931,6 +7273,31 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 6294583519968677299, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
+    - target: {fileID: 6294583519968677299, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 6294583519968677299, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 6294583519968677299, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 6294583519968677299, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
     - target: {fileID: 6388048273307773274, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -7036,6 +7403,41 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 6739142558800372423, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739142558800372423, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 60999481}
+    - target: {fileID: 6739142558800372423, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeActiveTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739142558800372423, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739142558800372423, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739142558800372423, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739142558800372423, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6741942900994406894, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -7183,6 +7585,31 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7110322030320074404, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
+    - target: {fileID: 7110322030320074404, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 7110322030320074404, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 7110322030320074404, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 7110322030320074404, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
     - target: {fileID: 7111914301916539843, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -7202,6 +7629,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292041634441713475, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292041634441713475, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 60999481}
+    - target: {fileID: 7292041634441713475, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeActiveTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292041634441713475, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292041634441713475, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292041634441713475, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292041634441713475, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: leftClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7375547218926311840, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
@@ -7589,6 +8051,31 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 8190400504335537154, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
+    - target: {fileID: 8190400504335537154, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 8190400504335537154, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 8190400504335537154, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 8190400504335537154, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
     - target: {fileID: 8191948832012425377, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7719,6 +8206,56 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 8541326997357060798, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
+    - target: {fileID: 8541326997357060798, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 8541326997357060798, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 8541326997357060798, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 8541326997357060798, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
+    - target: {fileID: 8563851662649282974, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1192562798}
+    - target: {fileID: 8563851662649282974, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 8563851662649282974, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 8563851662649282974, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 8563851662649282974, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1408385455}
     - target: {fileID: 8654242334602877236, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -10174,6 +10711,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2830981471826745345, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!114 &538634313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8141599040485652204, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &549415876
 GameObject:
   m_ObjectHideFlags: 0
@@ -17674,6 +18223,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!114 &1192562798 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7855809574211134711, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1200502465
 GameObject:
   m_ObjectHideFlags: 0
@@ -18051,6 +18612,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6488098242423459146, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!114 &1228402271 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1312487534393816580, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1232682688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6160320537577060919, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -19590,6 +20163,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1396614833}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1399050103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7002301586357210997, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1400694728
 GameObject:
   m_ObjectHideFlags: 0
@@ -21099,6 +21684,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 247945212261189630, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!114 &1600954851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4550921519005497333, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1602713548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6730023891343881581, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -22587,6 +23184,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7675006590446261492, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!114 &1904545379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4683486100852891768, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1909112143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -970522379998384950, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -24372,6 +24981,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5793aab43204a5441858d44a2b8f5384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2135474633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 548498292917551729, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2138307428 stripped

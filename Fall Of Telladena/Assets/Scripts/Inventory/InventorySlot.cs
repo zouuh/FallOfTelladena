@@ -79,16 +79,16 @@ public class InventorySlot : MonoBehaviour {
 			item.Use();
 			nameText.text = item.name;
 			descriptionText.text = item.description;
-            if (item.droppable)
+            /*if (item.droppable)
 			{
 				canvasController.TurnOnActionCanvas("Poser");
 			}
-			toolsManager.CarryItem(true, item);
+			toolsManager.CarryItem(true, item);*/
 		}
 		else {
-			Inventory.instance.usedItem = null; // no item is used
+			/*Inventory.instance.usedItem = null; // no item is used
 			canvasController.TurnOffActionCanvas();
-			toolsManager.CarryItem(false);
+			toolsManager.CarryItem(false);*/
 			nameText.text = "";
 			descriptionText.text = "";
 		}
