@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*
+ * Authors : Amélia, Manon
+ */
+
+using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */

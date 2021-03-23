@@ -2792,6 +2792,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1364044295979360024, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
+--- !u!114 &103566788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8399822661375022158, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 289328729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &103618575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3885796170318888538, guid: f1a2b8b0a27278547bf90f7edc2812ba,
@@ -4248,7 +4260,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 303732126787498320, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -4354,6 +4366,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 540484119811140523, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 540484119811140523, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 540484119811140523, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 559243123982346626, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -4533,7 +4560,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 522301242}
+      objectReference: {fileID: 0}
     - target: {fileID: 559243124634726296, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -4959,6 +4986,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1669779471}
+    - target: {fileID: 559243125932648848, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: playerPositionSprite
+      value: 
+      objectReference: {fileID: 2003281397}
     - target: {fileID: 559243125932648849, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5024,11 +5056,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interface
       objectReference: {fileID: 0}
-    - target: {fileID: 606123688285311827, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 570316888321311885, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -5038,7 +5065,12 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
+    - target: {fileID: 606123688285311827, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 631778770965591891, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_Value
@@ -5058,7 +5090,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 925362848765318762, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5369,6 +5401,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1797087352995692095, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 1797087352995692095, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 1797087352995692095, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 1821252110504845485, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -5378,7 +5425,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 1838708030350488180, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -5388,7 +5435,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 1842101829004182959, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5458,7 +5505,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 1985205539923620985, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -5468,7 +5515,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 2051629563431666938, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5589,6 +5636,36 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2285383383090224681, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 2285383383090224681, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 2285383383090224681, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 2310019951106405996, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 2310019951106405996, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 2310019951106405996, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 2339881744779791562, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5628,7 +5705,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 2456117867233992573, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -5638,7 +5715,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 2489242338127055924, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5699,6 +5776,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2551165960946101946, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 2551165960946101946, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 2551165960946101946, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 2575458483478749574, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5729,6 +5821,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2589442731191090223, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 2589442731191090223, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 2589442731191090223, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 2623345402473569311, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5859,6 +5966,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3040970991635893807, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0018310547
+      objectReference: {fileID: 0}
     - target: {fileID: 3095673891193146604, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_Pivot.y
@@ -5869,11 +5981,6 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
-    - target: {fileID: 3148506201185962460, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
-        type: 3}
-      propertyPath: nameText
-      value: 
-      objectReference: {fileID: 2007773536}
     - target: {fileID: 3209563387403083396, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -5883,7 +5990,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 3473379349865830195, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5923,7 +6030,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 3507995839455156525, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5963,7 +6070,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 3536480083110140782, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_Text
@@ -6014,6 +6121,56 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3652518174629200031, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 3652518174629200031, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 3652518174629200031, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 3705546852534478900, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 3705546852534478900, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 3705546852534478900, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 3766835915394717448, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000046120458
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783751132180084448, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 3783751132180084448, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 3783751132180084448, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 3816943612567877053, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6104,6 +6261,36 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3938984291269764214, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 3938984291269764214, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 3938984291269764214, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 3968683156243752092, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 3968683156243752092, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 3968683156243752092, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 4075509053395809737, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -6194,6 +6381,21 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4552923612681840240, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 4552923612681840240, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 4552923612681840240, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 4634044876359409132, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -6203,7 +6405,22 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650812051662116090, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 4650812051662116090, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 4650812051662116090, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 4694229400516372906, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -6303,7 +6520,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 4985841329609826155, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6463,7 +6680,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 5468757171569966797, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6558,7 +6775,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 5725330638179953490, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -6568,12 +6785,27 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 5829798253382732943, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5846771329341990519, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846771329341990519, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846771329341990519, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5862843552722630808, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -6664,6 +6896,21 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 6211044983784705506, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 6211044983784705506, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 6211044983784705506, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 6268926515047138353, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -6684,6 +6931,36 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 6388048273307773274, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 6388048273307773274, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 6388048273307773274, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
+    - target: {fileID: 6423400364088958943, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 6423400364088958943, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 6423400364088958943, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 6515673983625533375, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6759,6 +7036,21 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 6741942900994406894, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 6741942900994406894, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 6741942900994406894, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 6764927149553552388, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: toolsManager
@@ -6768,7 +7060,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 6784458323324137365, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6828,7 +7120,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 6859100941016061561, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6859,6 +7151,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6929007756178703207, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 6929007756178703207, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 6929007756178703207, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 6942940205435521306, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_enableWordWrapping
@@ -6885,7 +7192,12 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259352711076184778, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259352711392973417, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_TagString
@@ -6910,7 +7222,22 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482037100557200516, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 7482037100557200516, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 7482037100557200516, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 7507694008600753399, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7021,6 +7348,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7785532939704491402, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 7785532939704491402, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 7785532939704491402, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 7809445300139313299, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7377,6 +7719,21 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 8654242334602877236, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 8654242334602877236, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 8654242334602877236, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 8670193422209499711, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -7387,6 +7744,21 @@ PrefabInstance:
       propertyPath: toolsManager
       value: 
       objectReference: {fileID: 231149750}
+    - target: {fileID: 8764518720608022796, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 8764518720608022796, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 8764518720608022796, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 8770038002350283182, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_Sprite
@@ -7402,7 +7774,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     - target: {fileID: 8971690802274743581, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7498,6 +7870,21 @@ PrefabInstance:
       propertyPath: m_VerticalScrollbarVisibility
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9117415072493092582, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 289328735}
+    - target: {fileID: 9117415072493092582, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: toolsManager
+      value: 
+      objectReference: {fileID: 231149750}
+    - target: {fileID: 9117415072493092582, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 103566788}
     - target: {fileID: 9137624552934510719, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
         type: 3}
       propertyPath: canvasController
@@ -7547,7 +7934,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2007773536}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf68ab3ba2eeb174f98e5ce53d8311d9, type: 3}
 --- !u!1 &289328730 stripped
@@ -9552,18 +9939,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3930403374248025409, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
---- !u!114 &522301242 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8651559684952330971, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
-    type: 3}
-  m_PrefabInstance: {fileID: 289328729}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f1a0fab02e67248948bdd46a8b84fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &522363308
 GameObject:
   m_ObjectHideFlags: 0
@@ -22887,16 +23262,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -836972204623327857, guid: f1a2b8b0a27278547bf90f7edc2812ba, type: 3}
---- !u!114 &2007773536 stripped
+--- !u!114 &2003281397 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2066413480677980706, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
+  m_CorrespondingSourceObject: {fileID: 1601781784027370092, guid: bf68ab3ba2eeb174f98e5ce53d8311d9,
     type: 3}
   m_PrefabInstance: {fileID: 289328729}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: 28f1a0fab02e67248948bdd46a8b84fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2008122434 stripped

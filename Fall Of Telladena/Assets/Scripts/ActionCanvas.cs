@@ -12,7 +12,7 @@ public class ActionCanvas : MonoBehaviour
     TextMeshProUGUI actionText;
     [SerializeField]
     Image background;
-    /*
+    
     [SerializeField]
     Sprite baseColor;
     [SerializeField]
