@@ -235,8 +235,9 @@ MonoBehaviour:
   myLever: {fileID: 0}
   listOfPlatforms:
   - {fileID: 0}
-  requiredToolName: GoldenFish
-  actionName: Use
+  triggerCinematic: 0
+  requiredToolName: Manivelle
+  actionName: Utiliser
 --- !u!54 &5007595081224300081
 Rigidbody:
   m_ObjectHideFlags: 0
