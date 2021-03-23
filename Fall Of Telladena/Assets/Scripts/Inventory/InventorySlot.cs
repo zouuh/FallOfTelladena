@@ -78,7 +78,7 @@ public class InventorySlot : MonoBehaviour {
 			descriptionText.text = item.name;
             if (item.droppable)
 			{
-				canvasController.TurnOnActionCanvas("Drop");
+				canvasController.TurnOnActionCanvas("Poser");
 			}
 			toolsManager.CarryItem(true, item);
 		}

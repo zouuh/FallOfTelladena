@@ -19,7 +19,7 @@ public class NestController : MonoBehaviour
     GameObject egg;
 
     [SerializeField]
-    List<string> requiredUsingTools = new List<string>() { "Blue Egg", "Green Egg", "Red Egg", "Silver Egg", "Golden Egg", "Purple Egg" };
+    List<string> requiredUsingTools = new List<string>() { "Oeuf Bleu", "Oeuf Vert", "Oeuf Rouge", "Oeuf Argenté", "Oeuf Doré", "Oeuf Violet" };
 
     bool win = false;
 
@@ -57,7 +57,7 @@ public class NestController : MonoBehaviour
                     win = true;
                 }
                 nestIsEmpty = false;
-                toolsManager.ActivateActionInfo("Take", null, "Egg");
+                toolsManager.ActivateActionInfo("Prendre", null, "Oeuf");
             }
             else
             {
@@ -80,7 +80,7 @@ public class NestController : MonoBehaviour
                 }
 
                 nestIsEmpty = true;
-                toolsManager.ActivateActionInfo("Drop", requiredUsingTools, "Egg");
+                toolsManager.ActivateActionInfo("Poser", requiredUsingTools, "Oeuf");
             }
         }
     }
@@ -98,11 +98,11 @@ public class NestController : MonoBehaviour
 
             if (nestIsEmpty)
             {
-                toolsManager.ActivateActionInfo("Drop", requiredUsingTools, "Egg");
+                toolsManager.ActivateActionInfo("Poser", requiredUsingTools, "Oeuf");
             }
             else
             {
-                toolsManager.ActivateActionInfo("Take", null, "Egg");
+                toolsManager.ActivateActionInfo("Prendre", null, "Oeuf");
             }
         }
     }

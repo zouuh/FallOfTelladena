@@ -32,7 +32,7 @@ public class WaterPlatformController : MonoBehaviour
     [SerializeField]
     string requiredToolName; // Filled recipient
     [SerializeField]
-    string actionName = "Drop water";
+    string actionName = "Verser de l'eau";
     [SerializeField]
     Item emptyRecipient; // Empty recipient
 
@@ -73,8 +73,6 @@ public class WaterPlatformController : MonoBehaviour
                 if (Input.GetButtonUp("Action") && !toolsManager.usingATool)
                 {
                     toolsManager.StartCoroutine("UseTool");
-                    // get water
-                    Debug.Log("Drop water.");
 
                     Inventory.instance.RemoveByName(requiredToolName);
                     Inventory.instance.Add(emptyRecipient);

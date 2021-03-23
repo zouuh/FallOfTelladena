@@ -125,7 +125,7 @@ public class ToolsManager : MonoBehaviour
         {
             Debug.Log("droppable");
             Debug.Log("used item :"+Inventory.instance.usedItem.name);
-            interfaceManager.TurnOnActionCanvas("Drop");
+            interfaceManager.TurnOnActionCanvas("Poser");
         }
         else
         {

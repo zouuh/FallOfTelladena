@@ -24,7 +24,7 @@ public class Item : ScriptableObject
 	{
 		// Use the item
 		// Something may happen
-		Debug.Log("Using : " + name);
+		//Debug.Log("Using : " + name);
 
 		// Tell the inventory we are using this item now
 		Inventory.instance.usedItem = this;

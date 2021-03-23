@@ -9,7 +9,7 @@ public class FacingWaterZone : MonoBehaviour
     [SerializeField]
     string requiredToolName; // Empty recipient
     [SerializeField]
-    string actionName = "Fill recipient";
+    string actionName = "Remplir le Vase";
     [SerializeField]
     Item filledRecipient; // Filled recipient
 
@@ -30,8 +30,6 @@ public class FacingWaterZone : MonoBehaviour
                 {
                     GetComponentInParent<PlayerMovement>().animator.SetBool("pickUp", true);
                     toolManager.StartCoroutine("UseTool");
-                    // get water
-                    Debug.Log("Get water.");
 
                     toolManager.CarryItem(true, filledRecipient);
 
