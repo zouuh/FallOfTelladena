@@ -13,8 +13,6 @@ public class FacingWaterZone : MonoBehaviour
     [SerializeField]
     Item filledRecipient; // Filled recipient
 
-    //[SerializeField]
-    //public FloattingText floattingText; // public because used in RespawnZone
     [SerializeField]
     ToolsManager toolManager;
 
@@ -43,11 +41,6 @@ public class FacingWaterZone : MonoBehaviour
 
                     toolManager.DeactivateActionInfo();
                 }
-                //floattingText.activate();
-            }
-            else
-            {
-                //floattingText.activate(requiredToolName);
             }
         }
     }
