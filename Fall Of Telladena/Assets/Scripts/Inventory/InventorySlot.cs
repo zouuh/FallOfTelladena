@@ -1,8 +1,4 @@
-﻿/*
- * Authors : Amélia, Manon
- */
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */
@@ -59,7 +55,7 @@ public class InventorySlot : MonoBehaviour {
 	{
 		if (item.amount == 1){
 			item.amount = item.amount-1;
-			Inventory.instance.RemoveAll(item);
+			Inventory.instance.Remove(item);
 			descriptionText.text = " ";
 		}
 		

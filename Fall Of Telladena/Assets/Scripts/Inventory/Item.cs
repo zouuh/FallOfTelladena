@@ -7,18 +7,14 @@ using UnityEngine;
 /* The base item class. All items should derive from this. */
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
-public class Item : ScriptableObject
-{
+public class Item : ScriptableObject {
 	new public string name = "New Item";    // Name of the item
 	public int amount = 0;                  // Amount of items
 	public Sprite icon = null;              // Item icon
 	public bool showInInventory = true;
+	public bool activeInstance = false;
 	public bool droppable = false;
 	public GameObject prefab;
-	public bool activeInstance = false;
-
-	// the item the player is using now
-	//public bool isUsed = false;
 
 	// Called when the item is pressed in the inventory
 	public virtual void Use()
@@ -26,6 +22,7 @@ public class Item : ScriptableObject
 		// Use the item
 		// Something may happen
 		Debug.Log("Using : " + name);
+		Debug.Log("----------------------------------");
 
 		// Tell the inventory we are using this item now
 		Inventory.instance.usedItem = this;

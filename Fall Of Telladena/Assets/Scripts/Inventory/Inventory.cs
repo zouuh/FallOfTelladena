@@ -31,14 +31,10 @@ public class Inventory : MonoBehaviour {
 
 	// Our current list of items in the inventory
 	public List<Item> items = new List<Item>();
-
-	public Item usedItem = null; // the item the player is using now
-
-	public List<string> objectsThatHaveBeenConsumed = new List<string>(); // keep track of the objects that have consume objects and that can now be used forever
-
-	ToolsManager toolsManager = null;
-
+	public Item usedItem = null; // the item the player is using now	
 	public List<Item> itemInvent = new List<Item>();
+	public List<string> objectsThatHaveBeenConsumed = new List<string>(); // keep track of the objects that have consume objects and that can now be used forever
+	ToolsManager toolsManager = null;
 
 	// Add a new item if enough room
 	public bool Add (Item item)
@@ -48,7 +44,6 @@ public class Inventory : MonoBehaviour {
 				Debug.Log ("Not enough room.");
 				return false;
 			}
-			// for first appearance
 			for (int i = 0; i < items.Count; i++){
 				if(items[i].name == item.name){
 					items[i].amount += 1;
@@ -57,10 +52,11 @@ public class Inventory : MonoBehaviour {
 			}
 			if(item.amount <= 0){
 				item.amount = 1;
-				items.Add(item);
+				items.Add (item);
 			}
-			else{
-				items.Add(item);
+			
+			else {
+				items.Add (item);
 			}
 			
 			if (onItemChangedCallback != null)
@@ -135,7 +131,6 @@ public class Inventory : MonoBehaviour {
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
 	}
-
 
 	// Remove an item
 	public void RemoveAll(Item item)

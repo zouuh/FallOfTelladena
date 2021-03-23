@@ -13,9 +13,7 @@ public class ItemPickup : MonoBehaviour
     ToolsManager toolsManager;
     public bool canPickUp = true;
     bool isInContact;
-
     public Item item;
-
     public Animator oksusuAnimator;
 
     public ButtonController ActivateButton = null;
@@ -23,11 +21,8 @@ public class ItemPickup : MonoBehaviour
     void PickUp()
     {
         Debug.Log("PickUP() : " + item.name);
-       // Debug.Log("Inventory.instance.items.Count " + OnClick.test);
-        // Debug.Log(item);
         bool wasPickedUp = Inventory.instance.Add(item);
         oksusuAnimator.SetBool("pickUp", true);
-        // Debug.Log(isPick);
         StartCoroutine(WaitForAnim(wasPickedUp));
     }
 
@@ -87,6 +82,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.CompareTag("ContactZone") && Input.GetKeyDown(KeyCode.I) && canPickUp)
         {
+            Debug.Log("JE PICK UP");
             PickUp();
             isPickedUp = true;
             toolsManager.DeactivateActionInfo();

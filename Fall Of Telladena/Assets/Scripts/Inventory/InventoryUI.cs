@@ -19,7 +19,6 @@ public class InventoryUI : MonoBehaviour {
 
 		// Populate our slots array
 		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-#if UNITY_EDITOR
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
         foreach (string guid2 in guids2)
         {
@@ -32,7 +31,7 @@ public class InventoryUI : MonoBehaviour {
 				}
 			}
         }
-#endif
+
 	}
 	
 	void Update () {
