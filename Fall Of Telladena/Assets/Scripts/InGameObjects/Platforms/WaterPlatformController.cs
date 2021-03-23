@@ -41,7 +41,7 @@ public class WaterPlatformController : MonoBehaviour
     {
         myPlayer = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
         toolsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
-        audioManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>();
 
         myAnimation = myPlatform.GetComponent<Animation>();
         anim = myPlatform.GetComponent<Animator>();
