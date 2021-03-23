@@ -61,7 +61,7 @@ public class PowersController : MonoBehaviour
 
         if (Input.GetButtonDown("Action") && Inventory.instance.isUsingTool("Pierre de Clarté") && !GetComponent<ToolsManager>().usingATool)
         {
-            //GetComponent<ToolsManager>().StartCoroutine("UseTool");
+            GetComponent<ToolsManager>().StartCoroutine("UseTool");
 
             sameLightImpulse = !sameLightImpulse;
             StartCoroutine(ActiveLightPower());
