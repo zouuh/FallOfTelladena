@@ -12,6 +12,7 @@ public class WaterPlatformController : MonoBehaviour
     int axisId;
     int currStep = 0;
     public int forwardOrBackward = 1; // 1 = forward, -1 = backward
+    int initialForwardOrBackward = 1;
     public CharacterController myPlayer; // public because used by WaterPlatform
     ToolsManager toolsManager;
 
@@ -41,6 +42,9 @@ public class WaterPlatformController : MonoBehaviour
         toolsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
         myAnimation = myPlatform.GetComponent<Animation>();
         anim = myPlatform.GetComponent<Animator>();
+
+        initialForwardOrBackward = forwardOrBackward;
+
         switch (axisToAnimate)
         {
             case "x":
@@ -157,7 +161,8 @@ public class WaterPlatformController : MonoBehaviour
         myAnimation.Play(clip.name);
 
         currStep = 0;
-    }
+        forwardOrBackward = initialForwardOrBackward;
+}
 
     void OnTriggerEnter(Collider other)
     {
