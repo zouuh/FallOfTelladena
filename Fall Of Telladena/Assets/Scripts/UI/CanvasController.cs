@@ -18,6 +18,13 @@ public class CanvasController : MonoBehaviour {
     [SerializeField]
     ActionCanvas actionCanvas;
 
+    // needed for the map
+    [SerializeField]
+    GameObject player; // the player
+
+    [SerializeField]
+    MapPlayerPosition playerPositionSprite; // the marker for player
+
     void Start() {
         loadingCanvas.SetActive(false);
     }
@@ -35,7 +42,8 @@ public class CanvasController : MonoBehaviour {
             if(mapCanvas.activeSelf) {
                 SwitchCanvas(mapCanvas, mainViewCanvas);
             }
-            else if(mainViewCanvas.activeSelf) {
+            else if(mainViewCanvas.activeSelf)
+            {
                 SwitchCanvas(mainViewCanvas, mapCanvas);
             }
         }

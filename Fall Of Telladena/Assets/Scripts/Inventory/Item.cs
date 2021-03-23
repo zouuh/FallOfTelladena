@@ -15,14 +15,14 @@ public class Item : ScriptableObject {
 	public bool activeInstance = false;
 	public bool droppable = false;
 	public GameObject prefab;
+	public string description = "";
 
 	// Called when the item is pressed in the inventory
 	public virtual void Use()
 	{
 		// Use the item
 		// Something may happen
-		Debug.Log("Using : " + name);
-		Debug.Log("----------------------------------");
+		//Debug.Log("Using : " + name);
 
 		// Tell the inventory we are using this item now
 		Inventory.instance.usedItem = this;

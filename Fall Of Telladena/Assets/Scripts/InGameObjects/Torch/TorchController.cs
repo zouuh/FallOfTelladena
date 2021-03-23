@@ -14,7 +14,7 @@ public class TorchController : MonoBehaviour
     bool sameLightImpulseTmp = false;
 
     [SerializeField]
-    string requiredToolName = "LightStone";
+    string requiredToolName = "Pierre de Clarté";
 
     PowersController player;
 

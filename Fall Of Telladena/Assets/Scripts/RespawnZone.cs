@@ -16,7 +16,6 @@ public class RespawnZone : MonoBehaviour
         Debug.Log(other.tag);
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player in water !");
             other.gameObject.SetActive(false);
             if (fixedSpawnPos)
             {

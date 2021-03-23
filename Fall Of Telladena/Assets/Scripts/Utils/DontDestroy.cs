@@ -37,7 +37,6 @@ public class DontDestroy : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         var player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(player);
         player.GetComponent<PlayerPositionManager>().SearchNewPosition();
         player.GetComponent<PlayerMovement>().dust.Play();
     }

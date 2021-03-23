@@ -15,6 +15,11 @@ public class NPC : MonoBehaviour
     public GameObject dialogueCanvas;
     public GameObject mainInterfaceCanvas;
 
+    [SerializeField]
+    string actionName = "Parler";
+    [SerializeField]
+    ToolsManager toolManager;
+
     // Private attributes
     private static string myName;
     private int dialogueId = 0;
@@ -152,6 +157,7 @@ public class NPC : MonoBehaviour
         myName = this.name;
         dialogueCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("DialogueCanvas").gameObject;
         mainInterfaceCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("MainInterfaceCanvas").gameObject;
+        toolManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ToolsManager>();
         dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadNpcFile();
@@ -163,6 +169,36 @@ public class NPC : MonoBehaviour
     }
 
     void Update() {
+        if (isDialoguePossible)
+        {
+            if (Input.GetButtonUp("Action") && !toolManager.usingATool)
+            {
+                Vector3 playerPos = toolManager.gameObject.transform.root.position;
+                Vector3 NPCPos = transform.position;
+                toolManager.transform.LookAt(new Vector3(NPCPos.x, playerPos.y, NPCPos.z));
+
+                //transform.LookAt(new Vector3(playerPos.x, NPCPos.y, playerPos.z));
+                //transform.rotation *= Quaternion.FromToRotation(Vector3.left, Vector3.forward);
+                Vector3 relativePos = new Vector3(playerPos.x, NPCPos.y, playerPos.z) - transform.position;
+                // the second argument, upwards, defaults to Vector3.up
+                Quaternion rotation = Quaternion.LookRotation(relativePos, new Vector3(0, 1, 0));
+                transform.rotation = rotation * Quaternion.Euler(0, 90, 0);
+
+                toolManager.StartCoroutine("UseTool");
+
+                // Test if the dialogue window isn't active
+                if (!dialogueCanvas.activeSelf)
+                {
+                    ActiveDialogue();
+                }
+                else
+                {
+                    HideDialogue();
+                }
+            }
+        }
+
+        /*
         if (Input.GetKeyDown("p")) {        // Mettre la touche action correspondante
             // Test if the NPC is in the dialogue zone
             if (isDialoguePossible) {
@@ -175,6 +211,7 @@ public class NPC : MonoBehaviour
                 }
             }
         }
+        */
     }
 
     void OnTriggerEnter(Collider colliderInfo) {
@@ -185,13 +222,20 @@ public class NPC : MonoBehaviour
                 ActiveDialogue();
                 automaticDialogue = false;
             }
+            else
+            {
+                toolManager.canDrop = false;
+                toolManager.ActivateActionInfo(actionName, 1, null);
+            }
         }
     }
 
     void OnTriggerExit(Collider colliderInfo) {
         // Change bool if this isn't in the dialogue zone
         if (colliderInfo.CompareTag("DialogueInput")) {
-             isDialoguePossible = false;
+            isDialoguePossible = false;
+            toolManager.canDrop = true;
+            toolManager.DeactivateActionInfo();
         }
     }
 

@@ -40,7 +40,7 @@ public class MapUI : MonoBehaviour
             player.GetComponent<PlayerMovement>().enabled = false;
 
             // Update player position
-            playerPositionSprite.updatePlayerPosition();
+            playerPositionSprite.UpdatePlayerPosition();
 		}
         else if (Input.GetButtonDown("CloseMap"))
         {

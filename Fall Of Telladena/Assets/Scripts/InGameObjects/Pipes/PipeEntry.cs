@@ -15,7 +15,7 @@ public class PipeEntry : MonoBehaviour
     ToolsManager toolsManager;
     bool isInContact = false;
     [SerializeField]
-    List<string> requiredUsingTools = new List<string>() { "Circle Coin", "Diamond Coin", "Hexagon Coin", "Pentagon Coin", "Rectangle Coin", "Square Coin", "Star Coin", "Trapese Coin", "Triangle Coin" };
+    List<string> requiredUsingTools = new List<string>() { "Pièce Cercle", "Pièce Diamant", "Pièce Hexagone", "Pièce Pentagone", "Pièce Rectangle", "Pièce Carré", "Pièce Etoile", "Pièce Trapèze", "Pièce Triangle" };
 
     private void Update()
     {
@@ -33,7 +33,7 @@ public class PipeEntry : MonoBehaviour
             {
                 toolsManager.CarryItem(false);
             }
-            toolsManager.ActivateActionInfo("Drop", requiredUsingTools, "item");
+            toolsManager.ActivateActionInfo("Poser", requiredUsingTools, "l'item");
         }
     }
 
@@ -72,7 +72,7 @@ public class PipeEntry : MonoBehaviour
             isInContact = true;
             toolsManager.canDrop = false;
 
-            toolsManager.ActivateActionInfo("Drop", requiredUsingTools, "item");
+            toolsManager.ActivateActionInfo("Poser", requiredUsingTools, "l'item");
         }
     }
 
