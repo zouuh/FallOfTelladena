@@ -54,6 +54,12 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(LoadAsynchronously(nextSceneName));
     }
 
+    public void StartNewGame() {
+        
+        //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
+        StartCoroutine(LoadAsynchronously(nextSceneName));
+    }
+
     IEnumerator LoadAsynchronously(string sceneName)    {
         //Debug.Log("Loading = " + sceneName);
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);

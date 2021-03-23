@@ -85,14 +85,34 @@ public class NPC : MonoBehaviour
         dialogueNameText.text = this.name;
         // Enable the right sentence of current Id
         dialogueText.text = "";
-        // dialogueText.text = dialogue[dialogueId];
+        dialogueText.text = dialogue[dialogueId];
         mainInterfaceCanvas.SetActive(false);
 
-        StartCoroutine(TypeSentence(dialogue[dialogueId]));
+        //StartCoroutine(TypeSentence(dialogue[dialogueId]));
     }
 
     IEnumerator TypeSentence (string sentence) {
-        foreach(char letter in sentence.ToCharArray()) {
+        for(int i=0; i<sentence.Length; ++i) {
+            char letter = sentence[i];
+            if(letter.Equals("<")) {
+                Debug.Log("couleur");
+                string word = "<";
+                while (!letter.Equals(">")) {
+                    ++i;
+                    letter = sentence[i];
+                    word += letter;
+                }
+                ++i;
+                letter = sentence[i];
+                word += letter;
+                while (!letter.Equals(">")) {
+                    ++i;
+                    letter = sentence[i];
+                    word += letter;
+                }
+                dialogueText.text += word;
+                yield return null;
+            }
             dialogueText.text += letter;
             yield return null;
         }
