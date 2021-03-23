@@ -9,11 +9,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject {
 	new public string name = "New Item";    // Name of the item
-	public int amount = 0;                  // Amount of items
+	public int amount = 0;              	// Amount of items
 	public Sprite icon = null;              // Item icon
 	public bool showInInventory = true;
 	public bool activeInstance = false;
 	public bool droppable = false;
+	public bool eatable = false;
+	public float energy = 0;
 	public GameObject prefab;
 	public string description = "";
 
@@ -34,5 +36,12 @@ public class Item : ScriptableObject {
 	public void RemoveFromInventory()
 	{
 		Inventory.instance.Remove(this);
+	}
+
+	public void eatItem (PlayerMovement playerMov) {
+		if (this.eatable) {
+			playerMov.energy += this.energy;
+			Inventory.instance.Remove(this);
+		}
 	}
 }

@@ -16,7 +16,10 @@ public class CanvasController : MonoBehaviour {
     [SerializeField]
     GameObject loadingCanvas;
     [SerializeField]
+    GameObject optionsCanvas;
+    [SerializeField]
     ActionCanvas actionCanvas;
+
 
     // needed for the map
     [SerializeField]
@@ -50,6 +53,10 @@ public class CanvasController : MonoBehaviour {
         if (Input.GetButtonDown("Cancel")) {
             if(mainViewCanvas.activeSelf) {
                 mainViewCanvas.SetActive(false);
+                pauseCanvas.SetActive(true);
+            }
+            if(optionsCanvas.activeSelf) {
+                optionsCanvas.SetActive(false);
                 pauseCanvas.SetActive(true);
             }
             else {

@@ -14,7 +14,6 @@ public class InventorySlot : MonoBehaviour {
 	public Text amountText;     // Reference to the Amount Text
 	public Text nameText;// Reference to the name Text
 	public Text descriptionText;// Reference to the descrition Text
-
 	Item item;  // Current item in the slot
 
 	[SerializeField]
