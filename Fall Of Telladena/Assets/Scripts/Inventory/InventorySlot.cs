@@ -11,7 +11,8 @@ public class InventorySlot : MonoBehaviour {
 
 	public Image icon;			// Reference to the Icon image
 	public Button removeButton;	// Reference to the remove button
-	public Text amountText;		// Reference to the Amount Text
+	public Text amountText;     // Reference to the Amount Text
+	public Text nameText;// Reference to the name Text
 	public Text descriptionText;// Reference to the descrition Text
 
 	Item item;  // Current item in the slot
@@ -35,7 +36,7 @@ public class InventorySlot : MonoBehaviour {
 
 	// Print Amount text
 	public void PrintAmount(Item item){
-		if (item.amount > 1){
+		if (item.amount > 0){
 			amountText.text = item.amount.ToString();
 		}
 		else {
@@ -60,6 +61,7 @@ public class InventorySlot : MonoBehaviour {
 		if (item.amount == 1){
 			item.amount = item.amount-1;
 			Inventory.instance.RemoveAll(item);
+			nameText.text = "";
 			descriptionText.text = "";
 		}
 		
@@ -75,7 +77,8 @@ public class InventorySlot : MonoBehaviour {
 		if (item != null)
 		{
 			item.Use();
-			descriptionText.text = item.name + " " + item.description;
+			nameText.text = item.name;
+			descriptionText.text = item.description;
             if (item.droppable)
 			{
 				canvasController.TurnOnActionCanvas("Poser");
@@ -86,6 +89,7 @@ public class InventorySlot : MonoBehaviour {
 			Inventory.instance.usedItem = null; // no item is used
 			canvasController.TurnOffActionCanvas();
 			toolsManager.CarryItem(false);
+			nameText.text = "";
 			descriptionText.text = "";
 		}
 	}
