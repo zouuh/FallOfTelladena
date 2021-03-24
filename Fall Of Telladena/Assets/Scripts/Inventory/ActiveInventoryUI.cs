@@ -18,6 +18,7 @@ public class ActiveInventoryUI : MonoBehaviour
 
 		// Populate our slots array
 		slots = itemsParent.GetComponentsInChildren<ActiveInventorySlot>();
+#if UNITY_EDITOR
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
 		foreach (string guid2 in guids2)
 		{
@@ -40,6 +41,7 @@ public class ActiveInventoryUI : MonoBehaviour
 				}
 			}
 		}
+#endif
 		Inventory.verif = false;
         UpdateActiveUI();
 	}

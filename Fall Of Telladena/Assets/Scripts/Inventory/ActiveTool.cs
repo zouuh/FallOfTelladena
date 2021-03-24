@@ -10,6 +10,7 @@ public class ActiveTool : MonoBehaviour
 	void Start () {
         //int  cmpt = 0;
         inventory = Inventory.instance;
+#if UNITY_EDITOR
 		string[] guids2 = AssetDatabase.FindAssets("", new[] {"Assets/Items"});
         foreach (string guid2 in guids2)
         {
@@ -29,7 +30,8 @@ public class ActiveTool : MonoBehaviour
 				//cmpt++;
 				//Debug.Log(o);
 			}
-        }   
+        }  
+#endif 
     }
 
     void FromInventoryToActive(Item item){

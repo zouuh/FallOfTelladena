@@ -81,6 +81,7 @@ public class ActiveInventorySlot : MonoBehaviour {
 			{
 				canvasController.TurnOnActionCanvas("Poser");
 			}
+			Debug.Log(toolsManager);
 			toolsManager.CarryItem(true, item);
 		}
 		else {

@@ -9,7 +9,7 @@ public class LeverController : MonoBehaviour
 {
     GameObject player = null;
 
-    public GameObject myLever;
+    // public GameObject myLever;
     public List<Platform> listOfPlatforms = new List<Platform>();
     bool isInContact = false;
     [SerializeField]

@@ -173,8 +173,6 @@ public class NPC : MonoBehaviour
         {
             if (Input.GetButtonUp("Action") && !toolManager.usingATool)
             {
-                toolManager.StartCoroutine("UseTool");
-
                 Vector3 playerPos = toolManager.gameObject.transform.root.position;
                 Vector3 NPCPos = transform.position;
                 toolManager.transform.LookAt(new Vector3(NPCPos.x, playerPos.y, NPCPos.z));
@@ -185,6 +183,8 @@ public class NPC : MonoBehaviour
                 // the second argument, upwards, defaults to Vector3.up
                 Quaternion rotation = Quaternion.LookRotation(relativePos, new Vector3(0, 1, 0));
                 transform.rotation = rotation * Quaternion.Euler(0, 90, 0);
+
+                toolManager.StartCoroutine("UseTool");
 
                 // Test if the dialogue window isn't active
                 if (!dialogueCanvas.activeSelf)

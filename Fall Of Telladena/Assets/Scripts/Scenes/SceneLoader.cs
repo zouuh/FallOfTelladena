@@ -21,10 +21,12 @@ public class SceneLoader : MonoBehaviour
     bool loadOnTrigger = true;
 
     public void Start() {
-        loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
+        // loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
         slider = loadingScreen.GetComponentInChildren<Slider>();
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        if (actualSceneName != "MainMenu") {
+            mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -45,10 +47,12 @@ public class SceneLoader : MonoBehaviour
             Debug.Log("saved " + pnj.name);
             pnj.SaveNPC();
         }
-        player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
-        player.GetComponent<PlayerMovement>().dust.Stop();
-        player.GetComponent<PlayerMovement>().enabled = false;
-        player.GetComponent<CharacterController>().enabled = false;
+        if (actualSceneName != "MainMenu") {
+            player.GetComponent<PlayerPositionManager>().SetPreviousPlace(actualSceneName);
+            player.GetComponent<PlayerMovement>().dust.Stop();
+            player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<CharacterController>().enabled = false;
+        }
 
         //FindObjectOfType<SpawnPoints>().SetPreviousPlace(actualSceneName);
         StartCoroutine(LoadAsynchronously(nextSceneName));

@@ -20,6 +20,7 @@ public class CanvasController : MonoBehaviour {
     [SerializeField]
     ActionCanvas actionCanvas;
 
+
     // needed for the map
     [SerializeField]
     GameObject player; // the player

@@ -59,7 +59,7 @@ public class PowersController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Action") && Inventory.instance.isUsingTool("Pierre de Clarté") && !GetComponent<ToolsManager>().usingATool)
+        if (Input.GetButtonDown("Action") && Inventory.instance.isUsingTool("ClarityStone") && !GetComponent<ToolsManager>().usingATool)
         {
             GetComponent<ToolsManager>().StartCoroutine("UseTool");
 
