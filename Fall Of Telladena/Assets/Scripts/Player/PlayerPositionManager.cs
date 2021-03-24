@@ -83,7 +83,7 @@ public class PlayerPositionManager : MonoBehaviour
 */
     private void Start()
     {
-        InvokeRepeating("SaveLastPosition", 0f, 20f);
+        InvokeRepeating("SaveLastPosition", 0f, 10f);
     }
 
     public void SaveLastPosition()
