@@ -18,13 +18,13 @@ public class MapPlayerPosition : MonoBehaviour
 
         // Create origins array
         origins.Add(Vector2.zero); // Menu
-        origins.Add(new Vector2(-315f, 65f)); // Village
-        origins.Add(new Vector2(-21f, 129f)); // Outside Castle
-        origins.Add(new Vector2(-21f, 153f)); // Inside Castle
-        origins.Add(new Vector2(-21f, 153f)); // Outside Stairs
-        origins.Add(new Vector2(100f, 153f)); // Maze
-        origins.Add(new Vector2(-21f, 153f)); // Forest
-        origins.Add(new Vector2(-21f, 153f)); // Lands
+        origins.Add(new Vector2(-297.8f, 59.9f)); // Village
+        origins.Add(new Vector2(-470f, 156.2f)); // Outside Castle
+        origins.Add(new Vector2(-470f, 177f)); // Inside Castle
+        origins.Add(new Vector2(-470f, 177f)); // Outside Stairs
+        origins.Add(new Vector2(-470f, 177f)); // Maze
+        origins.Add(new Vector2(438f, -44f)); // Forest
+        origins.Add(new Vector2(91f, -95f)); // Lands
 
         // Create zones array
         zones.Add(Vector2.zero); // Menu
@@ -33,20 +33,20 @@ public class MapPlayerPosition : MonoBehaviour
         zones.Add(new Vector2(.1f, .05f)); // Inside Castle
         zones.Add(new Vector2(.1f, .05f)); // Outside Stairs
         zones.Add(new Vector2(.1f, .05f)); // Maze
-        origins.Add(new Vector2(-21f, 153f)); // Forest
-        origins.Add(new Vector2(-21f, 153f)); // Lands
+        zones.Add(new Vector2(-21f, 153f)); // Forest
+        zones.Add(new Vector2(-21f, 153f)); // Lands
 
         // Create array
         values.Add(Vector2.zero); // Menu
         //values.Add(new Vector2(-280f/-11.7f, 160f/-43.57f)); // Village
         //values.Add(new Vector2(.7266f, .4780f)); // Village
-        values.Add(new Vector2(-1.376f, -2.09f)); // Village
-        values.Add(new Vector2(.15f, .07f)); // Outside Castle
-        values.Add(new Vector2(.1f, .05f)); // Inside Castle
-        values.Add(new Vector2(.1f, .05f)); // Outside Stairs
-        values.Add(new Vector2(.1f, .05f)); // Maze
-        values.Add(new Vector2(-21f, 153f)); // Forest
-        values.Add(new Vector2(-21f, 153f)); // Lands
+        values.Add(new Vector2(-1.7f, -2f)); // Village
+        values.Add(new Vector2(0f, 0f)); // Outside Castle
+        values.Add(new Vector2(0f, 0f)); // Inside Castle
+        values.Add(new Vector2(0f, .0f)); // Outside Stairs
+        values.Add(new Vector2(0f, .0f)); // Maze
+        values.Add(new Vector2(0f, 0f)); // Forest
+        values.Add(new Vector2(-1.7f, -2f)); // Lands
     }
     public void UpdatePlayerPosition()
     {

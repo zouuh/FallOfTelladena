@@ -47,6 +47,7 @@ public class CanvasController : MonoBehaviour {
             }
             else if(mainViewCanvas.activeSelf)
             {
+                playerPositionSprite.UpdatePlayerPosition();
                 SwitchCanvas(mainViewCanvas, mapCanvas);
             }
         }
