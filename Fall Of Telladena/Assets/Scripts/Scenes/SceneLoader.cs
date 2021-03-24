@@ -21,7 +21,7 @@ public class SceneLoader : MonoBehaviour
     bool loadOnTrigger = true;
 
     public void Start() {
-        // loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
+        loadingScreen = GameObject.FindGameObjectWithTag("Interface").transform.Find("LoadingScreen").gameObject;
         slider = loadingScreen.GetComponentInChildren<Slider>();
         if (actualSceneName != "MainMenu") {
             mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();

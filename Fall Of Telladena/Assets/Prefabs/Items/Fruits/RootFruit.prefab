@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8233629131074214158}
   - component: {fileID: -4387037173295925265}
   m_Layer: 0
-  m_Name: ItemRootFruit
+  m_Name: RootFruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPickUp: 1
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 7759ce88a0f1a0d44bc7471fb1512d17, type: 2}
   oksusuAnimator: {fileID: 0}
   ActivateButton: {fileID: 0}

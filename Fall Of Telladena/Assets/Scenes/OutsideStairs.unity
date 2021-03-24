@@ -5829,6 +5829,7 @@ MonoBehaviour:
   space: 42
   items: []
   usedItem: {fileID: 0}
+  itemInvent: []
   objectsThatHaveBeenConsumed: []
 --- !u!1 &2098151396
 GameObject:
@@ -6014,7 +6015,7 @@ PrefabInstance:
     - target: {fileID: 4687830599361222976, guid: 84f53ed03b109d44a94171a40daff28f,
         type: 3}
       propertyPath: requiredToolsName.Array.data[0].name
-      value: MazeKey
+      value: "Cl\xE9 du Labyrinthe"
       objectReference: {fileID: 0}
     - target: {fileID: 4687830599361222976, guid: 84f53ed03b109d44a94171a40daff28f,
         type: 3}
