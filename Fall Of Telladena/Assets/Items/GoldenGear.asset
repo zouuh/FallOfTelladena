@@ -16,6 +16,10 @@ MonoBehaviour:
   amount: 0
   icon: {fileID: 21300000, guid: dcf5794833b570346b8da4ab983e6d6b, type: 3}
   showInInventory: 1
-  droppable: 1
-  prefab: {fileID: 6148606770214940441, guid: bae457ae69eecdc43a02ff30fa7802c9, type: 3}
   activeInstance: 0
+  droppable: 1
+  eatable: 0
+  energy: 0
+  prefab: {fileID: 6148606770214940441, guid: bae457ae69eecdc43a02ff30fa7802c9, type: 3}
+  description: "Cet engrenage est le symbole du village. (Il permet d\u2019ouvrir
+    la barri\xE8re qui entoure la for\xEAt de bambou). Item unique."
