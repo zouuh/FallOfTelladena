@@ -3,7 +3,17 @@ guid: cb65f459386520d468e4001afa53caa1
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AxeBlade
+    second: {fileID: 2100000, guid: 66885cc75dd87694f9097f2798ea9875, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AxeStick
+    second: {fileID: 2100000, guid: db6aef64c6ab59346a76a81e8dd427fb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

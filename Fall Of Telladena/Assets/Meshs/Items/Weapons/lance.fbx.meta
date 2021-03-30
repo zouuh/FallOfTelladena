@@ -3,7 +3,12 @@ guid: 43dd251b716cfce4daa7de139e7cc120
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lance
+    second: {fileID: 2100000, guid: 878dcb0ddb688fb42a60095e7c43500e, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

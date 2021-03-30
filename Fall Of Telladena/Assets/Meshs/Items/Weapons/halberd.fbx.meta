@@ -3,7 +3,12 @@ guid: ae86cfad4ca04634b8eacd3d141b0300
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Halberd
+    second: {fileID: 2100000, guid: 8cf3d9ae7274cb949b3db2c2e72f0429, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

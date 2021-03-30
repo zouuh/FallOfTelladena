@@ -3,7 +3,12 @@ guid: 847efc0af38ddfe4ba25efa8c2d36c7c
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrambleBushNearPossi
+    second: {fileID: 2100000, guid: bcf3596c9d1f27945b5987953f160de7, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

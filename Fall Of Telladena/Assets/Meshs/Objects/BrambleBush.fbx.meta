@@ -3,7 +3,12 @@ guid: e2875ee953a12cd4f857440e9b90894e
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrambleBush
+    second: {fileID: 2100000, guid: 9855893c1fa4b7042b7330718d17850d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

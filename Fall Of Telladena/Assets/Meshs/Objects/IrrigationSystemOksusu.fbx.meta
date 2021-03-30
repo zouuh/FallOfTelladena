@@ -3,7 +3,17 @@ guid: d2ae1fdfb3585ed43afd119735145873
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IrrigationSustemKiyoHolders
+    second: {fileID: 2100000, guid: 4a2c400b800876d4187a5a380d6b3be0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IrrigationSystemKiyoBamboo
+    second: {fileID: 2100000, guid: 4a2c400b800876d4187a5a380d6b3be0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

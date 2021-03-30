@@ -3,7 +3,17 @@ guid: 567757eafe735c247a3b1cd8ae6c0cf3
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MachetteBlade
+    second: {fileID: 2100000, guid: c3ec3425830f29248971a196d61602f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MachetteGrip
+    second: {fileID: 2100000, guid: a5e4d9684cfa8aa49aed53326014937a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
