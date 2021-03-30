@@ -132,7 +132,7 @@ public class NPC : MonoBehaviour
 
     static string[] ReadNpcFile() {
         // Path of this NPC's document
-        string path = "Assets/Documents/Dialogue/" + myName + ".txt";
+        string path = "Assets/Resources/Documents/Dialogue/" + myName + ".txt";
 
         StreamReader reader = new StreamReader(path);
 
@@ -260,28 +260,30 @@ public class NPC : MonoBehaviour
     public void ResetNPC() {
 
         // Path of this NPC initial document
-        string path = "Assets/Documents/Initial/" + this.name + "Initial.txt";
+        string path = "Assets/Resources/Documents/Initial/" + this.name + "Initial.txt";
 
         StreamReader reader = new StreamReader(path);
 
-        reader.ReadLine();
+        if(reader != null) {
+            reader.ReadLine();
 
-        // Set dialogue ID to 0
-        this.dialogueId = 0;
-        // Get the initial scene of the NPC
-        this.scene = reader.ReadLine();
-        // Get the initial position of the NPC
-        float posx = float.Parse(reader.ReadLine());
-        float posy = float.Parse(reader.ReadLine());
-        float posz = float.Parse(reader.ReadLine());
-        this.SetPosition(new Vector3(posx, posy, posz));
-        // Get the initial rotation
-        float rotx = float.Parse(reader.ReadLine());
-        float roty = float.Parse(reader.ReadLine());
-        float rotz = float.Parse(reader.ReadLine());
-        this.transform.rotation = new Quaternion(rotx, roty, rotz, 0);
+            // Set dialogue ID to 0
+            this.dialogueId = 0;
+            // Get the initial scene of the NPC
+            this.scene = reader.ReadLine();
+            // Get the initial position of the NPC
+            float posx = float.Parse(reader.ReadLine());
+            float posy = float.Parse(reader.ReadLine());
+            float posz = float.Parse(reader.ReadLine());
+            this.SetPosition(new Vector3(posx, posy, posz));
+            // Get the initial rotation
+            float rotx = float.Parse(reader.ReadLine());
+            float roty = float.Parse(reader.ReadLine());
+            float rotz = float.Parse(reader.ReadLine());
+            this.transform.rotation = new Quaternion(rotx, roty, rotz, 0);
 
-        reader.Close();
+            reader.Close();
+        }
 
         this.CheckScene();
         this.SaveNPC();
