@@ -4638,11 +4638,11 @@ RectTransform:
   m_Father: {fileID: 3831506520019828058}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -506, y: 111}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 20}
   m_SizeDelta: {x: 441.0797, y: 77.39076}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &958732576514945879
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7060,6 +7060,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 559243125893453914}
     m_Modifications:
+    - target: {fileID: 782344984873952571, guid: b7610329732aabc47b93fbf8371583f7,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 782344984873952571, guid: b7610329732aabc47b93fbf8371583f7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 782344984873952571, guid: b7610329732aabc47b93fbf8371583f7,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 1889587144822259798, guid: b7610329732aabc47b93fbf8371583f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7169,6 +7185,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ActionInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195973965084501677, guid: b7610329732aabc47b93fbf8371583f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822356637460085893, guid: b7610329732aabc47b93fbf8371583f7,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 4822356637460085893, guid: b7610329732aabc47b93fbf8371583f7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822356637460085893, guid: b7610329732aabc47b93fbf8371583f7,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822356637460085893, guid: b7610329732aabc47b93fbf8371583f7,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 892709196598362561, guid: b7610329732aabc47b93fbf8371583f7, type: 3}

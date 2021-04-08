@@ -184,7 +184,6 @@ GameObject:
   - component: {fileID: 5558892486942411268}
   - component: {fileID: 7750985202923259885}
   - component: {fileID: 6885170033127803701}
-  - component: {fileID: 892709196598362561}
   m_Layer: 5
   m_Name: ActionInfo
   m_TagString: Untagged
@@ -272,22 +271,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &892709196598362561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4195973965084501677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ec54557e7c9e847b419b3627605a86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionText: {fileID: 4822356637460085893}
-  background: {fileID: 5722186130111213452}
-  baseColor: {fileID: 21300000, guid: c13582dd7298bca4bbceaf044b7ff7ae, type: 3}
-  disableColor: {fileID: 21300000, guid: df0ba84ab5810d64b8a34e2036787027, type: 3}
 --- !u!1 &4324620234530574699
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,10 +512,10 @@ RectTransform:
   m_Father: {fileID: 3262314046079936590}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 0}
-  m_SizeDelta: {x: 0, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 12.499996, y: 0}
+  m_SizeDelta: {x: -25.000008, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5006455467661647810
 CanvasRenderer:
