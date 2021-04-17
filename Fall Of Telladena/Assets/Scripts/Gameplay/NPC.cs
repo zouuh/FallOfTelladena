@@ -133,6 +133,25 @@ public class NPC : MonoBehaviour
 
     static string[] ReadNpcFile() {
         return Resources.Load<TextAsset>("Documents/Dialogue/" + myName).text.Split('\n').Skip(2).ToArray();
+        // Path of this NPC's document
+        string path = "Assets/StreamingAssets/" + myName + ".txt";
+
+        StreamReader reader = new StreamReader(path);
+
+        reader.ReadLine();
+
+        // Get the number of sentences of the NPC
+        int nbDialogue = int.Parse(reader.ReadLine());
+        // Initiate the string array with the right size
+        string[] dialogue = new string[nbDialogue];
+        // Put sentences in this array
+        for (int i=0; i<nbDialogue; i++) {
+            string newLine = "";
+            newLine += reader.ReadLine();
+            dialogue[i] = newLine;
+        }
+        reader.Close();
+        return dialogue;
     }
 
     // Unity functions
@@ -243,7 +262,7 @@ public class NPC : MonoBehaviour
     public void ResetNPC() {
 
         // Path of this NPC initial document
-        string path = "Assets/Resources/Documents/Initial/" + this.name + "Initial.txt";
+        string path = "Assets/StreamingAssets/Documents/Initial/" + this.name + "Initial.txt";
 
         StreamReader reader = new StreamReader(path);
 
