@@ -8,25 +8,26 @@ using UnityEngine;
 
 public class MainQuest_State1 : StateMachineBehaviour
 {
+    StoryManager storyManager = null;
 
-    StoryManager storyManager;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       storyManager = FindObjectOfType<StoryManager>();
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (storyManager == null) {
+            storyManager = FindObjectOfType<StoryManager>();
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       if(storyManager.inCrystalRoom == 1 || storyManager.mainQuestAdvencement >= 1) {
-           animator.SetInteger("MainQuestAdvencement", 1);
-       }
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        // Go to next step if Oksusu goes in Cristal room
+        if(storyManager.inCrystalRoom == 1 || storyManager.mainQuestAdvencement >= 1) {
+            animator.SetInteger("MainQuestAdvencement", 1);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        
         // Moves Aïki and change his dialogue ID
         NPC aiki = storyManager.aiki;
         aiki.SetScene("OutsideCastle");

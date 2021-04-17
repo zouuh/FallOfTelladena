@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/* 
+ * Authors : Zoé, Manon
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,9 +21,10 @@ public class UsePowerEnd : StateMachineBehaviour
     //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       animator.SetBool("usePower", false);
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+
+        // Stop power animation
+        animator.SetBool("usePower", false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

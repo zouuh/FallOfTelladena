@@ -10,16 +10,15 @@ public class SerenityQuest_State5 : StateMachineBehaviour
 {
     StoryManager storyManager;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       storyManager = FindObjectOfType<StoryManager>();
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (storyManager == null) {
+            storyManager = FindObjectOfType<StoryManager>();
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        Debug.Log("have seen dialogue : " + storyManager.yoh.HaveSeenDialogue(1));
-        Debug.Log("has turbull : " + Inventory.instance.HasTool("Turbull", 1));
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        // Go to next step
         if((storyManager.yoh.HaveSeenDialogue(1) && Inventory.instance.HasTool("Turbull", 1)) || storyManager.serenityQuestAdvencement >= 5) {
             Debug.Log("j'ai le turbull");
             animator.SetInteger("SerenityQuestAdvencement", 5);
@@ -27,8 +26,7 @@ public class SerenityQuest_State5 : StateMachineBehaviour
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         // Change Yoh's dialogue ID
         NPC yoh = storyManager.yoh;
         yoh.SetDialogueID(2);

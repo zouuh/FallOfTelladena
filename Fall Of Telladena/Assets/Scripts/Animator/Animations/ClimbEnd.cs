@@ -1,4 +1,6 @@
-﻿//ZOE
+﻿/* 
+ * Authors : Zoé
+ */
 
 using System.Collections;
 using System.Collections.Generic;
@@ -19,9 +21,9 @@ public class ClimbEnd : StateMachineBehaviour
     //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       animator.SetBool("climb", false);
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        // Stop climb animation
+        animator.SetBool("climb", false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

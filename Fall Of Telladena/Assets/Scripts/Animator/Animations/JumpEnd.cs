@@ -1,4 +1,6 @@
-﻿//ZOE
+﻿/* 
+ * Authors : Zoé, Manon
+ */
 
 using System.Collections;
 using System.Collections.Generic;
@@ -6,41 +8,38 @@ using UnityEngine;
 
 public class JumpEnd : StateMachineBehaviour
 {
+    int frame = 0;
+    float jumpTime = 0;
     public BimbopJumpZone bimbopJumpZone = null;
     public PlayerPositionManager playerPositionManager = null;
-    private CharacterController controller;
-    //public Animation animation;
-    int frame = 0;
-    float time = 0;
+    private CharacterController controller = null;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        frame = 0;
+        jumpTime = 0;
+
         if(controller == null) {
             controller = FindObjectOfType<CharacterController>();
         }
-        frame = 0;
-        time = 0;
-
-        if (bimbopJumpZone == null)
-        {
+        if (bimbopJumpZone == null) {
             bimbopJumpZone = FindObjectOfType<BimbopJumpZone>();
         }
-        if (playerPositionManager == null)
-        {
+        if (playerPositionManager == null) {
             playerPositionManager = FindObjectOfType<PlayerPositionManager>().GetComponent<PlayerPositionManager>();
         }
         playerPositionManager.SaveLastPosition();
-
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if(time >= 1f/24f) {
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        
+        // Do it each frame
+        if(jumpTime >= 1f/24f) {
             frame ++;
-            time = 0;
+            jumpTime = 0;
 
+            // Move collider while jumping
             if (frame < 7) {
                 controller.center = new Vector3(0, controller.center.y + 0.1f, 0);
             }
@@ -48,30 +47,29 @@ public class JumpEnd : StateMachineBehaviour
                 controller.center = new Vector3(0, controller.center.y - 0.06f, 0);
             }
         }
-        
-        time += Time.deltaTime;
+        // Increase jump time
+        jumpTime += Time.deltaTime;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if (bimbopJumpZone != null && !bimbopJumpZone.caveIsOpen) // only usefull until cave is open
-        {
-            if (bimbopJumpZone.isInZone)
-            {
-                if (bimbopJumpZone.timer > 0f)
-                {
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+
+        // Update Bimbop cave jump counter
+        if (bimbopJumpZone != null && !bimbopJumpZone.caveIsOpen) { // only usefull until cave is open
+            if (bimbopJumpZone.isInZone) {
+                if (bimbopJumpZone.timer > 0f) {
                     bimbopJumpZone.AddJump();
                 }
-                else
-                {
+                else {
                     bimbopJumpZone.ResetJump();
                 }
                 bimbopJumpZone.ResetTimer();
             }
         }
         
+        // Replace collider if necessary
         controller.center = new Vector3(0, 0.65f, 0);
+        // Stop jump animation
         animator.SetBool("jump", false);
     }
 

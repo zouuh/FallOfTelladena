@@ -10,22 +10,22 @@ public class SerenityQuest_State6 : StateMachineBehaviour
 {
     StoryManager storyManager;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       storyManager = FindObjectOfType<StoryManager>();
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (storyManager == null) {
+            storyManager = FindObjectOfType<StoryManager>();
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       if(storyManager.yoh.HaveSeenDialogue(2) || storyManager.serenityQuestAdvencement >= 6) {
-           animator.SetInteger("SerenityQuestAdvencement", 6);
-       }
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        // Go to next step
+        if(storyManager.yoh.HaveSeenDialogue(2) || storyManager.serenityQuestAdvencement >= 6) {
+            animator.SetInteger("SerenityQuestAdvencement", 6);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         // Remove the turbull from the inventory 
         Inventory.instance.Remove(storyManager.turbull);
 
