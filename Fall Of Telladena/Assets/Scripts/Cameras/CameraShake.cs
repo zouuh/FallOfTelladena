@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*
+ * Authors : Manon
+ */
+
+using UnityEngine;
 using Cinemachine;
 
 public class CameraShake : MonoBehaviour

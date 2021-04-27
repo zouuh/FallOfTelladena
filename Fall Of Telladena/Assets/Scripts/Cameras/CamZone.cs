@@ -1,11 +1,12 @@
 ﻿/*
- * Authors : (Notslot), Manon
+ * Authors : Manon, (Notslot)
  */
 
 using Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
+
 public class CamZone : MonoBehaviour
 {
     #region Fields

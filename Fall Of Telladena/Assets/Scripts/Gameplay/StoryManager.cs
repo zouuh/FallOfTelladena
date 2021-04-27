@@ -8,25 +8,29 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StoryManager : MonoBehaviour {
+
     // PUBLIC ATTRIBUTES
+    public bool beginStoneQuests = false;
+    public int mainQuestAdvencement = 0;
+    public int serenityQuestAdvencement = 0;
+    public int currentSerenityAdvencement = 0;
+    public int currentMainAdvencement = 0;
     public int inCrystalRoom = 0;
     public int builtIrrigation = 0;
     public bool possiIsBack = false;
     public bool inBimbopCave = false;
-    public bool beginStoneQuests = false;
-    public int mainQuestAdvencement = 0;
-    public int serenityQuestAdvencement = 0;
-    private int currentSerenityAdvencement = 0;
-    private int currentMainAdvencement = 0;
+    public NPC aiki, byoldal, gwang, migwa, namou, yoh;
 
     // PRIVATE ATTRIBUTES
-    public NPC aiki, byoldal, gwang, migwa, namou, yoh;
+    // TO DO : change attributes to private and add getters and setters
 
     // SERIALIZED ATTRIBUTES
     [SerializeField]
     public Item turbull, mazeKey, lullubyMushroom, lullubyPotion, serenityStone;
 
-    // Methods
+    // METHODS
+    
+    // TO DO : udate state machine to go to the right state if the game has been saved at a special state
     public void SetMainAdvencement(int newId) {
         if(newId > mainQuestAdvencement) {
             mainQuestAdvencement = newId;
@@ -36,6 +40,7 @@ public class StoryManager : MonoBehaviour {
         }
     }
 
+    // TO DO : same as "SetMainAdvencement(newId)"
     public void SetSerenityAdvencement(int newId) {
         if(newId > serenityQuestAdvencement) {
             serenityQuestAdvencement = newId;
@@ -45,7 +50,7 @@ public class StoryManager : MonoBehaviour {
         }
     }
 
-
+    // UNITY FUNCTIONS
     void Start() {
         LoadStory();
         NPC[] characters = FindObjectsOfType<NPC>();
@@ -75,12 +80,12 @@ public class StoryManager : MonoBehaviour {
         }
     }
     
-    // Save and load functions
+    // SAVE AND LOAD FUNCTIONS
     public void SaveStory() {
-        Debug.Log("Save story");
         SaveSystem.SaveStory(this);
     }
     
+    // Read save file and update attributes
     public void LoadStory() {
         StoryData data = SaveSystem.LoadStory();
 
@@ -101,5 +106,6 @@ public class StoryManager : MonoBehaviour {
         beginStoneQuests = false;
         mainQuestAdvencement = 0;
         serenityQuestAdvencement = 0;
+        SaveStory();
     }
 }

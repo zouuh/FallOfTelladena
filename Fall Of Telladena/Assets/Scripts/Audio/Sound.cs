@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* 
+ * Authors : Manon
+ */
+
+using UnityEngine;
 using UnityEngine.Audio;
 
 [System.Serializable]

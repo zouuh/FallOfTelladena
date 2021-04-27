@@ -1,4 +1,8 @@
-﻿using Cinemachine;
+﻿/*
+ * Authors : Manon
+ */
+
+using Cinemachine;
 using UnityEngine;
 
 public class DollyController : MonoBehaviour
@@ -6,6 +10,7 @@ public class DollyController : MonoBehaviour
     bool play = false;
     [SerializeField]
     CinemachineVirtualCamera dolly;
+
     void OnEnabled()
     {
         play = true;

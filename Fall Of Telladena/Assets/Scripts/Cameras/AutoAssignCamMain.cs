@@ -10,6 +10,7 @@ public class AutoAssignCamMain : MonoBehaviour
 {
     [SerializeField]
     CinemachineBrain mainCamera;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;

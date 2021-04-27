@@ -1,5 +1,5 @@
 ﻿/* 
- * Authors : Zoé 
+ * Authors : Zoé, Manon
  */
 
 using UnityEngine;
@@ -12,28 +12,26 @@ using System.Linq;
 
 public class NPC : MonoBehaviour
 {
-    // Public attributes
-    public GameObject dialogueCanvas;
-    public GameObject mainInterfaceCanvas;
-
     [SerializeField]
     string actionName = "Parler";
     [SerializeField]
     ToolsManager toolManager;
 
-    // Private attributes
+    // PRIVATE ATTRIBUTES
     private static string myName;
     private int dialogueId = 0;
-    public string scene;
+    private string scene;
     private bool automaticDialogue = false;
     private bool isDialoguePossible = false;
     private bool hasSeenDialogue = false;
     private string[] dialogue;
     private Text dialogueNameText;
     private Text dialogueText;
+    private GameObject dialogueCanvas;
+    private GameObject mainInterfaceCanvas;
     
 
-    // Getter and Setter
+    // GETTERS AND SETTERS
     public int GetDialogueId() {
         return dialogueId;
     }
@@ -52,21 +50,25 @@ public class NPC : MonoBehaviour
         this.CheckScene();
     }
 
+    // Used when NPC has automatic dialogues
     public void SetAutomaticDialogue(bool newBool) {
         automaticDialogue = newBool;
     }
 
+    // Change local position of player
     public void SetPosition(Vector3 newPos) {
-        // Change local position of player
         transform.position = newPos;
     }
 
 
-    // Other methods
+    // OTHER METHODS
+
+    // Return true if the active dialogue have been red one time or more, else return false 
     public bool HaveSeenDialogue(int id) {
         return (dialogueId == id && hasSeenDialogue);
     }
 
+    // Active NPC's colliders and meshes if he appears in the current scene, else unactive it
     public void CheckScene() {
         if(SceneManager.GetActiveScene().name != scene) {
             foreach(Collider col in GetComponentsInChildren<Collider>()) {
@@ -86,17 +88,18 @@ public class NPC : MonoBehaviour
         }
     }
 
+    // Take the right sentence and name and switch from main interface canvas to dialogue canvas
     public void ActiveDialogue() {
         dialogueCanvas.SetActive(true);
         dialogueNameText.text = this.name;
-        // Enable the right sentence of current Id
-        dialogueText.text = "";
         dialogueText.text = dialogue[dialogueId];
         mainInterfaceCanvas.SetActive(false);
 
+        // TO IMPLEMENT : text appearing progressively
         //StartCoroutine(TypeSentence(dialogue[dialogueId]));
     }
 
+    // For "ActiveDialogue" -> display the text letter by letter (excepting css code)
     IEnumerator TypeSentence (string sentence) {
         for(int i=0; i<sentence.Length; ++i) {
             char letter = sentence[i];
@@ -124,37 +127,41 @@ public class NPC : MonoBehaviour
         }
     }
 
+    // Switch from dialogue canvas to main interface canvas and update dialogue as "seen"
     public void HideDialogue() {
         dialogueCanvas.SetActive(false);
-        // Say that Oksusu red this dialogue
         hasSeenDialogue = true;
         mainInterfaceCanvas.SetActive(true);
     }
 
+    // Read the .txt files with dialogue of NPCs and return a list of sentences
     static string[] ReadNpcFile() {
         return Resources.Load<TextAsset>("Documents/Dialogue/" + myName).text.Split('\n').Skip(2).ToArray();
-        // Path of this NPC's document
-        string path = "Assets/StreamingAssets/" + myName + ".txt";
 
-        StreamReader reader = new StreamReader(path);
+        // OLD CODE : check if we need to keep some elements        
+        // // Path of this NPC's document
+        // string path = "Assets/StreamingAssets/" + myName + ".txt";
 
-        reader.ReadLine();
+        // StreamReader reader = new StreamReader(path);
 
-        // Get the number of sentences of the NPC
-        int nbDialogue = int.Parse(reader.ReadLine());
-        // Initiate the string array with the right size
-        string[] dialogue = new string[nbDialogue];
-        // Put sentences in this array
-        for (int i=0; i<nbDialogue; i++) {
-            string newLine = "";
-            newLine += reader.ReadLine();
-            dialogue[i] = newLine;
-        }
-        reader.Close();
-        return dialogue;
+        // reader.ReadLine();
+
+        // // Get the number of sentences of the NPC
+        // int nbDialogue = int.Parse(reader.ReadLine());
+        // // Initiate the string array with the right size
+        // string[] dialogue = new string[nbDialogue];
+        // // Put sentences in this array
+        // for (int i=0; i<nbDialogue; i++) {
+        //     string newLine = "";
+        //     newLine += reader.ReadLine();
+        //     dialogue[i] = newLine;
+        // }
+        // reader.Close();
+        // return dialogue;
     }
 
-    // Unity functions
+    // UNITY FUNCTIONS
+
     void Start() {
         myName = this.name;
         dialogueCanvas = GameObject.FindGameObjectWithTag("Interface").transform.Find("DialogueCanvas").gameObject;
@@ -163,18 +170,19 @@ public class NPC : MonoBehaviour
         dialogueNameText = dialogueCanvas.GetComponentsInChildren<Text>()[0];
         dialogueText = dialogueCanvas.GetComponentsInChildren<Text>()[1];
         dialogue = ReadNpcFile();
-        this.LoadNPC();
+        this.LoadNPC();     // To update every NPC with the story advencement
         CheckScene();
-        if(this.name == "Aïki") {
-            automaticDialogue = true;
-        }
+        
+        // TO DO : Fix automatic dialogues system
+        // if(this.name == "Aïki") {
+        //     automaticDialogue = true;
+        // }
     }
 
     void Update() {
-        if (isDialoguePossible)
-        {
-            if (Input.GetButtonUp("Action") && !toolManager.usingATool)
-            {
+        if (isDialoguePossible) {       // If Oksusu is in the dialogue zone of a character
+            if (Input.GetButtonUp("Action") && !toolManager.usingATool) {     // If dialogue dialoge request is demanded
+                
                 Vector3 playerPos = toolManager.gameObject.transform.root.position;
                 Vector3 NPCPos = transform.position;
                 toolManager.transform.LookAt(new Vector3(NPCPos.x, playerPos.y, NPCPos.z));
@@ -188,7 +196,7 @@ public class NPC : MonoBehaviour
 
                 toolManager.StartCoroutine("UseTool");
 
-                // Test if the dialogue window isn't active
+                // Test if the dialogue window is active to display or hide it
                 if (!dialogueCanvas.activeSelf)
                 {
                     ActiveDialogue();
@@ -199,41 +207,25 @@ public class NPC : MonoBehaviour
                 }
             }
         }
-
-        /*
-        if (Input.GetKeyDown("p")) {        // Mettre la touche action correspondante
-            // Test if the NPC is in the dialogue zone
-            if (isDialoguePossible) {
-                // Test if the dialogue window isn't active
-                if (!dialogueCanvas.activeSelf) {
-                    ActiveDialogue();
-                }
-                else {
-                    HideDialogue();
-                }
-            }
-        }
-        */
     }
 
+    // change dialogue possibility to true if Oksusu is in the dialogue zone and run automatic dialogues
     void OnTriggerEnter(Collider colliderInfo) {
-        // Change bool if this is in the dialogue zone
         if (colliderInfo.CompareTag("DialogueInput")) {
             isDialoguePossible = true;
             if(automaticDialogue) {
                 ActiveDialogue();
                 automaticDialogue = false;
             }
-            else
-            {
+            else {
                 toolManager.canDrop = false;
                 toolManager.ActivateActionInfo(actionName, 1, null);
             }
         }
     }
 
+    // Change dialogue possibility to false if Oksusu exits the dialogue zone
     void OnTriggerExit(Collider colliderInfo) {
-        // Change bool if this isn't in the dialogue zone
         if (colliderInfo.CompareTag("DialogueInput")) {
             isDialoguePossible = false;
             toolManager.canDrop = true;
@@ -241,11 +233,12 @@ public class NPC : MonoBehaviour
         }
     }
 
-    // Save and load functions
+    // SAVE AND LOAD FUNCTIONS
     public void SaveNPC() {
         SaveSystem.SaveNPC(this, this.name);
     }
     
+    // Take NPC's infos from saving file and save it in attributes
     public void LoadNPC() {
         NPCData data = SaveSystem.LoadNPC(this.name);
 
@@ -259,8 +252,8 @@ public class NPC : MonoBehaviour
         transform.position = position;
     }
 
+    // Take NPC's initial infos from .txt file and save it in attributes
     public void ResetNPC() {
-
         // Path of this NPC initial document
         string path = "Assets/StreamingAssets/Documents/Initial/" + this.name + "Initial.txt";
 
@@ -287,6 +280,7 @@ public class NPC : MonoBehaviour
             reader.Close();
         }
 
+        // Display or not the NPC after reseted it and save the new values
         this.CheckScene();
         this.SaveNPC();
     }

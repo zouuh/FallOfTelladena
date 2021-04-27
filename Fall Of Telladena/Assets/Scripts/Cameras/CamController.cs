@@ -1,5 +1,5 @@
 ﻿/*
- * Authors : (Notslot), Manon
+ * Authors : Manon, (Notslot)
  */
 
 using Cinemachine;
